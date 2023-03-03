@@ -1,9 +1,92 @@
+<main>
+    <div class="container">
+
+        <div class="main py-5 ">
+            <div class="row">
+                <h1 class="col-md-7 action-color text-uppercase">
+                    Не останавливайся<br> на достигнутом!
+                </h1>
+            </div>
+            <img src="/images/main.png" class="img-fluid mb-5 d-md-none">
+            <div class="row mb-5">
+                <p class="col-md-6">
+                    Торопитесь делать задуманное. «Позже» слишком часто превращается в «никогда».
+                </p>
+            </div>
+
+            <a href="#program"><button type="button" class="color-white btn btn-primary ">Выбрать курс</button></a>
+        </div>
+
+
+        <div class="row mb-5 align-items-stretch gap-4">
+            <div class="col border p-5 rounded-4">
+
+                <h2>
+                    FluidCourse
+                </h2>
+                <p>
+                    На сегодняшний день наша команда состоит из высококвалифицированных специалистов,
+                    у каждого из которых имеется огромный опыт работы. Мы собрали большую базу знаний и поняли,
+                    что готовы делится опытом и навыками.
+                </p>
+
+            </div>
+            <div class="col border p-5 rounded-4">
+
+
+                <h2 class="text-info">
+                    Для вас:
+                </h2>
+
+                <ol class="list-unstyled orange-points">
+                    <li>
+                        Курсы по узким направлениям в области промышленной инженерии
+                    </li>
+                    <li>
+                        Обучение работе в САПР
+                    </li>
+                    <li>
+                        Актуальные теоретические и практические материалы 
+                    </li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<section class="gradient text-light py-5">
+
+    <div class="container">
+
+        <h2 id="program" class="mb-5">
+            Ближайшие программы обучения 
+        </h2>
+        <div class="row mb-5 gy-4">
+
+            [[!pdoResources?
+            &parents=`10`
+            &tpl=`tpl_for_upcoming_program`
+            &limit=`3`
+            &includeTVs =`total_price,monthly_price,anotation`
+            &showHidden=`1`
+            &includeContent=`1`
+            ]]
+
+            <div class="col-md-6 col-xxl-2 d-flex justify-content-center align-content-end flex-wrap py-4">
+                <a class="text-white  text-decoration-none p-3" href="[[~4]]">Все курсы ᐳᐳ </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="py-5 mb-5">
     <div class="container">
 
         <div class="row">
             <div class="col-lg-6 mb-5 text-center">
-                <img class="img-fluid" src="../../../../images/f3.png">
+                <img class="img-fluid" src="../../../images/f3.png">
             </div>
             <div class="col-lg-6">
                 <h2>Видеоматериалы:</h2>

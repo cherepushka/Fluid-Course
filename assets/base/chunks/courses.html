@@ -1,0 +1,56 @@
+<main>
+    <div class="container">
+
+        <div class=" py-5 ">
+            <div class="row">
+                <h1 class="h3 action-color mb-5">
+                    Наши программы обучения
+                </h1>
+            </div>
+
+            <div class="row mb-5">
+
+                [[pdoMenu?
+                &parents=`14`
+                &level=`0`
+                &tplOuter = `@INLINE
+                <ol class="list-inline">[[+wrapper]]</ol>`
+                &tpl = `@INLINE
+                <li class="list-inline-item">
+                    <button type="button" class="color-white btn btn-primary btn-sm" [[+attributes]]>[[+menutitle]]</button>
+                </li>
+                `
+                ]]
+
+
+                <!--                <ol class="list-inline">-->
+                <!--                    <li class="list-inline-item">-->
+                <!--                        <button type="button" class="color-white btn btn-primary btn-sm">Все курсы</button>-->
+                <!--                    </li>-->
+                <!--                    <li  class="list-inline-item">-->
+                <!--                        <button type="button" class="color-white btn btn-primary btn-sm">САПР</button>-->
+                <!--                    </li>-->
+                <!--                    <li  class="list-inline-item">-->
+                <!--                        <button type="button" class="color-white btn btn-primary btn-sm">MS Office</button>-->
+                <!--                    </li>-->
+                <!--                </ol>-->
+
+            </div>
+
+
+            <div class="row mb-5 gy-4 ">
+
+                [[!pdoResources?
+                &parents=`10`
+                &tpl=`tpl_for_upcoming_program`
+                &limit=`3`
+                &includeTVs =`total_price,monthly_price,anotation`
+                &showHidden=`1`
+                &includeContent=`1`
+                ]]
+
+            </div>
+        </div>
+
+    </div>
+</main>
