@@ -1,0 +1,26 @@
+$primary: #FF5500;
+$body-bg: #F5F5F5;
+$body-color: #000;
+
+$secondary: #8300d9;
+$info: #FF4800;
+
+$border-color: #4763D5;
+$btn-color: #fff;
+
+$btn-padding-y: 14px;
+$btn-padding-x: 70px;
+
+$font-family-sans-serif: 'Gotham Pro';
+
+
+$grid-breakpoints: (
+  xs: 0,
+  xss: 200px,
+
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+)
