@@ -4,7 +4,7 @@
         <div class=" py-5 ">
             <div class="row">
                 <h1 class="h3 action-color mb-5">
-                    Все курсы
+                    [[*pagetitle]]
                 </h1>
             </div>
 
@@ -16,19 +16,15 @@
                 &tplOuter = `@INLINE
                 <ol class="list-inline">
                     <li class="list-inline-item">
-                        <a href="[[~4]]">
-                            <button type="button" class="color-white btn btn-primary btn-sm">Все курсы</button>
-                        </a>
+                        <a href="[[~4]]"><button type="button" class="color-white btn btn-primary btn-sm">Все курсы</button></a>
                     </li>
                     [[+wrapper]]
                 </ol>
                 `
                 &tpl = `@INLINE
                 <li class="list-inline-item">
-                    <a href="[[+link]]">
-                        <button type="button" class="color-white btn btn-primary btn-sm">[[+menutitle]]
-                        </button>
-                    </a>
+                    <a style="text-decoration: none" href="[[+link]]"><button type="button" class="color-white btn btn-primary btn-sm">[[+menutitle]]
+                    </button></a>
                 </li>
                 `
                 ]]
@@ -39,13 +35,12 @@
             <div class="row mb-5 gy-4 ">
 
                 [[!pdoResources?
-                &parents=`14`
+                &parents=`[[*id]]`
                 &tpl=`tpl_for_upcoming_program`
-                &limit=`0`
+                &limit=`3`
                 &includeTVs =`total_price,monthly_price,anotation,img`
                 &showHidden=`1`
-                &includeContent=`1`
-                &hideContainers = `1`
+                &includeContent
                 ]]
 
             </div>
