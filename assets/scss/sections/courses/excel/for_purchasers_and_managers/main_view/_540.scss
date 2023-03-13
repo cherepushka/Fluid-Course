@@ -1,0 +1,136 @@
+
+.main_view {
+    padding-bottom: 56px;
+    
+    .box_container {
+        .main_header {
+            padding: 0px 10px;
+            padding-bottom: 10px;
+
+            .logotip {
+                width: 192px;
+                height: 64.4px;
+            }
+
+            .navigator {
+                margin: 10px 0;
+                flex-direction: column;
+                gap: 2.7px;
+                align-items: end;
+            }
+        }
+
+        .cource_info {
+            margin-top: -9px;
+
+            .description {
+                margin-top: 34px;
+                width: 100%;
+            }
+
+
+            .action {
+                margin: 33px 0 67px 0;
+                font-size: 25px;
+                width: 185px;
+                padding: 1px 17px;
+
+                .btn {
+                    margin-right: -168px;
+                }
+            }
+
+        }
+
+        .what_you_will_learn {
+            padding: 0;
+
+            .im1 {
+                width: 85.7%;
+                margin-right: 13px;
+                margin-top: 21px;
+            }
+
+            .separate_row {
+                flex-direction: column;
+                gap: 134px;
+                align-items: center;
+
+                .grid {
+                    margin-top: -105px;
+                    padding: 40px 36px;
+                    grid-template-columns: 100%;
+                    gap: 29px;
+                    font-size: 18px;
+
+
+                    li {
+                        
+                        strong {
+                            margin-bottom: 4px;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+
+        .additional_info {
+
+            .navigator {    
+                padding: 0;
+                flex-wrap: wrap;
+                gap: 23px;
+
+                li {
+                    width: calc(50% - 12px);
+                    padding: 18px 21px;
+                    line-height: 20.6px;
+                    height: 184px;
+                    font-size: 16px;
+                }
+
+                .selected-line {
+                    @include animate-line(--main-module-box, 0, 233px, 203px, 159px, 15px, 100px);
+                }
+            }
+        }
+    }
+}
+
+.separate_row {
+    display: flex;
+    gap: 42px;
+}
+
+
+
+h1 {
+    font-size: 34.1px;
+    font-weight: 500;
+    line-height: 55px;
+    margin: 20px 0;
+
+    .small {    
+        font-size: 26.7px;
+        line-height: 12px;
+    }
+}
+
+h2 {
+    padding: 0;
+    font-size: 28px;
+}
+
+.btn {
+    font-size: 18px;
+    padding: 8px 30px;
+}
+
+p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+}

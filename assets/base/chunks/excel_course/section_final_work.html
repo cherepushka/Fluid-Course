@@ -48,7 +48,7 @@
         <li class="training-box ">
           <h4>04</h4>
           Получаете сертификат
-          об  окончании курса
+          об окончании курса
           (при успешной сдаче Итоговой работы)
         </li>
       </ol>
@@ -135,38 +135,73 @@
             Начало обучения: 20 марта<br>
             Окончание регистрации: 26 марта
           </p>
-          <form>
-            <ul class="apply-form__success"></ul>
-            <ul class="apply-form__errors"></ul>
 
-            @csrf
-            <input type="text" placeholder="Имя фамилия" name="name_and_surname">
-            <input type="text" placeholder="E-mail" class="mail" name="email">
-            <input type="text" placeholder="+7 (999) 999-99-99" class="phone" name="phone">
 
-            <input type="text" placeholder="Компания" name="company">
-            <input type="text" placeholder="Должность" name="job">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          [[!AjaxForm?
+          &snippet=`FormIt`
+          &hooks=`FormItSaveForm,Test`
+          &form=`tpl_ajax_form`
+          &formName=`Курс Excel`
+          &formFields=`name_and_surname, email, phone,company, job`
+          &fieldNames=`name_and_surname==Имя, email==Электронная почта, phone==Телефон, company==Организация, job==Должность`
+          &validate=`
+          name_and_surname:required:minLength=^3^:maxLength=^21^,
+          email:required:email,
+          phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+          company:required:minLength=^3^,
+          job:required:minLength=^3^,
+          workemail:blank
+          `
+          &successMessage=`Сообщение успешно отправлено`
+          &validationErrorMessage=`В форме qwesad ошибки!`
+          ]]
 
-            <div class="split">
-              <button class="btn">
-                Записаться
-              </button>
-            </div>
+          <script>
+            // $(document).on('af_complete', function (event, response) {
+            //     const elForm = $(response.form);
+            //     elForm.find('.is-invalid').each(function (index, el) {
+            //         $(el).removeClass('is-invalid');
+            //     });
+            //     for (let key in response.data) {
+            //         const elInput = elForm.find(`[name=${key}]`);
+            //         elInput.addClass('is-invalid');
+            //         elInput.next('.invalid-feedback').text($(response.data[key]).text());
+            //     }
+            // });
+          </script>
 
-            <label>
-              <input type="checkbox" checked disabled>
-              Записываясь на курс, вы даете согласие на обработку своих
-              персональных данных в соответствии
-              <span>
-                                с политикой конфиденциальности.
-                            </span>
-            </label>
+<!--          <form>-->
+<!--            <ul class="apply-form__success"></ul>-->
+<!--            <ul class="apply-form__errors"></ul>-->
 
-            <label>
-              <input type="checkbox" checked disabled>
-              Получение SMS и Email рассылок.
-            </label>
-          </form>
+<!--            <input type="text" placeholder="Имя фамилия" name="name_and_surname">-->
+<!--            <input type="text" placeholder="E-mail" class="mail" name="email">-->
+<!--            <input type="text" placeholder="+7 (999) 999-99-99" class="phone" name="phone">-->
+
+<!--            <input type="text" placeholder="Компания" name="company">-->
+<!--            <input type="text" placeholder="Должность" name="job">-->
+
+<!--            <div class="split">-->
+<!--              <button class="btn">-->
+<!--                Записаться-->
+<!--              </button>-->
+<!--            </div>-->
+
+<!--            <label>-->
+<!--              <input type="checkbox" checked disabled>-->
+<!--              Записываясь на курс, вы даете согласие на обработку своих-->
+<!--              персональных данных в соответствии-->
+<!--              <span>-->
+<!--                                с политикой конфиденциальности.-->
+<!--                            </span>-->
+<!--            </label>-->
+
+<!--            <label>-->
+<!--              <input type="checkbox" checked disabled>-->
+<!--              Получение SMS и Email рассылок.-->
+<!--            </label>-->
+<!--          </form>-->
         </div>
       </div>
     </div>

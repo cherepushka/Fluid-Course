@@ -1,0 +1,82 @@
+$activeColor: #FCCD49;
+$showTemplate: true;
+
+$showTemplate: false;
+$anim1: cubic-bezier(.67,.08,.14,1.4);
+$anim2: cubic-bezier(.74,-0.33,.14,1.63);
+
+
+body {
+    margin:  0;
+    padding: 0;
+    font-family: 'Golos', tahoma;
+    color: #fff;
+    @if($showTemplate){
+        color: #f00 !important;
+    }
+    background-position: Calc(50% + 6px) 0;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 60.7px;
+    letter-spacing: 0em;
+    margin: 15px 0;
+
+    .small {
+        font-size: 42.2px;
+        font-weight: 500;
+        line-height: 49px;
+        letter-spacing: 0em;
+    }
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0em;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0em;
+    margin: 15px 0;
+}
+
+p {
+    margin: 15px 0;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+
+*{
+    scroll-behavior: smooth !important;
+}
+
+@import '../../../../fonts/Montserrat.scss';
+@import '../../../../fonts/Golos.scss';
+
+@import './animation';
+@import './sizes/containers';

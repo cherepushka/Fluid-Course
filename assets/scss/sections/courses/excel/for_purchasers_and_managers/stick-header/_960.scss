@@ -1,0 +1,21 @@
+
+.stick-header {
+
+    .main_header {
+
+        
+        .navigator {
+            gap: 25px;
+
+            li:not(:first-child) {
+                display: none;
+            }
+            
+            .btn {
+                font-size: 13px;
+                line-height: 13px;
+            }
+        }
+    }
+
+}

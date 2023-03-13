@@ -1,0 +1,203 @@
+@import './components/components';
+
+@import '../../../../../sections/courses/excel/for_purchasers_and_managers/main_view/view';
+@import '../../../../../sections/courses/excel/for_purchasers_and_managers/acquaintance_view/view';
+@import '../../../../../sections/courses/excel/for_purchasers_and_managers/training_program/view';
+
+@import './components/types';
+@import '../../../../../sections/courses/excel/for_purchasers_and_managers/final_work/view';
+
+@import '../../../../../sections/courses/excel/for_purchasers_and_managers/footer/view';
+
+@import '../../../../../sections/courses/excel/for_purchasers_and_managers/stick-header/view';
+
+.box_container { 
+    width: 1240px;
+    margin: 0 auto;
+    padding-left: 12.6px;
+}
+
+//выставить размер 540 и по нему обвести картинку
+@media (min-width: 100px) and (max-width: 374px) {
+
+    body {
+        @if($showTemplate){
+            background-image: url('/sizes/320all.png');
+        }
+    }
+
+    @import './components/320';
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/main_view/320";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/acquaintance_view/320";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/training_program/320";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/final_work/320";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/footer/320";
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/stick-header/320";
+}
+
+
+@media (min-width: 375px) and (max-width: 539px) {
+
+    body {
+        @if($showTemplate){
+            background-image: url('/sizes/375all.png');
+        }
+    }
+
+    .box_container {
+        width: 339px;
+    }
+
+    @import './components/375';
+
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/main_view/375";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/acquaintance_view/375";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/training_program/375";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/final_work/375";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/footer/375";
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/stick-header/375";
+
+}
+
+
+//выставить размер 540 и по нему обвести картинку
+@media (min-width: 540px) and (max-width: 719px) {
+
+    body {
+        @if($showTemplate){
+            background-image: url('/sizes/540all.png');
+        }
+    }
+
+    .box_container {
+        width: 450px;
+    }
+
+    @import './components/540';
+    
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/main_view/540";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/acquaintance_view/540";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/training_program/540";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/final_work/540";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/footer/540";
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/stick-header/540";
+    
+}
+
+
+
+@media (min-width: 720px) and (max-width: 959px) {
+
+    body {
+        @if($showTemplate){
+            background-image: url('/sizes/720all.png');
+        }
+    }
+
+    .box_container {
+        width: 596px;
+    }
+
+    @import './components/720';
+
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/main_view/720";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/acquaintance_view/720";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/training_program/720";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/final_work/720";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/footer/720";
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/stick-header/720";
+
+}
+
+
+
+@media (min-width: 960px) and (max-width: 1139px) {
+    body {
+        @if($showTemplate){
+            background-image: url('/sizes/960all.png');
+        }
+    }
+
+    .box_container {
+        width: 782px;
+    }
+    
+    @import './components/960';
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/main_view/960";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/acquaintance_view/960";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/training_program/960";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/final_work/960";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/footer/960";
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/stick-header/960";
+
+}
+
+
+
+@media (min-width:1140px) and (max-width: 1439px) {
+    body {
+        @if($showTemplate){
+            background-image: url('/sizes/1140all.png');
+        }
+    }
+
+
+    .box_container {
+        width: 933px;
+    }
+
+    @import './components/1140';
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/main_view/1140";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/acquaintance_view/1140";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/training_program/1140";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/final_work/1140";
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/footer/1140";
+
+    @import "../../../../../sections/courses/excel/for_purchasers_and_managers/stick-header/1140";
+}
+
+
+
+@media (min-width:1440px) and (max-width: 1749px) {
+
+        body {
+            @if($showTemplate){
+                background-image: url('/sizes/1440all.png');
+            }
+        }
+    
+        .box_container {
+            width: 1225px;
+        }
+
+        @import "../../../../../sections/courses/excel/for_purchasers_and_managers/main_view/1440";
+        @import "../../../../../sections/courses/excel/for_purchasers_and_managers/acquaintance_view/1440";
+        @import "../../../../../sections/courses/excel/for_purchasers_and_managers/training_program/1440";
+        @import "../../../../../sections/courses/excel/for_purchasers_and_managers/final_work/1440";
+    }
+
+
+
+@media (min-width:1750px) {  // 1920
+    body {
+        @if($showTemplate){
+            background-image: url('/sizes/1920all.png');
+        }
+    }
+
+    .box_container {
+        width: 1227px;
+    }
+
+}

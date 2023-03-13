@@ -1,0 +1,49 @@
+
+
+
+.training_program {
+    padding: 77px 0;
+    padding-bottom: 67px;
+
+
+    .scrolled {
+        width: 833px;
+
+        .space {
+            ol {
+                gap: 20px;
+
+                li {
+                    width: 260px;
+                }
+            }
+        }
+    }
+
+    .modules {
+        margin-top: 36px;
+
+
+        .module {
+            .split {
+                justify-content: space-between;
+                .title {
+                
+                    h3 {
+                        font-size: 27px;
+                    }
+
+                    h4 {
+                        font-size: 21.1px;
+                        width: 300px;
+                    }
+                }
+
+                .list {
+                    width: 61.6%;
+                    line-height: 25.6px;
+                }
+            }
+        }
+    }
+}

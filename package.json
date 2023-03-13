@@ -1,0 +1,7 @@
+{
+  "name": "modx",
+  "version": "1.0.0",
+  "dependencies": {
+    "imask": "^6.4.3"
+  }
+}

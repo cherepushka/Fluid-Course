@@ -1,0 +1,39 @@
+.stick-header {
+    transition: transform .3s ease-in-out;
+    --show: 0;
+    transform: translateY(calc(-100px + 100px * var(--show)));
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    z-index: 100;
+    background: #138147;
+
+    img {
+        height: 55px;
+        margin-top: 5px;
+    }
+
+    .main_header {
+        padding: 0px;
+
+        .navigator {
+            margin: 0;
+            align-items: center;
+
+            .btn {
+                padding: 10px 30px;
+
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 22px;
+                letter-spacing: 0em;
+
+            }
+
+            
+        }
+    }
+
+}

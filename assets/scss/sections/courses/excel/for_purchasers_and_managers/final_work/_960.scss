@@ -1,0 +1,160 @@
+
+.Final_work {
+    padding-top: 30px;
+    padding-bottom: 74px;
+
+    // min-height: 2856px;
+    
+    .Final_work_block {
+        
+        .split {
+            gap: 48px;
+
+            .image {
+                height: 248px;
+                margin-top: 19px;
+            }
+
+            .text {
+                p,
+                li {
+                    font-size: 17.3px;
+                    line-height: 21px;
+                }
+            }
+        }
+
+    }
+
+
+    .How_is_the_training_going {
+        margin-top: -7px;
+        ol {
+            li {
+                font-size: 18px;
+                line-height: 22px;
+                &.active {
+
+                    &:after {
+                        bottom: -54px;
+                        width: 95px;
+                    }
+                }
+                
+                h4 {
+                    margin-bottom: 20px;
+                }
+
+
+            }
+
+            .selected-line {
+                @include animate-line(--training-box, 1, 206px, 0, 240px, 8px, 135px);
+            }
+        }
+    }
+
+
+    .Student_reviews {
+        margin-top: 51px;
+
+
+        .carousel {
+            margin: 40px 0;
+
+            .coments {
+                .box {
+                    height: 296px;
+                }
+            }
+
+            .coment {
+                height: 202px;
+                padding: 3px 14px;
+
+                .inner {
+                    h3 {
+                        font-size: 17px; 
+                    }
+                    
+                    p {
+                        font-size: 17px;
+                        line-height: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .Cource_participation {
+        margin-top: 54px;
+        gap: 30px;
+
+        .part {
+            padding: 12px 37px;
+
+            h2 {
+                margin-bottom: 23px;
+                font-size: 30px;
+            }
+
+            ol {
+                line-height: 28.9px;
+            }
+
+            .price {
+                margin-top: -4px;
+                margin-bottom: 45px;
+            }
+
+            form {
+                padding: 0px 0;
+
+                .split {
+                    margin-top: 28px;
+
+                    button {
+                        padding: 7px 16px;
+                    }
+                } 
+
+                .btn {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .Frequently_Asked_Questions {
+        margin-top: 42px;
+        
+        .split {
+            .list {
+                details {
+                    font-size: 17.6px;
+                }
+            } 
+        }
+    }
+
+
+
+
+
+}
+
+
+.Certificate {
+    padding: 9px 0 34px;
+
+    .split {
+        img {
+            height: 220px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+} 

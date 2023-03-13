@@ -1,0 +1,388 @@
+$slider_height: 182px;
+
+root {
+    --training-box: 0;
+    --coment-box: 0;
+}
+
+.Final_work {
+    padding-top: 51px;
+    padding-bottom: 51px;    
+    // min-height: 2913px;
+
+    color: #000;
+    background: #fff;
+    @if($showTemplate){
+        color: #f00 !important;
+        background: rgb(147, 33, 228);
+    }
+
+    @if($showTemplate){
+        opacity: .5;
+    }
+
+    
+    .Final_work_block {
+        
+        .split {
+            display: flex;
+            gap: 153px;
+            .text {
+                width: 600px;
+
+
+                p,
+                li {
+                    margin-top: 10px;
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 27px;
+                    letter-spacing: 0em;
+                }
+
+                ol {
+                    list-style: disc;
+                }
+
+            }
+
+            .image {
+                margin-top: -15px;
+            }
+        }
+    }
+
+
+    .How_is_the_training_going {
+        margin-top: -10px;
+        padding-bottom: 60px;
+
+        ol {
+            list-style: none;
+            
+            gap: 10px;
+            grid-template-columns: 25% 25% 25% 25%;
+            margin: 0;
+            padding: 0;
+
+            position: relative;
+
+            li {
+
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 27px;
+                letter-spacing: 0em;
+                padding: 0px 8px;
+                height: 260px;
+                cursor: pointer;
+
+                
+                h4 {
+                    font-size: 64px;
+                    font-weight: 700;
+                    line-height: 64px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin: 0;
+                    margin-bottom: 11px;
+
+                    transition: color .3s;
+                }
+
+
+                &.active {
+
+                    h4 {
+                        color: #138147;
+                    }
+                }
+
+
+               
+            }
+
+            .selected-line {
+                @include animate-line(--training-box, 1, 319px, 0, 210px, 0px, 200px);
+                // @include animate-line(var(--training-box), 1, 205%, 0, 200px);
+                // @animate-line(var(--training-box), 1, 205%, 0);
+            }
+        }
+    }
+
+
+
+
+    .Student_reviews {
+        margin-top: -70px;
+
+        .carousel {
+            margin-top: 37px;
+
+                .coments {
+
+                    width: calc(100% - 20px);
+                    padding: 40px;
+                    box-shadow: 0 0 10px #0006;
+                    border-radius: 42px;
+                    
+                    display: flex;
+                    gap: 20px;
+                    box-sizing: border-box;
+
+                    button {
+                        width: 100px;
+                        border: none;
+                        background: #0000;
+
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        cursor: pointer;
+
+                        &.carousel-control-prev {
+                            background-image: url('/images/prev.svg');
+                        }
+
+                        &.carousel-control-next {
+                            background-image: url('/images/next.svg');
+                        }
+                    }
+
+
+                    .box {
+                        width: 80%;
+                        height: $slider_height;
+                        position: relative;
+                        
+                        .inner {
+                            client-coment {
+                                transition: all .8s;
+
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                width: 80%;
+                                visibility: hidden;
+                                opacity: 0;
+
+                                &.active {
+                                    visibility: visible;
+                                    opacity: 1;
+                                    transition: all .8s .8s;
+                                }
+
+                                h2 {
+                                    // position: absolute;
+                                    font-size: 21px;
+                                    font-weight: 600;
+                                    color: #138147;
+                                }
+
+                                p {
+                                    line-height: 25px;
+
+                                    font-family: Golos;
+                                    font-size: 20px;
+                                    font-weight: 400;
+                                    line-height: 24px;
+                                    letter-spacing: 0em;
+                                    text-align: left;
+
+                                    &:after {
+                                        content: "";
+                                        width: 2px;
+                                        background: #000;
+                                        height: 21px;
+                                        display: inline-block;
+                                        margin-bottom: -5px;
+                                        margin-left: 3px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    
+                    // transition: opacity 5s;
+
+
+                    // &.active {
+                    //     opacity: 1;
+                    //     visibility: visible;
+                    //     transform: translateX(0px);
+                    // }
+                }
+
+
+
+
+            // }
+        }
+    }
+
+    .Cource_participation {
+        margin-top: 88px;
+        display: flex;
+        gap: 50px;
+
+        h2 {
+            color: #FCCD49;
+
+        }
+
+        .part {
+            color: #fff;
+            flex: 1;
+            padding: 27px 75px;
+
+            background: linear-gradient(180deg, #138147 0%, #000000 100%);
+            border-radius: 45px;
+
+            h2 {
+                margin-bottom: 37px;
+            }
+
+            ol {
+                font-size: 20px;
+                list-style: disc;
+                line-height: 27.9px;
+                margin: 27px -8px;
+            }
+
+            form {
+                padding: 10px 0;
+
+                input[type="text"] {
+                    width: 100%;
+
+                    &.transparent {
+                        background: #fff0;
+                        color: #fff;
+                        border: 1px solid #BEFFA9;
+
+                        &:focus {
+                            background: #f00;
+                        }
+                    }
+                }
+
+                .split {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+
+                    button {
+                        padding: 16px 25px;
+                        flex: 1;
+                    }
+                }
+
+                label {
+                    display: block;
+                    margin: 20px 0;
+                }
+            }
+
+            .price {
+                font-size: 41px;
+                font-weight: 900;
+                margin-top: 57px;
+                margin-bottom: 96px;
+            }
+        }
+    }
+
+    .Frequently_Asked_Questions {
+        margin-top: 82px;
+
+        .split {
+            display: flex;
+            gap: 50px;
+
+            .list {
+                flex: 1;
+
+                details {
+                    border-bottom: 10px solid #138147;
+                    padding: 0px 10px 19px;
+                    font-size: 20px;
+                    line-height: 27px;
+                    margin-top: 10px;
+                    position: relative;
+
+                    p {
+                        margin-right: 30px;
+                    }
+                    
+                    summary {
+                        cursor: pointer;
+                        font-size: 20px;
+                        line-height: 24px;
+                        font-weight: 700;
+                        margin-bottom: 14px;
+                        padding-right: 30px;
+
+                        &::marker {
+                            content: '';
+                        }
+
+                        &:after {
+                            content: '';
+                            border-left: 10px solid #35B56800;
+                            border-top: 18px solid #35B568;
+                            border-right: 10px solid #353bb500;
+                            position: absolute;
+                            right: 0;
+                            top: 3px;
+                            height: 0;
+                            width: 0;
+                            transition: all .6s $anim2;
+                        }
+                    }
+
+                    &[open] {
+                        summary {
+                            &:after {
+                                transform: rotate(180deg);
+                                top: calc(100% - 28px);
+                            }
+                        }
+                    }
+                }
+
+                
+            }
+        }
+    }
+
+
+}
+
+
+.Certificate {
+    padding: 34px 0 34px ;
+    background: linear-gradient(182.82deg, #138147 20.02%, #138147 20.02%, #000000 87.48%);
+    h2 {
+        color: #FCCD49;
+    }
+
+    .split {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        
+        p {
+            padding: 20px;
+        }
+
+        img {
+            height: 300px;
+        }
+    }
+
+
+
+    @if($showTemplate){
+        background: #f004;
+    }
+}

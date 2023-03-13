@@ -1,0 +1,29 @@
+@import "../../app.scss";
+
+@import "../../layout.scss";
+@import "../../sections/fluidkurs_ru/for_beginners/top-nav.scss";
+@import "../../sections/fluidkurs_ru/for_beginners/section-start.scss";
+@import "../../sections/fluidkurs_ru/for_beginners/seaction-is-for.scss";
+@import "../../sections/fluidkurs_ru/for_beginners/section-format.scss";
+@import "../../sections/fluidkurs_ru/for_beginners/section-program.scss";
+@import "../../sections/fluidkurs_ru/for_beginners/section-teacher.scss";
+@import "../../sections/fluidkurs_ru/for_beginners/section-price.scss";
+@import "../../sections/fluidkurs_ru/for_beginners/section-reviews.scss";
+@import "../../sections/fluidkurs_ru/for_beginners/section-certificate.scss";
+@import "../../blocks/fluidkurs_ru/footer.scss";
+
+@import "../../blocks/fluidkurs_ru/for_beginners/apply-form.scss";
+@import "../../blocks/fluidkurs_ru/for_beginners/popup-apply-form.scss";
+
+@import "../../partials/popup.scss";
+@import "../../partials/inputs.scss";
+@import "../../partials/animation.scss";
+
+.certificate-small, .nav-logo-burger, .footer-md, .footer-sm, .collapse {
+    display: none;
+}
+
+.popup-apply-form-close {
+    display: none;
+    text-decoration: none;
+}

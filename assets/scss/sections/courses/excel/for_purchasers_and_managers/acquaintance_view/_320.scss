@@ -1,0 +1,75 @@
+.acquaintance_view {
+    padding: 0;
+    padding-bottom: 46px;
+    
+    .Who_is_this_course_for {
+        padding: 3px 0 20px;
+        
+        h2 {
+            margin-top: -1px;
+        }
+
+        ol {
+            margin-top: -9px;
+
+            li {
+                width: 300px;
+                margin-bottom: 46px;
+                
+                img {
+                    width: 132px;
+                }
+
+                .text {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+
+    .Teacher {
+        align-items: center;
+        flex-direction: column;
+        gap: 31px;
+        margin-top: -88px;
+
+        .avatar {
+            width: 100%;
+            text-align: center;
+
+            .header_2 {
+                display: block;
+                margin: 20px 0;
+                width: 100%;
+                text-align: left;
+            }
+
+            img {
+                width: 160px;
+                height: 160px;
+                margin: -10px;
+            }
+
+        }
+
+        .header_1 {
+            display: none;
+        }
+
+
+
+        .info {
+            margin-top: -25px;
+
+            ol {
+                font-size: 16.1px;
+            }
+        }
+    } 
+}
+
+h3 {
+    font-size: 21.3px;
+    line-height: 27px;
+}

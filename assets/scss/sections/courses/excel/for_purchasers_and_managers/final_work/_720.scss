@@ -1,0 +1,181 @@
+
+.Final_work {
+    padding-top: 4px;
+    padding-bottom: 33px;
+
+    // min-height: 3201px;
+    
+    .Final_work_block {
+        
+        .split {
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+
+            .image {
+                width: 383px;
+                margin-top: 0;
+            }
+
+            .text {
+                p,
+                li {
+                    font-size: 17.3px;
+                    line-height: 21px;
+                }
+            }
+        }
+
+    }
+
+
+    .How_is_the_training_going {
+        margin-top: -18px;
+        padding-bottom: 10px;
+        
+
+        ol {
+            grid-template-columns: 50% 50%;
+            gap: 68px 7px;
+
+            li {
+                font-size: 18px;
+                line-height: 22px;
+                &.active {
+
+                    &:after {
+                        bottom: -41px;
+                        width: 102px;
+                    }
+                }
+                
+                h4 {
+                    margin-bottom: 10px;
+                }
+
+
+            }
+
+            .selected-line {
+                @include animate-line(--training-box, 2, 304px, 330px, 200px, 8px, 135px);
+            }
+        }
+    }
+
+
+    .Student_reviews {
+        margin-top: -8px;
+
+
+        .carousel {
+            margin-top: -14px;
+
+            .coments {
+                padding: 3px 14px;
+
+                .box {
+                    height: 436px;
+                }
+
+
+                .inner {
+                    h3 {
+                        font-size: 17px; 
+                    }
+                    
+                    p {
+                        font-size: 17px;
+                        line-height: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .Cource_participation {
+        margin-top: 54px;
+        gap: 30px;
+        flex-direction: column;
+
+        .part {
+            padding: 0px 45px;
+
+            h2 {
+                margin-bottom: 23px;
+                font-size: 30px;
+                padding: 8px 0;
+            }
+
+            ol {
+                line-height: 24.3px;
+            }
+
+            .price {
+                margin-top: -4px;
+                margin-bottom: 78px;
+            }
+
+            form {
+                padding: 1px 0;
+
+                .split {
+                    justify-content: flex-start;
+                    margin-top: 8px;
+
+                    button {
+                        padding: 7px 30px;
+                    }
+                } 
+
+                .btn {
+                    font-size: 13px;
+                }
+
+                label {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .Frequently_Asked_Questions {
+        margin-top: 38px;
+        
+        .split {
+            flex-direction: column;
+            margin-top: -28px;
+            gap: 0;
+
+            .list {
+                details {
+                    font-size: 14px;
+                    border-bottom: 5px solid #138147;
+                    padding: 0px 10px 0px;
+                }
+            } 
+        }
+    }
+
+
+
+
+
+}
+
+
+.Certificate {
+    padding: 0px 0 34px;
+
+    .split {
+        flex-direction: column;
+        img {
+            height: 300px;
+        }
+
+        p {
+            font-size: 18px;
+            width: 80%;
+        }
+    }
+} 

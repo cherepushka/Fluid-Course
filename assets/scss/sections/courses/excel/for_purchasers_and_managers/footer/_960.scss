@@ -1,0 +1,29 @@
+
+
+footer {
+    padding: 20px 0;
+
+    .box_container {
+        .line {
+            .links {
+                flex-direction: column;
+                gap: 0px;
+                align-items: flex-start;
+            }
+        }
+    }
+
+    .logotip {
+        width: 214px;
+    }
+
+    .social_media {
+        img {
+            width: 26px;
+        }
+    }
+
+    .doc {
+        font-size: 12px;
+    } 
+}
