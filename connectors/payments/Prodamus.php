@@ -1,10 +1,5 @@
 <?php
 
-namespace App\Packages\Api\Prodamus;
-
-use App\Packages\Api\Prodamus\Hmac;
-use App\Packages\Api\Prodamus\DTO\PayLinkRequest;
-
 class Prodamus{
     
     public function __construct(

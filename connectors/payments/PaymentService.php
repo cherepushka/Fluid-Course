@@ -1,23 +1,7 @@
 <?php
 
-namespace App\Http\Services;
-
-use App\Enums\PaymentMethod;
-use App\Exceptions\InvalidPromocodeException;
-use App\Models\Course;
-use App\Models\Payment;
-use App\Models\PromoCode;
-use App\Packages\Api\Prodamus\DTO\PayLinkRequest;
-use App\Packages\Api\Prodamus\DTO\PayLinkRequestProductItem;
-use App\Packages\Api\Prodamus\Prodamus;
-use App\Enums\PaymentStatus;
-use App\Exceptions\ForbiddenPaymentMethodException;
-use App\Jobs\GrantAccessToCourseJob;
-use App\Models\CourseRegistration;
-use App\Models\CourseRegistrationUserData;
-use App\Models\UserDataField;
-use Illuminate\Support\Facades\DB;
-use RuntimeException;
+require_once './src/Packages/Api/Prodamus/DTO/PayLinkRequest.php';
+require_once './src/Packages/Api/Prodamus/DTO/PayLinkRequestProductItem.php';
 
 final class PaymentService{
 
@@ -45,9 +29,10 @@ final class PaymentService{
             $promocode === null 
             && $paymentMethod === PaymentMethod::INSTALLMENT 
             && $course->installment_available == false
-        ){
-            throw new ForbiddenPaymentMethodException();
-        }
+        )
+        // {
+        //     throw new ForbiddenPaymentMethodException();
+        // }
 
         $price = $course->default_price;
 
