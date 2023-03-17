@@ -1,0 +1,9 @@
+{
+    "name": "user/modx",
+    "autoload": {
+        "psr-4": {
+            "Modx\\": "src/"
+        }
+    },
+    "require": {}
+}

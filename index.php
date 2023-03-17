@@ -45,6 +45,7 @@ ob_start();
 
 /* Create an instance of the modX class */
 $modx = new \MODX\Revolution\modX();
+
 if (!is_object($modx) || !($modx instanceof \MODX\Revolution\modX)) {
     ob_get_level() && @ob_end_flush();
     $errorMessage = '<a href="setup/">MODX not installed. Install now?</a>';

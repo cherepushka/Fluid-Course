@@ -13,22 +13,20 @@ define('MODX_API_MODE', true);
 
 // Classes to loop through
 $classes = [
-    'Course\Model\courses',
-    // 'ToDo\Model\tdList',
+ 'ToDo\Model\tdList',
+ 'ToDo\Model\tdTask'
 ];
 
 // Get the manager
 $manager = $modx->getManager();
-// echo MODX_BASE_PATH; die;
 
 // Loop through our classes
 foreach ($classes as $class) {
-    // Check if the class exists
-    if (class_exists($class)  ) {
-        // Create the table
-        echo("Creating table for class: $class".PHP_EOL);
-        $manager->createObjectContainer($class);
-        // var_dump('done');die; 
+ // Check if the class exists
+ if (class_exists($class)  ) {
+  // Create the table
+  echo("Creating table for class: $class".PHP_EOL);
+  $manager->createObjectContainer($class);
  }
  else {
   echo("Unable to load model class: $class".PHP_EOL);

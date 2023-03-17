@@ -1,5 +1,10 @@
 <?php
 
+namespace Modx\payments\Prodamus;
+
+use Modx\payments\Prodamus\DTO\PayLinkRequest;
+
+
 class Prodamus{
     
     public function __construct(

@@ -127,12 +127,12 @@
             Начало обучения: 20 марта<br>
             Окончание регистрации: 26 марта
           </p>
-
+          <!-- &hooks=`FormItSaveForm,excelFormRequest,Test,csrf,course` -->
 
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
           [[!AjaxForm?
           &snippet=`FormIt`
-          &hooks=`excelFormRequest,FormItSaveForm,excelFormRequest,Test, csrf`
+          &hooks=`FormItSaveForm`
           &form=`tpl_ajax_form`
           &formName=`Курс Excel`
           &formFields=`name_and_surname, email, phone,company, job`
@@ -167,6 +167,7 @@
             //     e.preventDefault();
             //   });
             // });
+            
             $(function () {
               $('form').submit(function (e) {
                 e.preventDefault();
@@ -182,12 +183,10 @@
             });
           </script>
 
-          [[excelFormRequest]]
-          
-        </div>
-      </div>
-    </div>
 
+</div>
+</div>
+</div>
 
 
     <div class="Frequently_Asked_Questions">

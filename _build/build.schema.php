@@ -16,31 +16,26 @@ $manager = $modx->getManager();
 $generator = $manager->getGenerator();
 
 // Define the paths needed
-//MODX_BASE_PATH = C:/OSPanel/domains/modx/
+//{base_path}/project1/
 $projectRootDir = MODX_BASE_PATH;
-// echo MODX_BASE_PATH; die;
 
-
-$corePath = $projectRootDir . 'core/components/Model/Course/';
-// echo $corePath; die;
-
+//{base_path}/project1/core/components/todo/
+$corePath = $projectRootDir . 'core/components/todo/';
 
 //{base_path}/project1/core/components/todo/schema/todo.mysql.schema.xml
-$schemaFile = $corePath . "schema/course.mysql.schema.xml";
-// echo $schemaFile; die;
-
+$schemaFile = $corePath . "schema/todo.mysql.schema.xml";
 
 if (is_file($schemaFile)) {
  echo("Parsing schema: $schemaFile".PHP_EOL);
  // Parse the schema to generate the class files
-$generator->parseSchema(
+ $generator->parseSchema(
   $schemaFile,
   $corePath . 'src/',
   [
    "compile" => 0,
    "update" => 0,
    "regenerate" => 1,
-   "namespacePrefix" => "Course\\"
+   "namespacePrefix" => "ToDo\\"
   ]
  );
 }

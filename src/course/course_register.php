@@ -1,6 +1,7 @@
 <?php
-require_once './connectors/payments/Prodamus.php';
-require_once './connectors/payments/PaymentService.php';
+namespace Modx\course;
+
+use Modx\payments\Prodamus\Prodamus;
 
 
 $secret_url = 'https://fluidcourse.payform.ru/';
