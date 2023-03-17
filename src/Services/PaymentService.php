@@ -1,10 +1,10 @@
 <?php
 
-namespace Modx\payments;
+namespace Modx\Services;
 
-use Modx\payments\Prodamus\Prodamus;
-use Modx\payments\Prodamus\DTO\PayLinkRequestProductItem;
-use Modx\payments\Prodamus\DTO\PayLinkRequest;
+use Modx\Payments\Prodamus\Prodamus;
+use Modx\Payments\Prodamus\DTO\PayLinkRequestProductItem;
+use Modx\Payments\Prodamus\DTO\PayLinkRequest;
 use Modx\Enums\PaymentMethod;
 use Modx\Enums\PaymentStatus;
 use Modx\Exceptions\InvalidPromocodeException;
@@ -21,10 +21,10 @@ $modx = new \MODX\Revolution\modX();
 
 final class PaymentService
 {
-
+    
     public function __construct(
         private readonly Prodamus $prodamus
-    ) {
+        ) {
     }
 
     /**

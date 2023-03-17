@@ -13,13 +13,14 @@ $modx = new \MODX\Revolution\modX();
 
 // var_dump($params);
 
-$query = "INSERT INTO `modx_courses` (`title`,`slug`,`link`,`start_date`,`end_date`) 
-        VALUES (?,?,?,?,?)";
 // $query = "INSERT INTO `modx_courses` (`title`,`slug`,`link`,`start_date`,`end_date`) 
 //         VALUES ('{$_POST['name_and_surname']}', '{$_POST['email']}','{$_POST['phone']}',now(),now())";
+
+$query = "INSERT INTO `modx_courses` (`title`,`slug`,`link`,`start_date`,`end_date`) 
+        VALUES (?,?,?,?,?)";
 $statement = $modx->prepare($query);
-if($statement->execute([
-        $_POST['name_and_surname'], 
+if ($statement->execute([
+        $_POST['name_and_surname'],
         $_POST['email'],
         $_POST['phone'],
         date("Y-m-d H:i:s"),
