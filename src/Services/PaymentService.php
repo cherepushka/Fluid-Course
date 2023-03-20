@@ -53,7 +53,7 @@ final class PaymentService
 
             $price = $course->default_price;
 
-        $promocodeObjQuery = null;
+        $promocodeObj = null;
         if (null !== $promocode) {
 
             $promocode = mb_strtoupper($promocode);
