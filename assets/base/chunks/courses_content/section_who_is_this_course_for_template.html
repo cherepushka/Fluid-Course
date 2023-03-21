@@ -1,0 +1,69 @@
+<div class="Who_is_this_course_for">
+  <h2>
+    Для кого этот курс
+  </h2>
+  <ol>
+    {set $rows = json_decode($_modx->resource.who_is_this_course_for_migx, true)}
+    {foreach $rows as $row}
+    <li>
+      <img src="{$row.img}" alt="">
+      <div class="text">
+       {$row.describe}
+      </div>
+    </li>
+    {/foreach}
+  </ol>
+</div>
+
+
+<!-- <div class="Who_is_this_course_for">
+  <h2>
+    Для кого этот курс
+  </h2>
+
+<ol>
+  [[!Gallery? 
+  &thumbWidth=`150` 
+  &thumbHeight=`150`
+  &thumbTpl=`tpl_gallery`
+  &imageWidth=`500` 
+  &imageHeight=`500`
+]]
+</ol>
+
+<li>
+  <img class="[[+imgCls]]" src="[[+thumbnail]]" alt="[[+name]]" [[+image_attributes]] />
+  <div class="text" style="text-align: center;">
+      [[+description]]
+  </div>
+</li> -->
+
+<!-- [[*list_above_teacher]] -->
+
+
+<!-- <h2>
+      Для кого этот курс
+    </h2>
+    <ol>
+      <li>
+        <img src="/assets/img/pages/courses/excel/for_purchasers_and_managers/for-who-1.png" alt="">
+        <div class="text">
+          Для менеджеров по закупкам
+          и менеджеров по продажам
+        </div>
+      </li>
+      <li>
+        <img src="/assets/img/pages/courses/excel/for_purchasers_and_managers/for-who-2.png" alt="">
+        <div class="text">
+          Для всех, кто работает с большим количеством данных
+        </div>
+      </li>
+      <li>
+        <img src="/assets/img/pages/courses/excel/for_purchasers_and_managers/for-who-3.png" alt="">
+        <div class="text">
+          Для тех, кто хочет разобраться
+          в программе для себя, работы или учебы
+        </div>
+      </li>
+    </ol> -->
+<!-- </div> -->

@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en"> >
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <meta name="_token" content="{csrf_token()}"> -->
-    <!--    <meta name="_token" content="{{ csrf_token() }}">-->
 
     <title>[[+longtitle]]</title>
 
     <meta name="description" content="[[+description]]">
 
     <!-- Yandex.Metrika counter -->
-    <!-- <script>
+    <script>
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () {
                 (m[i].a = m[i].a || []).push(arguments)
@@ -41,11 +40,10 @@
             <img src="https://mc.yandex.ru/watch/90898955" style="position:absolute; left:-9999px;" alt="" />
         </div>
     </noscript>
+
     <!-- /Yandex.Metrika counter -->
 
-    <!-- <script>
-        if (session('user_email_referral_hash')) {
-            window.user_email_referral_hash = '{{ session('user_email_referral_hash') }}';
+    <script>
 
             ym(90898955, 'getClientID', (clientID) => {
                 fetch('/api/save-ym-uid', {
@@ -61,21 +59,20 @@
                     })
                 });
             });
-        }
-    </script> -->
+    </script>
 
     [[!$header_assets_template]]
 
 </head>
 
 <body>
-    [[!$top_nav_sticky]]
+    [[!$top_nav_sticky_template]]
     <div class="main_view" id="top">
         <div class="box_container">
-            [[!$top_nav]]
-            [[!$section_course_info]]
-            [[!$section_additional_info]]
-            [[!$section_what_you_will_learn]]
+            [[!$top_nav_template]]
+            [[!$section_course_info_template]]
+            [[!$section_additional_info_template]]
+            [[!$section_what_you_will_learn_template]]
         </div>
     </div>
 
@@ -83,22 +80,22 @@
     <div class="acquaintance_view">
         <div class="box_container">
 
-            [[!$section_who_is_this_course_for]]
+            [[!$section_who_is_this_course_for_template]]
 
-            [[!$section_teacher]]
+            [[!$section_teacher_template]]
 
         </div>
     </div>
 
-    [[!$section_training_program]]
+    [[!$section_training_program_template]]
 
-    [[!$section_final_work]]
+    [[!$section_final_work_template]]
 
-    [[!$section_certificate]]
+    [[!$section_certificate_template]]
 
-    [[!$footer_course]]
+    [[!$footer_course_template]]
 
-    [[!$footer_scripts_template]]
+    [[!$footer_scripts]]
 
 </body>
 
