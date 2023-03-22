@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en"> >
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <meta name="_token" content="{csrf_token()}"> -->
-    <!--    <meta name="_token" content="{{ csrf_token() }}">-->
 
     <title>[[+longtitle]]</title>
 
     <meta name="description" content="[[+description]]">
 
     <!-- Yandex.Metrika counter -->
-    <!-- <script>
+    <script>
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () {
                 (m[i].a = m[i].a || []).push(arguments)
@@ -41,11 +40,10 @@
             <img src="https://mc.yandex.ru/watch/90898955" style="position:absolute; left:-9999px;" alt="" />
         </div>
     </noscript>
+
     <!-- /Yandex.Metrika counter -->
 
-    <!-- <script>
-        if (session('user_email_referral_hash')) {
-            window.user_email_referral_hash = '{{ session('user_email_referral_hash') }}';
+    <script>
 
             ym(90898955, 'getClientID', (clientID) => {
                 fetch('/api/save-ym-uid', {
@@ -61,8 +59,7 @@
                     })
                 });
             });
-        }
-    </script> -->
+    </script>
 
     [[!$header_assets_template]]
 

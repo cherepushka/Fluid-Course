@@ -4,9 +4,15 @@
     </h2>
     <div class="separate_row">
         <img class="im1" src=[[*img_what_you_learn]]>
+
         <ol class="grid">
-            [[*list_what_you_learn]]
-            
+            {set $rows = json_decode($_modx->resource.what_you_will_learn_migx, true)}
+            {foreach $rows as $row}
+            <li>
+                <strong>{$row.title}</strong>
+                {$row.describe}
+            </li>
+            {/foreach}
         </ol>
     </div>
 </div>

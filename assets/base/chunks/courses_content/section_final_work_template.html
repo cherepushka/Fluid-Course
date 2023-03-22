@@ -22,7 +22,7 @@
         {set $rows = json_decode($_modx->resource.final_work_template_migx, true)}
         {set $i = 1}
         {foreach $rows as $row}
-        <li class="training-box active">
+        <li class="training-box">
           <h4>0{$i}</h4>
           {$row.describe}
         </li>
@@ -40,13 +40,11 @@
           <button class="carousel-control-prev" type="button"></button>
           <div class="box">
             <div class="inner">
-
-              <!-- {set $rows = json_decode($_modx->resource.comments_migx, true)}
+              {set $rows = json_decode($_modx->resource.comments_migx, true)}
               {foreach $rows as $row}
-              <h5>{$row.client}</h5>
-              {$row.comment_text}
-              <client-coment client={$row.client} text={$row.comment_text}></client-coment>
-              {/foreach} -->
+              <client-coment client="{$row.client}" text="{$row.comment_text}"></client-coment>
+              {/foreach}
+
             </div>
           </div>
 
