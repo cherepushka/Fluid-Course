@@ -229,7 +229,7 @@ root {
   line-height: 24px;
   letter-spacing: 0em;
   height: 190px;
-  cursor: pointer;
+  /* cursor: pointer; */
   font-weight: 100;
   background: #FCCD49;
   width: 23.8%;
@@ -593,7 +593,7 @@ root {
   letter-spacing: 0em;
   padding: 0px 8px;
   height: 260px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .Final_work .How_is_the_training_going ol li h4 {
