@@ -31,7 +31,11 @@
       </ol>
     </div>
 
+
+
     <div class="Student_reviews">
+      
+    {if $_modx->resource.hideComments?}{else}
       <h2>
         Отзывы студентов
       </h2>
@@ -51,86 +55,115 @@
           <button class="carousel-control-next" type="button"></button>
         </div>
       </div>
+      {/if}
 
-      <div class="Cource_participation">
-        <div class="part Cost_of_participation">
-          [[*describe_near_form_reg]]
-        </div>
+    <div class="Cource_participation">
+      <div class="part Cost_of_participation">
+        [[*describe_near_form_reg]]
+      </div>
 
-        <a id="enroll-form" style="
+      <a id="enroll-form" style="
                       visibility: hidden;
                       position: relative;
                       top: -60px;
                       display: block;
                   ">
-        </a>
+      </a>
 
-        <div class="part Enroll_in_a_course">
-          [[*header_form_reg]]
+      <div class="part Enroll_in_a_course">
+        [[*header_form_reg]]
 
-          <!-- &hooks=`FormItSaveForm,excelFormRequest,Test,csrf,course` -->
+        <!-- &hooks=`FormItSaveForm,excelFormRequest,Test,csrf,course` -->
 
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-          [[!AjaxForm?
-          &snippet=`FormIt`
-          &hooks=`FormItSaveForm`
-          &form=`tpl_ajax_form`
-          &formName=`Курс Excel`
-          &formFields=`name_and_surname, email, phone,company, job`
-          &fieldNames=`name_and_surname==Имя, email==Электронная почта, phone==Телефон, company==Организация,
-          job==Должность`
-          &validate=`
-          name_and_surname:required:minLength=^3^:maxLength=^21^,
-          email:required:email,
-          phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-          company:required:minLength=^3^,
-          job:required:minLength=^3^,
-          workemail:blank
-          `
-          &successMessage=`Сообщение успешно отправлено`
-          &validationErrorMessage=`В форме qwesad ошибки!`
-          ]]
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        {if $_modx->resource.change_forms_buy_or_reg?}
+        
+        [[!AjaxForm?
+        &snippet=`FormIt`
+        &hooks=`FormItSaveForm`
+        &form=`tpl_buy_form`
+        &formName=`[[*pagetitle]]`
+        &formFields=`name_and_surname, email, phone`
+        &fieldNames=`name_and_surname==Имя, email==Электронная почта, phone==Телефон`
+        &validate=`
+        name_and_surname:required:minLength=^3^:maxLength=^21^,
+        email:required:email,
+        phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+        workemail:blank
+        `
+        &successMessage=`Сообщение успешно отправлено`
+        &validationErrorMessage=`В форме qwesad ошибки!`
+        ]]
+        
+        
+        {else}
+        
+        [[!AjaxForm?
+        &snippet=`FormIt`
+        &hooks=`FormItSaveForm`
+        &form=`tpl_enroll_form`
+        &formName=`[[*pagetitle]]`
+        &formFields=`name_and_surname, email, phone,company, job`
+        &fieldNames=`name_and_surname==Имя, email==Электронная почта, phone==Телефон, company==Организация,
+        job==Должность`
+        &validate=`
+        name_and_surname:required:minLength=^3^:maxLength=^21^,
+        email:required:email,
+        phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+        company:required:minLength=^3^,
+        job:required:minLength=^3^,
+        workemail:blank
+        `
+        &successMessage=`Сообщение успешно отправлено`
+        &validationErrorMessage=`В форме qwesad ошибки!`
+        ]]
 
-          <script type="text/javascript">
-            // $(function() {
-            //   $('form').submit(function(e) {
-            //     var $form = $(this);
-            //     $.ajax({
-            //       type: $form.attr('method'),
-            //       url: $form.attr('action'),
-            //       data: $form.serialize()
-            //     }).done(function() {
-            //       console.log('success');
-            //     }).fail(function() {
-            //       console.log('fail');
-            //     });
-            //     //отмена действия по умолчанию для кнопки submit
-            //     e.preventDefault();
-            //   });
-            // });
+        {/if}
 
-            $(function () {
-              $('form').submit(function (e) {
-                e.preventDefault();
-                var m_method = $(this).attr('method');
-                var m_action = $(this).attr('action');
-                var m_data = $(this).serialize();
-                $.ajax({
-                  type: m_method,
-                  url: m_action,
-                  data: m_data,
-                });
+
+        <script type="text/javascript">
+          
+          $(function () {
+            $('form').submit(function (e) {
+              e.preventDefault();
+              var m_method = $(this).attr('method');
+              var m_action = $(this).attr('action');
+              var m_data = $(this).serialize();
+              $.ajax({
+                type: m_method,
+                url: m_action,
+                data: m_data,
               });
             });
-          </script>
+          });
+
+          // $(function() {
+          //   $('form').submit(function(e) {
+          //     var $form = $(this);
+          //     $.ajax({
+          //       type: $form.attr('method'),
+          //       url: $form.attr('action'),
+          //       data: $form.serialize()
+          //     }).done(function() {
+          //       console.log('success');
+          //     }).fail(function() {
+          //       console.log('fail');
+          //     });
+          //     //отмена действия по умолчанию для кнопки submit
+          //     e.preventDefault();
+          //   });
+          // });
+
+        </script>
 
 
-        </div>
+
       </div>
     </div>
-
-
-    <div class="Frequently_Asked_Questions">
+  </div>
+  
+  
+  <div class="Frequently_Asked_Questions">
       <h2>
         Часто задаваемые вопросы
       </h2>

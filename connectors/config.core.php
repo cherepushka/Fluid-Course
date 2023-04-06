@@ -4,6 +4,7 @@
  * Add customizations to the $config_options array in `core/config/config.inc.php`.
  *
  */
-define('MODX_CORE_PATH', '/home/f/fluidline/dev.fluid.kz/public_html/core/');
+define('MODX_CORE_PATH', 'C:\OSPanel\domains\modx/core/');
+
 define('MODX_CONFIG_KEY', 'config');
 ?>

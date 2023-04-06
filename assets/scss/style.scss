@@ -13,10 +13,22 @@
     color: #4763D5;
 }
 
+.material-tag {
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #4763D5;
+    border-radius: 8px;
+  }
+  .material-tag:hover {
+    box-shadow: 7px 5px 5px #0d6efd;
+  }
+
 .main {
     margin: 84px 0;
     background: url('/images/main.png') no-repeat 100% 0;
-    
+
     h1 {
         margin-bottom: 110px;
     }
@@ -29,7 +41,7 @@ h1 {
     font-weight: 400;
     font-size: 54px;
     line-height: 133.7%;
-    
+
     letter-spacing: -0.005em;
 }
 
@@ -78,7 +90,7 @@ h1 {
     .box-itm-2 {
         margin-left: 0%;
     }
-    
+
     .box-itm-3 {
         margin-left: 0%;
     }
@@ -92,7 +104,7 @@ h1 {
     .box-itm-2 {
         margin-left: 0%;
     }
-    
+
     .box-itm-3 {
         margin-left: 0%;
     }
@@ -106,12 +118,12 @@ h1 {
     box-shadow: 0px 4px 28px 8px #00000008;
     z-index: 99;
 
-    
+
     nav {
-        
+
         .blue-link {
             color: #4763D5;
-            
+
         }
     }
 }
@@ -120,10 +132,11 @@ h1 {
 
 
 .orange-points {
-    li {	
+    li {
         margin-bottom: 10px;
+
         &:before {
-            content: ''; 
+            content: '';
             height: 2px;
             width: 27px;
             border-radius: 0px;
@@ -163,7 +176,7 @@ button {
     }
 
 
-    
+
     .carousel-control-next {
         right: -10%;
         width: 10%;
@@ -174,3 +187,6 @@ button {
     }
 }
 
+.testqwe {
+
+}

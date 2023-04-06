@@ -55,7 +55,7 @@
                 </a>
 
                 <a href="https://www.youtube.com/@fluidcourse" class="text-decoration-none">
-                  <img class="pe-3 d-inline-block" src="/assets/icons/socials/vk_logo.svg">
+                  <img class="pe-3 d-inline-block" src="/assets/icons/socials/youtube.svg">
                   <span class="d-xss-none d-lg-inline-block">
                                           YouTube
                                         </span>
@@ -76,10 +76,10 @@
 
           [[!FormIt?
           &hooks=`email,FormItSaveForm`
-          &formName=`Курс`
+          &formName=`[[+pagetitle]]`
           &formFields=`name,phone,company,email, checkbox-personal-data, checkbox-sms-email-mailing`
           &fieldNames=`name==Имя,phone==Телефон, company==Организация, email==Электронная почта, target==Задача, checkbox-personal-data==Согласие на обработку персональных данных,checkbox-sms-email-mailing==Согласие на получение SMS и Email рассылок`
-          &validate=`name:required:minLength=^3^:maxLength=^21^, phone:isNumber, company:minLength=^3^ ,email:email:required,`
+          &validate=`name:required:minLength=^3^:maxLength=^21^, phone:isNumber:minLength=^11^,maxLength=^11^, company:minLength=^3^ ,email:email:required,`
           &emailTpl=`tplForm`
           &emailTo=`[[++emailsender]]`
           &emailFrom=`mail@fluidcourse.ru`

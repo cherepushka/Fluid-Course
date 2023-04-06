@@ -1,5 +1,6 @@
 <div class="col-md-6 col-xxl-3 align-items-stretch ">
-  <div class="cource-card border h-100    p-4 bg-white rounded-4 text-black  d-flex flex-column justify-content-between gap-4">
+  <div
+    class="cource-card border h-100    p-4 bg-white rounded-4 text-black  d-flex flex-column justify-content-between gap-4">
     <div class="flex-grow-1 ">
 
       <h2 class="fs-5 fw-bold">
@@ -11,11 +12,13 @@
       <div class="col-8">
       </div>
       <div class="col text-end">
-        <img src="../../../../index.php">
-<!--        <img src="images/f2/excel_cource_logo.svg">-->
+        <img src="[[+tv.img]]">
       </div>
     </div>
 
-    <button type="button" class="btn btn-secondary">Смотреть</button>
+    <a href="[[+tv.material_link]]">
+      <button type="button" class="btn btn-secondary">[[+tv.material_action]]</button>
+    </a>
+
   </div>
 </div>

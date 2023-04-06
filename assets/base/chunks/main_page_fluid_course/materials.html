@@ -2,51 +2,38 @@
 
 <main>
     <div class="container">
-
-        [[pdoMenu?
-        &parents=`24`
-        &level=`0`
-        &tplOuter = `@INLINE
         <div class=" py-5 ">
             <div class="row">
-                [[+wrapper]]
-            </div>
-            `
-            &tpl = `@INLINE <a class="text-decoration-none" href="[[+link]]"><h1 class="h3 action-color mb-5">
-            [[+pagetitle]]</h1></a>`
-            ]]
 
-
-            <div class="row mb-5 gy-4 ">
-                [[!pdoResources?
-                &parents=`[[*id]]`
-                &tpl=`tpl_material`
-                &limit=`3`
-                &includeTVs =`img`
-                &showHidden=`1`
-                &includeContent
-                ]]
-                <!--        <div class="col-md-6 col-xxl-3 align-items-stretch ">-->
-                <!--          <div class="cource-card border h-100    p-4 bg-white rounded-4 text-black  d-flex flex-column justify-content-between gap-4">-->
-                <!--            <div class="flex-grow-1 ">-->
-
-                <!--              <h2 class="fs-5 fw-bold">-->
-                <!--                Мастер-класс по MS Excel-->
-                <!--              </h2>-->
-                <!--            </div>-->
-
-                <!--            <div class="row">-->
-                <!--              <div class="col-8">-->
-                <!--              </div>-->
-                <!--              <div class="col text-end">-->
-                <!--                <img src="images/f2/excel_cource_logo.svg" >-->
-                <!--              </div>-->
-                <!--            </div>-->
-
-                <!--            <button type="button" class="btn btn-secondary">Смотреть</button>-->
-                <!--          </div>-->
-                <!--        </div>-->
+                <h1 class="h3 action-color">Бесплатные материалы</h1>
+                [[pdoMenu?
+                &parents=`24`
+                &level=`0`
+                &tplOuter = `@INLINE
+                <div class=" py-3">
+                    <div class="d-flex gap-4">
+                        [[+wrapper]]
+                    </div>
+                    `
+                    &tpl = `@INLINE <a class="text-decoration-none" href="[[+link]]">
+                        <div class=" material-tag">
+                            [[+pagetitle]]</div>
+                    </a>`
+                    ]]
+                    <hr>
+                    <h2>[[*pagetitle]]</h2>
+                </div>
+                <div class="row my-2 ">
+                    [[!pdoResources?
+                    &parents=``
+                    &tpl=`tpl_material`
+                    &limit=`0`
+                    &includeTVs =`img,material_link,material_action`
+                    &showHidden=`1`
+                    &includeContent,
+                    &first =`1`
+                    ]]
+                </div>
             </div>
         </div>
-    </div>
 </main>

@@ -641,17 +641,19 @@ root {
   width: 100px;
   border: none;
   background: rgba(0, 0, 0, 0);
+  /* background: black; */
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
 }
 
 .Final_work .Student_reviews .carousel .coments button.carousel-control-prev {
-  background-image: url("/images/prev.svg");
+  /* background-image: url("../../assets/icons/chevron-left.svg"); */
+  background-image: url("../../assets/icons/chevron-left.svg");
 }
 
 .Final_work .Student_reviews .carousel .coments button.carousel-control-next {
-  background-image: url("/images/next.svg");
+  background-image: url("../../assets/icons/chevron-right.svg");
 }
 
 .Final_work .Student_reviews .carousel .coments .box {
@@ -931,6 +933,10 @@ footer .box_container .line .doc {
   width: 1240px;
   margin: 0 auto;
   padding-left: 12.6px;
+}
+
+.material-link:hover {
+  color: black !important;
 }
 
 @media (min-width: 100px) and (max-width: 374px) {
