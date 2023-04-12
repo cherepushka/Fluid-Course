@@ -1,4 +1,4 @@
-import '../../../app';
+// import '../../../app';
 
 import CommentsExpand from "../../../modules/comments-list";
 import ModulesList from "../../../modules/modules-list";

@@ -4,6 +4,8 @@
   </div>
 
   {set $rows = json_decode($_modx->resource.training_program_migx, true)}
+  <div class="count-modules" data-attr="{count($rows)}"></div>
+
   <div class="scrolled">
     <div class="space">
       <ol>

@@ -1,12 +1,12 @@
-import '../../../../app';
+// import '../../../../app';
 
 const Coment = require('./components/_Coment.js');
 const Modules = require('./components/_Modules.js');
 import IMask from 'imask';
 
-import { 
-    notEmptySubmitValidator, 
-    emailSubmitValidator, 
+import {
+    notEmptySubmitValidator,
+    emailSubmitValidator,
     phoneSubmitValidator,
 } from '../../../../utils/validation/FormSubmitValidators';
 import { phoneLiveValidator } from '../../../../utils/validation/LiveValidators';
@@ -15,7 +15,7 @@ import FormHandler from '../../../../modules/FormHandler';
 
 const animationController = new class {
 
-    createAnimation(className, maxCount = 4, time = 5000, onclick = false){
+    createAnimation(className, maxCount = 4, time = 5000, onclick = false) {
         let mainSelectX = 0
         const interval = setInterval(() => {
             mainSelectX++
@@ -25,7 +25,7 @@ const animationController = new class {
             this.select(className, mainSelectX)
         }, time);
 
-        if (!onclick){
+        if (!onclick) {
 
             document.querySelectorAll(`.${className}`).forEach((element, index) => {
                 element.onclick = () => {
@@ -33,34 +33,33 @@ const animationController = new class {
                     this.select(className, index)
                 }
             });
-            
+
         } else {
             onclick()
         }
     }
 
-    select(className, index){
+    select(className, index) {
         document.body.style.setProperty(`--${className}`, index);
 
         switch (index) {
             case 0:
                 document.body.style.setProperty(`--${className}_x`, 0);
                 document.body.style.setProperty(`--${className}_y`, 0);
-            break;
+                break;
             case 1:
                 document.body.style.setProperty(`--${className}_x`, 1);
                 document.body.style.setProperty(`--${className}_y`, 0);
-            break;
+                break;
             case 2:
                 document.body.style.setProperty(`--${className}_x`, 0);
                 document.body.style.setProperty(`--${className}_y`, 1);
-            break;
+                break;
             case 3:
                 document.body.style.setProperty(`--${className}_x`, 1);
                 document.body.style.setProperty(`--${className}_y`, 1);
-            break;
+                break;
         }
-
 
         document.querySelector(`.${className}.active`).classList.remove('active');
         document.querySelectorAll(`.${className}`)[index].classList.add('active');
@@ -74,12 +73,12 @@ animationController.createAnimation('training-box');
 Coment.init()
 Modules.init()
 
-document.body.onscroll = function(e) {
+document.body.onscroll = function (e) {
     const scroll = document.documentElement.scrollTop || document.body.scrollTop
-    document.querySelector('.stick-header').style.setProperty('--show', scroll>200 ? 1 : 0)
+    document.querySelector('.stick-header').style.setProperty('--show', scroll > 200 ? 1 : 0)
 }
 
-IMask(document.querySelector('.phone'), {mask: '+{7} (000) 000-00-00'});
+IMask(document.querySelector('.phone'), { mask: '+{7} (000) 000-00-00' });
 
 new FormHandler(
     '/sign-up/course/for_purchasers_and_managers',
