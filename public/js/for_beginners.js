@@ -502,6 +502,91 @@ var Popup = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./assets/js/pages/courses/compas_3d/for_beginners.js":
+/*!************************************************************!*\
+  !*** ./assets/js/pages/courses/compas_3d/for_beginners.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_comments_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../modules/comments-list */ "./assets/js/modules/comments-list.js");
+/* harmony import */ var _modules_modules_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../modules/modules-list */ "./assets/js/modules/modules-list.js");
+/* harmony import */ var _modules_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../modules/popup */ "./assets/js/modules/popup.js");
+/* harmony import */ var _modules_animation_MouseParallax__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../modules/animation/MouseParallax */ "./assets/js/modules/animation/MouseParallax.js");
+/* harmony import */ var _modules_FormHandler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../modules/FormHandler */ "./assets/js/modules/FormHandler.js");
+/* harmony import */ var _utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../utils/validation/FormSubmitValidators */ "./assets/js/utils/validation/FormSubmitValidators.js");
+/* harmony import */ var _utils_validation_LiveValidators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../utils/validation/LiveValidators */ "./assets/js/utils/validation/LiveValidators.js");
+// import '../../../app';
+
+
+
+
+
+
+
+
+var collapseShow = document.getElementById('collapse-burger-show');
+collapseShow.addEventListener('click', function () {
+  document.getElementById("collapse-container").style.display = "block";
+});
+var collapseHide = document.getElementById('collapse-burger-close');
+collapseHide.addEventListener('click', function () {
+  document.getElementById("collapse-container").style.display = "none";
+});
+new _modules_FormHandler__WEBPACK_IMPORTED_MODULE_4__["default"]('/sign-up/course/for-beginners', '.apply-form__form', {
+  'input[name="name_and_surname"]': {
+    inputName: 'Имя',
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
+  },
+  'input[name="email"]': {
+    inputName: 'Имейл',
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.emailSubmitValidator]
+  },
+  'input[name="phone"]': {
+    inputName: 'Телефон',
+    liveValidator: _utils_validation_LiveValidators__WEBPACK_IMPORTED_MODULE_6__.phoneLiveValidator,
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.phoneSubmitValidator]
+  },
+  'input[name="job"]': {
+    inputName: 'Должность',
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
+  },
+  'input[name="company"]': {
+    inputName: 'Компания',
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
+  }
+}, 'error', '.apply-form__errors', '.apply-form__success');
+new _modules_FormHandler__WEBPACK_IMPORTED_MODULE_4__["default"]('/sign-up/course/for-beginners', '.popup-apply-form__form', {
+  'input[name="name_and_surname"]': {
+    inputName: 'Имя',
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
+  },
+  'input[name="email"]': {
+    inputName: 'Имейл',
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.emailSubmitValidator]
+  },
+  'input[name="phone"]': {
+    inputName: 'Телефон',
+    liveValidator: _utils_validation_LiveValidators__WEBPACK_IMPORTED_MODULE_6__.phoneLiveValidator,
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.phoneSubmitValidator]
+  },
+  'input[name="job"]': {
+    inputName: 'Должность',
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
+  },
+  'input[name="company"]': {
+    inputName: 'Компания',
+    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
+  }
+}, 'error', '.popup-apply-form__errors', '.apply-form__success');
+new _modules_comments_list__WEBPACK_IMPORTED_MODULE_0__["default"]('.review__wrapper', '.review-item', '.expand-all-comments', '.hide-all-comments', '.review-item__content', '.expand-review', '.hide-review', 'expanded', 3);
+new _modules_modules_list__WEBPACK_IMPORTED_MODULE_1__["default"]('.programs__item', '.program-block', 'expanded');
+new _modules_popup__WEBPACK_IMPORTED_MODULE_2__["default"]('.top-nav__button', '.popup-overlay', 'hidden');
+new _modules_animation_MouseParallax__WEBPACK_IMPORTED_MODULE_3__["default"]('.promo-animated__3D-1', 1.7, 2);
+new _modules_animation_MouseParallax__WEBPACK_IMPORTED_MODULE_3__["default"]('.promo-animated__3D-2', 1.5, -1.5);
+
+/***/ }),
+
 /***/ "./assets/js/utils/DOM.js":
 /*!********************************!*\
   !*** ./assets/js/utils/DOM.js ***!
@@ -588,6 +673,18 @@ var phoneLiveValidator = function phoneLiveValidator(event, input) {
   }
 };
 
+/***/ }),
+
+/***/ "./assets/scss/new_fluid_style.scss":
+/*!******************************************!*\
+  !*** ./assets/scss/new_fluid_style.scss ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
 /***/ })
 
 /******/ 	});
@@ -616,7 +713,42 @@ var phoneLiveValidator = function phoneLiveValidator(event, input) {
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -645,90 +777,68 @@ var phoneLiveValidator = function phoneLiveValidator(event, input) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/public/js/for_beginners": 0,
+/******/ 			"assets/css/new_fluid_style": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkmodx"] = self["webpackChunkmodx"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-/*!************************************************************!*\
-  !*** ./assets/js/pages/courses/compas_3d/for_beginners.js ***!
-  \************************************************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_comments_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../modules/comments-list */ "./assets/js/modules/comments-list.js");
-/* harmony import */ var _modules_modules_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../modules/modules-list */ "./assets/js/modules/modules-list.js");
-/* harmony import */ var _modules_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../modules/popup */ "./assets/js/modules/popup.js");
-/* harmony import */ var _modules_animation_MouseParallax__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../modules/animation/MouseParallax */ "./assets/js/modules/animation/MouseParallax.js");
-/* harmony import */ var _modules_FormHandler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../modules/FormHandler */ "./assets/js/modules/FormHandler.js");
-/* harmony import */ var _utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../utils/validation/FormSubmitValidators */ "./assets/js/utils/validation/FormSubmitValidators.js");
-/* harmony import */ var _utils_validation_LiveValidators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../utils/validation/LiveValidators */ "./assets/js/utils/validation/LiveValidators.js");
-// import '../../../app';
-
-
-
-
-
-
-
-
-var collapseShow = document.getElementById('collapse-burger-show');
-collapseShow.addEventListener('click', function () {
-  document.getElementById("collapse-container").style.display = "block";
-});
-var collapseHide = document.getElementById('collapse-burger-close');
-collapseHide.addEventListener('click', function () {
-  document.getElementById("collapse-container").style.display = "none";
-});
-new _modules_FormHandler__WEBPACK_IMPORTED_MODULE_4__["default"]('/sign-up/course/for-beginners', '.apply-form__form', {
-  'input[name="name_and_surname"]': {
-    inputName: 'Имя',
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
-  },
-  'input[name="email"]': {
-    inputName: 'Имейл',
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.emailSubmitValidator]
-  },
-  'input[name="phone"]': {
-    inputName: 'Телефон',
-    liveValidator: _utils_validation_LiveValidators__WEBPACK_IMPORTED_MODULE_6__.phoneLiveValidator,
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.phoneSubmitValidator]
-  },
-  'input[name="job"]': {
-    inputName: 'Должность',
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
-  },
-  'input[name="company"]': {
-    inputName: 'Компания',
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
-  }
-}, 'error', '.apply-form__errors', '.apply-form__success');
-new _modules_FormHandler__WEBPACK_IMPORTED_MODULE_4__["default"]('/sign-up/course/for-beginners', '.popup-apply-form__form', {
-  'input[name="name_and_surname"]': {
-    inputName: 'Имя',
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
-  },
-  'input[name="email"]': {
-    inputName: 'Имейл',
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.emailSubmitValidator]
-  },
-  'input[name="phone"]': {
-    inputName: 'Телефон',
-    liveValidator: _utils_validation_LiveValidators__WEBPACK_IMPORTED_MODULE_6__.phoneLiveValidator,
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.phoneSubmitValidator]
-  },
-  'input[name="job"]': {
-    inputName: 'Должность',
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
-  },
-  'input[name="company"]': {
-    inputName: 'Компания',
-    submitValidators: [_utils_validation_FormSubmitValidators__WEBPACK_IMPORTED_MODULE_5__.notEmptySubmitValidator]
-  }
-}, 'error', '.popup-apply-form__errors', '.apply-form__success');
-new _modules_comments_list__WEBPACK_IMPORTED_MODULE_0__["default"]('.review__wrapper', '.review-item', '.expand-all-comments', '.hide-all-comments', '.review-item__content', '.expand-review', '.hide-review', 'expanded', 3);
-new _modules_modules_list__WEBPACK_IMPORTED_MODULE_1__["default"]('.programs__item', '.program-block', 'expanded');
-new _modules_popup__WEBPACK_IMPORTED_MODULE_2__["default"]('.top-nav__button', '.popup-overlay', 'hidden');
-new _modules_animation_MouseParallax__WEBPACK_IMPORTED_MODULE_3__["default"]('.promo-animated__3D-1', 1.7, 2);
-new _modules_animation_MouseParallax__WEBPACK_IMPORTED_MODULE_3__["default"]('.promo-animated__3D-2', 1.5, -1.5);
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["assets/css/new_fluid_style"], () => (__webpack_require__("./assets/js/pages/courses/compas_3d/for_beginners.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/new_fluid_style.scss")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
 /******/ })()
 ;

@@ -1,0 +1,168 @@
+<div class="bg_pic">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    [[!AjaxForm?
+    &snippet=`FormIt`
+    &form=`tpl_form_registration`
+    &hooks=`FormItSaveForm`
+    &formName=`Курсы`
+
+    &formFields=`
+        name,
+        email,
+        company,
+        job,
+        promocode,
+        personal_data,
+        mailing,
+        nanocad-2d,
+        google-word,
+        excel-seller,
+        excel-prof,
+        compas-m2,
+        compas-m3,
+        nanocad-3d,
+        industrial-automation,
+        fiting,
+        mechanical,
+        codesys,
+    `
+    &fieldNames=`
+        name==Имя,
+        email==Электронная почта,
+        company==Организация,
+        job==Должность,
+        promocode==Промокод,
+        personal_data==Согласие на обработку персональных данных,
+        mailing==Согласие на получение SMS и Email рассылок,
+        nanocad-2d==NanoCAD с нуля. Основы проектирования в 2D,
+        google-word==Google Docs + MS Word,
+        excel-seller==Excel для менеджеров по продажам и закупкам,
+        excel-prof==Excel углубленный курс,
+        compas-m2==Компас-3D подготовка к экзамену M2D,
+        compas-m3==Компас-3D подготовка к экзамену M3D,
+        nanocad-3d==NanoCAD проектирование в 3D,
+        industrial-automation==Современная промышленная пневмоавтоматика,
+        fiting==Работа с фитингами 2023,
+        mechanical==Мехатроника в промышленности (Автоматизация),
+        codesys==Разработка АСУ ТП в Codesys,
+    `
+    &validate=`
+        nospam:blank,
+        name:required:minLength=^3^:maxLength=^21^,
+        email:required:email,
+        company:required:minLength=^3^,
+        job:required:minLength=^3^,
+        promocode:required:regexp=^/fcng2023/i^,
+    `
+    &vTextContains=`Поле должно содержать корректный Промокод`
+
+    ]]
+    <script>
+        $(document).on('af_complete', function(event, response) {
+          const elForm = $(response.form);
+          elForm.find('.is-invalid').each(function(index, el) {
+            $(el).removeClass('is-invalid');
+          });
+          for (let key in response.data) {
+            const elInput = elForm.find(`[name=${key}]`);
+            elInput.addClass('is-invalid');
+            elInput.next('.invalid-feedback').text($(response.data[key]).text());
+          }
+        });
+        $(document).on('af_complete', function(event, response) {
+            var form = response.form;
+            if (response.success) {
+            response.form.hide();
+            $('#form').addClass('hidden');
+            $('#result').removeClass('hidden');
+        }
+        });
+      </script>
+      
+      <!-- Промокод -->
+      <!-- FCNG2023 -->
+
+    <!-- <form id="form" class="container-xxl fullscreen_form pt-4 px-md-5" method="post" action="#">
+        [[+fi.validation_error_message]]
+        [[+fi.successMessage]]
+        <input type="hidden" name="nospam" id="nospam" value="">
+        <div class="row gap-1">
+            <p class="h4 fw-400">Предварительная запись на выбранный курс.</p>
+            <p class="h6 fw-400" style="color: #4763D5;">Мы заранее оповестим вас о старте курса.</p>
+        </div>
+
+        <div class="row my-3">
+
+            [[pdoMenu?
+            &parents=`14`
+            &level=`0`
+            &tplOuter = `@INLINE
+            <div class="col-lg-6 mb-lg-1 mb-md-4">
+
+                [[+wrapper]]
+
+                <div class="d-flex justify-content-center w-75 my-4 mt-md-4 gap-3">
+                    <input class="checkbox_course" type="checkbox" checked id="off_all_courses"
+                        name="off_all_courses[]">
+                    <label class="text_accept" for="off_all_courses">Снять все выбранные галочки в одно
+                        мгновение</label>
+                </div>
+            </div>
+            `
+            &tpl = `@INLINE
+            <div class="name_course">
+                <strong>[[+pagetitle]]</strong>
+                <input class="checkbox_course" type="checkbox" checked id=[[+alias]] name=[[+alias]]>
+                <label for=[[+alias]]></label>
+            </div>
+            `
+            ]]
+
+            <div class="col-1"></div>
+
+            <div class="col-lg">
+                <div class="mb-3">
+                    <input class="input_form w-100" type="text" placeholder="Имя*" name="name" required minlength="3">
+                    <span class="error">[[+fi.error.name]]</span>
+                </div>
+                <div class="mb-3">
+                    <input class="input_form w-100" type="email" placeholder="E-mail*" name="email" required>
+                    <span class="error">[[+fi.error.email]]</span>
+                </div>
+                <div class="mb-3">
+                    <input class="input_form w-100" type="text" placeholder="Компания*" name="company" required>
+                    <span class="error">[[+fi.error.company]]</span>
+                </div>
+                <div class="mb-3">
+                    <input class="input_form w-100" type="text" placeholder="Должность*" name="job" required>
+                    <span class="error">[[+fi.error.job]]</span>
+                </div>
+                <div class="mb-3">
+                    <input class="input_form w-100" type="text" placeholder="Промокод*" name="promocode" pattern="НЕФТЕГАЗ">
+                    <span class="error">[[+fi.error.promocode]]</span>
+                </div>
+
+                <button type="submit" class="form-btn w-100 my-2 py-2">Отправить</button>
+
+                <div class="mb-3">
+                    <input class="checkbox_accept" type="checkbox" id="personal_data" name="personal_data" checked
+                        required>
+                    <label class="text_accept" for="personal_data">Вы даете согласие на обработку своих персональных
+                        данных в соответствии с
+                        политикой
+                        конфиденциальности</label>
+                </div>
+                <div class="mt-1">
+                    <input class="checkbox_accept" type="checkbox" id="mailing" name="mailing">
+                    <label class="text_accept" for="mailing">Согласие на получение SMS и Email рассылок.</label>
+                </div>
+            </div>
+
+        </div>
+
+    </form> -->
+    <div id="result" class="container-xxl success_form pt-4 px-md-5 hidden">
+        <div class="welcome_text col-lg-7"><span>Спасибо! <br> Вся информация придет вам на почту</span></div>
+        <div class="col-lg-5"><img src="/images/img_for_welcome.png" alt=""></div>
+    </div>
+</div>

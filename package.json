@@ -15,13 +15,13 @@
     "lodash": "^4.17.19",
     "postcss": "^8.1.14",
     "resolve-url-loader": "^5.0.0",
-    "sass": "^1.52.2",
-    "sass-loader": "^12.6.0"
+    "sass": "^1.62.0",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.78.0"
   },
   "dependencies": {
     "animejs": "^3.2.1",
-    "imask": "^6.4.3",
-    "webpack": "^5.78.0"
+    "imask": "^6.4.3"
   },
   "name": "modx",
   "version": "1.0.0",
