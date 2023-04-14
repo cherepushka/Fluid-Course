@@ -2,8 +2,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     [[!AjaxForm?
     &snippet=`FormIt`
+    &hooks=`FormItSaveForm,email`
     &form=`tpl_form_registration`
-    &hooks=`FormItSaveForm`
+    &emailTpl=`tpl_email`,
+    &emailSubject=`От [[++site_name]]`
+    &emailTo=`[[++emailsender]]`
+    &emailFrom=`mail@fluidcourse.ru`
     &formName=`Курсы`
 
     &formFields=`
@@ -54,7 +58,8 @@
         job:required:minLength=^3^,
         promocode:required:regexp=^/fcng2023/i^,
     `
-    &vTextContains=`Поле должно содержать корректный Промокод`
+    &validationErrorMessage=``
+    &successMessage=` `
 
     ]]
     <script>
