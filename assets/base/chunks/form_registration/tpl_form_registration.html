@@ -19,15 +19,20 @@
             <div class="d-flex justify-content-center w-75 my-4 mt-md-4 gap-3">
                 <input class="checkbox_course" type="checkbox" checked id="off_all_courses" name="off_all_courses[]">
                 <label class="text_accept" for="off_all_courses">Снять все выбранные галочки в одно
-                    мгновение</label>
+                    мгновение
+                </label>
             </div>
         </div>
         `
         &tpl = `@INLINE
         <div class="name_course">
             <strong>[[+pagetitle]]</strong>
-            <input class="checkbox_course" type="checkbox" checked id=[[+alias]] name=[[+alias]]>
-            <label for=[[+alias]]></label>
+            <div class="checkbox-other">
+                <input class="checkbox_course" type="checkbox" checked id=[[+alias]] name=[[+alias]]>
+                <label for=[[+alias]] class="checkbox-other__label">
+                    <span></span>
+                </label>
+            </div>
         </div>
         `
         ]]
@@ -37,7 +42,8 @@
         <div class="col-lg">
             <input class="input_form w-100 mb-3" type="text" placeholder="Имя*" name="name" minlength="3" required>
             <input class="input_form w-100 mb-3" type="email" placeholder="E-mail*" name="email" required>
-            <input class="input_form w-100 mb-3" type="text" placeholder="Компания*" name="company" minlength="3" required>
+            <input class="input_form w-100 mb-3" type="text" placeholder="Компания*" name="company" minlength="3"
+                required>
             <input class="input_form w-100 mb-3" type="text" placeholder="Должность*" name="job" minlength="3" required>
             <input class="input_form w-100 mb-3" type="text" placeholder="Промокод*" name="promocode" required
                 pattern="[Ff][Cc][Nn][Gg]2023" title="Введите корректный Промокод">

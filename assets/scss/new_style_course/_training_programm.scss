@@ -91,26 +91,21 @@
 
 .modules {
     margin-top: 47px;
-    min-height: 420px;
     position: relative;
 
     .module.active {
-        visibility: visible;
-        opacity: 1;
+        display: block;
     }
 
     .module {
-        position: absolute;
+        display: none;
         width: 100%;
         top: 0px;
-        visibility: hidden;
-        opacity: 0;
         transition: all 0.3s;
 
         .split {
             display: flex;
             justify-content: flex-start;
-            // gap: 40px;
 
             .title {
                 h3 {

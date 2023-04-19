@@ -10,6 +10,7 @@
     // top: 50%;
     // left: 50%;
 }
+
 .success_form {
     display: flex;
     flex-wrap: wrap;
@@ -66,17 +67,18 @@
     color: red;
     font-size: 13px;
 }
+
 .hidden {
     display: none;
-  }
+}
 
 input:valid:not(:placeholder-shown) {
     border-color: green;
-  }
-  
-  input:invalid:not(:placeholder-shown) {
+}
+
+input:invalid:not(:placeholder-shown) {
     border-color: red;
-  }
+}
 
 .checkbox_accept,
 .checkbox_accept+label::before {
@@ -90,11 +92,14 @@ input:valid:not(:placeholder-shown) {
     line-height: 14px;
 }
 
+
+
 .name_course {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgba(71, 99, 213, 0.3);
     padding: 0 10px 0 0;
+    position: relative;
 
     strong {
         font-weight: 400;
@@ -104,6 +109,15 @@ input:valid:not(:placeholder-shown) {
     }
 }
 
+.checkbox-other {
+    display: flex;
+    align-items: center;
+    line-height: 22px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
 .checkbox_course,
 .checkbox_accept {
     position: absolute;
@@ -111,36 +125,43 @@ input:valid:not(:placeholder-shown) {
     opacity: 0;
 }
 
-.checkbox_course+label,
-.checkbox_accept+label {
-    display: inline-flex;
+.checkbox_course+.checkbox-other__label,
+.checkbox_accept+.checkbox-other__label {
+	display: inline-block;
+    position: relative; 
     align-items: center;
     user-select: none;
-}
-
-.checkbox_course+label::before,
-.checkbox_accept+label::before {
-    content: '';
-    display: inline-block;
     width: 20px;
     height: 20px;
-    flex-shrink: 0;
-    flex-grow: 0;
     border: 1px solid #4763D5;
+    background-color: #FFFFFF;
     border-radius: 0.25em;
     margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
 }
 
-.checkbox_course:checked+label::before,
-.checkbox_accept:checked+label::before {
-    border-color: #4763D5;
-    background-color: #FFFFFF;
+.checkbox_course:checked+.checkbox-other__label,
+.checkbox_accept:checked+.checkbox-other__label {
     box-shadow: 0px 0px 4px #4763D5;
-    background-size: 20px 20px;
-    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2219%22%20viewBox%3D%220%200%2022%2019%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M2.05078%209.17836L7.8293%2016.3846L20.3494%201%22%20stroke%3D%22%232C2C2C%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox_course+.checkbox-other__label span,
+.checkbox_accept+.checkbox-other__label span {
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.checkbox_course:checked+.checkbox-other__label span,
+.checkbox_accept:checked+.checkbox-other__label span {
+    transform: translate(-15%, -25%);
+    background-size: 25px 20px;
+    opacity: 1;
+    background-image: url(/images/checkbox.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 @media screen and (max-width: 1024px) {
@@ -152,7 +173,8 @@ input:valid:not(:placeholder-shown) {
         width: 100%;
         height: 100%;
     }
-    .success_form  {
+
+    .success_form {
         background: #FFFFFF;
         border-radius: 0px;
         padding: 2rem;
@@ -170,16 +192,18 @@ input:valid:not(:placeholder-shown) {
     // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(5px);
 
-    background: radial-gradient(66.38% 141.5% at 86.86% 39.18%, rgba(71, 99, 213, 0.7) 6.87%, rgba(0, 0, 0, 0.7) 100%);
+    background: url(/images/form_bg.png) no-repeat;
+    background-size: cover;
+    // background: radial-gradient(66.38% 141.5% at 86.86% 39.18%, rgba(71, 99, 213, 0.7) 6.87%, rgba(0, 0, 0, 0.7) 100%);
 }
 
 @media screen and (max-width: 1024px) {
-    .bg_pic{
+    .bg_pic {
         backdrop-filter: none;
         position: initial;
     }
 
-    .fullscreen_form{
+    .fullscreen_form {
         position: initial;
         transform: initial;
         left: 0;
