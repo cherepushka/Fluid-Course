@@ -1,34 +1,36 @@
-
 <form class="ajax_form" method="post" action="/assets\base\snippets\Course.php">
 
-    <ul class="apply-form__success"></ul>
-    <ul class="apply-form__errors"></ul>
-  
-    <input type="text" placeholder="Имя фамилия" name="name_and_surname">
-  
-    <input type="text" placeholder="E-mail" class="mail" name="email">
-  
-    <input type="text" placeholder="+7 (999) 999-99-99" class="phone" name="phone">
-  
-    <!--для защиты от ботов-->
-    <input type="hidden" name="workemail" value="" />
-  
-  
-    <div class="split">
-      <button class="btn" type="submit">Купить</button>
-      <button class="btn" type="submit">В рассрочку</button>
-    </div>
-  
-    <label>
-      <input type="checkbox" checked disabled>
-      Записываясь на курс, вы даете согласие на обработку своих
-      персональных данных в соответствии
-      <span>с политикой конфиденциальности.</span>
-    </label>
-  
-    <label>
-      <input type="checkbox" checked disabled>
-      Получение SMS и Email рассылок.
-    </label>
-  
-  </form>
+  <ul class="apply-form__success"></ul>
+  <ul class="apply-form__errors"></ul>
+
+  <input class="final_work_input" type="text" placeholder="Имя фамилия" name="name_and_surname" required>
+
+  <input class="final_work_input mail" type="text" placeholder="E-mail" name="email" required>
+
+  <input class="final_work_input phone" type="text" placeholder="+7 (999) 999-99-99" name="phone" required>
+
+  <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode" required
+    pattern="[Ff][Cc][Nn][Gg]2023" title="Введите корректный Промокод">
+
+  <!--для защиты от ботов-->
+  <input type="hidden" name="workemail" value="" />
+
+
+  <div class="d-flex gap-3 my-4">
+    <button class="color-white btn btn-primary btn_buy w-50" type="submit">Оплатить</button>
+    <button class="color-white btn btn_installment w-50" type="submit">Оплатить в рассрочку</button>
+  </div>
+
+  <label>
+    <input type="checkbox" checked disabled>
+    Записываясь на курс, вы даете согласие на обработку своих
+    персональных данных в соответствии
+    <span>с политикой конфиденциальности.</span>
+  </label>
+
+  <label>
+    <input type="checkbox" checked disabled>
+    Получение SMS и Email рассылок.
+  </label>
+
+</form>

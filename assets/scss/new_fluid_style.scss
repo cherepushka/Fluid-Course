@@ -1,3 +1,15 @@
+@import "./varibles";
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import "./new_style_course/form";
+@import './new_style_course/head_banner_info';
+@import './new_style_course/what_you_will_learn';
+@import './new_style_course/who_is_this_course';
+@import './new_style_course/teacher';
+@import './new_style_course/training_programm';
+@import './new_style_course/final_work';
+@import './fonts/Golos.scss';
+@import 'fonts/font';
+
 
 .fw-400 {
   font-weight: 400;
@@ -7,5 +19,45 @@
   font-weight: 500;
 }
 
-@import "./form";
-@import "./varibles";
+h1 {
+  font-family: 'Golos';
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 45.94px;
+}
+
+h2 {
+  font-family: 'Golos';
+  font-size: 32px;
+  line-height: 30.62px;
+}
+
+h3 {
+  font-family: 'Golos';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+h5 {
+  font-family: 'Golos';
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+p {
+  font-family: 'Golos';
+}
+
+li {
+  font-family: 'Golos';
+}
+
+span {
+  font-family: 'Golos';
+}
+
+strong {
+  font-family: 'Golos';
+}

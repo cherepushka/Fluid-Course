@@ -1,169 +1,177 @@
-<div class="Final_work">
-  <div class="box_container">
+<div class="container-xxl my-5">
 
-    <div class="Final_work_block">
-      <div class="split">
-        <div class="text">
-          [[*final_work_template_head_text]]
-        </div>
-        <img class="image" src="[[*final_work_template_img]]" alt="Графика курса">
-      </div>
+  <!-- ИТОГОВАЯ РАБОТА -->
+  <div class="row align-items-center">
+    <div class="final_work_describe col-md-8">
+      [[*final_work_template_head_text]]
     </div>
+    <img class="col-md-4" src=[[*final_work_template_img]] alt="Графика курса">
+  </div>
 
 
+  <!-- КАК ПРОХОДИТ ОБУЧЕНИЕ -->
+  <div>
+    <h2>
+      Как проходит обучение
+    </h2>
+    <ol class="row list-unstyled my-4">
+      <!-- <div class="selected-line"></div> -->
 
-    <div class="How_is_the_training_going">
-      <h2>
-        Как проходит обучение
-      </h2>
-      <ol class="grid">
-        <!-- <div class="selected-line"></div> -->
-
-        {set $rows = json_decode($_modx->resource.final_work_template_migx, true)}
-        {set $i = 1}
-        {foreach $rows as $row}
-        <li class="training-box">
-          <h4>0{$i}</h4>
-          {$row.describe}
-        </li>
-        {set $i += 1}
-        {/foreach}
-      </ol>
-    </div>
+      {set $rows = json_decode($_modx->resource.final_work_template_migx, true)}
+      {set $i = 1}
+      {foreach $rows as $row}
+      <li class="final_work_stage col-md-3 col-sm-6">
+        <h1 class="my-4" style="font-size: 62px;">0{$i}</h1>
+        {$row.describe}
+      </li>
+      {set $i += 1}
+      {/foreach}
+    </ol>
+  </div>
 
 
+  <!-- ОТЗЫВЫ -->
+  <div class="student_reviews">
 
-    <div class="Student_reviews">
-      
     {if $_modx->resource.hideComments?}{else}
-      <h2>
-        Отзывы студентов
-      </h2>
-      <div class="carousel">
+    <h2>
+      Отзывы студентов
+    </h2>
+    <div class="d-flex">
+      <button class="carousel-control-prev"><img src="/images/chevron_left.png" alt=""></button>
+      <div class="carousel my-4">
         <div class="coments">
-          <button class="carousel-control-prev" type="button"></button>
+          <!-- <button class="carousel-control-prev" type="button"></button> -->
           <div class="box">
-            <div class="inner">
-              {set $rows = json_decode($_modx->resource.comments_migx, true)}
-              {foreach $rows as $row}
-              <client-coment client="{$row.client}" text="{$row.comment_text}"></client-coment>
-              {/foreach}
-
-            </div>
+            {set $rows = json_decode($_modx->resource.comments_migx, true)}
+            {foreach $rows as $row}
+            <client-coment client="{$row.client}" text="{$row.comment_text}"></client-coment>
+            {/foreach}
           </div>
 
-          <button class="carousel-control-next" type="button"></button>
         </div>
+        <!-- <button class="carousel-control-next" type="button"></button> -->
       </div>
+      <button class="carousel-control-next"><img src="/images/chevron_right.png" alt=""></button>
+    </div>
+    {/if}
+  </div>
+
+
+  <!-- ФОРМЫ ЗАПИСИ -->
+  <div id="enroll-form" class="row justify-content-evenly gy-4">
+    <div class="col-md-5 describe_near_form">
+      [[*describe_near_form_reg]]
+    </div>
+
+    <div class="col-md-5 reg_form">
+      [[*header_form_reg]]
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      {if $_modx->resource.change_forms_buy_or_reg?}
+
+      [[!AjaxForm?
+      &snippet=`FormIt`
+      &hooks=`FormItSaveForm`
+      &form=`tpl_buy_form`
+      &formName=`[[*pagetitle]]`
+      &formFields=`name_and_surname, email, phone, promocode`
+      &fieldNames=`name_and_surname==Имя, email==Электронная почта, phone==Телефон,promocode==Промокод`
+      &validate=`
+      name_and_surname:required:minLength=^3^:maxLength=^21^,
+      email:required:email,
+      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+      promocode:required:regexp=^/fcng2023/i^,
+      workemail:blank
+      `
+      &successMessage=`Сообщение успешно отправлено`
+      &validationErrorMessage=`В форме qwesad ошибки!`
+      ]]
+
+
+      {else}
+
+      [[!AjaxForm?
+      &snippet=`FormIt`
+      &hooks=`FormItSaveForm`
+      &form=`tpl_enroll_form`
+      &formName=`[[*pagetitle]]`
+      &formFields=`name_and_surname, email, phone,company, job`
+      &fieldNames=`name_and_surname==Имя, email==Электронная почта, phone==Телефон, company==Организация,
+      job==Должность`
+      &validate=`
+      name_and_surname:required:minLength=^3^:maxLength=^21^,
+      email:required:email,
+      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+      company:required:minLength=^3^,
+      job:required:minLength=^3^,
+      workemail:blank
+      `
+      &successMessage=`Сообщение успешно отправлено`
+      &validationErrorMessage=`В форме qwesad ошибки!`
+      ]]
+
       {/if}
 
-    <div class="Cource_participation">
-      <div class="part Cost_of_participation">
-        [[*describe_near_form_reg]]
-      </div>
 
-      <a id="enroll-form" style="
-                      visibility: hidden;
-                      position: relative;
-                      top: -60px;
-                      display: block;
-                  ">
-      </a>
+      <script type="text/javascript">
 
-      <div class="part Enroll_in_a_course">
-        [[*header_form_reg]]
-
-        <!-- &hooks=`FormItSaveForm,excelFormRequest,Test,csrf,course` -->
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        {if $_modx->resource.change_forms_buy_or_reg?}
-        
-        [[!AjaxForm?
-        &snippet=`FormIt`
-        &hooks=`FormItSaveForm`
-        &form=`tpl_buy_form`
-        &formName=`[[*pagetitle]]`
-        &formFields=`name_and_surname, email, phone`
-        &fieldNames=`name_and_surname==Имя, email==Электронная почта, phone==Телефон`
-        &validate=`
-        name_and_surname:required:minLength=^3^:maxLength=^21^,
-        email:required:email,
-        phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-        workemail:blank
-        `
-        &successMessage=`Сообщение успешно отправлено`
-        &validationErrorMessage=`В форме qwesad ошибки!`
-        ]]
-        
-        
-        {else}
-        
-        [[!AjaxForm?
-        &snippet=`FormIt`
-        &hooks=`FormItSaveForm`
-        &form=`tpl_enroll_form`
-        &formName=`[[*pagetitle]]`
-        &formFields=`name_and_surname, email, phone,company, job`
-        &fieldNames=`name_and_surname==Имя, email==Электронная почта, phone==Телефон, company==Организация,
-        job==Должность`
-        &validate=`
-        name_and_surname:required:minLength=^3^:maxLength=^21^,
-        email:required:email,
-        phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-        company:required:minLength=^3^,
-        job:required:minLength=^3^,
-        workemail:blank
-        `
-        &successMessage=`Сообщение успешно отправлено`
-        &validationErrorMessage=`В форме qwesad ошибки!`
-        ]]
-
-        {/if}
-
-
-        <script type="text/javascript">
-          
-          $(function () {
-            $('form').submit(function (e) {
-              e.preventDefault();
-              var m_method = $(this).attr('method');
-              var m_action = $(this).attr('action');
-              var m_data = $(this).serialize();
-              $.ajax({
-                type: m_method,
-                url: m_action,
-                data: m_data,
-              });
+        $(function () {
+          $('form').submit(function (e) {
+            e.preventDefault();
+            var m_method = $(this).attr('method');
+            var m_action = $(this).attr('action');
+            var m_data = $(this).serialize();
+            $.ajax({
+              type: m_method,
+              url: m_action,
+              data: m_data,
             });
           });
+        });
 
-        </script>
+      </script>
 
 
 
-      </div>
     </div>
   </div>
-  
-  
-  <div class="Frequently_Asked_Questions">
-      <h2>
-        Часто задаваемые вопросы
-      </h2>
-      <div class="split">
-        <div class="list">
-          {set $rows = json_decode($_modx->resource.faq_migx, true)}
-          {foreach $rows as $row}
-          <details>
-            <summary>
-              {$row.question}
-            </summary>
-            <p>{$row.answer_text}</p>
-          </details>
-          {/foreach}
-        </div>
+
+
+  <!-- FAQ -->
+  <div class="faq py-4">
+    <h2>
+      Часто задаваемые вопросы
+    </h2>
+    <div class="row split">
+      {set $rows = json_decode($_modx->resource.faq_migx, true)}
+      {foreach $rows as $row}
+      <div class="list">
+        <h5>{$row.question}</h5>
+        <p>{$row.answer_text}</p>
+      </div>
+      {/foreach}
+    </div>
+  </div>
+
+  <!-- Раскрывающийся список
+  <div class="faq">
+    <h2>
+      Часто задаваемые вопросы
+    </h2>
+    <div class="split">
+      <div class="list">
+        {set $rows = json_decode($_modx->resource.faq_migx, true)}
+        {foreach $rows as $row}
+        <details>
+          <summary>
+            {$row.question}
+          </summary>
+          <p>{$row.answer_text}</p>
+        </details>
+        {/foreach}
       </div>
     </div>
+  </div> -->
 
-  </div>
 </div>

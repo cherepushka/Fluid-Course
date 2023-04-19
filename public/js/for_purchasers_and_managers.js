@@ -358,7 +358,6 @@ var Modules = /*#__PURE__*/function () {
     var _this = this;
     _classCallCheck(this, Modules);
     _defineProperty(this, "sliderMOVED", false);
-    _defineProperty(this, "countModules", document.querySelector('.count-modules').getAttribute('data-attr'));
     _defineProperty(this, "selected", 0);
     // this.spaceCreate(document.querySelector(`.${className} .space`))
     this.sliderCreate(document.querySelector(".".concat(className, " .scrolled ol")));
@@ -372,7 +371,7 @@ var Modules = /*#__PURE__*/function () {
   _createClass(Modules, [{
     key: "selectElement",
     value: function selectElement(index) {
-      this.rails.scrollTo(this.rails.scrollWidth / this.countModules * index, 0);
+      this.rails.scrollTo(this.rails.scrollWidth / 3 * index, 0);
     }
   }, {
     key: "spaceCreate",
@@ -391,7 +390,7 @@ var Modules = /*#__PURE__*/function () {
       this.rails = component;
       this.rails.addEventListener('scroll', function () {
         var position = _this2.rails.scrollLeft / (_this2.rails.scrollWidth - _this2.rails.clientWidth) * 100;
-        _this2.setScroll(position * position / 100);
+        _this2.setScroll(position);
       });
     }
   }, {
@@ -407,10 +406,8 @@ var Modules = /*#__PURE__*/function () {
   }, {
     key: "setPosition",
     value: function setPosition(position) {
-      // let selectElement = Math.round((position / this.countModules) * this.countModules)
-      var selectElement = Math.round(position / (100 / (this.countModules - 1)));
-      // console.log('position', position, ' = ', selectElement)
-      if (selectElement > this.countModules - 1) selectElement = this.countModules - 1;
+      var selectElement = Math.round((position - 10) / 33);
+      if (selectElement > 2) selectElement = 2;
       if (this.selected != selectElement) {
         this.selected = selectElement;
         this.removeActive('.scrolled');

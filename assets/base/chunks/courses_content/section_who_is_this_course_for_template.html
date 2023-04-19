@@ -1,11 +1,11 @@
-<div class="Who_is_this_course_for">
-  <h2>
+<div class="container-xxl who_is_this_course_for">
+  <h2 class="my-5">
     Для кого этот курс
   </h2>
-  <ol>
+  <ol class="row list-unstyled gy-4">
     {set $rows = json_decode($_modx->resource.who_is_this_course_for_migx, true)}
     {foreach $rows as $row}
-    <li>
+    <li class="col-xl-4 col-md-6">
       <img src="{$row.img}" alt="">
       <div class="text">
        {$row.describe}

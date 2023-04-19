@@ -1,91 +1,57 @@
 <div class="training_program" id="programm">
-  <div class="box_container">
-    <h2>[[*duration_of_study]]</h2>
-  </div>
+  <div class="container-xxl">
+    <h2 class="text-white">[[*duration_of_study]]</h2>
 
-  {set $rows = json_decode($_modx->resource.training_program_migx, true)}
-  <div class="count-modules" data-attr="{count($rows)}"></div>
 
-  <div class="scrolled">
-    <div class="space">
-      <ol>
-        <li class="active">
-          <div class="text">
-            <strong>
-              {$rows.0.title}
-            </strong>
-            <div class="small">
-              {$rows.0.subtitle}
+    {if count(json_decode($_modx->resource.training_program_migx,true)) <= 3} 
+      {$_modx->getChunk('tpl_modules_no_more')}
+      
+      {else}
+        {$_modx->getChunk('tpl_modules_more')}
+      {/if}
+
+
+      {set $rows = json_decode($_modx->resource.training_program_migx, true)}
+      {set $index = 0}
+      <div class="modules h-100">
+        <div class="module active">
+          <div class="split row">
+            <div class="title col-md-6">
+              <h3> {$rows.0.title}</h3>
+              <h4> {$rows.0.subtitle}</h4>
+            </div>
+            <div class="list col-md-6">
+              {$rows.0.describe}
             </div>
           </div>
-          
-          <img src="{$rows.0.img}" alt="- icon">
-        </li>
+        </div>
+
         {foreach $rows as $row index=$index}
+
         {if $index == 0}
         {set $index = 1}
         {continue}
         {/if}
-        <li>
-          <div class="text">
-            <strong>
-              {$row.title}
-            </strong>
-            <div class="small">
-              {$row.subtitle}
+        <div class="module">
+          <div class="split">
+            <div class="title">
+              <h3> {$row.title}</h3>
+              <h4> {$row.subtitle}</h4>
+            </div>
+            <div class="list">
+              {$row.describe}
             </div>
           </div>
-          
-          <img src="{$row.img}" alt="- icon">
-        </li>
+        </div>
         {/foreach}
-      </ol>
-    </div>
-  </div>
-  
-  <div class="box_container">
-    
-    {set $index = 0}
-    <div class="modules">
-      <div class="module active">
-        <div class="split">
-          <div class="title">
-            <h3> {$rows.0.title}</h3>
-            <h4> {$rows.0.subtitle}</h4>
-          </div>
-          <div class="list">
-            {$rows.0.describe}
-          </div>
-        </div>
       </div>
-      
-      {foreach $rows as $row index=$index}
-      
-      <!-- {var_dump($row)} -->
 
-      {if $index == 0}
-      {set $index = 1}
-      {continue}
-      {/if}
-      <div class="module">
-        <div class="split">
-          <div class="title">
-            <h3> {$row.title}</h3>
-            <h4> {$row.subtitle}</h4>
-          </div>
-          <div class="list">
-            {$row.describe}
-          </div>
-        </div>
+
+      <div class="footnote">
+        [[*duration_of_study]]
+        <br><br>
+        [[*describe_training_program]]
       </div>
-      {/foreach}
-    </div>
-    
-    <div class="footnote">
-      [[*duration_of_study]]
-      <br><br>
-      [[*describe_training_program]]
-    </div>
   </div>
-  
+  <!-- </div> -->
 </div>

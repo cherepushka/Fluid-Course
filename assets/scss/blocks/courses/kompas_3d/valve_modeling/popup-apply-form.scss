@@ -12,10 +12,10 @@
     display: flex;
     flex-direction: column;
 
-    @media screen and (min-width: $container-xxl-min) {
-        padding: 45px 70px 45px 30px;
-        width: 710px;
-    }
+    // @media screen and (min-width: $container-xxl-min) {
+    //     padding: 45px 70px 45px 30px;
+    //     width: 710px;
+    // }
 
     @media screen and (max-width: $container-xl-max) and (min-width: $container-xl-min) {
         padding: 45px 70px 25px 30px;

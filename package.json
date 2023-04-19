@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "bootstrap": "^5.2.3",
     "imask": "^6.4.3"
   },
   "name": "modx",

@@ -1,14 +1,12 @@
-<div class="Certificate">
-  <div class="box_container">
-    <h2>Сертификат</h2>
+<div class="container-xxl my-4">
+  <h2 class="my-4">Сертификат</h2>
 
-    <div class="split">
-      {set $tpl = json_decode($_modx->resource.certificate_migx, true)}
-      <p>{$tpl.0.certificate_text}</p>
-      <img src={$tpl.0.certificate_img} alt="Сертификат">
-    </div>
-
+  <div class="row">
+    {set $tpl = json_decode($_modx->resource.certificate_migx, true)}
+    <img class="col-lg-6" src={$tpl.0.certificate_img} alt="Сертификат">
+    <p class="col-lg-6 d-flex align-items-center">{$tpl.0.certificate_text}</p>
   </div>
+
 </div>
 
 

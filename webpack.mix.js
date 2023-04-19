@@ -51,18 +51,5 @@ function findFiles(dir) {
     return results;
 }
 
-// mix.js('assets/js/form.js', 'public/js');
+
 mix.sass('assets/scss/new_fluid_style.scss', 'assets/css/new_fluid_style.css');
-
-// buildSass('assets/scss/reg_form', 'public/assets/css');
-
-// function buildSass(dir, dest) {
-//         findFiles(dir).forEach(function (file) {
-        
-//                 const filename = path.basename(file)
-        
-//                 if (!filename.startsWith('_')) {
-//                     mix.sass(file, dest).version();
-//                 }
-//             });
-//         }

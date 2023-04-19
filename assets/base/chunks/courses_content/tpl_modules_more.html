@@ -1,0 +1,35 @@
+{set $rows = json_decode($_modx->resource.training_program_migx, true)}
+
+<!-- <div class="module_more_3"> -->
+<ol class="d-flex flex-wrap justify-content-sm-between list-unstyled gap-3 my-4 modules_more_3">
+    <li class="active">
+    <!-- <li class="active col-lg-4 col-md-6 gy-2"> -->
+        <div class="text">
+            <strong>
+                {$rows.0.title}
+            </strong>
+            <p>
+                {$rows.0.subtitle}
+            </p>
+        </div>
+    </li>
+
+    {foreach $rows as $row index=$index}
+    {if $index == 0}
+    {set $index = 1}
+    {continue}
+    {/if}
+    <li>
+    <!-- <li class="col-lg-4 col-md-6 gy-2"> -->
+        <div class="text">
+            <strong>
+                {$row.title}
+            </strong>
+            <p>
+                {$row.subtitle}
+            </p>
+        </div>
+    </li>
+    {/foreach}
+</ol>
+<!-- </div> -->

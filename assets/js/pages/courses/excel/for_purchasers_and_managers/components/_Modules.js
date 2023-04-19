@@ -2,9 +2,7 @@ class Modules {
 
     sliderMOVED = false
 
-    countModules = document.querySelector('.count-modules').getAttribute('data-attr');
-
-    constructor(className) {
+    constructor(className){
         // this.spaceCreate(document.querySelector(`.${className} .space`))
         this.sliderCreate(document.querySelector(`.${className} .scrolled ol`))
         this.railsCreate(document.querySelector(`.${className} .scrolled`))
@@ -14,34 +12,33 @@ class Modules {
             element.onclick = () => this.selectElement(index)
         })
     }
-
-    selectElement(index) {
-        this.rails.scrollTo((this.rails.scrollWidth) / this.countModules * index, 0)
+ 
+    selectElement(index){
+        this.rails.scrollTo((this.rails.scrollWidth) / 3 * index, 0)
     }
 
-    spaceCreate(space) {
+    spaceCreate(space){
         this.space = space
     }
 
-    sliderCreate(slider) {
+    sliderCreate(slider){
         this.slider = slider
     }
 
-    railsCreate(component) {
+    railsCreate(component){
         this.rails = component
         this.rails.addEventListener('scroll', () => {
-            const position = ((this.rails.scrollLeft / (this.rails.scrollWidth - this.rails.clientWidth))) * 100
-
-
-            this.setScroll(position * position / 100)
+            const position = (this.rails.scrollLeft  /  (this.rails.scrollWidth - this.rails.clientWidth)) * 100
+            this.setScroll(position)
         })
     }
 
-    setScroll(position) {
+
+    setScroll(position){
         this.setPosition(position)
     }
 
-    setTransition(status) {
+    setTransition(status){
         if (status)
             document.body.style.setProperty('--sliderActiveTransition', 'all .3s ease-in-out')
         else
@@ -49,16 +46,13 @@ class Modules {
     }
 
     selected = 0
-    setPosition(position) {
-        // let selectElement = Math.round((position / this.countModules) * this.countModules)
-        let selectElement = Math.round(position / (100 / (this.countModules - 1)))
-        // console.log('position', position, ' = ', selectElement)
-        if (selectElement > this.countModules - 1)
-            selectElement = this.countModules - 1
+    setPosition(position){
+        let selectElement = Math.round((position - 10) / 33)
+        if (selectElement>2)
+            selectElement = 2
 
-
-        if (this.selected != selectElement) {
-            this.selected = selectElement
+        if (this.selected!=selectElement){
+            this.selected=selectElement
             this.removeActive('.scrolled')
             this.removeActive('.modules')
 
@@ -68,14 +62,14 @@ class Modules {
     }
 
 
-    removeActive(query) {
+    removeActive(query){
         const active = document.querySelector(`${query} .active`)
-        if (active)
-            active.classList.remove('active')
+            if (active)
+                active.classList.remove('active')
     }
 
 
-    static init() {
+    static init(){
         new Modules('training_program')
     }
 }

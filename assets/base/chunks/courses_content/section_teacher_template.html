@@ -1,12 +1,16 @@
-<div class="Teacher">
-    <div class="avatar">
-      <h2 class="header_2">
+<div class="container-xxl my-5 py-4">
+  <h2 class="header_2">
+    Преподаватель
+  </h2>
+  {set $tpl = json_decode($_modx->resource.teacher_migx, true)}
+  <div class="row justify-content-center teacher">
+    <!-- <div class="d-md-flex justify-content-center teacher"> -->
+    <img class="col-md-5" src={$tpl.0.img} alt="Специалист по обучению">
+    <div class="col-md-7">
+      <h2 class="header_1">
         Преподаватель
-      </h2>      
-      {set $tpl = json_decode($_modx->resource.teacher_migx, true)}
-      <img src={$tpl.0.img} alt="Специалист по обучению">
-    </div>
-    <div class="info">
+      </h2>
       {$tpl.0.describe}
     </div>
   </div>
+</div>

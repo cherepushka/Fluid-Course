@@ -12,6 +12,7 @@ $btn-padding-y: 14px;
 $btn-padding-x: 70px;
 
 $font-family-sans-serif: 'Gotham Pro';
+$font-family-sans-serif-golos: 'golos';
 
 
 $grid-breakpoints: (
@@ -22,5 +23,13 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
+  xxl: 1440px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
   xxl: 1400px
-)
+);

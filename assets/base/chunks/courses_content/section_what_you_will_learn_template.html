@@ -1,11 +1,11 @@
-<div class="what_you_will_learn">
-    <h2>
+<div class="container-xxl">
+    <h2 class="my-4">
         Чему научитесь
     </h2>
-    <div class="separate_row">
-        <img class="im1" src=[[*img_what_you_learn]]>
+    <div class="row gy-4">
+        <img class="col-xl-6" src=[[*img_what_you_learn]]>
 
-        <ol class="grid">
+        <ol class="grid col-xl-6">
             {set $rows = json_decode($_modx->resource.what_you_will_learn_migx, true)}
             {foreach $rows as $row}
             <li>
