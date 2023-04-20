@@ -12,6 +12,7 @@ import {
 import { phoneLiveValidator } from '../../../../utils/validation/LiveValidators';
 
 import FormHandler from '../../../../modules/FormHandler';
+import { includes } from 'lodash';
 
 const animationController = new class {
 
@@ -72,6 +73,7 @@ animationController.createAnimation('training-box');
 
 Coment.init()
 Modules.init()
+ModulesMore.init()
 
 document.body.onscroll = function (e) {
     const scroll = document.documentElement.scrollTop || document.body.scrollTop

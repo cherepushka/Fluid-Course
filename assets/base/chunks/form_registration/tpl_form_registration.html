@@ -16,12 +16,14 @@
 
             [[+wrapper]]
 
-            <div class="d-flex justify-content-center w-75 my-4 mt-md-4 gap-3">
+            <div class="d-flex justify-content-center align-items-center w-75 my-4 mt-md-4 gap-1">
                 <input class="checkbox_course" type="checkbox" checked id="off_all_courses" name="off_all_courses[]">
-                <label class="text_accept" for="off_all_courses">Снять все выбранные галочки в одно
-                    мгновение
+                <label for="off_all_courses" class="checkbox-other__label">
+                    <span></span>
                 </label>
+                <div class="text_accept">Снять все выбранные галочки в одно мгновение</div>
             </div>
+
         </div>
         `
         &tpl = `@INLINE
@@ -37,6 +39,29 @@
         `
         ]]
 
+        <script>
+            NodeList.prototype.forEach = Array.prototype.forEach;
+
+            document.getElementById("off_all_courses").addEventListener("click", function (e) {
+                const formBlock = document.getElementById("form");
+                const inputArr = formBlock.querySelectorAll(".checkbox_course");
+                const inputOff = document.getElementById("off_all_courses");
+                inputArr.forEach(function (el) {
+                    el.checked = false;
+                });
+            });
+        </script>
+        <script>
+            NodeList.prototype.forEach = Array.prototype.forEach;
+
+            document.querySelectorAll(".checkbox_course").forEach(el => el.addEventListener('click', function (e) {
+                const inputOff = document.getElementById("off_all_courses");
+                if (el.checked == true) {
+                    inputOff.checked = true;
+                }
+            }));
+        </script>
+
         <div class="col-1"></div>
 
         <div class="col-lg">
@@ -50,16 +75,21 @@
 
             <button type="submit" class="form-btn w-100 my-2 py-2">Отправить</button>
 
-            <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center my-3">
                 <input class="checkbox_accept" type="checkbox" id="personal_data" name="personal_data" checked required>
-                <label class="text_accept" for="personal_data">Вы даете согласие на обработку своих персональных
+                <label class="checkbox-other__label" for="personal_data"><span></span></label>
+                <div class="text_accept w-100">Вы даете согласие на обработку своих персональных
                     данных в соответствии с
                     политикой
-                    конфиденциальности</label>
+                    конфиденциальности</div>
             </div>
-            <div class="mt-1">
+
+            <div class="d-flex align-items-center">
                 <input class="checkbox_accept" type="checkbox" id="mailing" name="mailing">
-                <label class="text_accept" for="mailing">Согласие на получение SMS и Email рассылок.</label>
+                <label class="checkbox-other__label" for="mailing"><span></span></label>
+                <div class="text_accept">Согласие на получение SMS и Email
+                    рассылок.
+                </div>
             </div>
         </div>
 

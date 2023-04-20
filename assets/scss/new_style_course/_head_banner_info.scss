@@ -29,7 +29,7 @@
             font-weight: 500;
             line-height: 38px;
             letter-spacing: 0em;
-            width: 500px;
+            // width: 500px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -69,6 +69,27 @@
             }
 
         }
+
+        .up_img {
+            display: none;
+        }
+
+        .down_img {
+            width: 50%;
+            display: block;
+        }
+
+        @media screen and (max-width:992px) {
+            .up_img {
+                width: 100%;
+                display: block;
+            }
+
+            .down_img {
+                display: none;
+            }
+
+        }
     }
 }
 
@@ -102,7 +123,7 @@
             font-weight: 500;
             line-height: 38px;
             letter-spacing: 0em;
-            width: 500px;
+            // width: 500px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -142,6 +163,27 @@
             }
 
         }
+
+        .up_img {
+            display: none;
+        }
+
+        .down_img {
+            width: 50%;
+            display: block;
+        }
+
+        @media screen and (max-width:992px) {
+            .up_img {
+                width: 100%;
+                display: block;
+            }
+
+            .down_img {
+                display: none;
+            }
+
+        }
     }
 }
 
@@ -176,7 +218,7 @@
             font-weight: 500;
             line-height: 38px;
             letter-spacing: 0em;
-            width: 500px;
+            // width: 500px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -213,6 +255,27 @@
                     margin-bottom: 10px;
                     font-size: 20px;
                 }
+            }
+
+        }
+
+        .up_img {
+            display: none;
+        }
+
+        .down_img {
+            width: 50%;
+            display: block;
+        }
+
+        @media screen and (max-width:992px) {
+            .up_img {
+                width: 100%;
+                display: block;
+            }
+
+            .down_img {
+                display: none;
             }
 
         }

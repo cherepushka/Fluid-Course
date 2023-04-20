@@ -7,21 +7,24 @@
 
     <div class="container-xxl head_banner_info">
       <div class="row">
+        {if $_modx->resource.img_right_side_banner?}
+        <img class="col-lg-6 h-75 up_img" src=[[*img_right_side_banner]] alt="Графика курса">
+        {/if}
         <div class="col-lg-6 py-4">
           <h1 class="head_banner_info_title">
             [[*pagetitle]]
           </h1>
-          <p class="mb-4">
+          <div class="mb-4" style="word-wrap: break-word;">
             [[*content]]
-          </p>
-          <div class="action">
-            <a class="btn overdate color-white btn-primary custom-btn" href="#enroll-form">Записаться на курс</a>
-            <div class="data_start w-100">[[*date_start]]</div>
+          </div>
+          <div class="action row w-75">
+            <a class="btn d-flex align-items-center justify-content-center overdate color-white btn-primary custom-btn col-6" href="#enroll-form">Записаться на курс</a>
+            <div class="data_start col-6">[[*date_start]]</div>
           </div>
         </div>
 
         {if $_modx->resource.img_right_side_banner?}
-        <img class="col-lg-6 h-75" src=[[*img_right_side_banner]] alt="Графика курса">
+        <img class="col-lg-6 h-75 down_img" src=[[*img_right_side_banner]] alt="Графика курса">
         {/if}
       </div>
       <!-- <a href="#enroll-form"></a><button class="color-white btn btn-primary custom-btn">Выбрать курс</button></a> -->

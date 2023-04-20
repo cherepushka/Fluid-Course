@@ -1,9 +1,7 @@
 {set $rows = json_decode($_modx->resource.training_program_migx, true)}
 
-<!-- <div class="module_more_3"> -->
 <ol class="d-flex flex-wrap justify-content-sm-between list-unstyled gap-3 my-4 modules_more_3">
     <li class="active">
-    <!-- <li class="active col-lg-4 col-md-6 gy-2"> -->
         <div class="text">
             <strong>
                 {$rows.0.title}
@@ -20,7 +18,6 @@
     {continue}
     {/if}
     <li>
-    <!-- <li class="col-lg-4 col-md-6 gy-2"> -->
         <div class="text">
             <strong>
                 {$row.title}
@@ -32,4 +29,22 @@
     </li>
     {/foreach}
 </ol>
-<!-- </div> -->
+
+<script>
+    document.querySelectorAll('.modules_more_3 li').forEach((active, index) => active.addEventListener('click', function (e) {
+        const modules = document.querySelectorAll('.modules_more_3 li');
+        const modulesText = document.querySelectorAll('.modules .module');
+        modules.forEach(el => {
+            if (el.classList.contains('active')) {
+                el.classList.remove('active');
+                active.classList.add('active');
+            }
+        });
+        modulesText.forEach(el => {
+            if (el.classList.contains('active')) {
+                el.classList.remove('active');
+            }
+        });
+        modulesText[index].classList.add('active');
+    }));
+</script>
