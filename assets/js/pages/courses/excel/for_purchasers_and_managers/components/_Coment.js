@@ -108,7 +108,7 @@ class Coment extends HTMLElement {
         
         const interval = setInterval(() => {
             Coment.nextComent()
-        }, 10000);
+        }, 30000);
 
 
         document.querySelectorAll('.carousel-control-prev').forEach(element => {

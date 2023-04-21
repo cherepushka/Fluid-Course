@@ -313,7 +313,7 @@ var Coment = /*#__PURE__*/function (_HTMLElement) {
       customElements.define("client-coment", Coment);
       var interval = setInterval(function () {
         Coment.nextComent();
-      }, 10000);
+      }, 30000);
       document.querySelectorAll('.carousel-control-prev').forEach(function (element) {
         element.onclick = function () {
           clearInterval(interval);

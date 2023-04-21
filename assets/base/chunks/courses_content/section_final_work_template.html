@@ -72,7 +72,10 @@
 
       [[!AjaxForm?
       &snippet=`FormIt`
-      &hooks=`FormItSaveForm`
+      &hooks=`FormItSaveForm,email`
+      &emailSubject=`Тестовое сообщение`
+      &emailTo=`[[+email]]`
+      &emailTpl=`tpl_email`
       &form=`tpl_buy_form`
       &formName=`[[*pagetitle]]`
       &formFields=`name_and_surname, email, phone, promocode`
@@ -84,8 +87,8 @@
       promocode:required:regexp=^/fcng2023/i^,
       workemail:blank
       `
-      &successMessage=`Сообщение успешно отправлено`
-      &validationErrorMessage=`В форме qwesad ошибки!`
+      &successMessage=`Форма успешно отправлено`
+      &validationErrorMessage=`Неправильно заполнена форма!`
       ]]
 
 
@@ -93,7 +96,10 @@
 
       [[!AjaxForm?
       &snippet=`FormIt`
-      &hooks=`FormItSaveForm`
+      &hooks=`FormItSaveForm,email`
+      &emailSubject=`Тестовое сообщение`
+      &emailTo=`[[+email]]`
+      &emailTpl=`tpl_email`
       &form=`tpl_enroll_form`
       &formName=`[[*pagetitle]]`
       &formFields=`name_and_surname, email, phone,company, job`
@@ -107,8 +113,8 @@
       job:required:minLength=^3^,
       workemail:blank
       `
-      &successMessage=`Сообщение успешно отправлено`
-      &validationErrorMessage=`В форме qwesad ошибки!`
+      &successMessage=`Форма успешно отправлено`
+      &validationErrorMessage=`Неправильно заполнена форма!`
       ]]
 
       {/if}

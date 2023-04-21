@@ -14,7 +14,8 @@
                 </p>
             </div>
 
-            <a href="#program"><button type="button" class="color-white btn btn-primary custom-btn">Выбрать курс</button></a>
+            <a href="#program"><button type="button" class="color-white btn btn-primary custom-btn">Выбрать
+                    курс</button></a>
         </div>
 
 
@@ -63,20 +64,22 @@
         <h2 id="program" class="mb-5">
             Ближайшие программы обучения 
         </h2>
-        <div class="row mb-5 gy-4">
+        <div class="d-flex">
+            <div class="row mb-5 gy-4">
 
-            [[!pdoResources?
-            &parents=`14`
-            &tpl=`tpl_for_upcoming_program`
-            &limit=`3`
-            &includeTVs =`total_price,monthly_price,anotation,img`
-            &showHidden=`1`
-            &includeContent=`1`
-            &hideContainers = `1`
-            ]]
+                [[!pdoResources?
+                &parents=`14`
+                &tpl=`tpl_for_upcoming_program`
+                &limit=`3`
+                &includeTVs =`total_price,monthly_price,anotation,img`
+                &showHidden=`1`
+                &includeContent=`1`
+                &hideContainers = `1`
+                ]]
 
-            <div class="col-md-6 col-xxl-2 d-flex justify-content-center align-content-end flex-wrap py-4">
-                <a class="text-white  text-decoration-none p-3" href="[[~4]]">Все курсы ᐳᐳ </a>
+                <div class="d-flex justify-content-center align-content-end py-4">
+                    <a class="text-white  text-decoration-none p-3" href="[[~4]]">Все курсы ᐳᐳ </a>
+                </div>
             </div>
         </div>
     </div>
@@ -93,7 +96,8 @@
                 <h2>Видеоматериалы:</h2>
                 <ol class="boxs list-unstyled">
                     <a class="material-link" href="https://youtu.be/xHNuduNvwIM">
-                        <li class="box-itm-1 px-5 py-3 d-inline-block border w-100 rounded-4 mb-3 material-link">Мгновенное заполнение
+                        <li class="box-itm-1 px-5 py-3 d-inline-block border w-100 rounded-4 mb-3 material-link">
+                            Мгновенное заполнение
                             в MS Excel
                         </li>
                     </a>
