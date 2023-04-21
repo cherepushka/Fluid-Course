@@ -29,7 +29,7 @@
             font-weight: 500;
             line-height: 38px;
             letter-spacing: 0em;
-            // width: 500px;
+            width: 75%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -58,12 +58,12 @@
                 div {
                     color: #fff;
                     width: 100%;
-                    font-size: 16px;
+                    // font-size: 16px;
                 }
 
                 strong {
                     color: #fff;
-                    font-size: 22px;
+                    // font-size: 22px;
                     font-weight: 400;
                 }
             }
@@ -80,6 +80,7 @@
         }
 
         @media screen and (max-width:992px) {
+
             .up_img {
                 width: 100%;
                 display: block;
@@ -89,6 +90,12 @@
                 display: none;
             }
 
+        }
+
+        @media screen and (max-width: 568px) {
+            .action {
+                width: 100%;
+            }
         }
     }
 }
@@ -123,7 +130,7 @@
             font-weight: 500;
             line-height: 38px;
             letter-spacing: 0em;
-            // width: 500px;
+            width: 75%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -184,6 +191,12 @@
             }
 
         }
+
+        @media screen and (max-width: 568px) {
+            .action {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -218,7 +231,7 @@
             font-weight: 500;
             line-height: 38px;
             letter-spacing: 0em;
-            // width: 500px;
+            width: 75%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -279,6 +292,12 @@
             }
 
         }
+
+        @media screen and (max-width: 568px) {
+            .action {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -289,7 +308,7 @@
 }
 
 .btn {
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0em;

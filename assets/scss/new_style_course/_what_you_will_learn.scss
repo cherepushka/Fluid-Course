@@ -12,7 +12,6 @@
     margin: 0;
     gap: 21px;
     line-height: 19.5px;
-    font-size: 18px;
     border: 1px solid #4763D5;
 
     li {
@@ -20,8 +19,14 @@
             color: #4763D5;
             font-weight: 700;
             display: block;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
         }
     }
 
+}
+
+@media screen and (max-width:568px) {
+    .grid {
+        font-size: 14px;
+    }
 }

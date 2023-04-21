@@ -11875,6 +11875,7 @@ input:invalid:not(:placeholder-shown) {
   font-weight: 500;
   line-height: 38px;
   letter-spacing: 0em;
+  width: 75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11900,11 +11901,9 @@ input:invalid:not(:placeholder-shown) {
 .head_banner_gradient .head_banner_info .additional_info .main-module-box div {
   color: #fff;
   width: 100%;
-  font-size: 16px;
 }
 .head_banner_gradient .head_banner_info .additional_info .main-module-box strong {
   color: #fff;
-  font-size: 22px;
   font-weight: 400;
 }
 .head_banner_gradient .head_banner_info .up_img {
@@ -11921,6 +11920,11 @@ input:invalid:not(:placeholder-shown) {
   }
   .head_banner_gradient .head_banner_info .down_img {
     display: none;
+  }
+}
+@media screen and (max-width: 568px) {
+  .head_banner_gradient .head_banner_info .action {
+    width: 100%;
   }
 }
 
@@ -11951,6 +11955,7 @@ input:invalid:not(:placeholder-shown) {
   font-weight: 500;
   line-height: 38px;
   letter-spacing: 0em;
+  width: 75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11999,6 +12004,11 @@ input:invalid:not(:placeholder-shown) {
     display: none;
   }
 }
+@media screen and (max-width: 568px) {
+  .head_banner_white .head_banner_info .action {
+    width: 100%;
+  }
+}
 
 .head_banner_picture {
   background-size: cover;
@@ -12028,6 +12038,7 @@ input:invalid:not(:placeholder-shown) {
   font-weight: 500;
   line-height: 38px;
   letter-spacing: 0em;
+  width: 75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12076,6 +12087,11 @@ input:invalid:not(:placeholder-shown) {
     display: none;
   }
 }
+@media screen and (max-width: 568px) {
+  .head_banner_picture .head_banner_info .action {
+    width: 100%;
+  }
+}
 
 .custom-btn:hover {
   background: #4763d5;
@@ -12083,7 +12099,7 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .btn {
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0em;
@@ -12111,16 +12127,20 @@ input:invalid:not(:placeholder-shown) {
   margin: 0;
   gap: 21px;
   line-height: 19.5px;
-  font-size: 18px;
   border: 1px solid #4763D5;
 }
 .grid li strong {
   color: #4763D5;
   font-weight: 700;
   display: block;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
+@media screen and (max-width: 568px) {
+  .grid {
+    font-size: 14px;
+  }
+}
 .who_is_this_course_for {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -12136,14 +12156,6 @@ input:invalid:not(:placeholder-shown) {
 }
 .who_is_this_course_for ol img {
   margin-bottom: 15px;
-}
-
-.teacher {
-  gap: 3rem;
-}
-.teacher img {
-  max-width: 271px;
-  max-height: 264px;
 }
 
 .header_2 {
@@ -12354,7 +12366,6 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .carousel {
-  min-height: 250px;
   display: flex;
   width: 100%;
   padding: 40px;
@@ -12365,10 +12376,7 @@ input:invalid:not(:placeholder-shown) {
 }
 .carousel .coments .box client-coment {
   transition: all 0.8s;
-  position: absolute;
-  width: 80%;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
 }
 .carousel .coments .box client-coment h2, .carousel .coments .box client-coment .h2 {
   margin-bottom: 15px;
@@ -12383,8 +12391,7 @@ input:invalid:not(:placeholder-shown) {
   text-align: left;
 }
 .carousel .coments .box client-coment.active {
-  visibility: visible;
-  opacity: 1;
+  display: block;
   transition: all 0.4s 0.4s;
 }
 .carousel .coments .box client-coment.active h2, .carousel .coments .box client-coment.active .h2 {
@@ -12429,7 +12436,7 @@ input:invalid:not(:placeholder-shown) {
   background: #4763D5;
   border: #4763D5;
   border-radius: 11px;
-  padding: 15px 28px;
+  padding: 15px 15px;
 }
 .btn_installment:hover {
   color: #4763D5;
@@ -12631,6 +12638,7 @@ h6, .h6 {
 
 p {
   font-family: "Golos";
+  font-size: 20px;
 }
 
 li {
@@ -12643,4 +12651,48 @@ span {
 
 strong {
   font-family: "Golos";
+}
+
+@media screen and (max-width: 1140px) {
+  h1, .h1 {
+    font-family: "Golos";
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 56.94px;
+  }
+  h2, .h2 {
+    font-family: "Golos";
+    font-size: 32px;
+    line-height: 30.62px;
+  }
+  h3, .h3 {
+    font-family: "Golos";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  h5, .h5 {
+    font-family: "Golos";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+  h6, .h6 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+  p {
+    font-family: "Golos";
+    font-size: 18px;
+  }
+  li {
+    font-family: "Golos";
+  }
+  span {
+    font-family: "Golos";
+  }
+  strong {
+    font-family: "Golos";
+  }
 }
