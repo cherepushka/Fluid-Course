@@ -1,5 +1,10 @@
 <form class="ajax_form" method="post" action="/assets\base\snippets\Course.php">
 
+  <!-- Подключение библиотеки jQuery -->
+  <script src="jquery.js"></script>
+  <!-- Подключение jQuery плагина Masked Input -->
+  <script src="/assets/js/jquery.maskedinput.min.js"></script>
+
   <ul class="apply-form__success"></ul>
   <ul class="apply-form__errors"></ul>
 
@@ -7,13 +12,24 @@
 
   <input class="final_work_input" type="text" placeholder="E-mail" class="mail" name="email" required>
 
-  <input class="final_work_input" type="text" placeholder="+7 (999) 999-99-99" class="phone" name="phone" required>
+  <input class="final_work_input" id="form_phone" type="text" placeholder="+7 (999) 999-99-99" class="phone"
+    name="phone" required>
 
   <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode"
     pattern="[Ff][Cc][Nn][Gg]2023" title="Введите корректный Промокод">
 
   <!--для защиты от ботов-->
   <input type="hidden" name="workemail" value="" />
+
+  <script>
+    //Код jQuery, установливающий маску для ввода телефона элементу input
+    //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+    $(function () {
+      //2. Получить элемент, к которому необходимо добавить маску
+      $("#form_phone").mask("+7 (999) 999-99-99");
+    });
+  </script>
+
 
 
   <div class="split">

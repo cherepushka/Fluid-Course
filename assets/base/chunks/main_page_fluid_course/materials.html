@@ -23,6 +23,21 @@
                     <hr>
                     <h2>[[*pagetitle]]</h2>
                 </div>
+
+                {if $_modx->resource.id == 5}
+
+                <div class="row my-2 ">
+                    [[!pdoResources?
+                    &parents=`24`
+                    &tpl=`tpl_material`
+                    &limit=`4`
+                    &includeTVs =`img,material_link,material_action`
+                    &showHidden=`1`
+                    &includeContent,
+                    &first =`1`
+                    ]]
+                </div>
+                {else}
                 <div class="row my-2 ">
                     [[!pdoResources?
                     &parents=``
@@ -34,6 +49,7 @@
                     &first =`1`
                     ]]
                 </div>
+                {/if}
             </div>
         </div>
 </main>

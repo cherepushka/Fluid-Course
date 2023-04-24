@@ -3,11 +3,10 @@
     [[!AjaxForm?
     &snippet=`FormIt`
     &hooks=`FormItSaveForm,email`
+    &emailSubject=`От FluidCourse`
+    &emailTo=`[[+email]]`
+    &emailTpl=`tpl_email_form_pop`
     &form=`tpl_form_registration`
-    &emailTpl=`tpl_email`,
-    &emailSubject=`От [[++site_name]]`
-    &emailTo=`[[++emailsender]]`
-    &emailFrom=`mail@fluidcourse.ru`
     &formName=`Курсы`
 
     &formFields=`
@@ -93,83 +92,3 @@
 
 <!-- Промокод -->
 <!-- FCNG2023 -->
-
-<!-- <form id="form" class="container-xxl fullscreen_form pt-4 px-md-5" method="post" action="#">
-        [[+fi.validation_error_message]]
-        [[+fi.successMessage]]
-        <input type="hidden" name="nospam" id="nospam" value="">
-        <div class="row gap-1">
-            <p class="h4 fw-400">Предварительная запись на выбранный курс.</p>
-            <p class="h6 fw-400" style="color: #4763D5;">Мы заранее оповестим вас о старте курса.</p>
-        </div>
-
-        <div class="row my-3">
-
-            [[pdoMenu?
-            &parents=`14`
-            &level=`0`
-            &tplOuter = `@INLINE
-            <div class="col-lg-6 mb-lg-1 mb-md-4">
-
-                [[+wrapper]]
-
-                <div class="d-flex justify-content-center w-75 my-4 mt-md-4 gap-3">
-                    <input class="checkbox_course" type="checkbox" checked id="off_all_courses"
-                        name="off_all_courses[]">
-                    <label class="text_accept" for="off_all_courses">Снять все выбранные галочки в одно
-                        мгновение</label>
-                </div>
-            </div>
-            `
-            &tpl = `@INLINE
-            <div class="name_course">
-                <strong>[[+pagetitle]]</strong>
-                <input class="checkbox_course" type="checkbox" checked id=[[+alias]] name=[[+alias]]>
-                <label for=[[+alias]]></label>
-            </div>
-            `
-            ]]
-
-            <div class="col-1"></div>
-
-            <div class="col-lg">
-                <div class="mb-3">
-                    <input class="input_form w-100" type="text" placeholder="Имя*" name="name" required minlength="3">
-                    <span class="error">[[+fi.error.name]]</span>
-                </div>
-                <div class="mb-3">
-                    <input class="input_form w-100" type="email" placeholder="E-mail*" name="email" required>
-                    <span class="error">[[+fi.error.email]]</span>
-                </div>
-                <div class="mb-3">
-                    <input class="input_form w-100" type="text" placeholder="Компания*" name="company" required>
-                    <span class="error">[[+fi.error.company]]</span>
-                </div>
-                <div class="mb-3">
-                    <input class="input_form w-100" type="text" placeholder="Должность*" name="job" required>
-                    <span class="error">[[+fi.error.job]]</span>
-                </div>
-                <div class="mb-3">
-                    <input class="input_form w-100" type="text" placeholder="Промокод*" name="promocode" pattern="НЕФТЕГАЗ">
-                    <span class="error">[[+fi.error.promocode]]</span>
-                </div>
-
-                <button type="submit" class="form-btn w-100 my-2 py-2">Отправить</button>
-
-                <div class="mb-3">
-                    <input class="checkbox_accept" type="checkbox" id="personal_data" name="personal_data" checked
-                        required>
-                    <label class="text_accept" for="personal_data">Вы даете согласие на обработку своих персональных
-                        данных в соответствии с
-                        политикой
-                        конфиденциальности</label>
-                </div>
-                <div class="mt-1">
-                    <input class="checkbox_accept" type="checkbox" id="mailing" name="mailing">
-                    <label class="text_accept" for="mailing">Согласие на получение SMS и Email рассылок.</label>
-                </div>
-            </div>
-
-        </div>
-
-    </form> -->
