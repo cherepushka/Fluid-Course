@@ -3,15 +3,18 @@
   <ul class="apply-form__success"></ul>
   <ul class="apply-form__errors"></ul>
 
-  <input class="final_work_input" type="text" placeholder="Имя фамилия" name="name_and_surname">
+  <input class="final_work_input" type="text" placeholder="Имя фамилия" name="name_and_surname" required>
 
-  <input class="final_work_input" type="text" placeholder="E-mail" class="mail" name="email">
+  <input class="final_work_input" type="text" placeholder="E-mail" class="mail" name="email" required>
 
-  <input class="final_work_input" type="text" placeholder="+7 (999) 999-99-99" class="phone" name="phone">
+  <input class="final_work_input" type="text" placeholder="+7 (999) 999-99-99" class="phone" name="phone" required>
 
-  <input class="final_work_input" type="text" placeholder="Компания" name="company">
+  <input class="final_work_input" type="text" placeholder="Компания" name="company" required>
 
-  <input class="final_work_input" type="text" placeholder="Должность" name="job">
+  <input class="final_work_input" type="text" placeholder="Должность" name="job" required>
+
+  <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode" required
+    pattern="[Ff][Cc][Nn][Gg]2023" title="Введите корректный Промокод">
 
   <!--для защиты от ботов-->
   <input type="hidden" name="workemail" value="" />
