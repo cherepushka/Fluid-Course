@@ -22864,23 +22864,44 @@ var animationController = new ( /*#__PURE__*/function () {
     key: "select",
     value: function select(className, index) {
       document.body.style.setProperty("--".concat(className), index);
-      switch (index) {
-        case 0:
-          document.body.style.setProperty("--".concat(className, "_x"), 0);
-          document.body.style.setProperty("--".concat(className, "_y"), 0);
-          break;
-        case 1:
-          document.body.style.setProperty("--".concat(className, "_x"), 1);
-          document.body.style.setProperty("--".concat(className, "_y"), 0);
-          break;
-        case 2:
-          document.body.style.setProperty("--".concat(className, "_x"), 0);
-          document.body.style.setProperty("--".concat(className, "_y"), 1);
-          break;
-        case 3:
-          document.body.style.setProperty("--".concat(className, "_x"), 1);
-          document.body.style.setProperty("--".concat(className, "_y"), 1);
-          break;
+      if (document.documentElement.clientWidth > 768) {
+        switch (index) {
+          case 0:
+            document.body.style.setProperty("--".concat(className, "_x"), 0);
+            document.body.style.setProperty("--".concat(className, "_y"), 0);
+            break;
+          case 1:
+            document.body.style.setProperty("--".concat(className, "_x"), 1);
+            document.body.style.setProperty("--".concat(className, "_y"), 0);
+            break;
+          case 2:
+            document.body.style.setProperty("--".concat(className, "_x"), 0);
+            document.body.style.setProperty("--".concat(className, "_y"), 1);
+            break;
+          case 3:
+            document.body.style.setProperty("--".concat(className, "_x"), 1);
+            document.body.style.setProperty("--".concat(className, "_y"), 1);
+            break;
+        }
+      } else {
+        switch (index) {
+          case 0:
+            document.body.style.setProperty("--".concat(className, "_x"), 0);
+            document.body.style.setProperty("--".concat(className, "_y"), 0);
+            break;
+          case 1:
+            document.body.style.setProperty("--".concat(className, "_x"), 0);
+            document.body.style.setProperty("--".concat(className, "_y"), 1);
+            break;
+          case 2:
+            document.body.style.setProperty("--".concat(className, "_x"), 0);
+            document.body.style.setProperty("--".concat(className, "_y"), 2);
+            break;
+          case 3:
+            document.body.style.setProperty("--".concat(className, "_x"), 0);
+            document.body.style.setProperty("--".concat(className, "_y"), 3);
+            break;
+        }
       }
       document.querySelector(".".concat(className, ".active")).classList.remove('active');
       document.querySelectorAll(".".concat(className))[index].classList.add('active');

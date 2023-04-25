@@ -42,24 +42,45 @@ const animationController = new class {
 
     select(className, index) {
         document.body.style.setProperty(`--${className}`, index);
+        if (document.documentElement.clientWidth > 768) {
 
-        switch (index) {
-            case 0:
-                document.body.style.setProperty(`--${className}_x`, 0);
-                document.body.style.setProperty(`--${className}_y`, 0);
-                break;
-            case 1:
-                document.body.style.setProperty(`--${className}_x`, 1);
-                document.body.style.setProperty(`--${className}_y`, 0);
-                break;
-            case 2:
-                document.body.style.setProperty(`--${className}_x`, 0);
-                document.body.style.setProperty(`--${className}_y`, 1);
-                break;
-            case 3:
-                document.body.style.setProperty(`--${className}_x`, 1);
-                document.body.style.setProperty(`--${className}_y`, 1);
-                break;
+            switch (index) {
+                case 0:
+                    document.body.style.setProperty(`--${className}_x`, 0);
+                    document.body.style.setProperty(`--${className}_y`, 0);
+                    break;
+                case 1:
+                    document.body.style.setProperty(`--${className}_x`, 1);
+                    document.body.style.setProperty(`--${className}_y`, 0);
+                    break;
+                case 2:
+                    document.body.style.setProperty(`--${className}_x`, 0);
+                    document.body.style.setProperty(`--${className}_y`, 1);
+                    break;
+                case 3:
+                    document.body.style.setProperty(`--${className}_x`, 1);
+                    document.body.style.setProperty(`--${className}_y`, 1);
+                    break;
+            }
+        } else {
+            switch (index) {
+                case 0:
+                    document.body.style.setProperty(`--${className}_x`, 0);
+                    document.body.style.setProperty(`--${className}_y`, 0);
+                    break;
+                case 1:
+                    document.body.style.setProperty(`--${className}_x`, 0);
+                    document.body.style.setProperty(`--${className}_y`, 1);
+                    break;
+                case 2:
+                    document.body.style.setProperty(`--${className}_x`, 0);
+                    document.body.style.setProperty(`--${className}_y`, 2);
+                    break;
+                case 3:
+                    document.body.style.setProperty(`--${className}_x`, 0);
+                    document.body.style.setProperty(`--${className}_y`, 3);
+                    break;
+            }
         }
 
         document.querySelector(`.${className}.active`).classList.remove('active');
