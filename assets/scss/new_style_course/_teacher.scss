@@ -1,28 +1,24 @@
-// .teacher {
-//     gap: 3rem;
-
-//     img {
-//         max-width: 320px;
-//     }
-// }
-
+.teacher {
+    gap:3rem;
+    img {
+        max-width: 271px;
+        max-height: 264px;
+    }
+}
 .header_2 {
     display: none;
 }
-
 .header_1 {
     display: block;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px ) {
     .header_2 {
         display: block;
     }
-
     .header_1 {
         display: none;
     }
-
     .teacher {
         gap: 0px;
     }

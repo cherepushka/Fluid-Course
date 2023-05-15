@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Golos", tahoma;
-  background: #fff;
+  background: #FFFFFF;
   background-position: calc(50% + 6px) 0;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -99,7 +99,7 @@ p {
 body {
   --sliderDefaultTransition: transform .3s ease-in-out;
   --sliderActiveTransition: transform .3s ease-in-out;
-  /* background: #F5F5F5; */
+  /* background: #FFFFFF; */
 }
 
 .btn {
@@ -172,7 +172,7 @@ root {
 
 .main_view {
   /* background: linear-gradient(119.26deg, #138147 20.36%, #000000 102.13%); */
-  /* background: #F5F5F5; */
+  /* background: #FFFFFF; */
   padding: 20px 0;
   padding-bottom: 42px;
   color: black;
@@ -191,7 +191,7 @@ root {
   color: #000000;
   margin: 64px 0;
   padding: 9px 36px;
-  background: #fff;
+  background: #FFFFFF;
   font-size: 32px;
   font-weight: 500;
   line-height: 38px;
@@ -301,7 +301,7 @@ root {
 
 .acquaintance_view {
   padding-bottom: 34px;
-  /* background: #F5F5F5; */
+  /* background: #fff; */
   color: black;
 }
 
@@ -356,7 +356,7 @@ root {
 .training_program {
   padding: 90px 0;
   /* background: linear-gradient(236.1deg, #138147 41.79%, #000000 115.52%); */
-  /* background: #F5F5F5; */
+  /* background: #fff; */
   padding-bottom: 120px;
 }
 
@@ -543,7 +543,7 @@ root {
   padding-top: 51px;
   padding-bottom: 51px;
   color: #000;
-  /* background: #F5F5F5; */
+  /* background: #fff; */
 }
 
 .Final_work .Final_work_block .split {
@@ -834,7 +834,7 @@ root {
 .Certificate {
   padding: 34px 0 34px;
   /* background: linear-gradient(182.82deg, #138147 20.02%, #138147 20.02%, #000000 87.48%); */
-  /* background: #F5F5F5; */
+  /* background: #fff; */
   color: black;
 }
 
@@ -904,7 +904,7 @@ footer .box_container .line .doc {
   width: 100%;
   z-index: 100;
   /* background: #138147; */
-  /* background: #F5F5F5; */
+  /* background: #fff; */
 }
 
 .stick-header img {

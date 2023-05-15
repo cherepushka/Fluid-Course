@@ -46,15 +46,8 @@ h5 {
   line-height: 26px;
 }
 
-h6 {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14.52px;
-}
-
 p {
   font-family: 'Golos';
-  font-size: 20px;
 }
 
 li {
@@ -67,56 +60,4 @@ span {
 
 strong {
   font-family: 'Golos';
-}
-
-@media screen and (max-width:1140px) {
-  h1 {
-    font-family: 'Golos';
-    font-weight: 400;
-    font-size: 46px;
-    line-height: 56.94px;
-  }
-
-  h2 {
-    font-family: 'Golos';
-    font-size: 32px;
-    line-height: 30.62px;
-  }
-
-  h3 {
-    font-family: 'Golos';
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-  }
-
-  h5 {
-    font-family: 'Golos';
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 26px;
-  }
-
-  h6 {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14.52px;
-  }
-
-  p {
-    font-family: 'Golos';
-    font-size: 18px;
-  }
-
-  li {
-    font-family: 'Golos';
-  }
-
-  span {
-    font-family: 'Golos';
-  }
-
-  strong {
-    font-family: 'Golos';
-  }
 }

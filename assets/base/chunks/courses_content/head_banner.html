@@ -18,8 +18,7 @@
             [[*content]]
           </div>
           <div class="action row">
-            <a class="btn d-flex align-items-center justify-content-center overdate color-white btn-primary custom-btn col-6 h-100"
-              href="#enroll-form">Записаться на курс</a>
+            <a class="btn d-flex align-items-center justify-content-center overdate color-white btn-primary custom-btn col-6 h-100" href="#enroll-form">Записаться на курс</a>
             <div class="data_start col-6">[[*date_start]]</div>
           </div>
         </div>
@@ -34,6 +33,7 @@
       <div class="additional_info my-3">
 
         <ol class="row list-unstyled gy-4">
+          <!-- <div class="selected-line"></div> -->
           {set $rows = json_decode($_modx->resource.additional_info_migx, true)}
           <div class="selected_box"></div>
           {foreach $rows as $row}
@@ -46,10 +46,3 @@
       </div>
     </div>
   </div>
-
-  <script>
-    document.querySelectorAll('.main-module-box').forEach(el => el.addEventListener('onclick', () => {
-      const modules = document.querySelectorAll('.main-module-box');
-      console.log('123')
-    }));
-  </script>

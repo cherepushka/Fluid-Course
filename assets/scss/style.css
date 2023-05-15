@@ -95,7 +95,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: #FFFFFF;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -649,7 +649,7 @@ progress {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #F5F5F5;
+  background-color: #fff;
   border: 1px solid var(--bs-border-color);
   border-radius: 0.375rem;
   max-width: 100%;
@@ -2530,7 +2530,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #000;
-  background-color: #F5F5F5;
+  background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   -webkit-appearance: none;
@@ -2556,7 +2556,7 @@ progress {
 
 .form-control:focus {
   color: #000;
-  background-color: #F5F5F5;
+  background-color: #fff;
   border-color: #ffaa80;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(255, 85, 0, 0.25);
@@ -2705,7 +2705,7 @@ textarea.form-control-lg {
   font-weight: 400;
   line-height: 1.5;
   color: #000;
-  background-color: #F5F5F5;
+  background-color: #fff;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
@@ -2790,7 +2790,7 @@ textarea.form-control-lg {
   height: 1em;
   margin-top: 0.25em;
   vertical-align: top;
-  background-color: #F5F5F5;
+  background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -5255,7 +5255,7 @@ fieldset:disabled .btn {
 
 .accordion {
   --bs-accordion-color: #000;
-  --bs-accordion-bg: #F5F5F5;
+  --bs-accordion-bg: #fff;
   --bs-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
   --bs-accordion-border-color: var(--bs-border-color);
   --bs-accordion-border-width: 1px;
@@ -9637,7 +9637,7 @@ fieldset:disabled .btn {
 
 .bg-body {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #FFF;
 }
 
 .bg-transparent {
