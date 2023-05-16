@@ -9,7 +9,7 @@
  */
 
 if (!defined('MY_SERVER_DOCUMENT_ROOT')) {
-    define('MY_SERVER_DOCUMENT_ROOT', 'C:/OSPanel/domains/modx');
+    define('MY_SERVER_DOCUMENT_ROOT', rtrim(__DIR__, '\\/'));
 }
 
 $addr = $_SERVER['REMOTE_ADDR'];
