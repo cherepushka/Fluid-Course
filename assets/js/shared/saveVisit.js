@@ -18,8 +18,6 @@
         if (scrollPercents > userMaxScrollPercents) {
             userMaxScrollPercents = scrollPercents
         }
-
-        console.log(pageScrollHeight, userCurrentScroll, scrollPercents)
     })
 
     const getCookie = (cookieName) => {
