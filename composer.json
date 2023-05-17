@@ -5,5 +5,8 @@
             "Modx\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "php": ">=8.1",
+        "google/cloud-bigquery": "^1.24"
+    }
 }

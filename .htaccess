@@ -11,6 +11,8 @@
 RewriteEngine On
 RewriteBase /
 
+RedirectMatch 403 ^\/composer\..*?$
+RedirectMatch 403 ^\/vendor\/.*?$
 
 # Prevent rewrite the .well-known directory used by LetsEncrypt by rules below of this rule
 RewriteRule "^\.well-known/" - [L]
