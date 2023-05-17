@@ -68,14 +68,13 @@
       [[*header_form_reg]]
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      
-      {if $_modx->resource.change_forms_buy_or_reg?}
 
+      {if $_modx->resource.change_forms_buy_or_reg?}
 
 
       [[!AjaxForm?
       &snippet=`FormIt`
-      &hooks=`FormItSaveForm,email`
+      &hooks=`FormItSaveForm,email,teachbaseReg`
       &emailSubject=`От FluidCourse`
       &emailTo=`[[+email]]`
       &emailTpl=`tpl_email`
@@ -92,7 +91,7 @@
       phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
       company:required:minLength=^3^,
       job:required:minLength=^3^,
-      promocode:required:regexp=^/fcng2023|fl2023|к3601|HRK51|MPU61|MS51|MS360|HMS5/iu^,
+      promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,
       workemail:blank
       `
       &successMessage=`Форма успешно отправлено`
@@ -100,11 +99,12 @@
       ]]
 
 
+
       {else}
 
       [[!AjaxForm?
       &snippet=`FormIt`
-      &hooks=`FormItSaveForm,email`
+      &hooks=`FormItSaveForm,email,teachbaseReg`
       &emailSubject=`От FluidCourse`
       &emailTo=`[[+email]]`
       &emailFrom=`[[++emailsender]]`
@@ -118,7 +118,7 @@
       name_and_surname:required:minLength=^3^:maxLength=^21^,
       email:required:email,
       phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-      promocode:required:regexp=^/fcng2023|fl2023|к3601|HRK51|MPU61|MS51|MS360|HMS5/iu^,
+      promocode:regexp=^/fcng2023|[[*promocode]]/iu^,
       workemail:blank
       `
       &successMessage=`Форма успешно отправлено`
