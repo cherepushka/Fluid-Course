@@ -2,8 +2,13 @@
     "name": "user/modx",
     "autoload": {
         "psr-4": {
-            "Modx\\": "src/"
+            "Modx\\": "/"
         }
     },
-    "require": {}
+    "require-dev": {
+        "vansilich/teachbase-sdk": "^1.0"
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
 }
