@@ -2,24 +2,18 @@
   <div class="container-xxl">
     <h2 class="text-white">[[*duration_of_study]]</h2>
 
-
-<!-- {if count(json_decode($_modx->resource.training_program_migx,true)) <= 3} {$_modx->getChunk('tpl_modules_no_more')}    
-    {else}
-    {/if} -->
-
     {$_modx->getChunk('tpl_modules_more')}
-
 
       {set $rows = json_decode($_modx->resource.training_program_migx, true)}
       {set $index = 0}
       <div class="modules h-100">
         <div class="module active">
           <div class="split row">
-            <div class="title col-md-6">
+            <div class="title col-md-4">
               <h3> {$rows.0.title}</h3>
               <h4> {$rows.0.subtitle}</h4>
             </div>
-            <div class="list col-md-6">
+            <div class="list col-md-4">
               {$rows.0.describe}
             </div>
           </div>
@@ -33,11 +27,11 @@
         {/if}
         <div class="module">
           <div class="split row">
-            <div class="title col-md-6">
+            <div class="title col-md-4">
               <h3> {$row.title}</h3>
               <h4> {$row.subtitle}</h4>
             </div>
-            <div class="list col-md-6">
+            <div class="list col-md-4">
               {$row.describe}
             </div>
           </div>
@@ -52,5 +46,4 @@
         [[*describe_training_program]]
       </div>
   </div>
-  <!-- </div> -->
 </div>
