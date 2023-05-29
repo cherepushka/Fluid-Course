@@ -94,7 +94,7 @@
       promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,
       workemail:blank
       `
-      &successMessage=`Форма успешно отправлено`
+      &successMessage=`Форма успешно отправлена`
       &validationErrorMessage=`Неправильно заполнена форма!`
       ]]
 
@@ -121,32 +121,40 @@
       promocode:regexp=^/fcng2023|[[*promocode]]/iu^,
       workemail:blank
       `
-      &successMessage=`Форма успешно отправлено`
+      &successMessage=`Форма успешно отправлена`
       &validationErrorMessage=`Неправильно заполнена форма!`
       ]]
 
       {/if}
+      
+      <script type="application/javascript">
+        
+        const successBag = $('.ajax_form .apply-form__success');
+        const errorBag = $('.ajax_form .apply-form__errors');
+        
+        $(document).on('submit', '.ajax_form', function (event) {
+          successBag.html('')
+          errorBag.html('')
+          
+          successBag.removeClass('alert alert-success')
+          errorBag.removeClass('alert alert-danger')
+        })
+        
+        $(document).on('af_complete', () => {
+          
+          AjaxForm.Message.error = (message, sticky) => {
+            
+            errorBag.addClass('alert alert-danger')
+            errorBag.html('<li style="list-style: none">' + message + '</li>')
+          }
 
-
-      <script type="text/javascript">
-
-        $(function () {
-          $('form').submit(function (e) {
-            e.preventDefault();
-            var m_method = $(this).attr('method');
-            var m_action = $(this).attr('action');
-            var m_data = $(this).serialize();
-            $.ajax({
-              type: m_method,
-              url: m_action,
-              data: m_data,
-            });
-          });
-        });
-
+          AjaxForm.Message.success = (message, sticky) => {
+            
+            successBag.addClass('alert alert-success')
+            successBag.html('<li style="list-style: none">' + message + '</li>')
+          }
+        })
       </script>
-
-
 
     </div>
   </div>
