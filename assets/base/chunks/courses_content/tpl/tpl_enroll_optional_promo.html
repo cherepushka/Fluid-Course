@@ -13,10 +13,13 @@
   <input class="final_work_input" type="text" placeholder="E-mail" class="mail" name="email" required>
 
   <input class="final_work_input" id="form_phone" type="text" placeholder="+7 (999) 999-99-99" class="phone"
-         name="phone" required>
+    name="phone" required>
 
   <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode"
-         pattern="[Ff][Cc][Nn][Gg]2023|[Ff][Ll]2023|[Кк]3601|[Hh][Rr][Kk]51|[Mm][Pp][Uu]61|[Mm][Ss]51|[Mm][Ss]360|[Hh][Mm][Ss]5" title="Введите корректный Промокод">
+    title="Введите корректный Промокод">
+  <!-- <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode"
+    pattern="[Ff][Cc][Nn][Gg]2023|[Ff][Ll]2023|[Кк]3601|[Hh][Rr][Kk]51|[Mm][Pp][Uu]61|[Mm][Ss]51|[Mm][Ss]360|[Hh][Mm][Ss]5"
+    title="Введите корректный Промокод"> -->
 
   <!--для защиты от ботов-->
   <input type="hidden" name="workemail" value="" />
@@ -29,6 +32,16 @@
       $("#form_phone").mask("+7 (999) 999-99-99");
     });
   </script>
+
+  <style>
+  @media screen and (max-width:992px) {
+      .reviews .carousel-control-next {
+        right: -15%;
+      }
+      .reviews .carousel-control-prev {
+        left: -15%;
+      }
+  }</style>
 
 
 

@@ -1,0 +1,7 @@
+<!-- {set $values = $category_program | split : '||' | parent: 'category_program'}
+                       {var_dump($values)}
+                       {foreach $values as $value}
+                       {var_dump($value)}
+                       {/foreach}
+                    </div>
+                    <hr> -->

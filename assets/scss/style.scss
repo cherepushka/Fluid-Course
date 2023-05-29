@@ -202,9 +202,22 @@ button {
     color: #000;
   }
 
-  .describe-point-svedenya {
-    
+  .move-to-start li {
+    transition: all 2s ease-in-out;
   }
-  .container-point-svedenya {
-    max-width: 380px;
+  
+  .move-to-end li {
+    transition: all 2s ease-in-out;
+  }
+  
+  .move-to-start li {
+    &:hover {
+      transform: translateX(-315px);
+    }
+  }
+  
+  .move-to-end li {
+    &:hover {
+      transform: translateX(315px);
+    }
   }

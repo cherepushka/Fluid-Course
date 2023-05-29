@@ -95,18 +95,26 @@
             <div class="col-lg-6">
                 <h2>Видеоматериалы:</h2>
                 <ol class="boxs list-unstyled">
-                    <a class="material-link" href="https://youtu.be/xHNuduNvwIM">
-                        <li class="box-itm-1 px-5 py-3 d-inline-block border w-100 rounded-4 mb-3 material-link">
+                    <a class="d-flex justify-content-start material-link text-center w-100 move-to-end"
+                        href="https://youtu.be/xHNuduNvwIM">
+                        <li
+                            class="d-flex justify-content-center align-content-center p-3 border rounded-4 mb-3 material-link w-50">
                             Мгновенное заполнение
                             в MS Excel
                         </li>
                     </a>
-                    <a class="material-link" href="https://www.youtube.com/watch?v=nASjxE_H8dM">
-                        <li class="box-itm-2 px-5 py-3 d-inline-block border w-100 rounded-4 mb-3">КОМПАС-3D: 3 способа сделать выдавливание
+                    <a class="d-flex justify-content-end material-link text-center w-100 move-to-start"
+                        href="https://www.youtube.com/watch?v=nASjxE_H8dM">
+                        <li
+                            class="d-flex justify-content-center align-content-center p-3 border rounded-4 mb-3 material-link w-50">
+                            КОМПАС-3D: 3 способа сделать выдавливание
                         </li>
                     </a>
-                    <a class="material-link" href="https://www.youtube.com/watch?v=kstanpVWq3A">
-                        <li class="box-itm-3 px-5 py-3 d-inline-block border w-100 rounded-4 mb-3">КОМПАС-3D: состояния эскиза
+                    <a class="d-flex justify-content-start material-link text-center w-100 move-to-end"
+                        href="https://www.youtube.com/watch?v=kstanpVWq3A">
+                        <li
+                            class="d-flex justify-content-center align-content-center p-3 border rounded-4 mb-3 material-link w-50">
+                            КОМПАС-3D: состояния эскиза
                         </li>
                     </a>
                 </ol>
@@ -115,6 +123,34 @@
 
     </div>
 </section>
+
+<script>
+    const moveToStart = document.querySelector('.move-to-start li');
+    let moveToEnd = document.querySelectorAll('.move-to-end li');
+    window.addEventListener("scroll", () => {
+        if (isFullyVisible(moveToStart)) {
+            moveToStart.classList.add('transform-to-start');
+        } else {
+            moveToStart.classList.remove('transform-to-start');
+        }
+        moveToEnd.forEach(el => {
+            if (isFullyVisible(el)) {
+                el.classList.add('transform-to-end');
+            } else {
+                el.classList.remove('transform-to-end');
+            }
+        })
+    })
+
+    function isFullyVisible(el) {
+        var elementBoundary = el.getBoundingClientRect();
+
+        var top = elementBoundary.top;
+        var bottom = elementBoundary.bottom;
+
+        return top >= 0 && bottom <= window.innerHeight;
+    }
+</script>
 
 
 <section class="py-5 mb-5">
