@@ -93,7 +93,7 @@
     &:hover {
         color: #fff;
         background: #4763D5;
-        border: none;
+        border-color: transparent;
     }
 }
 
@@ -154,12 +154,11 @@ input.promocode {
     margin-top: 40px;
 
     .split {
-
         display: grid;
         grid-template-columns: 50% 50%;
-        gap: 50px 10px;
         gap: 21px;
         margin-top: 40px;
+        max-width: 100%;
 
         .list {
             border-bottom: 1px solid rgba(71, 99, 213, 0.3);
@@ -170,26 +169,6 @@ input.promocode {
         }
     }
 }
-
-// .faq {
-//     margin-top: 40px;
-
-//     details {
-//         border-bottom: 1px solid rgba(71, 99, 213, 0.3);
-//         transform: rotate(-0.09deg);
-
-//         summary {
-//             color: #4763D5;
-//             font-size: 22px;
-//         }
-
-//         p {
-//             font-size: 18px;
-//             line-height: 40px;
-//         }
-//     }
-
-// }
 
 @media screen and (max-width:992px) {
     .faq {
