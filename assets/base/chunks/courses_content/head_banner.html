@@ -11,15 +11,25 @@
         <img class="col-lg-6 h-75 up_img" src=[[*img_right_side_banner]] alt="Графика курса">
         {/if}
         <div class="col-lg-6 py-4">
-          <h1 class="head_banner_info_title">
+          <h1 class="head_banner_info_title" style="margin-bottom: 3rem">
             [[*pagetitle]]
           </h1>
-          <div class="mb-4" style="word-wrap: break-word;">
+          <div style="margin-bottom: 3rem">
             [[*content]]
           </div>
-          <div class="action row">
+          <div class="action row" style="margin-bottom: 3rem">
             <a class="btn d-flex align-items-center justify-content-center overdate color-white btn-primary custom-btn col-6 h-100" href="#enroll-form">Записаться на курс</a>
-            <div class="data_start col-6">[[*date_start]]</div>
+            <div class="data_start col-6">
+
+{if $_modx->resource.date_start_string?}
+{$_modx->resource.date_start_string}
+{/if}
+
+{if $_modx->resource.date_start_calendar?}
+{$_modx->resource.date_start_calendar}
+{/if}
+
+</div>
           </div>
         </div>
 
@@ -27,13 +37,11 @@
         <img class="col-lg-6 h-75 down_img" src=[[*img_right_side_banner]] alt="Графика курса">
         {/if}
       </div>
-      <!-- <a href="#enroll-form"></a><button class="color-white btn btn-primary custom-btn">Выбрать курс</button></a> -->
 
 
       <div class="additional_info my-3">
 
         <ol class="row list-unstyled gy-4">
-          <!-- <div class="selected-line"></div> -->
           {set $rows = json_decode($_modx->resource.additional_info_migx, true)}
           <div class="selected_box"></div>
           {foreach $rows as $row}

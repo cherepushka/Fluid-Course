@@ -1,16 +1,16 @@
 <main>
     <div class="container">
 
-        <div class="main py-5" style="background-size: 55%;">
+        <div class="main py-5" style="background-size: 59%;">
             <div class="row">
-                <h1 class="col-md-7 action-color text-uppercase">
+                <h1 class="col-md-7 action-color text-uppercase fw-normal">
                     Не останавливайся<br> на достигнутом!
                 </h1>
             </div>
             <img src="/images/main.png" class="img-fluid mb-5 d-md-none">
             <div class="row mb-5">
                 <p class="col-md-6">
-                    Торопитесь делать задуманное. «Позже» слишком часто превращается в «никогда».
+                    [[*slogan]]
                 </p>
             </div>
 
@@ -22,34 +22,12 @@
         <div class="row mb-5 align-items-stretch gap-4">
             <div class="col border p-5 rounded-4">
 
-                <h2>
-                    FluidCourse
-                </h2>
-                <p>
-                    На сегодняшний день наша команда состоит из высококвалифицированных специалистов,
-                    у каждого из которых имеется огромный опыт работы. Мы собрали большую базу знаний и поняли,
-                    что готовы делится опытом и навыками.
-                </p>
+[[*left_block]]
 
             </div>
             <div class="col border p-5 rounded-4">
 
-
-                <h2 class="text-info">
-                    Для вас:
-                </h2>
-
-                <ol class="list-unstyled orange-points">
-                    <li>
-                        Курсы по узким направлениям в области промышленной инженерии
-                    </li>
-                    <li>
-                        Обучение работе в САПР
-                    </li>
-                    <li>
-                        Актуальные теоретические и практические материалы 
-                    </li>
-                </ol>
+[[*right_block]]
 
             </div>
         </div>
@@ -67,15 +45,17 @@
         <div class="d-flex">
             <div class="row mb-5 gy-4">
 
-                [[!pdoResources?
-                &parents=`14`
-                &tpl=`tpl_for_upcoming_program`
-                &limit=`3`
-                &includeTVs =`total_price,monthly_price,anotation,img`
-                &showHidden=`1`
-                &includeContent=`1`
-                &hideContainers = `1`
-                ]]
+                 {'!pdoResources' | snippet : [
+                'parents' => 14,
+                'tpl' => 'tpl_main_page_program',
+                'limit' => 3,
+                'includeTVs' => 'total_price,monthly_price,anotation,img,category_program,date_start_calendar',
+                'sortby' => 'date_start_calendar',
+                'sortdir' => 'DESC',
+                'showHidden' => 1,
+                'includeContent' => 1,
+                'hideContainers' => 1,
+ ]}
 
                 <div class="d-flex justify-content-center align-content-end py-4">
                     <a class="text-white  text-decoration-none p-3" href="[[~4]]">Все курсы ᐳᐳ </a>
@@ -95,28 +75,32 @@
             <div class="col-lg-6">
                 <h2>Видеоматериалы:</h2>
                 <ol class="boxs list-unstyled">
-                    <a class="d-flex justify-content-start material-link text-center w-100 move-to-end"
-                        href="https://youtu.be/xHNuduNvwIM">
+
+              {set $videomaterials = json_decode($_modx->resource.videomaterial, true)}
+              {foreach $videomaterials as $videomaterial index=$index}
+                {if $index % 2 == 0}
+
+                   <a class="d-flex justify-content-start material-link text-center w-100 move-to-end"
+                        href={$videomaterial.link}>
                         <li
                             class="d-flex justify-content-center align-content-center p-3 border rounded-4 mb-3 material-link w-50">
-                            Мгновенное заполнение
-                            в MS Excel
+                            {$videomaterial.title}
                         </li>
                     </a>
+
+                 {else}
+
                     <a class="d-flex justify-content-end material-link text-center w-100 move-to-start"
-                        href="https://www.youtube.com/watch?v=nASjxE_H8dM">
+                        href={$videomaterial.link}>
                         <li
                             class="d-flex justify-content-center align-content-center p-3 border rounded-4 mb-3 material-link w-50">
-                            КОМПАС-3D: 3 способа сделать выдавливание
+                            {$videomaterial.title}
                         </li>
                     </a>
-                    <a class="d-flex justify-content-start material-link text-center w-100 move-to-end"
-                        href="https://www.youtube.com/watch?v=kstanpVWq3A">
-                        <li
-                            class="d-flex justify-content-center align-content-center p-3 border rounded-4 mb-3 material-link w-50">
-                            КОМПАС-3D: состояния эскиза
-                        </li>
-                    </a>
+
+                    {/if}
+                  {/foreach} 
+
                 </ol>
             </div>
         </div>
@@ -125,14 +109,17 @@
 </section>
 
 <script>
-    const moveToStart = document.querySelector('.move-to-start li');
+    let moveToStart = document.querySelectorAll('.move-to-start li');
     let moveToEnd = document.querySelectorAll('.move-to-end li');
     window.addEventListener("scroll", () => {
-        if (isFullyVisible(moveToStart)) {
-            moveToStart.classList.add('transform-to-start');
-        } else {
-            moveToStart.classList.remove('transform-to-start');
-        }
+        
+        moveToStart .forEach(el => {
+            if (isFullyVisible(el)) {
+                el.classList.add('transform-to-start');
+            } else {
+                el.classList.remove('transform-to-start');
+            }
+        })
         moveToEnd.forEach(el => {
             if (isFullyVisible(el)) {
                 el.classList.add('transform-to-end');
@@ -186,7 +173,7 @@
                             <div>
                                 <img class="d-inline-block" src="/images/social/vk_logo.svg" alt="vk logo">
                             </div>
-                            <div class="text-info mb-3">
+                            <div class="mb-3" style="color:#4763D5">
                                 ВКонтакте
                             </div>
                             <div>
@@ -201,7 +188,7 @@
                             <div>
                                 <img src="/images/social/tlg_logo.svg" alt="vk logo">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3" style="color:#4763D5">
                                 Телеграм
                             </div>
                             <div>
@@ -220,145 +207,123 @@
 </section>
 
 
-<!-- отзывы -->
+<!-- ОТЗЫВЫ-->
 <section class="py-5 mb-5">
     <div class="container">
 
-        <div class="reviews">
-            <h2 class="mb-5">
+        <div class="reviews px-3">
+            <h2 class="mb-3">
                 Отзывы
             </h2>
 
-            <div id="reviews" class="carousel slide">
+            <div id="reviews" class="carousel slide p-3 p-md-0">
                 <div class="carousel-inner">
 
+ {set $comments = json_decode($_modx->resource.comment, true)}
+{set $count = count($comments) - 1}
+              {for $i=0 to=$count}
+{if $i== 0}
                     <div class="carousel-item active">
                         <div class="d-block w-100">
                             <div class="row gy-4 align-items-stretch">
 
-
-                                <div class="col-lg-6">
-                                    <div class="border rounded-4 p-xss-2 p-md-5  h-100">
+<!-- 1й активный комментарий-->
+                                <div class="d-lg-block col-lg-6">
+                                    <div class="border rounded-4 p-5  h-100">
                                         <div class="row">
                                             <div class="col flex-grow-0">
-                                                <img src="/images/avatar.svg">
+                                                <img src={$comments.$i.avatar}>
                                             </div>
                                             <div class="col ">
                                                 <strong>
-                                                    Максим Лебедь
+                                                    {$comments.$i.name}
                                                 </strong>
                                                 <p>
-                                                    Курс «КОМПАС-3D»
+                                                    {$comments.$i.course}
                                                 </p>
                                             </div>
                                         </div>
 
                                         <p>
-
-                                            Спасибо большое за курс! Подача материала, качество видеоматериала отличная,
-                                            обучение на платформе проходит гораздо удобнее и интереснее чем в формате
-                                            вебинаров. Мне было бы еще интереснее, если на примере реального изделия, на
-                                            каждом этапе выполнять здание по построению детали, а в конце курса, как
-                                            итог собрать это всё в сборку, оформить документацию. Можно например
-                                            придумать свой какой нибудь проект и пройти так сказать путь от «Идеи до
-                                            готового изделия». У Autodesk Fusion 360 был такой проект «Нимфея»
-
+                                           {$comments.$i.comment}
                                         </p>
                                     </div>
                                 </div>
+{set $i += 1}
 
-
-                                <div class="d-xss-none d-lg-block col-lg-6">
+<!-- 2й активный комментарий-->
+<div class="d-lg-block col-lg-6">
                                     <div class="border rounded-4 p-5  h-100">
                                         <div class="row">
                                             <div class="col flex-grow-0">
-                                                <img src="/images/avatar.svg">
+                                                <img src={$comments.$i.avatar}>
                                             </div>
                                             <div class="col ">
                                                 <strong>
-                                                    Александр Бунин
+                                                    {$comments.$i.name}
                                                 </strong>
                                                 <p>
-                                                    Курс «КОМПАС-3D»
+                                                    {$comments.$i.course}
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <p class="">
-                                            Очень понравилась подача материала, особенно разъяснения преподавателем
-                                            некоторых моментов о правильном подходе к построению эскиза модели, что в
-                                            свою очередь ускоряет и упрощает работу по моделированию. Довольно
-                                            интересные тесты по курсам, некоторые приходилось проходить несколько раз. В
-                                            целом курсом очень доволен!
+                                        <p>
+                                           {$comments.$i.comment}
                                         </p>
                                     </div>
                                 </div>
+
 
 
                             </div>
                         </div>
                     </div>
-
+{else}
 
                     <div class="carousel-item">
                         <div class="d-block w-100">
                             <div class="row gy-4 align-items-stretch">
-
-
-                                <div class="col-lg-6">
-                                    <div class="border rounded-4 p-5  h-100">
-                                        <div class="row">
-                                            <div class="col flex-grow-0">
-                                                <img src="/images/avatar.svg">
-                                            </div>
-                                            <div class="col ">
-                                                <strong>
-                                                    Максим Лебедь
-                                                </strong>
-                                                <p>
-                                                    Курс «КОМПАС-3D»
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <p>
-
-                                            Спасибо большое за курс! Подача материала, качество видеоматериала отличная,
-                                            обучение на платформе проходит гораздо удобнее и интереснее чем в формате
-                                            вебинаров. Мне было бы еще интереснее, если на примере реального изделия, на
-                                            каждом этапе выполнять здание по построению детали, а в конце курса, как
-                                            итог собрать это всё в сборку, оформить документацию. Можно например
-                                            придумать свой какой нибудь проект и пройти так сказать путь от «Идеи до
-                                            готового изделия». У Autodesk Fusion 360 был такой проект «Нимфея»
-
-                                        </p>
-                                    </div>
-                                </div>
-
-
+<!-- 1й неактивный комментарий-->
                                 <div class="d-xss-none d-lg-block col-lg-6">
                                     <div class="border rounded-4 p-5  h-100">
                                         <div class="row">
                                             <div class="col flex-grow-0">
-                                                <img src="/images/avatar.svg">
+                                                <img src={$comments.$i.avatar}>
                                             </div>
                                             <div class="col ">
                                                 <strong>
-                                                    Александр Бунин
+                                                    {$comments.$i.name}
                                                 </strong>
                                                 <p>
-                                                    Курс «КОМПАС-3D»
+                                                    {$comments.$i.course}
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <p class="">
-                                            Очень понравилась подача материала, особенно разъяснения преподавателем
-                                            некоторых моментов о правильном подходе к построению эскиза модели, что в
-                                            свою очередь ускоряет и упрощает работу по моделированию. Довольно
-                                            интересные тесты по курсам, некоторые приходилось проходить несколько раз. В
-                                            целом курсом очень доволен!
-                                        </p>
+                                       {$comments.$i.comment}
+                                    </div>
+                                </div>
+{set $i += 1}
+<!-- 2й неактивный комментарий-->
+
+<div class="d-xss-none d-lg-block col-lg-6">
+                                    <div class="border rounded-4 p-5  h-100">
+                                        <div class="row">
+                                            <div class="col flex-grow-0">
+                                                <img src={$comments.$i.avatar}>
+                                            </div>
+                                            <div class="col ">
+                                                <strong>
+                                                    {$comments.$i.name}
+                                                </strong>
+                                                <p>
+                                                    {$comments.$i.course}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                       {$comments.$i.comment}
                                     </div>
                                 </div>
 
@@ -366,6 +331,10 @@
                             </div>
                         </div>
                     </div>
+
+{/if}
+
+                  {/for} 
 
 
                 </div>
