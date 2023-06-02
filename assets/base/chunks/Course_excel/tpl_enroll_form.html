@@ -1,0 +1,41 @@
+
+<form class="ajax_form" method="post" action="/assets\base\snippets\Course.php">
+
+  <ul class="apply-form__success"></ul>
+  <ul class="apply-form__errors"></ul>
+
+  <input type="text" placeholder="Имя фамилия" name="name_and_surname">
+
+  <input type="text" placeholder="E-mail" class="mail" name="email">
+
+  <input type="text" placeholder="+7 (999) 999-99-99" class="phone" name="phone">
+
+  <input type="text" placeholder="Компания" name="company">
+
+  <input type="text" placeholder="Должность" name="job">
+
+  <!--для защиты от ботов-->
+  <input type="hidden" name="workemail" value="" />
+
+
+  <div class="split">
+    <button class="btn" type="submit">
+      Записаться
+    </button>
+  </div>
+
+  <label>
+    <input type="checkbox" checked disabled>
+    Записываясь на курс, вы даете согласие на обработку своих
+    персональных данных в соответствии
+    <span>
+                                с политикой конфиденциальности.
+                            </span>
+  </label>
+
+  <label>
+    <input type="checkbox" checked disabled>
+    Получение SMS и Email рассылок.
+  </label>
+
+</form>

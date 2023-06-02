@@ -3,6 +3,9 @@
 namespace Modx\Services;
 
 global $modx;
+
+use Exception;
+
 define('MODX_CORE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/core/');
 require_once MODX_CORE_PATH . "vendor/autoload.php";
 $modx = new \MODX\Revolution\modX();
@@ -66,10 +69,11 @@ final class CourseRegisterService
 
     /**
      * Сохраняем в базу инфу о пользователе и отправляем имейл
-     * 
+     *
      * @param Course $course - курс, на который пользователь хочет записаться
      * @param string $userEmail - имейл пользователя
      * @param array $validated - дополнительные параметры из формы для записи
+     * @throws Exception
      */
     public function saveOnMainCourseSession(
         array $course,
@@ -133,7 +137,7 @@ final class CourseRegisterService
             $modx->commit();
 
             return $new_registration;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             $modx->rollBack();
             throw $e;
@@ -201,7 +205,7 @@ final class CourseRegisterService
                 ));
 
             DB::commit();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             DB::rollBack();
             throw $e;

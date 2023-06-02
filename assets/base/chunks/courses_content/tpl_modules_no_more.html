@@ -1,0 +1,40 @@
+{set $rows = json_decode($_modx->resource.training_program_migx, true)}
+
+<div class="count-modules" data-attr="{count($rows)}"></div>
+
+<div class="scrolled">
+    <div class="space">
+        <ol>
+            <li class="active">
+                <div class="text">
+                    <strong>
+                        {$rows.0.title}
+                    </strong>
+                    <div class="small">
+                        {$rows.0.subtitle}
+                    </div>
+                </div>
+
+                <img src="{$rows.0.img}" alt="- icon">
+            </li>
+            {foreach $rows as $row index=$index}
+            {if $index == 0}
+            {set $index = 1}
+            {continue}
+            {/if}
+            <li>
+                <div class="text">
+                    <strong>
+                        {$row.title}
+                    </strong>
+                    <div class="small">
+                        {$row.subtitle}
+                    </div>
+                </div>
+
+                <img src="{$row.img}" alt="- icon">
+            </li>
+            {/foreach}
+        </ol>
+    </div>
+</div>

@@ -74,7 +74,7 @@
 
 .describe_near_form {
     background: linear-gradient(180deg, #4763D5 0%, #000000 100%);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
     color: #fff;
     padding: 40px 40px;
@@ -82,7 +82,7 @@
 
 .reg_form {
     background: linear-gradient(180deg, #4763D5 0%, #000000 100%);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     padding: 40px 50px;
     color: #fff;
@@ -93,7 +93,7 @@
     &:hover {
         color: #fff;
         background: #4763D5;
-        border-color: transparent;
+        border: none;
     }
 }
 
@@ -154,11 +154,12 @@ input.promocode {
     margin-top: 40px;
 
     .split {
+
         display: grid;
         grid-template-columns: 50% 50%;
+        gap: 50px 10px;
         gap: 21px;
         margin-top: 40px;
-        max-width: 100%;
 
         .list {
             border-bottom: 1px solid rgba(71, 99, 213, 0.3);
@@ -170,6 +171,26 @@ input.promocode {
     }
 }
 
+// .faq {
+//     margin-top: 40px;
+
+//     details {
+//         border-bottom: 1px solid rgba(71, 99, 213, 0.3);
+//         transform: rotate(-0.09deg);
+
+//         summary {
+//             color: #4763D5;
+//             font-size: 22px;
+//         }
+
+//         p {
+//             font-size: 18px;
+//             line-height: 40px;
+//         }
+//     }
+
+// }
+
 @media screen and (max-width:992px) {
     .faq {
 
@@ -177,4 +198,8 @@ input.promocode {
             grid-template-columns: 100%;
         }
     }
+}
+
+.selected_stage {
+    color: #FF4800;
 }

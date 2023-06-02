@@ -1,4 +1,4 @@
-    /*
+/*
  |--------------------------------------------------------------------------
  | Mix Asset Management
  |--------------------------------------------------------------------------
@@ -14,8 +14,6 @@ const fs = require('fs');
 const path = require('path');
 
 mix.disableSuccessNotifications();
-
-// mix.js('assets/js/app.js','public/js/app.js');
 
 mix.setPublicPath('./');
 
@@ -33,8 +31,8 @@ function buildJs(dir, dest) {
 }
 
 function findFiles(dir) {
-    var results = [];
-    var list = fs.readdirSync(dir);
+    let results = [];
+    const list = fs.readdirSync(dir);
 
     list.forEach(function(file) {
         file = dir + '/' + file;
@@ -52,4 +50,4 @@ function findFiles(dir) {
 }
 
 
-mix.sass('assets/scss/new_fluid_style.scss', 'assets/css/new_fluid_style.css');
+// mix.sass('assets/scss/new_fluid_style.scss', 'assets/css/new_fluid_style.css');

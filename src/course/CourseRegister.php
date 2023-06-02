@@ -6,6 +6,7 @@ use Modx\Payments\Prodamus\Prodamus;
 use Modx\Services\PaymentService;
 use Modx\Enums\PaymentMethod;
 use Modx\Services\CourseRegisterService;
+use PDO;
 
 class CourseRegister
 {

@@ -3,37 +3,42 @@
         class="cource-card h-100 p-4 bg-white rounded-4 text-black  d-flex flex-column justify-content-between gap-4 border border-dark overflow-hidden position-relative">
         <div class="flex-grow-1 ">
             <small class="d-block text-muted mb-3">
-                [[+tv.anotation]]
+
+{$_pls['tv.category_program']} {$_pls['tv.anotation']}
             </small>
             <h2 class="fs-5 fw-bold">
-                [[+pagetitle]]
+                {$pagetitle}
             </h2>
         </div>
 
         <div class="row">
-            <div class="col-6">
-                <strong class="fs-5">
-                    [[+tv.total_price]]
-                </strong>
-                <div>
-                    [[+tv.monthly_price]]
-                </div>
-            </div>
             <div class="col text-end">
                 <img src=[[+tv.img]]>
+            </div>
+            <div class="col-6">
+
+    {if $_pls['tv.total_price']?}
+    <strong class="fs-5">
+        {$_pls['tv.total_price']} ₽
+    </strong>
+    {/if}
+
+{if $_pls['tv.monthly_price']?}
+    <div>
+        от {$_pls['tv.monthly_price']} ₽/мес
+    </div>
+    {/if}
             </div>
         </div>
 
         <div class="row gy-3">
             <a href="[[+alias]]" class="text-decoration-none">
                 <button type="button"
-                    class="d-flex align-items-center justify-content-center w-100 text-black py-1 btn_describe_courses">Подробнее</button>
-                <!-- <button type="button" class="btn btn-primary custom-btn">Подробнее</button> -->
+                    class="d-flex align-items-center justify-content-center w-100 text-black py-1 btn btn-outline-dark">Подробнее</button>
             </a>
             <a href="[[+alias]]#enroll-form" class="text-decoration-none">
                 <button type="button"
-                    class="d-flex align-items-center justify-content-center w-100 text-white py-1 btn_enroll_courses">Записаться</button>
-                <!-- <button type="button" class="btn btn-primary custom-btn">Записаться</button> -->
+                    class="d-flex align-items-center justify-content-center w-100 text-white py-1 btn btn-secondary">Записаться</button>
             </a>
         </div>
 
