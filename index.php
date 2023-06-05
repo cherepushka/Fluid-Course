@@ -8,6 +8,8 @@
  * files found in the top-level directory of this distribution.
  */
 
+error_reporting(E_ERROR|E_WARNING);
+
 if (!defined('MY_SERVER_DOCUMENT_ROOT')) {
     define('MY_SERVER_DOCUMENT_ROOT', rtrim(__DIR__, '\\/'));
 }
