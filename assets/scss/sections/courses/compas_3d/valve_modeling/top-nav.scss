@@ -8,7 +8,7 @@ $nav-height: 65px;
     height: $nav-height;
     width: 100%;
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.1);
-    background-color: $default-layout-color;
+    // background-color: $default-layout-color;
     display: flex;
     align-items: center;
 }
@@ -41,11 +41,11 @@ $nav-height: 65px;
         padding: 9px 45px;
         border-radius: 9px;
         border: none;
-        background-color: $default-active-color-peaky;
+        // background-color: $default-active-color-peaky;
         color: #ffffff;
 
         &:hover{
-            background-color: $default-active-color;
+            // background-color: $default-active-color;
         }
     }
 

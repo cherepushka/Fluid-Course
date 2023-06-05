@@ -15,8 +15,6 @@
       Как проходит обучение
     </h2>
     <ol class="row list-unstyled my-4">
-      <!-- <div class="selected-line"></div> -->
-
       {set $rows = json_decode($_modx->resource.final_work_template_migx, true)}
       {set $i = 1}
       {foreach $rows as $row}
@@ -28,6 +26,28 @@
       {/foreach}
     </ol>
   </div>
+  <style>
+    .selected_stage {
+      color: #FF4800;
+    }
+  </style>
+  <!-- <script>
+    let selectedStages = document.querySelectorAll('.final_work_stage h1');
+    console.log(selectedStages[0])
+    selectedStages[0].classList.add('selected_stage')
+    setTimeout(()=>{
+      selectedStages[0].classList.remove('selected_stage')
+      selectedStages[1].classList.add('selected_stage')
+    },2000)
+    setTimeout(()=>{
+      selectedStages[1].classList.remove('selected_stage')
+      selectedStages[2].classList.add('selected_stage')
+    },1000)
+    setTimeout(()=>{
+      selectedStages[2].classList.remove('selected_stage')
+      selectedStages[3].classList.add('selected_stage')
+    },1000)
+  </script> -->
 
 
   <!-- ОТЗЫВЫ -->
@@ -74,7 +94,7 @@
 
       [[!AjaxForm?
       &snippet=`FormIt`
-      &hooks=`FormItSaveForm,email,teachbaseReg`
+      &hooks=`FormItSaveForm,email`
       &emailSubject=`От FluidCourse`
       &emailTo=`[[+email]]`
       &emailTpl=`tpl_email`
@@ -151,6 +171,34 @@
     </div>
   </div>
 
+  <script type="application/javascript">
+
+    const successBag = $('.ajax_form .apply-form__success');
+    const errorBag = $('.ajax_form .apply-form__errors');
+
+    $(document).on('submit', '.ajax_form', function (event) {
+      successBag.html('')
+      errorBag.html('')
+
+      successBag.removeClass('alert alert-success')
+      errorBag.removeClass('alert alert-danger')
+    })
+
+    $(document).on('af_complete', () => {
+
+      AjaxForm.Message.error = (message, sticky) => {
+
+        errorBag.addClass('alert alert-danger')
+        errorBag.html('<li style="list-style: none">' + message + '</li>')
+      }
+
+      AjaxForm.Message.success = (message, sticky) => {
+
+        successBag.addClass('alert alert-success')
+        successBag.html('<li style="list-style: none">' + message + '</li>')
+      }
+    })
+  </script>
 
   <!-- FAQ -->
   <div class="faq py-4">
