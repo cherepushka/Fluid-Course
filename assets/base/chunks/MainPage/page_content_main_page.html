@@ -22,12 +22,12 @@
         <div class="row mb-5 align-items-stretch gap-4">
             <div class="col border p-5 rounded-4">
 
-[[*left_block]]
+                [[*left_block]]
 
             </div>
             <div class="col border p-5 rounded-4">
 
-[[*right_block]]
+                [[*right_block]]
 
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="d-flex">
             <div class="row mb-5 gy-4">
 
-                 {'!pdoResources' | snippet : [
+                {'!pdoResources' | snippet : [
                 'parents' => 14,
                 'tpl' => 'tpl_main_page_program',
                 'limit' => 3,
@@ -55,7 +55,7 @@
                 'showHidden' => 1,
                 'includeContent' => 1,
                 'hideContainers' => 1,
- ]}
+                ]}
 
                 <div class="d-flex justify-content-center align-content-end py-4">
                     <a class="text-white  text-decoration-none p-3" href="[[~4]]">Все курсы ᐳᐳ </a>
@@ -76,11 +76,11 @@
                 <h2>Видеоматериалы:</h2>
                 <ol class="boxs list-unstyled">
 
-              {set $videomaterials = json_decode($_modx->resource.videomaterial, true)}
-              {foreach $videomaterials as $videomaterial index=$index}
-                {if $index % 2 == 0}
+                    {set $videomaterials = json_decode($_modx->resource.videomaterial, true)}
+                    {foreach $videomaterials as $videomaterial index=$index}
+                    {if $index % 2 == 0}
 
-                   <a class="d-flex justify-content-start material-link text-center w-100 move-to-end"
+                    <a class="d-flex justify-content-start material-link text-center w-100 move-to-end"
                         href={$videomaterial.link}>
                         <li
                             class="d-flex justify-content-center align-content-center p-3 border rounded-4 mb-3 material-link w-50">
@@ -88,7 +88,7 @@
                         </li>
                     </a>
 
-                 {else}
+                    {else}
 
                     <a class="d-flex justify-content-end material-link text-center w-100 move-to-start"
                         href={$videomaterial.link}>
@@ -99,7 +99,7 @@
                     </a>
 
                     {/if}
-                  {/foreach} 
+                    {/foreach}
 
                 </ol>
             </div>
@@ -111,9 +111,10 @@
 <script>
     let moveToStart = document.querySelectorAll('.move-to-start li');
     let moveToEnd = document.querySelectorAll('.move-to-end li');
+    console.log(moveToStart)
     window.addEventListener("scroll", () => {
-        
-        moveToStart .forEach(el => {
+
+        moveToStart.forEach(el => {
             if (isFullyVisible(el)) {
                 el.classList.add('transform-to-start');
             } else {
@@ -206,182 +207,8 @@
     </div>
 </section>
 
-
 <!-- ОТЗЫВЫ-->
 <section class="py-5 mb-5">
-    <div class="container">
-
-        <div class="reviews px-3">
-            <h2 class="mb-3">
-                Отзывы
-            </h2>
-
-            <div id="reviews" class="carousel slide p-3 p-md-0">
-                <div class="carousel-inner">
-
-                    <div class="carousel-item active">
-                        <div class="d-block w-100">
-                            <div class="row gy-4 align-items-stretch">
-
-                                <div class="d-xss-none d-lg-block col-lg-6">
-                                    <div class="border rounded-4 p-5  h-100">
-                                        <div class="row">
-                                            <div class="col flex-grow-0">
-                                                <img src="/images/avatar.svg">
-                                            </div>
-                                            <div class="col ">
-                                                <strong>
-                                                    111
-                                                </strong>
-                                                <p>
-                                                    111
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <p>
-
-                                            111 Спасибо большое за курс! Подача материала, качество видеоматериала
-                                            отличная,
-                                            обучение на платформе проходит гораздо удобнее и интереснее чем в формате
-                                            вебинаров. Мне было бы еще интереснее, если на примере реального изделия, на
-                                            каждом этапе выполнять здание по построению детали, а в конце курса, как
-                                            итог собрать это всё в сборку, оформить документацию. Можно например
-                                            придумать свой какой нибудь проект и пройти так сказать путь от «Идеи до
-                                            готового изделия». У Autodesk Fusion 360 был такой проект «Нимфея»
-
-                                        </p>
-                                    </div>
-                                </div>
-
-
-                                <div class="d-xss-none d-lg-block col-lg-6">
-                                    <div class="border rounded-4 p-5  h-100">
-                                        <div class="row">
-                                            <div class="col flex-grow-0">
-                                                <img src="/images/avatar.svg">
-                                            </div>
-                                            <div class="col ">
-                                                <strong>
-                                                    222
-                                                </strong>
-                                                <p>
-                                                    222
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <p class="">
-                                            222 Очень понравилась подача материала, особенно разъяснения преподавателем
-                                            некоторых моментов о правильном подходе к построению эскиза модели, что в
-                                            свою очередь ускоряет и упрощает работу по моделированию. Довольно
-                                            интересные тесты по курсам, некоторые приходилось проходить несколько раз. В
-                                            целом курсом очень доволен!
-                                        </p>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="carousel-item">
-                        <div class="d-block w-100">
-                            <div class="row gy-4 align-items-stretch">
-
-
-                                <div class="d-xss-none d-lg-block col-lg-6">
-                                    <div class="border rounded-4 p-5  h-100">
-                                        <div class="row">
-                                            <div class="col flex-grow-0">
-                                                <img src="/images/avatar.svg">
-                                            </div>
-                                            <div class="col ">
-                                                <strong>
-                                                    333
-                                                </strong>
-                                                <p>
-                                                    333
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <p>
-
-                                            333 Спасибо большое за курс! Подача материала, качество видеоматериала
-                                            отличная,
-                                            обучение на платформе проходит гораздо удобнее и интереснее чем в формате
-                                            вебинаров. Мне было бы еще интереснее, если на примере реального изделия, на
-                                            каждом этапе выполнять здание по построению детали, а в конце курса, как
-                                            итог собрать это всё в сборку, оформить документацию. Можно например
-                                            придумать свой какой нибудь проект и пройти так сказать путь от «Идеи до
-                                            готового изделия». У Autodesk Fusion 360 был такой проект «Нимфея»
-
-                                        </p>
-                                    </div>
-                                </div>
-
-
-                                <div class="d-xss-none d-lg-block col-lg-6">
-                                    <div class="border rounded-4 p-5  h-100">
-                                        <div class="row">
-                                            <div class="col flex-grow-0">
-                                                <img src="/images/avatar.svg">
-                                            </div>
-                                            <div class="col ">
-                                                <strong>
-                                                    444
-                                                </strong>
-                                                <p>
-                                                    444
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <p class="">
-                                            444 Очень понравилась подача материала, особенно разъяснения преподавателем
-                                            некоторых моментов о правильном подходе к построению эскиза модели, что в
-                                            свою очередь ускоряет и упрощает работу по моделированию. Довольно
-                                            интересные тесты по курсам, некоторые приходилось проходить несколько раз. В
-                                            целом курсом очень доволен!
-                                        </p>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#reviews" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#reviews" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-
-
-<!-- отзывы -->
-<!-- <section class="py-5 mb-5">
     <div class="container">
 
         <div class="reviews">
@@ -392,126 +219,76 @@
             <div id="reviews" class="carousel slide p-3 p-md-0">
                 <div class="carousel-inner">
 
- {set $comments = json_decode($_modx->resource.comment, true)}
-{set $count = count($comments) - 1}
-              {for $i=0 to=$count}
-{if $i== 0}
+                    {set $comments = json_decode($_modx->resource.comment, true)}
+                    {set $i = 0}
+                    {foreach $comments as $comment}
+                    {if $i == 0}
                     <div class="carousel-item active">
                         <div class="d-block w-100">
                             <div class="row gy-4 align-items-stretch">
 
-<!-- 1й активный комментарий-->
-                                <div class="d-lg-block col-lg-6">
-                                    <div class="border rounded-4 p-5  h-100">
+                                <!-- 1й активный комментарий -->
+                                <div class="">
+                                    <div class="border rounded-4 p-lg-4 py-1 px-2 overflow-auto"
+                                        style="height: 430px;">
                                         <div class="row">
                                             <div class="col flex-grow-0">
-                                                <img src={$comments.$i.avatar}>
+                                                <img src={$comment.avatar}>
                                             </div>
                                             <div class="col ">
                                                 <strong>
-                                                    {$comments.$i.name}
+                                                    {$comment.name}
                                                 </strong>
                                                 <p>
-                                                    {$comments.$i.course}
+                                                    {$comment.course}
                                                 </p>
                                             </div>
                                         </div>
 
                                         <p>
-                                           {$comments.$i.comment}
+                                            {$comment.comment}
                                         </p>
                                     </div>
                                 </div>
-{set $i += 1}
-
-<!-- 2й активный комментарий-->
-<div class="d-lg-block col-lg-6">
-                                    <div class="border rounded-4 p-5  h-100">
-                                        <div class="row">
-                                            <div class="col flex-grow-0">
-                                                <img src={$comments.$i.avatar}>
-                                            </div>
-                                            <div class="col ">
-                                                <strong>
-                                                    {$comments.$i.name}
-                                                </strong>
-                                                <p>
-                                                    {$comments.$i.course}
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <p>
-                                           {$comments.$i.comment}
-                                        </p>
-                                    </div>
-                                </div>
-
-
+                                {set $i += 1}
 
                             </div>
                         </div>
                     </div>
-{else}
+                    {else}
 
                     <div class="carousel-item">
                         <div class="d-block w-100">
                             <div class="row gy-4 align-items-stretch">
-<!-- 1й неактивный комментарий-->
-                                <div class="d-xss-none d-lg-block col-lg-6">
-                                    <div class="border rounded-4 p-5  h-100">
+                                <!-- 1й неактивный комментарий-->
+                                <div class="">
+                                    <div class="border rounded-4 p-lg-4 py-1 px-2 overflow-auto"
+                                        style="height: 430px;">
                                         <div class="row">
                                             <div class="col flex-grow-0">
-                                                <img src={$comments.$i.avatar}>
+                                                <img src={$comment.avatar}>
                                             </div>
                                             <div class="col ">
                                                 <strong>
-                                                    {$comments.$i.name}
+                                                    {$comment.name}
                                                 </strong>
                                                 <p>
-                                                    {$comments.$i.course}
+                                                    {$comment.course}
                                                 </p>
                                             </div>
                                         </div>
 
-                                       {$comments.$i.comment}
+                                        {$comment.comment}
                                     </div>
                                 </div>
-{set $i += 1}
-<!-- 2й неактивный комментарий-->
-
-<div class="d-xss-none d-lg-block col-lg-6">
-                                    <div class="border rounded-4 p-5  h-100">
-                                        <div class="row">
-                                            <div class="col flex-grow-0">
-                                                <img src={$comments.$i.avatar}>
-                                            </div>
-                                            <div class="col ">
-                                                <strong>
-                                                    {$comments.$i.name}
-                                                </strong>
-                                                <p>
-                                                    {$comments.$i.course}
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                       {$comments.$i.comment}
-                                    </div>
-                                </div>
-
-
                             </div>
                         </div>
                     </div>
 
-{/if}
+                    {/if}
 
-                  {/for} 
-
-
+                    {/foreach}
                 </div>
-
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#reviews" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

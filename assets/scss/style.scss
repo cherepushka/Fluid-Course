@@ -1,6 +1,9 @@
 @import 'varibles';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'fonts/font';
+body {
+    background-color: #fff;
+}
 
 .btn-secondary {
     --bs-btn-color: #fff;
@@ -78,6 +81,12 @@ h1 {
     line-height: 133.7%;
 
     letter-spacing: -0.005em;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #000;
 }
 
 
@@ -222,37 +231,19 @@ button {
     }
 }
 
-.svedenya-title {
-    font-weight: 500;
-    font-size: 60px;
-}
-
-.title-point-svedenya {
-    border-top: 1px solid #000;
-    font-weight: 400;
-    font-size: 20px;
-    transition: all .2s ease;
-    cursor: pointer;
-    padding: 15px 0 45px;
-    color: #000;
-}
 
 .move-to-start li {
-    transition: all 2s ease-in-out;
+    transition: transform 2s ease-in-out;
 }
 
 .move-to-end li {
-    transition: all 2s ease-in-out;
+    transition: transform 2s ease-in-out;
 }
 
-.move-to-start li {
-    &:hover {
-        transform: translateX(-315px);
-    }
+.transform-to-start {
+    transform: translateX(-100%);
 }
 
-.move-to-end li {
-    &:hover {
-        transform: translateX(315px);
-    }
+.transform-to-end {
+    transform: translateX(100%);
 }
