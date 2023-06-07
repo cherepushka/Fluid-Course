@@ -16,8 +16,8 @@
                     </div>
                     `
                     &tpl = `@INLINE <a class="text-decoration-none  col-lg-3 col-md-6 col gy-2" href="[[+link]]">
-                        <button class="btn btn-primary" >
-                            [[+pagetitle]]</button >
+                        <button class="btn btn-primary">
+                            [[+pagetitle]]</button>
                     </a>`
                     ]]
                     <hr>
@@ -32,9 +32,7 @@
                     &tpl=`tpl_material`
                     &limit=`4`
                     &includeTVs =`img,material_link,material_action`
-                    &showHidden=`1`
-                    &includeContent,
-                    &first =`1`
+                    &hideContainers=`1`
                     ]]
                 </div>
                 {else}
@@ -44,9 +42,7 @@
                     &tpl=`tpl_material`
                     &limit=`0`
                     &includeTVs =`img,material_link,material_action`
-                    &showHidden=`1`
-                    &includeContent,
-                    &first =`1`
+                    &hideContainers=`1`
                     ]]
                 </div>
                 {/if}

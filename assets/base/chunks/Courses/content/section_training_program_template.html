@@ -5,46 +5,50 @@
     {$_modx->getChunk('tpl_modules_more')}
 
 
-      {set $rows = json_decode($_modx->resource.training_program_migx, true)}
-      {set $index = 0}
-      <div class="modules h-100">
-        <div class="module active">
-          <div class="split row">
-            <div class="title col-md-6">
-              <h3> {$rows.0.title}</h3>
-              <h4> {$rows.0.subtitle}</h4>
-            </div>
-            <div class="list col-md-6">
-              {$rows.0.describe}
-            </div>
+    {set $rows = json_decode($_modx->resource.modules, true)}
+    {foreach $rows as $row index=$index}
+    {if $index == 0}
+    <div class="modules h-100">
+      <div class="module active">
+        <div class="split row">
+          <div class="title col-md-5">
+            <h3> {$row.title}</h3>
+            <h4> {$row.subtitle}</h4>
           </div>
+          {set $items = $row.list_points | fromJSON}
+          <ol class="list col-md-7 px-4">
+            {foreach $items as $item}
+            <li>{$item.point}</li>
+            {/foreach}
+          </ol>
         </div>
-
-        {foreach $rows as $row index=$index}
-
-        {if $index == 0}
-        {set $index = 1}
-        {continue}
-        {/if}
-        <div class="module">
-          <div class="split row">
-            <div class="title col-md-6">
-              <h3> {$row.title}</h3>
-              <h4> {$row.subtitle}</h4>
-            </div>
-            <div class="list col-md-6">
-              {$row.describe}
-            </div>
+      </div>
+      {set $index = 1}
+      {else}
+      <div class="module">
+        <div class="split row">
+          <div class="title col-md-5">
+            <h3> {$row.title}</h3>
+            <h4> {$row.subtitle}</h4>
           </div>
+          {set $items = $row.list_points | fromJSON}
+          <ol class="list col-md-7 px-4">
+            {foreach $items as $item}
+            <li>{$item.point}</li>
+            {/foreach}
+          </ol>
         </div>
-        {/foreach}
       </div>
+      {/if}
+      {/foreach}
+    </div>
 
 
-      <div class="footnote">
-        [[*duration_of_study]]
-        <br><br>
-        [[*describe_training_program]]
-      </div>
+    <div class="footnote">
+      [[*duration_of_study]]
+      <br><br>
+      [[*describe_training_program]]
+    </div>
+
   </div>
 </div>

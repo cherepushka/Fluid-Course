@@ -1,21 +1,20 @@
-{set $rows = json_decode($_modx->resource.training_program_migx, true)}
+{set $rows = json_decode($_modx->resource.modules, true)}
+{foreach $rows as $row index=$index}
+{if $index == 0}
 
 <ol class="d-flex flex-wrap justify-content-sm-between list-unstyled gap-3 my-4 modules_more_3">
     <li class="active">
         <div class="text">
             <strong>
-                {$rows.0.title}
+                {$row.title}
             </strong>
             <p>
-                {$rows.0.subtitle}
+                {$row.subtitle}
             </p>
         </div>
     </li>
-    {foreach $rows as $row index=$index}
-    {if $index == 0}
     {set $index = 1}
-    {continue}
-    {/if}
+    {else}
     <li>
         <div class="text">
             <strong>
@@ -26,6 +25,7 @@
             </p>
         </div>
     </li>
+    {/if}
     {/foreach}
 </ol>
 

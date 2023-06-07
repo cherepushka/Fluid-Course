@@ -45,16 +45,19 @@
     </button>
   </div>
 
-  <label>
-    <input type="checkbox" checked disabled>
-    Записываясь на курс, вы даете согласие на обработку своих
-    персональных данных в соответствии
-    <span>с политикой конфиденциальности.</span>
-  </label>
+  <div class="d-flex justify-content-between align-items-center my-3">
+    <input class="checkbox_accept" type="checkbox" id="personal_data" name="personal_data[]" checked required disabled>
+    <label class="checkbox-other__label" for="personal_data"><span></span></label>
+    <div class="text_accept w-100">Записываясь на курс, вы даете согласие на обработку своих
+      персональных данных в соответствии
+      <span>с политикой конфиденциальности.
+    </div>
+  </div>
 
-  <label>
-    <input type="checkbox" checked disabled>
-    Получение SMS и Email рассылок.
-  </label>
+  <div class="d-flex align-items-center">
+    <input class="checkbox_accept" type="checkbox" id="mailing" name="mailing[]">
+    <label class="checkbox-other__label" for="mailing"><span></span></label>
+    <div class="text_accept">Получение SMS и Email рассылок.</div>
+  </div>
 
 </form>

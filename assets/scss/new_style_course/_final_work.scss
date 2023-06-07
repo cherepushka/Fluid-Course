@@ -11,6 +11,7 @@
     margin-bottom: 40px;
 }
 
+
 .carousel {
     min-height: 250px;
     display: flex;
@@ -68,7 +69,12 @@
                 }
             }
         }
-
+    }
+}
+@media (max-width:992px) {
+    .carousel {
+        padding: 10px;
+        margin: 0 10px;
     }
 }
 
@@ -90,6 +96,7 @@
 
 .btn_buy {
     padding: 15px 63px;
+
     &:hover {
         color: #fff;
         background: #4763D5;

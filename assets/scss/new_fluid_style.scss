@@ -10,6 +10,9 @@
 @import './fonts/Golos.scss';
 @import 'fonts/font';
 
+body {
+  background: #fff;
+}
 
 .fw-400 {
   font-weight: 400;
@@ -111,4 +114,8 @@ strong {
   strong {
     font-family: "Golos";
   }
+}
+
+.nav nav .blue-link {
+  color:#4763D5;
 }
