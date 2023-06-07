@@ -1,6 +1,9 @@
 @import 'varibles';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'fonts/font';
+body {
+    background-color: #fff;
+}
 
 body {
     background-color: #fff;
@@ -82,6 +85,12 @@ h1 {
     line-height: 133.7%;
 
     letter-spacing: -0.005em;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #000;
 }
 
 a {
