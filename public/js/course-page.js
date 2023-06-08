@@ -138,100 +138,6 @@ module.exports = Coment;
 
 /***/ }),
 
-/***/ "./assets/js/pages/courses/components/_Modules.js":
-/*!********************************************************!*\
-  !*** ./assets/js/pages/courses/components/_Modules.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-var Modules = /*#__PURE__*/function () {
-  function Modules(className) {
-    var _this = this;
-    _classCallCheck(this, Modules);
-    _defineProperty(this, "sliderMOVED", false);
-    _defineProperty(this, "selected", 0);
-    // this.spaceCreate(document.querySelector(`.${className} .space`))
-    this.sliderCreate(document.querySelector(".".concat(className, " .scrolled ol")));
-    this.railsCreate(document.querySelector(".".concat(className, " .scrolled")));
-    document.querySelectorAll('.scrolled li').forEach(function (element, index) {
-      element.onclick = function () {
-        return _this.selectElement(index);
-      };
-    });
-  }
-  _createClass(Modules, [{
-    key: "selectElement",
-    value: function selectElement(index) {
-      this.rails.scrollTo(this.rails.scrollWidth / 3 * index, 0);
-    }
-  }, {
-    key: "spaceCreate",
-    value: function spaceCreate(space) {
-      this.space = space;
-    }
-  }, {
-    key: "sliderCreate",
-    value: function sliderCreate(slider) {
-      this.slider = slider;
-    }
-  }, {
-    key: "railsCreate",
-    value: function railsCreate(component) {
-      var _this2 = this;
-      this.rails = component;
-      this.rails.addEventListener('scroll', function () {
-        var position = _this2.rails.scrollLeft / (_this2.rails.scrollWidth - _this2.rails.clientWidth) * 100;
-        _this2.setScroll(position);
-      });
-    }
-  }, {
-    key: "setScroll",
-    value: function setScroll(position) {
-      this.setPosition(position);
-    }
-  }, {
-    key: "setTransition",
-    value: function setTransition(status) {
-      if (status) document.body.style.setProperty('--sliderActiveTransition', 'all .3s ease-in-out');else document.body.style.setProperty('--sliderActiveTransition', 'none');
-    }
-  }, {
-    key: "setPosition",
-    value: function setPosition(position) {
-      var selectElement = Math.round((position - 10) / 33);
-      if (selectElement > 2) selectElement = 2;
-      if (this.selected != selectElement) {
-        this.selected = selectElement;
-        this.removeActive('.scrolled');
-        this.removeActive('.modules');
-        document.querySelectorAll('.scrolled li')[this.selected].classList.add('active');
-        document.querySelectorAll('.modules .module')[this.selected].classList.add('active');
-      }
-    }
-  }, {
-    key: "removeActive",
-    value: function removeActive(query) {
-      var active = document.querySelector("".concat(query, " .active"));
-      if (active) active.classList.remove('active');
-    }
-  }], [{
-    key: "init",
-    value: function init() {
-      new Modules('training_program');
-    }
-  }]);
-  return Modules;
-}();
-module.exports = Modules;
-
-/***/ }),
-
 /***/ "./assets/js/pages/courses/course-page.js":
 /*!************************************************!*\
   !*** ./assets/js/pages/courses/course-page.js ***!
@@ -245,7 +151,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var Coment = __webpack_require__(/*! ./components/_Coment.js */ "./assets/js/pages/courses/components/_Coment.js");
-var Modules = __webpack_require__(/*! ./components/_Modules.js */ "./assets/js/pages/courses/components/_Modules.js");
 
 // Часто задаваемый вопросы
 document.querySelectorAll('.faq .split .list').forEach(function (row) {
@@ -338,11 +243,6 @@ var animationController = new ( /*#__PURE__*/function () {
 animationController.createAnimation('main-module-box');
 animationController.createAnimation('training-box');
 Coment.init();
-Modules.init();
-document.body.onscroll = function (e) {
-  var scroll = document.documentElement.scrollTop || document.body.scrollTop;
-  document.querySelector('.stick-header').style.setProperty('--show', scroll > 200 ? 1 : 0);
-};
 
 /***/ }),
 
