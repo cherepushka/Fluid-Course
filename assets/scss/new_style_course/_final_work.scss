@@ -1,6 +1,10 @@
 .final_work_stage {
     font-family: 'Golos';
 
+    .my-4{
+        transition-duration: .3s;
+    }
+
     h1.active {
         color: #FF4800;
     }
@@ -13,7 +17,7 @@
 
 
 .carousel {
-    min-height: 250px;
+    min-height: 350px;
     display: flex;
     width: 100%;
     padding: 40px;
@@ -27,12 +31,7 @@
         .box {
             client-coment {
                 transition: all 0.8s;
-                position: absolute;
-                // left: 0;
-                // top: 0;
-                width: 80%;
-                visibility: hidden;
-                opacity: 0;
+                display: none;
 
                 h2 {
                     margin-bottom: 15px;
@@ -50,9 +49,8 @@
             }
 
             client-coment.active {
-                visibility: visible;
-                opacity: 1;
-                transition: all 0.8s 0.8s;
+                display: block;
+                transition: all 0.4s 0.4s;
 
                 h2 {
                     margin-bottom: 15px;
@@ -68,6 +66,12 @@
                     text-align: left;
                 }
             }
+        }
+    }
+
+    @media screen and (max-width: 568px) {
+        & {
+            min-height: 550px;
         }
     }
 }
@@ -95,6 +99,7 @@
 }
 
 .btn_buy {
+    border: #FF5500;
     padding: 15px 63px;
 
     &:hover {
@@ -108,7 +113,7 @@
     background: #4763D5;
     border: #4763D5;
     border-radius: 11px;
-    padding: 15px 28px;
+    padding: 15px 15px;
 
     &:hover {
         color: #4763D5;
@@ -123,7 +128,6 @@
     padding: 10px 22px;
     margin: 16px 0;
     border-radius: 11px;
-    border: none;
     font-size: 18px;
     border: 1px solid #fff;
     box-sizing: border-box;
@@ -161,52 +165,62 @@ input.promocode {
     margin-top: 40px;
 
     .split {
-
         display: grid;
         grid-template-columns: 50% 50%;
-        gap: 50px 10px;
         gap: 21px;
         margin-top: 40px;
 
         .list {
+            user-select: none;
+            overflow: hidden;
             border-bottom: 1px solid rgba(71, 99, 213, 0.3);
+            position: relative;
+
+            @media screen and (max-width: 720px) {
+                & {
+                    background: linear-gradient(0deg, rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0) 16px)
+                }
+            }
+
+            .list__collapse-comment{
+                position: absolute;
+                cursor: pointer;
+                display: block;
+                bottom: 8px;
+                right: 8px;
+
+                @media screen and (min-width: 720px) {
+                    display: none;
+                }
+            }
+
+            &.FAQ__hidden .list__collapse-comment{
+                display: none;
+                user-select: none;
+            }
+
+           
         }
 
-        h5 {
-            color: #4763D5;
-        }
-    }
-}
-
-// .faq {
-//     margin-top: 40px;
-
-//     details {
-//         border-bottom: 1px solid rgba(71, 99, 213, 0.3);
-//         transform: rotate(-0.09deg);
-
-//         summary {
-//             color: #4763D5;
-//             font-size: 22px;
-//         }
-
-//         p {
-//             font-size: 18px;
-//             line-height: 40px;
-//         }
-//     }
-
-// }
-
-@media screen and (max-width:992px) {
-    .faq {
-
-        .split {
+        @media screen and (max-width:992px) {
             grid-template-columns: 100%;
         }
+
+        & h5 {
+            margin-bottom: 20px;
+            color: #4763D5;
+
+            @media screen and (max-width: 720px) {
+                & {
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
 
-.selected_stage {
-    color: #FF4800;
+@media screen and (max-width: 720px) {
+    .FAQ__hidden p{
+        display: none;
+    }
 }

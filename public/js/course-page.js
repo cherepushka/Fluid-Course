@@ -151,11 +151,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var Coment = __webpack_require__(/*! ./components/_Coment.js */ "./assets/js/pages/courses/components/_Coment.js");
-// const Modules = require('./components/_Modules.js');
 
 // Часто задаваемый вопросы
 document.querySelectorAll('.faq .split .list').forEach(function (row) {
-  console.log(row);
   row.addEventListener('click', function (e) {
     row.classList.toggle('FAQ__hidden');
   });
@@ -245,12 +243,6 @@ var animationController = new ( /*#__PURE__*/function () {
 animationController.createAnimation('main-module-box');
 animationController.createAnimation('training-box');
 Coment.init();
-// Modules.init()
-
-// document.body.onscroll = function (e) {
-//     const scroll = document.documentElement.scrollTop || document.body.scrollTop
-//     document.querySelector('.stick-header').style.setProperty('--show', scroll > 200 ? 1 : 0)
-// }
 
 /***/ }),
 

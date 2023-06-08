@@ -12418,6 +12418,9 @@ input:invalid:not(:placeholder-shown) {
 .final_work_stage {
   font-family: "Golos";
 }
+.final_work_stage .my-4 {
+  transition-duration: 0.3s;
+}
 .final_work_stage h1.active, .final_work_stage .active.h1 {
   color: #FF4800;
 }
@@ -12428,7 +12431,7 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .carousel {
-  min-height: 250px;
+  min-height: 350px;
   display: flex;
   width: 100%;
   padding: 40px;
@@ -12439,10 +12442,7 @@ input:invalid:not(:placeholder-shown) {
 }
 .carousel .coments .box client-coment {
   transition: all 0.8s;
-  position: absolute;
-  width: 80%;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
 }
 .carousel .coments .box client-coment h2, .carousel .coments .box client-coment .h2 {
   margin-bottom: 15px;
@@ -12457,9 +12457,8 @@ input:invalid:not(:placeholder-shown) {
   text-align: left;
 }
 .carousel .coments .box client-coment.active {
-  visibility: visible;
-  opacity: 1;
-  transition: all 0.8s 0.8s;
+  display: block;
+  transition: all 0.4s 0.4s;
 }
 .carousel .coments .box client-coment.active h2, .carousel .coments .box client-coment.active .h2 {
   margin-bottom: 15px;
@@ -12472,6 +12471,11 @@ input:invalid:not(:placeholder-shown) {
   font-size: 18px;
   font-weight: 400;
   text-align: left;
+}
+@media screen and (max-width: 568px) {
+  .carousel {
+    min-height: 550px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -12497,6 +12501,7 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .btn_buy {
+  border: #FF5500;
   padding: 15px 63px;
 }
 .btn_buy:hover {
@@ -12509,7 +12514,7 @@ input:invalid:not(:placeholder-shown) {
   background: #4763D5;
   border: #4763D5;
   border-radius: 11px;
-  padding: 15px 28px;
+  padding: 15px 15px;
 }
 .btn_installment:hover {
   color: #4763D5;
@@ -12523,7 +12528,6 @@ input:invalid:not(:placeholder-shown) {
   padding: 10px 22px;
   margin: 16px 0;
   border-radius: 11px;
-  border: none;
   font-size: 18px;
   border: 1px solid #fff;
   box-sizing: border-box;
@@ -12562,26 +12566,60 @@ input.promocode {
 .faq .split {
   display: grid;
   grid-template-columns: 50% 50%;
-  gap: 50px 10px;
   gap: 21px;
   margin-top: 40px;
 }
 .faq .split .list {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
   border-bottom: 1px solid rgba(71, 99, 213, 0.3);
+  position: relative;
 }
-.faq .split h5, .faq .split .h5 {
-  color: #4763D5;
+@media screen and (max-width: 720px) {
+  .faq .split .list {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0) 16px);
+  }
 }
-
+.faq .split .list .list__collapse-comment {
+  position: absolute;
+  cursor: pointer;
+  display: block;
+  bottom: 8px;
+  right: 8px;
+}
+@media screen and (min-width: 720px) {
+  .faq .split .list .list__collapse-comment {
+    display: none;
+  }
+}
+.faq .split .list.FAQ__hidden .list__collapse-comment {
+  display: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
 @media screen and (max-width: 992px) {
   .faq .split {
     grid-template-columns: 100%;
   }
 }
-.selected_stage {
-  color: #FF4800;
+.faq .split h5, .faq .split .h5 {
+  margin-bottom: 20px;
+  color: #4763D5;
+}
+@media screen and (max-width: 720px) {
+  .faq .split h5, .faq .split .h5 {
+    cursor: pointer;
+  }
 }
 
+@media screen and (max-width: 720px) {
+  .FAQ__hidden p {
+    display: none;
+  }
+}
 @font-face {
   font-family: "Golos";
   src: url(/fonts/golos-text_regular.woff2?ae582e244fd754e381e0494d12e662ba) format("woff2"), url(/fonts/golos-text_regular.woff?b1395e91e001884eee01fbcf0896f85d) format("woff");
