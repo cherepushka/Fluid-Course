@@ -159,36 +159,7 @@
     </div>
   </div>
   {/if}
-
-  <!-- Скрипт отвечает за уведомление об НЕ успешном заполнении формы -->
-  <script type="application/javascript">
-
-    const successBag = $('.ajax_form .apply-form__success');
-    const errorBag = $('.ajax_form .apply-form__errors');
-
-    $(document).on('submit', '.ajax_form', function (event) {
-      successBag.html('')
-      errorBag.html('')
-
-      successBag.removeClass('alert alert-success')
-      errorBag.removeClass('alert alert-danger')
-    })
-
-    $(document).on('af_complete', () => {
-
-      AjaxForm.Message.error = (message, sticky) => {
-
-        errorBag.addClass('alert alert-danger')
-        errorBag.html('<li style="list-style: none">' + message + '</li>')
-      }
-
-      AjaxForm.Message.success = (message, sticky) => {
-
-        successBag.addClass('alert alert-success')
-        successBag.html('<li style="list-style: none">' + message + '</li>')
-      }
-    })
-  </script>
+  
   <!-- Скрипт отвечает за уведомление об успешном заполнении формы -->
   <script type="application/javascript">
 

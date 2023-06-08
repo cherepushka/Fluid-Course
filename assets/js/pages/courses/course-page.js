@@ -1,5 +1,5 @@
 const Coment = require('./components/_Coment.js');
-const Modules = require('./components/_Modules.js');
+// const Modules = require('./components/_Modules.js');
 
 // Часто задаваемый вопросы
 document.querySelectorAll('.faq .split .list').forEach(row => {
@@ -97,9 +97,9 @@ animationController.createAnimation('main-module-box');
 animationController.createAnimation('training-box');
 
 Coment.init()
-Modules.init()
+// Modules.init()
 
-document.body.onscroll = function (e) {
-    const scroll = document.documentElement.scrollTop || document.body.scrollTop
-    document.querySelector('.stick-header').style.setProperty('--show', scroll > 200 ? 1 : 0)
-}
+// document.body.onscroll = function (e) {
+//     const scroll = document.documentElement.scrollTop || document.body.scrollTop
+//     document.querySelector('.stick-header').style.setProperty('--show', scroll > 200 ? 1 : 0)
+// }
