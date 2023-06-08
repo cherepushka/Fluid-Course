@@ -357,6 +357,19 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
+/***/ }),
+
+/***/ "./assets/scss/style.scss":
+/*!********************************!*\
+  !*** ./assets/scss/style.scss ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
 /***/ })
 
 /******/ 	});
@@ -446,6 +459,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/public/js/course-page": 0,
+/******/ 			"assets/css/style": 0,
 /******/ 			"assets/css/new_fluid_style": 0
 /******/ 		};
 /******/ 		
@@ -496,8 +510,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["assets/css/new_fluid_style"], () => (__webpack_require__("./assets/js/pages/courses/course-page.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/new_fluid_style.scss")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/style","assets/css/new_fluid_style"], () => (__webpack_require__("./assets/js/pages/courses/course-page.js")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/style","assets/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/new_fluid_style.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/style","assets/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/style.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -1,0 +1,240 @@
+<div class="container-xxl my-5">
+
+  <!-- ИТОГОВАЯ РАБОТА -->
+  <div class="row align-items-center">
+    <div class="final_work_describe col-md-6">
+      [[*final_work_template_head_text]]
+    </div>
+    <img class="col-md-6" src=[[*final_work_template_img]] alt="Графика курса">
+  </div>
+
+
+  <!-- КАК ПРОХОДИТ ОБУЧЕНИЕ -->
+  <div class="my-5">
+    <h2>
+      Как проходит обучение
+    </h2>
+    <ol class="row list-unstyled my-4">
+      {set $rows = json_decode($_modx->resource.final_work_template_migx, true)}
+      {set $i = 1}
+      {foreach $rows as $row}
+      <li class="final_work_stage col-md-3 col-sm-6">
+        <h1 class="my-4" style="font-size: 62px;">0{$i}</h1>
+        {$row.describe}
+      </li>
+      {set $i += 1}
+      {/foreach}
+    </ol>
+  </div>
+  <style>
+    .selected_stage {
+      color: #FF4800;
+    }
+  </style>
+
+
+  <!-- ОТЗЫВЫ -->
+  <div class="student_reviews">
+
+    {if $_modx->resource.hideComments?}{else}
+    <h2>
+      Отзывы студентов
+    </h2>
+    <div class="d-flex">
+      <button class="carousel-control-prev"><img src="/images/chevron_left.png" alt=""></button>
+      <div class="carousel my-4 overflow-auto">
+        <div class="coments">
+          <!-- <button class="carousel-control-prev" type="button"></button> -->
+          <div class="box">
+            {set $rows = json_decode($_modx->resource.comments_migx, true)}
+            {foreach $rows as $row}
+            <client-coment client="{$row.client}" text="{$row.comment_text}"></client-coment>
+            {/foreach}
+          </div>
+
+        </div>
+        <!-- <button class="carousel-control-next" type="button"></button> -->
+      </div>
+      <button class="carousel-control-next"><img src="/images/chevron_right.png" alt=""></button>
+    </div>
+    {/if}
+  </div>
+
+
+  <!-- ФОРМЫ ЗАПИСИ -->
+  {if $_modx->resource.hideForm?}{else}
+  <div id="enroll-form" class="row justify-content-evenly gy-4">
+    <div class="col-md-5 describe_near_form">
+      [[*describe_near_form_reg]]
+    </div>
+
+    <div class="col-md-5 reg_form">
+      [[*header_form_reg]]
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+      {if $_modx->resource.change_forms_buy_or_reg?}
+
+      [[!AjaxForm?
+      &snippet=`FormIt`
+      &hooks=`FormItSaveForm,email`
+      &emailSubject=`От FluidCourse`
+      &emailTo=`[[+email]]`
+      &emailTpl=`tpl_email`
+      &emailFrom=`[[++emailsender]]`
+      &emailFromName=`FluidCourse.ru`
+      &form=`tpl_enroll_form`
+      &formName=`[[*pagetitle]]`
+      &formFields=`
+      name_and_surname,
+      email,
+      phone,
+      company,
+      job,
+      promocode,
+      personal-data,
+      mailing`
+      &fieldNames=`
+      name_and_surname==Имя,
+      email==Электронная почта,
+      phone==Телефон,
+      company==Организация,
+      job==Должность,
+      promocode==Промокод
+      personal-data==Согласие на обработку персональных данных,
+      mailing==Согласие на получение SMS и Email рассылок`
+      &validate=`
+      name_and_surname:required:minLength=^3^,
+      email:required:email,
+      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+      company:required:minLength=^3^,
+      job:required:minLength=^3^,
+      {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+      workemail:blank
+      `
+      &successMessage=`Поздравляем с успешной регистрацией!`
+      &validationErrorMessage=`Неправильно заполнена форма!`
+      ]]
+
+
+      {else}
+
+      [[!AjaxForm?
+      &snippet=`FormIt`
+      &hooks=`FormItSaveForm,email,teachbaseReg`
+      &emailSubject=`От FluidCourse`
+      &emailTo=`[[+email]]`
+      &emailFrom=`[[++emailsender]]`
+      &emailFromName=`FluidCourse.ru`
+      &emailTpl=`tpl_email`
+      &form=`tpl_enroll_optional_promo`
+      &formName=`[[*pagetitle]]`
+      &formFields=`
+      name_and_surname,
+      email,
+      phone,
+      promocode,
+      personal-data,
+      mailing`
+      &fieldNames=`
+      name_and_surname==Имя,
+      email==Электронная почта,
+      phone==Телефон,
+      promocode==Промокод
+      personal-data==Согласие на обработку персональных данных,
+      mailing==Согласие на получение SMS и Email рассылок`
+      &validate=`
+      name_and_surname:required:minLength=^3^,
+      email:required:email,
+      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+      {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+      workemail:blank
+      `
+      &successMessage=`Поздравляем с успешной регистрацией!`
+      &validationErrorMessage=`Неправильно заполнена форма!`
+      ]]
+
+      {/if}
+    </div>
+  </div>
+  {/if}
+
+  <!-- Скрипт отвечает за уведомление об НЕ успешном заполнении формы -->
+  <script type="application/javascript">
+
+    const successBag = $('.ajax_form .apply-form__success');
+    const errorBag = $('.ajax_form .apply-form__errors');
+
+    $(document).on('submit', '.ajax_form', function (event) {
+      successBag.html('')
+      errorBag.html('')
+
+      successBag.removeClass('alert alert-success')
+      errorBag.removeClass('alert alert-danger')
+    })
+
+    $(document).on('af_complete', () => {
+
+      AjaxForm.Message.error = (message, sticky) => {
+
+        errorBag.addClass('alert alert-danger')
+        errorBag.html('<li style="list-style: none">' + message + '</li>')
+      }
+
+      AjaxForm.Message.success = (message, sticky) => {
+
+        successBag.addClass('alert alert-success')
+        successBag.html('<li style="list-style: none">' + message + '</li>')
+      }
+    })
+  </script>
+  <!-- Скрипт отвечает за уведомление об успешном заполнении формы -->
+  <script type="application/javascript">
+
+    const successBag = $('.ajax_form .apply-form__success');
+    const errorBag = $('.ajax_form .apply-form__errors');
+
+    $(document).on('submit', '.ajax_form', function (event) {
+      successBag.html('')
+      errorBag.html('')
+
+      successBag.removeClass('alert alert-success')
+      errorBag.removeClass('alert alert-danger')
+    })
+
+    $(document).on('af_complete', () => {
+
+      AjaxForm.Message.error = (message, sticky) => {
+
+        errorBag.addClass('alert alert-danger')
+        errorBag.html('<li style="list-style: none">' + message + '</li>')
+      }
+
+      AjaxForm.Message.success = (message, sticky) => {
+
+        successBag.addClass('alert alert-success')
+        successBag.html('<li style="list-style: none">' + message + '</li>')
+      }
+    })
+  </script>
+
+
+  <!-- FAQ -->
+  <div class="faq py-4">
+    <h2>
+      Часто задаваемые вопросы
+    </h2>
+    <div class="row split">
+      {set $rows = json_decode($_modx->resource.faq_migx, true)}
+      {foreach $rows as $row}
+      <div class="list FAQ__hidden">
+        <h5>{$row.question}</h5>
+        <p>{$row.answer_text}</p>
+        <img class="list__collapse-comment" src="/assets/icons/pages/courses/comment-collapse-arrow.svg" alt="^">
+      </div>
+      {/foreach}
+    </div>
+  </div>
+
+</div>

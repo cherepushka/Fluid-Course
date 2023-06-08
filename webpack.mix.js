@@ -51,3 +51,4 @@ function findFiles(dir) {
 
 
 mix.sass('assets/scss/new_fluid_style.scss', 'assets/css/new_fluid_style.css');
+mix.sass('assets/scss/style.scss', 'assets/css/style.css');

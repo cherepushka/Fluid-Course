@@ -1,0 +1,51 @@
+<!--[[getMaterials]]-->
+
+<main>
+    <div class="container">
+        <div class=" py-5 ">
+            <div class="row">
+
+                <h1 class="h3 action-color">Бесплатные материалы</h1>
+                [[pdoMenu?
+                &parents=`24`
+                &level=`0`
+                &tplOuter = `@INLINE
+                <div class="py-3">
+                    <div class="row justify-content-center">
+                        [[+wrapper]]
+                    </div>
+                    `
+                    &tpl = `@INLINE <a class="text-decoration-none  col-lg-3 col-md-6 col gy-2" href="[[+link]]">
+                        <button class="btn btn-primary">
+                            [[+pagetitle]]</button>
+                    </a>`
+                    ]]
+                    <hr>
+                    <h2>[[*pagetitle]]</h2>
+                </div>
+
+                {if $_modx->resource.id == 5}
+
+                <div class="row my-2 ">
+                    [[!pdoResources?
+                    &parents=`24`
+                    &tpl=`tpl_material`
+                    &limit=`4`
+                    &includeTVs =`img,material_link,material_action`
+                    &hideContainers=`1`
+                    ]]
+                </div>
+                {else}
+                <div class="row my-2 ">
+                    [[!pdoResources?
+                    &parents=``
+                    &tpl=`tpl_material`
+                    &limit=`0`
+                    &includeTVs =`img,material_link,material_action`
+                    &hideContainers=`1`
+                    ]]
+                </div>
+                {/if}
+            </div>
+        </div>
+</main>
