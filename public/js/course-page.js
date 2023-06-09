@@ -152,6 +152,26 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var Coment = __webpack_require__(/*! ./components/_Coment.js */ "./assets/js/pages/courses/components/_Coment.js");
 
+//Программа обучения
+document.querySelectorAll('.modules_more_3 li').forEach(function (active, index) {
+  return active.addEventListener('click', function (e) {
+    var modules = document.querySelectorAll('.modules_more_3 li');
+    var modulesText = document.querySelectorAll('.modules .module');
+    modules.forEach(function (el) {
+      if (el.classList.contains('active')) {
+        el.classList.remove('active');
+        active.classList.add('active');
+      }
+    });
+    modulesText.forEach(function (el) {
+      if (el.classList.contains('active')) {
+        el.classList.remove('active');
+      }
+    });
+    modulesText[index].classList.add('active');
+  });
+});
+
 // Часто задаваемый вопросы
 document.querySelectorAll('.faq .split .list').forEach(function (row) {
   row.addEventListener('click', function (e) {
