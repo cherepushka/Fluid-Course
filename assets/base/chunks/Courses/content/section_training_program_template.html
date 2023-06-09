@@ -11,12 +11,12 @@
     <div class="modules h-100">
       <div class="module active">
         <div class="split row">
-          <div class="title col-md-5">
+          <div class="title col-lg-5">
             <h3> {$row.title}</h3>
             <h4> {$row.subtitle}</h4>
           </div>
           {set $items = $row.list_points | fromJSON}
-          <ol class="list col-md-7 px-4">
+          <ol class="list col-lg-7 px-4">
             {foreach $items as $item}
             <li>{$item.point}</li>
             {/foreach}
@@ -27,12 +27,12 @@
       {else}
       <div class="module">
         <div class="split row">
-          <div class="title col-md-5">
+          <div class="title col-lg-5">
             <h3> {$row.title}</h3>
             <h4> {$row.subtitle}</h4>
           </div>
           {set $items = $row.list_points | fromJSON}
-          <ol class="list col-md-7 px-4">
+          <ol class="list col-lg-7 px-4">
             {foreach $items as $item}
             <li>{$item.point}</li>
             {/foreach}

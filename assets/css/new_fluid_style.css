@@ -13635,6 +13635,7 @@ input:invalid:not(:placeholder-shown) {
   color: #fff;
   margin-top: 16px;
   padding: 0 10px;
+  gap: 10px 0;
 }
 @media (min-width: 992px) {
   .modules .module .split .list {
@@ -13647,6 +13648,7 @@ input:invalid:not(:placeholder-shown) {
     text-align: left;
     margin-top: 16px;
     color: #fff;
+    gap: 10px 20px;
   }
 }
 

@@ -13004,6 +13004,10 @@ body {
   background-color: #fff;
 }
 
+body {
+  background-color: #fff;
+}
+
 .btn-secondary {
   --bs-btn-color: #fff;
   --bs-btn-bg: #4763D5;
@@ -13073,6 +13077,14 @@ h1, .h1 {
   font-size: 54px;
   line-height: 133.7%;
   letter-spacing: -0.005em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
 }
 
 a {
