@@ -1,0 +1,96 @@
+<div class="bg_pic h-100">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    [[!AjaxForm?
+    &snippet=`FormIt`
+    &hooks=`FormItSaveForm,email`
+    &emailSubject=`От FluidCourse`
+    &emailTo=`[[+email]]`
+    &emailTpl=`tpl_email_form_pop`
+      &emailFrom=`[[++emailsender]]`
+      &emailFromName=`FluidCourse.ru`
+    &form=`tpl_form_registration`
+    &formName=`Курсы`
+
+    &formFields=`
+    name,
+    email,
+    company,
+    job,
+    promocode,
+    personal_data,
+    mailing,
+    nanocad-2d,
+    google-word,
+    excel-seller,
+    excel-prof,
+    compas-m2,
+    compas-m3,
+    nanocad-3d,
+    industrial-automation,
+    fiting,
+    mechanical,
+    codesys,
+    `
+    &fieldNames=`
+    name==Имя,
+    email==Электронная почта,
+    company==Организация,
+    job==Должность,
+    promocode==Промокод,
+    personal_data==Согласие на обработку персональных данных,
+    mailing==Согласие на получение SMS и Email рассылок,
+    nanocad-2d==NanoCAD с нуля. Основы проектирования в 2D,
+    google-word==Google Docs + MS Word,
+    excel-seller==Excel для менеджеров по продажам и закупкам,
+    excel-prof==Excel углубленный курс,
+    compas-m2==Компас-3D подготовка к экзамену M2D,
+    compas-m3==Компас-3D подготовка к экзамену M3D,
+    nanocad-3d==NanoCAD проектирование в 3D,
+    industrial-automation==Современная промышленная пневмоавтоматика,
+    fiting==Работа с фитингами 2023,
+    mechanical==Мехатроника в промышленности (Автоматизация),
+    codesys==Разработка АСУ ТП в Codesys,
+    `
+    &validate=`
+    nospam:blank,
+    name:required:minLength=^3^:maxLength=^21^,
+    email:required:email,
+    company:required:minLength=^3^,
+    job:required:minLength=^3^,
+    promocode:required:regexp=^/fcng2023/i^,
+    `
+    &validationErrorMessage=``
+    &successMessage=` `
+
+    ]]
+    <script>
+        $(document).on('af_complete', function (event, response) {
+            const elForm = $(response.form);
+            elForm.find('.is-invalid').each(function (index, el) {
+                $(el).removeClass('is-invalid');
+            });
+            for (let key in response.data) {
+                const elInput = elForm.find(`[name=${key}]`);
+                elInput.addClass('is-invalid');
+                elInput.next('.invalid-feedback').text($(response.data[key]).text());
+            }
+        });
+        $(document).on('af_complete', function (event, response) {
+            var form = response.form;
+            if (response.success) {
+                response.form.hide();
+                $('#form').addClass('hidden');
+                $('#result').removeClass('hidden');
+            }
+        });
+    </script>
+
+    <div id="result" class="container-xxl success_form pt-4 px-md-5 hidden">
+        <div class="welcome_text col-lg-7"><span>Спасибо! <br> Вся информация придет вам на почту</span></div>
+        <div class="col-lg-5"><img src="/images/img_for_welcome.png" alt=""></div>
+    </div>
+
+</div>
+
+<!-- Промокод -->
+<!-- FCNG2023 -->

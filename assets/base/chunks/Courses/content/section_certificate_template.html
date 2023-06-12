@@ -1,0 +1,10 @@
+<div class="container-xxl my-4">
+  <h2 class="my-4">Сертификат</h2>
+
+  <div class="row">
+    {set $tpl = json_decode($_modx->resource.certificate_migx, true)}
+    <img class="col-lg-5" src={$tpl.0.certificate_img} alt="Сертификат">
+    <p class="col-lg-7 d-flex align-items-center">{$tpl.0.certificate_text}</p>
+  </div>
+
+</div>

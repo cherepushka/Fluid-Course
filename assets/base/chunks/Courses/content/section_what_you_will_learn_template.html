@@ -1,0 +1,18 @@
+<div class="container-xxl">
+    <h2 class="my-5">
+        Чему научитесь
+    </h2>
+    <div class="row gy-4">
+        <img class="col-xl-6" src=[[*img_what_you_learn]]>
+
+        <ol class="grid col-xl-6 p-xl-4">
+            {set $rows = json_decode($_modx->resource.what_you_will_learn_migx, true)}
+            {foreach $rows as $row}
+            <li>
+                <strong>{$row.title}</strong>
+                {$row.describe}
+            </li>
+            {/foreach}
+        </ol>
+    </div>
+</div>

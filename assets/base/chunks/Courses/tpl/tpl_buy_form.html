@@ -1,0 +1,58 @@
+<form class="ajax_form" method="post" action="/assets\base\snippets\Course.php">
+
+  <ul class="apply-form__success"></ul>
+  <ul class="apply-form__errors"></ul>
+
+  <input class="final_work_input" type="text" placeholder="Имя фамилия" name="name_and_surname" required>
+
+  <input class="final_work_input mail" type="text" placeholder="E-mail" name="email" required>
+
+  <input class="final_work_input phone" type="text" placeholder="+7 (999) 999-99-99" name="phone" required>
+
+  <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode" required
+    pattern="[Ff][Cc][Nn][Gg]2023" title="Введите корректный Промокод">
+
+  <!--для защиты от ботов-->
+  <input type="hidden" name="workemail" value="" />
+
+
+  <div class="row flex-xl-nowrap gap-3 my-4">
+    <button class="color-white btn btn-primary btn_buy col-xl-6" type="submit">Оплатить</button>
+    <button class="color-white btn btn_installment col-xl-6" type="submit">Оплатить в рассрочку</button>
+  </div>
+
+  <label>
+    <input type="checkbox" checked disabled>
+    Записываясь на курс, вы даете согласие на обработку своих
+    персональных данных в соответствии
+    <span>с политикой конфиденциальности.</span>
+  </label>
+
+  <label>
+    <input type="checkbox" checked disabled>
+    Получение SMS и Email рассылок.
+  </label>
+
+</form>
+
+<!-- Рабочая форма на платную форму -->
+      <!-- [[!AjaxForm?
+      &snippet=`FormIt`
+      &hooks=`FormItSaveForm,email`
+      &emailSubject=`От [[++site_name]]`
+      &emailTo=`[[+email]]`
+      &emailTpl=`tpl_email`
+      &form=`tpl_buy_form`
+      &formName=`[[*pagetitle]]`
+      &formFields=`name_and_surname, email, phone, promocode`
+      &fieldNames=`name_and_surname==Имя, email==Электронная почта, phone==Телефон,promocode==Промокод`
+      &validate=`
+      name_and_surname:required:minLength=^3^:maxLength=^21^,
+      email:required:email,
+      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+      promocode:required:regexp=^/fcng2023/i^,
+      workemail:blank
+      `
+      &successMessage=`Форма успешно отправлено`
+      &validationErrorMessage=`Неправильно заполнена форма!`
+      ]] -->

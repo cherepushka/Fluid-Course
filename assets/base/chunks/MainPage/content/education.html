@@ -1,0 +1,88 @@
+<div class="container" style="color: #4763D5;">
+    <h4 style="font-weight: 400;">Образование</h4>
+    <div class="row">
+        <div class="col-md-4 col">
+
+            {set $alias = $_modx->resource.alias}
+
+            {'!pdoMenu' | snippet : [
+            'level' => 1,
+            'parents' => 76,
+            'tplOuter' => '@INLINE <ol
+                class="education-list d-flex flex-column border rounded-2 list-style-none p-2 p-lg-4 gap-4"
+                style="font-size: 18px;">{$wrapper}</ol> ',
+            'tpl' => '@INLINE <a class="[[+alias]]" href="[[+alias]]">
+                <li>{$pagetitle}</li>
+            </a>',
+            ]}
+
+            <script>
+                let alias = '{$alias}';
+                let links = document.querySelectorAll('.education-list a');
+                links.forEach(link => {
+                    if (link.classList.contains(alias)) {
+                        link.style.color = '#FF5500';
+                    }
+                })
+            </script>
+
+        </div>
+        <div class="col-md-8 col">
+            <div class="grid">
+                <div class="">
+                    <p class="m-0 text-black" style="font-size: 18px;font-weight: 500;">Полное наименование организации:
+                    </p>
+                    <p class="my-1 text-black" style="font-size: 16px;">Общество с ограниченной ответственностью
+                        «Нетология»
+                    </p>
+                </div>
+                <div class="">
+                    <p class="m-0 text-black" style="font-size: 18px;font-weight: 500;">Сокращенное наименование:</p>
+                    <p class="my-1 text-black" style="font-size: 16px;">ООО «Нетология»</p>
+                </div>
+                <div class="">
+                    <p class="m-0 text-black" style="font-size: 18px;font-weight: 500;">Сокращенное наименование:</p>
+                    <p class="my-1 text-black" style="font-size: 16px;">ООО «Нетология»</p>
+                </div>
+                <div class="d-flex flex-column">
+                    <p class="m-0 text-black" style="font-size: 18px;font-weight: 500;">Полное наименование организации:
+                    </p>
+                    <p class="my-1 text-black" style="font-size: 16px;">Общество с ограниченной ответственностью
+                        «Нетология»
+                    </p>
+                </div>
+                <div class="d-flex flex-column">
+                    <p class="m-0 text-black" style="font-size: 18px;font-weight: 500;">Полное наименование организации:
+                    </p>
+                    <p class="my-1 text-black" style="font-size: 16px;">Общество с ограниченной ответственностью
+                        «Нетология»
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .education-list {
+        list-style: none;
+    }
+
+    .education-list a {
+        color: #000;
+    }
+
+    .education-list a :hover {
+        color: #FF5500;
+    }
+    .active-link-education {
+        color: #FF5500;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 20px;
+    }
+</style>

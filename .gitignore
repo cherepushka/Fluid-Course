@@ -1,0 +1,11 @@
+core
+manager
+setup
+node_modules
+.env
+/vendor/
+.idea
+.DS_Store
+images/metodichka
+.htaccess
+.vscode
