@@ -13448,7 +13448,6 @@ input:invalid:not(:placeholder-shown) {
   cursor: pointer;
   transition: all 0.3s;
   white-space: nowrap;
-  border: 1px solid #FF5500;
 }
 
 .grid {
@@ -13597,24 +13596,22 @@ input:invalid:not(:placeholder-shown) {
   margin-bottom: 18px;
 }
 
-.modules {
-  margin-top: 47px;
-  position: relative;
-}
-.modules .module.active {
+.module.active {
+  margin-top: 15px;
   display: block;
 }
-.modules .module {
+
+.module {
   display: none;
   width: 100%;
   top: 0px;
   transition: all 0.3s;
 }
-.modules .module .split {
+.module .split {
   display: flex;
   justify-content: flex-start;
 }
-.modules .module .split .title h3, .modules .module .split .title .h3 {
+.module .split .title h3, .module .split .title .h3 {
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
@@ -13622,7 +13619,7 @@ input:invalid:not(:placeholder-shown) {
   text-align: left;
   color: #fff;
 }
-.modules .module .split .title h4, .modules .module .split .title .h4 {
+.module .split .title h4, .module .split .title .h4 {
   font-weight: 700;
   line-height: 30px;
   letter-spacing: 0em;
@@ -13631,14 +13628,14 @@ input:invalid:not(:placeholder-shown) {
   width: 380px;
   color: #fff;
 }
-.modules .module .split .list {
+.module .split .list {
   color: #fff;
   margin-top: 16px;
   padding: 0 10px;
   gap: 10px 0;
 }
 @media (min-width: 992px) {
-  .modules .module .split .list {
+  .module .split .list {
     display: grid;
     grid-template-columns: 50% 50%;
     font-size: 20.5px;
@@ -13652,21 +13649,47 @@ input:invalid:not(:placeholder-shown) {
   }
 }
 
+@media (max-width: 768px) {
+  .modules {
+    margin-top: 20px;
+  }
+}
 .modules_more_3 li {
-  width: 31%;
+  width: 47%;
   padding: 20px 30px;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
   border-radius: 16px;
 }
 .modules_more_3 li strong {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 28px;
   margin-bottom: 20px;
+}
+.modules_more_3 li p {
+  font-weight: 400;
+  font-size: 18px;
 }
 .modules_more_3 li.active {
   color: #1A1A1A;
   background: #FFFFFF;
+}
+
+.steps_for_reg li {
+  width: 31%;
+  padding: 20px 30px;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 16px;
+}
+.steps_for_reg li strong {
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.steps_for_reg li p {
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .footnote {
@@ -13674,27 +13697,30 @@ input:invalid:not(:placeholder-shown) {
   border: 1px solid #FFFFFF;
   border-radius: 16px;
   padding: 30px;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
-@media screen and (min-width: 720px) {
-  .footnote {
-    max-width: 899px;
+@media screen and (min-width: 768px) {
+  .modules_more_3 li {
+    margin-top: 20px;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .modules_more_3 li {
-    width: 48%;
-  }
-}
-@media screen and (max-width: 540px) {
-  .modules_more_3 li {
+    margin-top: 20px;
     width: 100%;
   }
 }
-@media screen and (min-width: 1140px) {
-  .footnote {
-    width: 899px;
+@media screen and (max-width: 992px) {
+  .steps_for_reg li {
+    margin-top: 20px;
+    width: calc(48% - 0.3rem);
+  }
+}
+@media screen and (max-width: 568px) {
+  .steps_for_reg li {
+    margin-top: 20px;
+    width: 100%;
   }
 }
 .final_work_stage {
@@ -13816,6 +13842,10 @@ input:invalid:not(:placeholder-shown) {
   font-family: "Golos", tahoma;
   outline: none;
   transition: all 0.3s;
+}
+
+.selected_stage {
+  color: #FF4800;
 }
 
 input.promocode {

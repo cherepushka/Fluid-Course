@@ -1,0 +1,52 @@
+<form class="col-lg-4 mt-lg-0 mt-3 d-flex flex-column align-items-between justify-content-center position-relative ajax_form"
+    action="post">
+
+    <!-- Подключение библиотеки jQuery -->
+    <script src="jquery.js"></script>
+
+    <ul class="apply-form__success_lesson position-absolute"></ul>
+    <ul class="apply-form__errors_lesson position-absolute"></ul>
+    <div class="d-sm-flex gap-2">
+        <input class="final_work_input" style="border: 1px solid #CACACA;margin: 0 0 20px 0;" type="text"
+            placeholder="Фамилия Имя" name="name_and_surname" required>
+
+        <input class="final_work_input mail" style="border: 1px solid #CACACA;margin: 0 0 20px 0;" type="email"
+            placeholder="E-mail" name="email" required>
+        <!--для защиты от ботов-->
+        <input type="hidden" name="workemail" value="" />
+    </div>
+
+    <button class="d-flex align-items-center justify-content-center w-100 text-white py-1 btn btn-secondary"
+        type="submit">
+        Получить
+    </button>
+</form>
+<!-- Скрипт отвечает за уведомление об успешном заполнении формы -->
+<script type="application/javascript">
+
+    const successBag = $('.ajax_form .apply-form__success_lesson');
+    const errorBag = $('.ajax_form .apply-form__errors_lesson');
+
+    $(document).on('submit', '.ajax_form', function (event) {
+        successBag.html('')
+        errorBag.html('')
+
+        successBag.removeClass('alert alert-success')
+        errorBag.removeClass('alert alert-danger')
+    })
+    // Уведомление об успешном заполнении формы
+    $(document).on('af_complete', () => {
+
+        AjaxForm.Message.error = (message, sticky) => {
+
+            errorBag.addClass('alert alert-danger')
+            errorBag.html('<li style="list-style: none">' + message + '</li>')
+        }
+
+        AjaxForm.Message.success = (message, sticky) => {
+
+            successBag.addClass('alert alert-success')
+            successBag.html('<li style="list-style: none">' + message + '</li>')
+        }
+    })
+</script>

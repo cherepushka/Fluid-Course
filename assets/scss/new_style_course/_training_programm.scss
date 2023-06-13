@@ -89,11 +89,12 @@
 
 
 
-.modules {
-    margin-top: 47px;
-    position: relative;
+// .modules {
+//     margin-top: 47px;
+//     position: relative;
 
     .module.active {
+        margin-top: 15px;
         display: block;
     }
 
@@ -110,7 +111,7 @@
 
             .title {
                 h3 {
-                    
+
                     font-size: 30px;
                     font-weight: 700;
                     line-height: 36px;
@@ -130,6 +131,7 @@
                     color: #fff;
                 }
             }
+
             .list {
                 color: #fff;
                 margin-top: 16px;
@@ -137,6 +139,7 @@
                 gap: 10px 0;
 
             }
+
             @media (min-width:992px) {
                 .list {
                     display: grid;
@@ -154,9 +157,40 @@
             }
         }
     }
+// }
+
+@media (max-width:768px) {
+    .modules {
+        margin-top: 20px;
+    }
 }
 
 .modules_more_3 {
+
+    li {
+        width: 47%;
+        padding: 20px 30px;
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+        border-radius: 16px;
+
+        strong {
+            font-weight: 400;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-weight: 400;
+            font-size: 18px;
+        }
+    }
+
+    li.active {
+        color: #1A1A1A;
+        background: #FFFFFF;
+    }
+}
+.steps_for_reg {
 
     li {
         width: 31%;
@@ -166,15 +200,14 @@
         border-radius: 16px;
 
         strong {
-            font-weight: 500;
+            font-weight: 400;
             font-size: 28px;
             margin-bottom: 20px;
         }
-    }
-
-    li.active {
-        color: #1A1A1A;
-        background: #FFFFFF;
+        p {
+            font-weight: 400;
+            font-size: 18px;
+        }
     }
 }
 
@@ -183,29 +216,29 @@
     border: 1px solid #FFFFFF;
     border-radius: 16px;
     padding: 30px;
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
-@media screen and (min-width:720px) {
-    .footnote {
-        max-width: 899px;
+@media screen and (min-width:768px) {
+    .modules_more_3 li {
+        margin-top: 20px;
     }
 }
-
-@media screen and (max-width:720px) {
+@media screen and (max-width:768px) {
     .modules_more_3 li {
-        width: 48%;
-    }
-}
-
-@media screen and (max-width:540px) {
-    .modules_more_3 li {
+        margin-top: 20px;
         width: 100%;
     }
 }
-
-@media screen and (min-width:1140px) {
-    .footnote {
-        width: 899px;
+    @media screen and (max-width:992px) {
+        .steps_for_reg li {
+            margin-top: 20px;
+            width: calc(48% - 0.3rem);
+        }
     }
-}
+    @media screen and (max-width:568px) {
+        .steps_for_reg li {
+            margin-top: 20px;
+            width: 100%;
+        }
+    }

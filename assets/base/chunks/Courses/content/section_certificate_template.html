@@ -3,8 +3,17 @@
 
   <div class="row">
     {set $tpl = json_decode($_modx->resource.certificate_migx, true)}
-    <img class="col-lg-5" src={$tpl.0.certificate_img} alt="Сертификат">
-    <p class="col-lg-7 d-flex align-items-center">{$tpl.0.certificate_text}</p>
+    <img class="col-lg-5 px-0" src={$tpl.0.certificate_img} alt="Сертификат">
+    <p class="col-lg-7 p-0 d-flex align-items-center">{$tpl.0.certificate_text}</p>
+  </div>
+
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-lg-7" style="font-size: 30px;">Бесплатная консультация по телефону</div>
+    <a href="tel:+74957411291" style="font-size: 30px;" class="col-lg-3 text-decoration-none"> +7 (495)741-12-91</a>
+    <div class="col-lg-2 mt-lg-0 mt-3 d-flex justify-content-center align-items-center">
+      <a href="#"><img class="" src="/images/viber.svg" alt=""></a>
+      <img class="w-50" src="/images/qr_code_consultacia.svg" alt="">
+    </div>
   </div>
 
 </div>

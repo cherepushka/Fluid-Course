@@ -1,7 +1,7 @@
 .final_work_stage {
     font-family: 'Golos';
 
-    .my-4{
+    .my-4 {
         transition-duration: .3s;
     }
 
@@ -75,6 +75,7 @@
         }
     }
 }
+
 @media (max-width:992px) {
     .carousel {
         padding: 10px;
@@ -134,7 +135,10 @@
     font-family: "Golos", tahoma;
     outline: none;
     transition: all 0.3s;
+}
 
+.selected_stage {
+    color: #FF4800;
 }
 
 input.promocode {
@@ -182,7 +186,7 @@ input.promocode {
                 }
             }
 
-            .list__collapse-comment{
+            .list__collapse-comment {
                 position: absolute;
                 cursor: pointer;
                 display: block;
@@ -194,12 +198,12 @@ input.promocode {
                 }
             }
 
-            &.FAQ__hidden .list__collapse-comment{
+            &.FAQ__hidden .list__collapse-comment {
                 display: none;
                 user-select: none;
             }
 
-           
+
         }
 
         @media screen and (max-width:992px) {
@@ -220,7 +224,7 @@ input.promocode {
 }
 
 @media screen and (max-width: 720px) {
-    .FAQ__hidden p{
+    .FAQ__hidden p {
         display: none;
     }
 }
