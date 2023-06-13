@@ -4,7 +4,7 @@
         <div class="flex-grow-1 ">
             <small class="d-block text-muted mb-3">
 
-{$_pls['tv.category_program']} {$_pls['tv.anotation']}
+                {$_pls['tv.category_program']} {$_pls['tv.anotation']}
             </small>
             <h2 class="fs-5 fw-bold">
                 {$pagetitle}
@@ -17,28 +17,28 @@
             </div>
             <div class="col-6">
 
-    {if $_pls['tv.total_price']?}
-    <strong class="fs-5">
-        {$_pls['tv.total_price']} ₽
-    </strong>
-    {/if}
+                {if $_pls['tv.total_price']?}
+                <strong class="fs-5">
+                    {$_pls['tv.total_price']} ₽
+                </strong>
+                {/if}
 
-{if $_pls['tv.monthly_price']?}
-    <div>
-        от {$_pls['tv.monthly_price']} ₽/мес
-    </div>
-    {/if}
+                {if $_pls['tv.monthly_price']?}
+                <div>
+                    от {$_pls['tv.monthly_price']} ₽/мес
+                </div>
+                {/if}
             </div>
         </div>
 
         <div class="row gy-3">
             <a href="[[+alias]]" class="text-decoration-none">
                 <button type="button"
-                    class="d-flex align-items-center justify-content-center w-100 text-black py-1 btn btn-outline-dark">Подробнее</button>
+                    class="d-flex align-items-center justify-content-center w-100 py-1 btn btn-outline-dark">Подробнее</button>
             </a>
             <a href="[[+alias]]#enroll-form" class="text-decoration-none">
                 <button type="button"
-                    class="d-flex align-items-center justify-content-center w-100 text-white py-1 btn btn-secondary">Записаться</button>
+                    class="d-flex align-items-center justify-content-center w-100 py-1 btn btn-secondary">Записаться</button>
             </a>
         </div>
 

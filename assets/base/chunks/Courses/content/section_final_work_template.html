@@ -66,7 +66,69 @@
       </div>
       <div class="col-lg-4">
         <span style="font-size: 18px;">{$row.0.description}</span>
+      </div> -->
+  [[-!AjaxForm?
+  &snippet=`FormIt`
+  &hooks=`FormItSaveForm,email`
+  &emailSubject=`От FluidCourse`
+  &emailTo=`[[+email]]`
+  &emailTpl=`tpl_email`
+  &emailFrom=`[[++emailsender]]`
+  &emailFromName=`FluidCourse.ru`
+  &form=`tpl_one_lesson`
+  &formName=`Запись одного урока [[*pagetitle]]`
+  &formFields=`
+  name_and_surname,
+  email
+  `
+  &fieldNames=`
+  name_and_surname==Имя,
+  email==Электронная почта,
+  `
+  &validate=`
+  name_and_surname:required:minLength=^3^,
+  email:required:email,
+  workemail:blank
+  `
+  &successMessage=`Поздравляем с успешной регистрацией!`
+  &validationErrorMessage=`Неправильно заполнена форма!`
+  ]]
+
+  <!-- </div>
+  </div> -->
+</div>
+
+<!-- ШАГИ РЕГИСТРАЦИИ -->
+{$_modx->getChunk('steps_for_reg')}
+
+
+<!-- ФОРМЫ ЗАПИСИ -->
+<div class="container-xxl my-5">
+  {if $_modx->resource.hideForm?}{else}
+  <div id="enroll-form" class="row justify-content-evenly gy-4">
+    <div class="col-md-5 describe_near_form">
+      [[*describe_near_form_reg]]
+      {if $_modx->resource.total_price?}<h1 style="font-size: 40px;">{$_modx->resource.total_price} руб.</h1>{/if}
+      <div class="row">
+        {if $_modx->resource.monthly_price?}
+        <div class="col-lg-7 col" style="line-height: 24px;">
+          <span style="color: #4763D5;">Купить в рассрочку</span> <br>
+          <span class="text-white">от {$_modx->resource.monthly_price} руб/ месяц</span>
+        </div>
+        {/if}
+        <button
+          class="col-lg-5 col d-flex align-items-center justify-content-center text-white py-1 mt-lg-0 mt-2 btn btn-secondary">Подробнее</button>
       </div>
+    </div>
+
+    <div class="col-md-5 reg_form">
+      [[*header_form_reg]]
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+      {if $_modx->resource.change_forms_buy_or_reg?}
+
       [[!AjaxForm?
       &snippet=`FormIt`
       &hooks=`FormItSaveForm,email`
@@ -75,181 +137,119 @@
       &emailTpl=`tpl_email`
       &emailFrom=`[[++emailsender]]`
       &emailFromName=`FluidCourse.ru`
-      &form=`tpl_one_lesson`
-      &formName=`Запись одного урока [[*pagetitle]]`
+      &form=`tpl_enroll_form`
+      &formName=`[[*pagetitle]]`
       &formFields=`
       name_and_surname,
-      email
-      `
+      email,
+      phone,
+      company,
+      job,
+      promocode,
+      personal-data,
+      mailing`
       &fieldNames=`
       name_and_surname==Имя,
       email==Электронная почта,
-      `
+      phone==Телефон,
+      company==Организация,
+      job==Должность,
+      promocode==Промокод
+      personal-data==Согласие на обработку персональных данных,
+      mailing==Согласие на получение SMS и Email рассылок`
       &validate=`
       name_and_surname:required:minLength=^3^,
       email:required:email,
+      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+      company:required:minLength=^3^,
+      job:required:minLength=^3^,
+      {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
       workemail:blank
       `
       &successMessage=`Поздравляем с успешной регистрацией!`
       &validationErrorMessage=`Неправильно заполнена форма!`
       ]]
 
+
+      {else}
+
+      [[!AjaxForm?
+      &snippet=`FormIt`
+      &hooks=`FormItSaveForm,email,teachbaseReg`
+      &emailSubject=`От FluidCourse`
+      &emailTo=`[[+email]]`
+      &emailFrom=`[[++emailsender]]`
+      &emailFromName=`FluidCourse.ru`
+      &emailTpl=`tpl_email`
+      &form=`tpl_enroll_optional_promo`
+      &formName=`[[*pagetitle]]`
+      &formFields=`
+      name_and_surname,
+      email,
+      phone,
+      promocode,
+      personal-data,
+      mailing`
+      &fieldNames=`
+      name_and_surname==Имя,
+      email==Электронная почта,
+      phone==Телефон,
+      promocode==Промокод
+      personal-data==Согласие на обработку персональных данных,
+      mailing==Согласие на получение SMS и Email рассылок`
+      &validate=`
+      name_and_surname:required:minLength=^3^,
+      email:required:email,
+      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+      {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+      workemail:blank
+      `
+      &successMessage=`Поздравляем с успешной регистрацией!`
+      &validationErrorMessage=`Неправильно заполнена форма!`
+      ]]
+
+      {/if}
     </div>
   </div>
-</div> -->
+  {/if}
+  <!-- Скрипт отвечает за уведомление об успешном заполнении формы -->
+  <script type="application/javascript">
 
-  <!-- ШАГИ РЕГИСТРАЦИИ -->
-  {$_modx->getChunk('steps_for_reg')}
+    const successBag = $('.ajax_form .apply-form__success');
+    const errorBag = $('.ajax_form .apply-form__errors');
 
+    $(document).on('submit', '.ajax_form', function (event) {
+      successBag.html('')
+      errorBag.html('')
 
-  <!-- ФОРМЫ ЗАПИСИ -->
-  <div class="container-xxl my-5">
-    {if $_modx->resource.hideForm?}{else}
-    <div id="enroll-form" class="row justify-content-evenly gy-4">
-      <div class="col-md-5 describe_near_form">
-        [[*describe_near_form_reg]]
-        {if $_modx->resource.total_price?}<h1 style="font-size: 40px;">{$_modx->resource.total_price} руб.</h1>{/if}
-        <div class="row">
-          {if $_modx->resource.monthly_price?}
-          <div class="col-lg-7 col" style="line-height: 24px;">
-            <span style="color: #4763D5;">Купить в рассрочку</span> <br>
-            <span class="text-white">от {$_modx->resource.monthly_price} руб/ месяц</span>
-          </div>
-          {/if}
-          <button
-            class="col-lg-5 col d-flex align-items-center justify-content-center text-white py-1 mt-lg-0 mt-2 btn btn-secondary">Подробнее</button>
-        </div>
-      </div>
+      successBag.removeClass('alert alert-success')
+      errorBag.removeClass('alert alert-danger')
+    })
+    // Уведомление об успешном заполнении формы
+    $(document).on('af_complete', () => {
 
-      <div class="col-md-5 reg_form">
-        [[*header_form_reg]]
+      AjaxForm.Message.error = (message, sticky) => {
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        errorBag.addClass('alert alert-danger')
+        errorBag.html('<li style="list-style: none">' + message + '</li>')
+      }
 
+      AjaxForm.Message.success = (message, sticky) => {
 
-        {if $_modx->resource.change_forms_buy_or_reg?}
+        successBag.addClass('alert alert-success')
+        successBag.html('<li style="list-style: none">' + message + '</li>')
+      }
+    })
+  </script>
+</div>
 
-        [[!AjaxForm?
-        &snippet=`FormIt`
-        &hooks=`FormItSaveForm,email`
-        &emailSubject=`От FluidCourse`
-        &emailTo=`[[+email]]`
-        &emailTpl=`tpl_email`
-        &emailFrom=`[[++emailsender]]`
-        &emailFromName=`FluidCourse.ru`
-        &form=`tpl_enroll_form`
-        &formName=`[[*pagetitle]]`
-        &formFields=`
-        name_and_surname,
-        email,
-        phone,
-        company,
-        job,
-        promocode,
-        personal-data,
-        mailing`
-        &fieldNames=`
-        name_and_surname==Имя,
-        email==Электронная почта,
-        phone==Телефон,
-        company==Организация,
-        job==Должность,
-        promocode==Промокод
-        personal-data==Согласие на обработку персональных данных,
-        mailing==Согласие на получение SMS и Email рассылок`
-        &validate=`
-        name_and_surname:required:minLength=^3^,
-        email:required:email,
-        phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-        company:required:minLength=^3^,
-        job:required:minLength=^3^,
-        {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
-        workemail:blank
-        `
-        &successMessage=`Поздравляем с успешной регистрацией!`
-        &validationErrorMessage=`Неправильно заполнена форма!`
-        ]]
-
-
-        {else}
-
-        [[!AjaxForm?
-        &snippet=`FormIt`
-        &hooks=`FormItSaveForm,email,teachbaseReg`
-        &emailSubject=`От FluidCourse`
-        &emailTo=`[[+email]]`
-        &emailFrom=`[[++emailsender]]`
-        &emailFromName=`FluidCourse.ru`
-        &emailTpl=`tpl_email`
-        &form=`tpl_enroll_optional_promo`
-        &formName=`[[*pagetitle]]`
-        &formFields=`
-        name_and_surname,
-        email,
-        phone,
-        promocode,
-        personal-data,
-        mailing`
-        &fieldNames=`
-        name_and_surname==Имя,
-        email==Электронная почта,
-        phone==Телефон,
-        promocode==Промокод
-        personal-data==Согласие на обработку персональных данных,
-        mailing==Согласие на получение SMS и Email рассылок`
-        &validate=`
-        name_and_surname:required:minLength=^3^,
-        email:required:email,
-        phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-        {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
-        workemail:blank
-        `
-        &successMessage=`Поздравляем с успешной регистрацией!`
-        &validationErrorMessage=`Неправильно заполнена форма!`
-        ]]
-
-        {/if}
-      </div>
-    </div>
-    {/if}
-    <!-- Скрипт отвечает за уведомление об успешном заполнении формы -->
-    <script type="application/javascript">
-
-      const successBag = $('.ajax_form .apply-form__success');
-      const errorBag = $('.ajax_form .apply-form__errors');
-
-      $(document).on('submit', '.ajax_form', function (event) {
-        successBag.html('')
-        errorBag.html('')
-
-        successBag.removeClass('alert alert-success')
-        errorBag.removeClass('alert alert-danger')
-      })
-      // Уведомление об успешном заполнении формы
-      $(document).on('af_complete', () => {
-
-        AjaxForm.Message.error = (message, sticky) => {
-
-          errorBag.addClass('alert alert-danger')
-          errorBag.html('<li style="list-style: none">' + message + '</li>')
-        }
-
-        AjaxForm.Message.success = (message, sticky) => {
-
-          successBag.addClass('alert alert-success')
-          successBag.html('<li style="list-style: none">' + message + '</li>')
-        }
-      })
-    </script>
-  </div>
-
-  <!-- ДРУГИЕ УСЛОВИЯ ДЛЯ КОРПОРАТИВНЫХ КЛИЕНТОВ -->
-  <!-- <div class="container-xxl m-0">
-  {set $row = json_decode($_modx->resource.conditions_for_corpopate_client, true)}
-  <h5 style="font-size: 26px;">{$row.0.title}</h5>
+<!-- ДРУГИЕ УСЛОВИЯ ДЛЯ КОРПОРАТИВНЫХ КЛИЕНТОВ -->
+<div class="container-xxl m-0">
+  <h5 style="font-size: 26px;">Условия для корпоративных клиентов</h5>
   <div class="d-flex w-75">
     <div class="d-lg-flex py-3">
-      <span class="" style="font-size: 18px;">{$row.0.description}</span>
+      <span class="" style="font-size: 18px;">Наша компания специализируется на разработке курсов для бизнеса. Больше
+        информации о сотрудничестве вы можете посмотреть на отдельной странице, жмите кнопку "подробнее"</span>
       <button class="col-md-2 align-items-center justify-content-center text-white py-1 btn btn-primary" type="submit">
         Перейти
       </button>
@@ -258,22 +258,37 @@
   <div class="w-25 h-50">
     <img src="/images/arrow_corporate_client.svg" alt="">
   </div>
-</div> -->
-
-
-  <!-- FAQ -->
-  <div class="faq py-4 container-xxl">
-    <h2>
-      Часто задаваемые вопросы
-    </h2>
-    <div class="row split">
-      {set $rows = json_decode($_modx->resource.faq_migx, true)}
-      {foreach $rows as $row}
-      <div class="list FAQ__hidden">
-        <h5>{$row.question}</h5>
-        <p>{$row.answer_text}</p>
-        <img class="list__collapse-comment" src="/assets/icons/pages/courses/comment-collapse-arrow.svg" alt="^">
+  <!-- <div class="container-xxl m-0">
+    {set $row = json_decode($_modx->resource.conditions_for_corpopate_client, true)}
+    <h5 style="font-size: 26px;">{$row.0.title}</h5>
+    <div class="d-flex w-75">
+      <div class="d-lg-flex py-3">
+        <span class="" style="font-size: 18px;">{$row.0.description}</span>
+        <button class="col-md-2 align-items-center justify-content-center text-white py-1 btn btn-primary" type="submit">
+          Перейти
+        </button>
       </div>
-      {/foreach}
     </div>
+    <div class="w-25 h-50">
+      <img src="/images/arrow_corporate_client.svg" alt="">
+    </div>
+  </div> -->
+</div>
+
+
+<!-- FAQ -->
+<div class="faq py-4 container-xxl">
+  <h2>
+    Часто задаваемые вопросы
+  </h2>
+  <div class="row split">
+    {set $rows = json_decode($_modx->resource.faq_migx, true)}
+    {foreach $rows as $row}
+    <div class="list FAQ__hidden">
+      <h5>{$row.question}</h5>
+      <p>{$row.answer_text}</p>
+      <img class="list__collapse-comment" src="/assets/icons/pages/courses/comment-collapse-arrow.svg" alt="^">
+    </div>
+    {/foreach}
   </div>
+</div>
