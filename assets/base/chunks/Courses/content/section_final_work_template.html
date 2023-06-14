@@ -244,21 +244,26 @@
 </div>
 
 <!-- ДРУГИЕ УСЛОВИЯ ДЛЯ КОРПОРАТИВНЫХ КЛИЕНТОВ -->
-<div class="container-xxl m-0">
+<div class="container-xxl">
   <h5 style="font-size: 26px;">Условия для корпоративных клиентов</h5>
-  <div class="d-flex w-75">
-    <div class="d-lg-flex py-3">
-      <span class="" style="font-size: 18px;">Наша компания специализируется на разработке курсов для бизнеса. Больше
-        информации о сотрудничестве вы можете посмотреть на отдельной странице, жмите кнопку "подробнее"</span>
-      <button class="col-md-2 align-items-center justify-content-center text-white py-1 btn btn-primary" type="submit">
-        Перейти
-      </button>
+  <div class="row mt-2">
+    <span class="col-lg-8" style="font-size: 18px;">Наша компания специализируется на разработке курсов для бизнеса.
+      Больше
+      информации о сотрудничестве вы можете посмотреть на отдельной странице, жмите кнопку "Подробнее"</span>
+    <div class="col-lg-4 d-sm-flex mt-4">
+      <div class="d-flex">
+        <button class="col-lg-2 flex-grow-1 align-items-center justify-content-center py-1 btn btn-primary"
+          type="submit">
+          Подробнее
+        </button>
+      </div>
+      <div class="position-relative d-sm-block d-none">
+        <img class="corporate-arrow" src="/images/arrow_corporate_client.svg" alt="">
+      </div>
     </div>
   </div>
-  <div class="w-25 h-50">
-    <img src="/images/arrow_corporate_client.svg" alt="">
-  </div>
-  <!-- <div class="container-xxl m-0">
+</div>
+<!-- <div class="container-xxl m-0">
     {set $row = json_decode($_modx->resource.conditions_for_corpopate_client, true)}
     <h5 style="font-size: 26px;">{$row.0.title}</h5>
     <div class="d-flex w-75">
@@ -273,7 +278,6 @@
       <img src="/images/arrow_corporate_client.svg" alt="">
     </div>
   </div> -->
-</div>
 
 
 <!-- FAQ -->

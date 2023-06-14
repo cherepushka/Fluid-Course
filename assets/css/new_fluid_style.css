@@ -13872,6 +13872,14 @@ input.promocode {
   transition: opacity 0.15s ease;
 }
 
+.corporate-arrow {
+  position: absolute;
+  left: -30px;
+  top: -70px;
+  width: 218px;
+  height: 165px;
+}
+
 .faq {
   margin-top: 40px;
 }
@@ -13930,6 +13938,11 @@ input.promocode {
 @media screen and (max-width: 720px) {
   .FAQ__hidden p {
     display: none;
+  }
+}
+@media (max-width: 992px) {
+  .corporate-arrow {
+    top: -50px;
   }
 }
 @font-face {
