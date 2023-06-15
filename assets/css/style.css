@@ -13428,6 +13428,23 @@ input:invalid:not(:placeholder-shown) {
   background-size: cover;
 }
 
+.date_flag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  position: absolute;
+  left: -30px;
+  top: -20px;
+  padding: 10px 0;
+  width: 40%;
+  font-size: calc(19px - 0.5vh);
+  border: none;
+  background: #FF5500;
+  border-radius: 0px 9px 9px 0px;
+  color: #fff;
+}
+
 @media screen and (max-width: 1024px) {
   .bg_pic {
     -webkit-backdrop-filter: none;
