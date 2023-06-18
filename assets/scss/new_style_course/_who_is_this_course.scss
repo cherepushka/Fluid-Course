@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .who_is_this_course_for {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -17,4 +18,24 @@
             margin-bottom: 15px;
         }
     }
+=======
+.who_is_this_course_for {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    ol {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        .text {
+            font-size: 18px;
+            line-height: 21.6px;
+        }
+
+        img {
+            margin-bottom: 15px;
+        }
+    }
+>>>>>>> remotes/origin/master
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $primary: #FF5500;
 $body-bg: #F5F5F5;
 $body-color: #000;
@@ -32,4 +33,40 @@ $container-max-widths: (
   lg: 960px,
   xl: 1140px,
   xxl: 1400px
+=======
+$primary: #FF5500;
+$body-bg: #F5F5F5;
+$body-color: #000;
+
+$secondary: #4763D5;
+$info: #FF4800;
+
+$border-color: #4763D5;
+$btn-color: #fff;
+
+$btn-padding-y: 14px;
+$btn-padding-x: 70px;
+
+$font-family-sans-serif: 'Gotham Pro';
+$font-family-sans-serif-golos: 'golos';
+
+
+$grid-breakpoints: (
+  xs: 0,
+  xss: 200px,
+
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1400px
+>>>>>>> remotes/origin/master
 );

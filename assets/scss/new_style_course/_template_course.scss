@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .gradient {
     background-image: url(/images/f2/bg.png);
     background-size: cover;
@@ -215,4 +216,223 @@ button {
 
   
 
+=======
+.gradient {
+    background-image: url(/images/f2/bg.png);
+    background-size: cover;
+}
+
+.action-color {
+    color: #4763D5;
+}
+
+.material-tag {
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #4763D5;
+    border-radius: 8px;
+  }
+  .material-tag:hover {
+    box-shadow: 7px 5px 5px #0d6efd;
+  }
+
+.main {
+    margin: 84px 0;
+    background: url('/images/main.png') no-repeat 100% 0;
+
+    h1 {
+        margin-bottom: 110px;
+    }
+
+}
+
+
+
+h1 {
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 133.7%;
+
+    letter-spacing: -0.005em;
+}
+
+
+
+
+
+
+@include media-breakpoint-down(xxl) {
+    h1 {
+        font-size: 42px;
+    }
+
+    .main {
+        background-size: 50%;
+    }
+}
+
+@include media-breakpoint-down(xl) {
+    h1 {
+        font-size: 35px;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    h1 {
+        font-size: 27px;
+    }
+}
+
+
+
+@include media-breakpoint-down(md) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .main {
+        background: none;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    h1 {
+        font-size: 23px;
+    }
+
+    .box-itm-2 {
+        margin-left: 0%;
+    }
+
+    .box-itm-3 {
+        margin-left: 0%;
+    }
+}
+
+@include media-breakpoint-down(xss) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .box-itm-2 {
+        margin-left: 0%;
+    }
+
+    .box-itm-3 {
+        margin-left: 0%;
+    }
+}
+
+
+.nav {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    box-shadow: 0px 4px 28px 8px #00000008;
+    z-index: 99;
+
+
+    nav {
+
+        .blue-link {
+            color: #4763D5;
+
+        }
+    }
+}
+
+
+
+
+.orange-points {
+    li {
+        margin-bottom: 10px;
+
+        &:before {
+            content: '';
+            height: 2px;
+            width: 27px;
+            border-radius: 0px;
+            background: #FF5500;
+            // position: absolute;
+            display: inline-block;
+            margin-bottom: 5px;
+            margin-right: 10px;
+        }
+    }
+}
+
+
+button {
+    color: #fff !important;
+}
+
+.arrow {
+    margin-left: -53px;
+    margin-top: -138px;
+}
+
+
+.reviews {
+    padding: 0 10%;
+
+    .carousel-control-prev {
+        left: -10%;
+        width: 10%;
+
+        .carousel-control-prev-icon {
+            background-image: url('/images/left.svg');
+        }
+    }
+
+
+
+    .carousel-control-next {
+        right: -10%;
+        width: 10%;
+
+        .carousel-control-next-icon {
+            background-image: url('/images/right.svg');
+        }
+    }
+}
+
+.svedenya-title {
+    font-weight: 500;
+    font-size: 60px;
+  }
+
+  .title-point-svedenya {
+    border-top: 1px solid #000;
+    font-weight: 400;
+    font-size: 20px;
+    transition: all .2s ease;
+    cursor: pointer;
+    padding: 15px 0 45px;  
+    color: #000;
+  }
+
+  .container-point-svedenya {
+    max-width: 380px;
+  }
+
+  .fw-400 {
+    font-weight: 400;
+  }
+  .fw-500 {
+    font-weight: 500;
+  }
+
+  .fz-14 {
+    font-size: 14px;
+  }
+  .fz-16 {
+    font-size: 16px;
+  }
+
+  
+
+>>>>>>> remotes/origin/master
   

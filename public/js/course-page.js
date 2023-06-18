@@ -156,7 +156,12 @@ var Coment = __webpack_require__(/*! ./components/_Coment.js */ "./assets/js/pag
 document.querySelectorAll('.modules_more_3 li').forEach(function (active, index) {
   return active.addEventListener('click', function (e) {
     var modules = document.querySelectorAll('.modules_more_3 li');
+<<<<<<< HEAD
     var modulesText = document.querySelectorAll('.modules .module');
+=======
+    var modulesText = document.querySelectorAll('.module');
+    console.log(modulesText);
+>>>>>>> remotes/origin/master
     modules.forEach(function (el) {
       if (el.classList.contains('active')) {
         el.classList.remove('active');

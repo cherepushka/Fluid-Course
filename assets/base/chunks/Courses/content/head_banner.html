@@ -18,8 +18,14 @@
             [[*content]]
           </div>
           <div class="action row" style="margin-bottom: 3rem">
-            <a class="btn d-flex align-items-center justify-content-center overdate color-white btn-primary custom-btn col-6 h-100
+            {if $_modx->resource.background_banner == 'head_banner_picture' || $_modx->resource.background_banner ==
+            'head_banner_gradient'}
+            <a class="d-flex align-items-center justify-content-center overdate btn btn-primary-white col-6 h-100
             position-relative" href="#enroll-form" style="z-index: 2;">Записаться на курс</a>
+            {else}
+            <a class="d-flex align-items-center justify-content-center overdate btn btn-primary col-6 h-100
+            position-relative" href="#enroll-form" style="z-index: 2;">Записаться на курс</a>
+            {/if}
             <div class="data_start col-6 position-relative top-0" style="z-index: 1;">
 
               {if $_modx->resource.date_start_string?}

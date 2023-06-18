@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .grid {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -26,4 +27,34 @@
             font-size: 14px;
         }
     }
+=======
+.grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: none;
+    border-radius: 15px;
+    font-size: 20px;
+    letter-spacing: 0em;
+    list-style: none;
+    padding: 40px;
+    margin: 0;
+    gap: 21px;
+    line-height: 19.5px;
+    border: 1px solid #4763D5;
+
+    li {
+        strong {
+            color: #4763D5;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 18px;
+        }
+    }
+
+    @media screen and (max-width: 568px) {
+        & {
+            font-size: 14px;
+        }
+    }
+>>>>>>> remotes/origin/master
 }

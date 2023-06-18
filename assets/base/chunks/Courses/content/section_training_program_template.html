@@ -3,54 +3,81 @@
     <h2 class="text-white">[[*duration_of_study]]</h2>
 
     <div class="row">
-      {$_modx->getChunk('tpl_modules_more')} {set $rows =
-      json_decode($_modx->resource.modules, true)} {foreach $rows as $row
-      index=$index} {if $index == 0}
 
-      <div class="col-md-4 modules">
-        <div class="module active">
-          <div class="split row">
-            <!-- <div class="title col-lg-5">
-              <h3>{$row.title}</h3>
-              <h4>{$row.subtitle}</h4>
-            </div> -->
-            {set $items = $row.list_points | fromJSON}
-            <ol
-              class="text-white list-unstyled ps-md-5 ps-3"
-              style="font-size: 1.3rem; line-height: 30px"
-            >
-              {set $i = 1} {foreach $items as $item}
-              <li>{$i}. {$item.point}</li>
-              {set $i += 1} {/foreach}
-            </ol>
-          </div>
-        </div>
-        {set $index = 1} {else}
-        <div class="module">
-          <div class="split row">
-            <!-- <div class="title col-lg-5">
-              <h3>{$row.title}</h3>
-              <h4>{$row.subtitle}</h4>
-            </div> -->
-            {set $items = $row.list_points | fromJSON}
-            <ol
-              class="text-white list-unstyled ps-md-5 ps-3"
-              style="font-size: 1.3rem; line-height: 30px"
-            >
-              {set $i = 1} {foreach $items as $item}
-              <li>{$i}. {$item.point}</li>
-              {set $i += 1} {/foreach}
-            </ol>
-          </div>
-        </div>
-        {/if} {/foreach}
+      <!-- Отображение модулей 768px и выше -->
+      <div class="col-md-8 d-md-block d-none">
+        {$_modx->getChunk('tpl_modules')}
       </div>
 
-      <div class="footnote d-md-none">
-        [[*duration_of_study]]
-        <br /><br />
-        [[*describe_training_program]]
+      <div class="col-md-4 my-5 modules d-md-block d-none">
+        {$_modx->getChunk('tpl_description_list_modules')}
       </div>
+      <!-- Отображение модулей 768px и выше -->
+
+
+      <!-- Отображение модулей 768px и ниже -->
+      {set $rows = json_decode($_modx->resource.modules, true)}
+      <ol class="row justify-content-sm-between list-unstyled my-4 d-md-none">
+        {foreach $rows as $row index=$index}
+        {if $i == 0}
+        <div>
+          <div class="modules_more_3">
+            <li class="active">
+              <div class="text">
+                <strong> {$row.title} </strong>
+                <p>{$row.subtitle}</p>
+              </div>
+            </li>
+          </div>
+          <div class="module active">
+            <div class="split row">
+              {set $items = $row.list_points | fromJSON}
+              <ol class="text-white list-unstyled ps-md-5 ps-3" style="font-size: 1.1rem; line-height: 30px">
+                {set $i = 1}
+                {foreach $items as $item}
+                <li>{$i}. {$item.point}</li>
+                {set $i += 1}
+                {/foreach}
+              </ol>
+            </div>
+          </div>
+        </div>
+        {set $i += 1}
+        {else}
+        <div>
+          <div class="modules_more_3">
+            <li class="">
+              <div class="text">
+                <strong> {$row.title} </strong>
+                <p>{$row.subtitle}</p>
+              </div>
+            </li>
+          </div>
+          <div class="module">
+            <div class="split row">
+              {set $items = $row.list_points | fromJSON}
+              <ol class="text-white list-unstyled ps-md-5 ps-3" style="font-size: 1.1rem; line-height: 30px">
+                {set $i = 1}
+                {foreach $items as $item}
+                <li>{$i}. {$item.point}</li>
+                {set $i += 1}
+                {/foreach}
+              </ol>
+            </div>
+          </div>
+        </div>
+        {/if}
+        {/foreach}
+        <div>
+          <div class="footnote d-md-none">
+            [[*duration_of_study]]
+            <br /><br />
+            [[*describe_training_program]]
+          </div>
+        </div>
+      </ol>
+      <!-- Отображение модулей 768px и ниже -->
+
     </div>
   </div>
 </div>

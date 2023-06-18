@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .header_2 {
     display: none;
 }
@@ -15,4 +16,23 @@
     .teacher {
         gap: 0px;
     }
+=======
+.header_2 {
+    display: none;
+}
+.header_1 {
+    display: block;
+}
+
+@media screen and (max-width: 768px ) {
+    .header_2 {
+        display: block;
+    }
+    .header_1 {
+        display: none;
+    }
+    .teacher {
+        gap: 0px;
+    }
+>>>>>>> remotes/origin/master
 }

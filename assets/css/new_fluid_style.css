@@ -13448,7 +13448,10 @@ input:invalid:not(:placeholder-shown) {
   cursor: pointer;
   transition: all 0.3s;
   white-space: nowrap;
+<<<<<<< HEAD
   border: 1px solid #FF5500;
+=======
+>>>>>>> remotes/origin/master
 }
 
 .grid {
@@ -13597,6 +13600,7 @@ input:invalid:not(:placeholder-shown) {
   margin-bottom: 18px;
 }
 
+<<<<<<< HEAD
 .modules {
   margin-top: 47px;
   position: relative;
@@ -13605,16 +13609,32 @@ input:invalid:not(:placeholder-shown) {
   display: block;
 }
 .modules .module {
+=======
+.module.active {
+  margin-top: 15px;
+  display: block;
+}
+
+.module {
+>>>>>>> remotes/origin/master
   display: none;
   width: 100%;
   top: 0px;
   transition: all 0.3s;
 }
+<<<<<<< HEAD
 .modules .module .split {
   display: flex;
   justify-content: flex-start;
 }
 .modules .module .split .title h3, .modules .module .split .title .h3 {
+=======
+.module .split {
+  display: flex;
+  justify-content: flex-start;
+}
+.module .split .title h3, .module .split .title .h3 {
+>>>>>>> remotes/origin/master
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
@@ -13622,7 +13642,11 @@ input:invalid:not(:placeholder-shown) {
   text-align: left;
   color: #fff;
 }
+<<<<<<< HEAD
 .modules .module .split .title h4, .modules .module .split .title .h4 {
+=======
+.module .split .title h4, .module .split .title .h4 {
+>>>>>>> remotes/origin/master
   font-weight: 700;
   line-height: 30px;
   letter-spacing: 0em;
@@ -13631,14 +13655,22 @@ input:invalid:not(:placeholder-shown) {
   width: 380px;
   color: #fff;
 }
+<<<<<<< HEAD
 .modules .module .split .list {
+=======
+.module .split .list {
+>>>>>>> remotes/origin/master
   color: #fff;
   margin-top: 16px;
   padding: 0 10px;
   gap: 10px 0;
 }
 @media (min-width: 992px) {
+<<<<<<< HEAD
   .modules .module .split .list {
+=======
+  .module .split .list {
+>>>>>>> remotes/origin/master
     display: grid;
     grid-template-columns: 50% 50%;
     font-size: 20.5px;
@@ -13665,15 +13697,46 @@ input:invalid:not(:placeholder-shown) {
   border-radius: 16px;
 }
 .modules_more_3 li strong {
+<<<<<<< HEAD
   font-weight: 500;
   font-size: 28px;
   margin-bottom: 20px;
 }
+=======
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.modules_more_3 li p {
+  font-weight: 400;
+  font-size: 18px;
+}
+>>>>>>> remotes/origin/master
 .modules_more_3 li.active {
   color: #1A1A1A;
   background: #FFFFFF;
 }
 
+<<<<<<< HEAD
+=======
+.steps_for_reg li {
+  width: 31%;
+  padding: 20px 30px;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 16px;
+}
+.steps_for_reg li strong {
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.steps_for_reg li p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+>>>>>>> remotes/origin/master
 .footnote {
   color: #fff;
   border: 1px solid #FFFFFF;
@@ -13682,13 +13745,35 @@ input:invalid:not(:placeholder-shown) {
   margin-top: 60px;
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 720px) {
+=======
+@media screen and (min-width: 768px) {
+>>>>>>> remotes/origin/master
   .modules_more_3 li {
     margin-top: 20px;
   }
 }
+<<<<<<< HEAD
 @media screen and (max-width: 540px) {
   .modules_more_3 li {
+=======
+@media screen and (max-width: 768px) {
+  .modules_more_3 li {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .steps_for_reg li {
+    margin-top: 20px;
+    width: calc(48% - 0.3rem);
+  }
+}
+@media screen and (max-width: 568px) {
+  .steps_for_reg li {
+    margin-top: 20px;
+>>>>>>> remotes/origin/master
     width: 100%;
   }
 }
@@ -13813,6 +13898,13 @@ input:invalid:not(:placeholder-shown) {
   transition: all 0.3s;
 }
 
+<<<<<<< HEAD
+=======
+.selected_stage {
+  color: #FF4800;
+}
+
+>>>>>>> remotes/origin/master
 input.promocode {
   color: #fff;
   background: none;
@@ -13837,6 +13929,17 @@ input.promocode {
   transition: opacity 0.15s ease;
 }
 
+<<<<<<< HEAD
+=======
+.corporate-arrow {
+  position: absolute;
+  left: -30px;
+  top: -70px;
+  width: 218px;
+  height: 165px;
+}
+
+>>>>>>> remotes/origin/master
 .faq {
   margin-top: 40px;
 }
@@ -13897,6 +14000,14 @@ input.promocode {
     display: none;
   }
 }
+<<<<<<< HEAD
+=======
+@media (max-width: 992px) {
+  .corporate-arrow {
+    top: -50px;
+  }
+}
+>>>>>>> remotes/origin/master
 @font-face {
   font-family: "Golos";
   src: url(/fonts/golos-text_regular.woff2?ae582e244fd754e381e0494d12e662ba) format("woff2"), url(/fonts/golos-text_regular.woff?b1395e91e001884eee01fbcf0896f85d) format("woff");
@@ -13987,10 +14098,93 @@ input.promocode {
   font-weight: 300;
   font-style: italic;
 }
+<<<<<<< HEAD
+=======
+.btn-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4763D5;
+  --bs-btn-border-color: #4763D5;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #FF5500;
+  --bs-btn-hover-border-color: #FF5500;
+  --bs-btn-focus-shadow-rgb: 150, 38, 223;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #FF5500;
+  --bs-btn-active-border-color: #FF5500;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4763D5;
+  --bs-btn-disabled-border-color: #4763D5;
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #FF5500;
+  --bs-btn-border-color: #FF5500;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #4763D5;
+  --bs-btn-hover-border-color: #4763D5;
+  --bs-btn-focus-shadow-rgb: 217, 72, 0;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #4763D5;
+  --bs-btn-active-border-color: #4763D5;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4763D5;
+  --bs-btn-disabled-border-color: #FF5500;
+}
+
+.btn-outline-dark {
+  --bs-btn-color: #000000;
+  --bs-btn-border-color: #000;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #000000;
+  --bs-btn-hover-border-color: #000000;
+  --bs-btn-focus-shadow-rgb: 33, 37, 41;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #000000;
+  --bs-btn-active-border-color: #000000;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #000000;
+  --bs-gradient: none;
+}
+
+.btn-primary-white {
+  background-color: #FF5500;
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: #FF5500;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-focus-shadow-rgb: 33, 37, 41;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #fff;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #fff;
+  --bs-gradient: none;
+}
+
+>>>>>>> remotes/origin/master
 body {
   background: #fff;
 }
 
+<<<<<<< HEAD
+=======
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+}
+
+>>>>>>> remotes/origin/master
 .fw-400 {
   font-weight: 400;
 }
