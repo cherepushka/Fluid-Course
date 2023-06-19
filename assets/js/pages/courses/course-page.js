@@ -4,12 +4,8 @@ const Coment = require('./components/_Coment.js');
 //Программа обучения
 document.querySelectorAll('.modules_more_3 li').forEach((active, index) => active.addEventListener('click', function (e) {
     const modules = document.querySelectorAll('.modules_more_3 li');
-<<<<<<< HEAD
-    const modulesText = document.querySelectorAll('.modules .module');
-=======
     const modulesText = document.querySelectorAll('.module');
     console.log(modulesText)
->>>>>>> remotes/origin/master
     modules.forEach(el => {
         if (el.classList.contains('active')) {
             el.classList.remove('active');

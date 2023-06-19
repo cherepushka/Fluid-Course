@@ -13448,10 +13448,6 @@ input:invalid:not(:placeholder-shown) {
   cursor: pointer;
   transition: all 0.3s;
   white-space: nowrap;
-<<<<<<< HEAD
-  border: 1px solid #FF5500;
-=======
->>>>>>> remotes/origin/master
 }
 
 .grid {
@@ -13600,41 +13596,22 @@ input:invalid:not(:placeholder-shown) {
   margin-bottom: 18px;
 }
 
-<<<<<<< HEAD
-.modules {
-  margin-top: 47px;
-  position: relative;
-}
-.modules .module.active {
-  display: block;
-}
-.modules .module {
-=======
 .module.active {
   margin-top: 15px;
   display: block;
 }
 
 .module {
->>>>>>> remotes/origin/master
   display: none;
   width: 100%;
   top: 0px;
   transition: all 0.3s;
 }
-<<<<<<< HEAD
-.modules .module .split {
-  display: flex;
-  justify-content: flex-start;
-}
-.modules .module .split .title h3, .modules .module .split .title .h3 {
-=======
 .module .split {
   display: flex;
   justify-content: flex-start;
 }
 .module .split .title h3, .module .split .title .h3 {
->>>>>>> remotes/origin/master
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
@@ -13642,11 +13619,7 @@ input:invalid:not(:placeholder-shown) {
   text-align: left;
   color: #fff;
 }
-<<<<<<< HEAD
-.modules .module .split .title h4, .modules .module .split .title .h4 {
-=======
 .module .split .title h4, .module .split .title .h4 {
->>>>>>> remotes/origin/master
   font-weight: 700;
   line-height: 30px;
   letter-spacing: 0em;
@@ -13655,22 +13628,14 @@ input:invalid:not(:placeholder-shown) {
   width: 380px;
   color: #fff;
 }
-<<<<<<< HEAD
-.modules .module .split .list {
-=======
 .module .split .list {
->>>>>>> remotes/origin/master
   color: #fff;
   margin-top: 16px;
   padding: 0 10px;
   gap: 10px 0;
 }
 @media (min-width: 992px) {
-<<<<<<< HEAD
-  .modules .module .split .list {
-=======
   .module .split .list {
->>>>>>> remotes/origin/master
     display: grid;
     grid-template-columns: 50% 50%;
     font-size: 20.5px;
@@ -13697,12 +13662,6 @@ input:invalid:not(:placeholder-shown) {
   border-radius: 16px;
 }
 .modules_more_3 li strong {
-<<<<<<< HEAD
-  font-weight: 500;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-=======
   font-weight: 400;
   font-size: 28px;
   margin-bottom: 20px;
@@ -13711,14 +13670,11 @@ input:invalid:not(:placeholder-shown) {
   font-weight: 400;
   font-size: 18px;
 }
->>>>>>> remotes/origin/master
 .modules_more_3 li.active {
   color: #1A1A1A;
   background: #FFFFFF;
 }
 
-<<<<<<< HEAD
-=======
 .steps_for_reg li {
   width: 31%;
   padding: 20px 30px;
@@ -13736,7 +13692,6 @@ input:invalid:not(:placeholder-shown) {
   font-size: 18px;
 }
 
->>>>>>> remotes/origin/master
 .footnote {
   color: #fff;
   border: 1px solid #FFFFFF;
@@ -13745,19 +13700,11 @@ input:invalid:not(:placeholder-shown) {
   margin-top: 60px;
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 720px) {
-=======
 @media screen and (min-width: 768px) {
->>>>>>> remotes/origin/master
   .modules_more_3 li {
     margin-top: 20px;
   }
 }
-<<<<<<< HEAD
-@media screen and (max-width: 540px) {
-  .modules_more_3 li {
-=======
 @media screen and (max-width: 768px) {
   .modules_more_3 li {
     margin-top: 20px;
@@ -13773,7 +13720,6 @@ input:invalid:not(:placeholder-shown) {
 @media screen and (max-width: 568px) {
   .steps_for_reg li {
     margin-top: 20px;
->>>>>>> remotes/origin/master
     width: 100%;
   }
 }
@@ -13898,13 +13844,10 @@ input:invalid:not(:placeholder-shown) {
   transition: all 0.3s;
 }
 
-<<<<<<< HEAD
-=======
 .selected_stage {
   color: #FF4800;
 }
 
->>>>>>> remotes/origin/master
 input.promocode {
   color: #fff;
   background: none;
@@ -13929,8 +13872,6 @@ input.promocode {
   transition: opacity 0.15s ease;
 }
 
-<<<<<<< HEAD
-=======
 .corporate-arrow {
   position: absolute;
   left: -30px;
@@ -13939,7 +13880,6 @@ input.promocode {
   height: 165px;
 }
 
->>>>>>> remotes/origin/master
 .faq {
   margin-top: 40px;
 }
@@ -14000,14 +13940,11 @@ input.promocode {
     display: none;
   }
 }
-<<<<<<< HEAD
-=======
 @media (max-width: 992px) {
   .corporate-arrow {
     top: -50px;
   }
 }
->>>>>>> remotes/origin/master
 @font-face {
   font-family: "Golos";
   src: url(/fonts/golos-text_regular.woff2?ae582e244fd754e381e0494d12e662ba) format("woff2"), url(/fonts/golos-text_regular.woff?b1395e91e001884eee01fbcf0896f85d) format("woff");
@@ -14098,8 +14035,6 @@ input.promocode {
   font-weight: 300;
   font-style: italic;
 }
-<<<<<<< HEAD
-=======
 .btn-secondary {
   --bs-btn-color: #fff;
   --bs-btn-bg: #4763D5;
@@ -14169,13 +14104,10 @@ input.promocode {
   --bs-gradient: none;
 }
 
->>>>>>> remotes/origin/master
 body {
   background: #fff;
 }
 
-<<<<<<< HEAD
-=======
 a {
   text-decoration: none;
 }
@@ -14184,7 +14116,6 @@ a:hover {
   color: #000;
 }
 
->>>>>>> remotes/origin/master
 .fw-400 {
   font-weight: 400;
 }

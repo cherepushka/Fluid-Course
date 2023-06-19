@@ -1,11 +1,7 @@
 .final_work_stage {
     font-family: 'Golos';
 
-<<<<<<< HEAD
-    .my-4{
-=======
     .my-4 {
->>>>>>> remotes/origin/master
         transition-duration: .3s;
     }
 
@@ -79,10 +75,7 @@
         }
     }
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> remotes/origin/master
 @media (max-width:992px) {
     .carousel {
         padding: 10px;
@@ -142,14 +135,10 @@
     font-family: "Golos", tahoma;
     outline: none;
     transition: all 0.3s;
-<<<<<<< HEAD
-
-=======
 }
 
 .selected_stage {
     color: #FF4800;
->>>>>>> remotes/origin/master
 }
 
 input.promocode {
@@ -176,8 +165,6 @@ input.promocode {
     transition: opacity 0.15s ease;
 }
 
-<<<<<<< HEAD
-=======
 .corporate-arrow {
     position: absolute;
     left: -30px;
@@ -186,7 +173,6 @@ input.promocode {
     height: calc(165px);
 }
 
->>>>>>> remotes/origin/master
 .faq {
     margin-top: 40px;
 
@@ -208,11 +194,7 @@ input.promocode {
                 }
             }
 
-<<<<<<< HEAD
-            .list__collapse-comment{
-=======
             .list__collapse-comment {
->>>>>>> remotes/origin/master
                 position: absolute;
                 cursor: pointer;
                 display: block;
@@ -224,20 +206,12 @@ input.promocode {
                 }
             }
 
-<<<<<<< HEAD
-            &.FAQ__hidden .list__collapse-comment{
-=======
             &.FAQ__hidden .list__collapse-comment {
->>>>>>> remotes/origin/master
                 display: none;
                 user-select: none;
             }
 
-<<<<<<< HEAD
-           
-=======
 
->>>>>>> remotes/origin/master
         }
 
         @media screen and (max-width:992px) {
@@ -258,11 +232,6 @@ input.promocode {
 }
 
 @media screen and (max-width: 720px) {
-<<<<<<< HEAD
-    .FAQ__hidden p{
-        display: none;
-    }
-=======
     .FAQ__hidden p {
         display: none;
     }
@@ -272,5 +241,4 @@ input.promocode {
     .corporate-arrow {
         top: -50px;
     }
->>>>>>> remotes/origin/master
 }
