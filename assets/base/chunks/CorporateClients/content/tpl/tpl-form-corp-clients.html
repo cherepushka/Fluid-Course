@@ -1,0 +1,49 @@
+<form class="col-md-6 col reg_form" method="post" action="">
+  <h3 class="mb-5">Форма для заполнения</h3>
+
+  <!-- Подключение библиотеки jQuery -->
+  <script src="jquery.js"></script>
+  <!-- Подключение jQuery плагина Masked Input -->
+  <script src="/assets/js/jquery.maskedinput.min.js"></script>
+
+  <ul class="apply-form__success"></ul>
+  <ul class="apply-form__errors"></ul>
+
+  <input class="final_work_input" type="text" placeholder="Имя фамилия" name="name_and_surname" required>
+
+  <input class="final_work_input" id="form_phone" type="text" placeholder="+7 (999) 999-99-99" class="phone"
+    name="phone" required>
+
+  <input class="final_work_input" type="text" placeholder="Компания" name="company" required>
+  <!-- <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode" required
+    pattern="[Ff][Cc][Nn][Gg]2023|[Ff][Ll]2023|[Кк]3601|[Hh][Rr][Kk]51|[Mm][Pp][Uu]61|[Mm][Ss]51|[Mm][Ss]360|[Hh][Mm][Ss]5"
+    title="Введите корректный Промокод"> -->
+
+
+  <script>
+    //Код jQuery, установливающий маску для ввода телефона элементу input
+    //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+    $(function () {
+      //2. Получить элемент, к которому необходимо добавить маску
+      $("#form_phone").mask("+7 (999) 999-99-99");
+    });
+  </script>
+
+  <!--для защиты от ботов-->
+  <input type="hidden" name="workemail" value="" />
+
+
+    <button class="btn btn-primary w-100 py-2 my-4" type="submit">
+      Получить консультацию
+    </button>
+
+  <div class="d-flex justify-content-between align-items-center my-3">
+    <input class="checkbox_accept" type="checkbox" id="personal_data" name="personal_data[]" checked required disabled>
+    <label class="checkbox-other__label" for="personal_data"><span></span></label>
+    <div class="text_accept w-100 px-3">Записываясь на курс, вы даете согласие на обработку своих
+      персональных данных в соответствии
+      <span>с политикой конфиденциальности.
+    </div>
+  </div>
+
+</form>

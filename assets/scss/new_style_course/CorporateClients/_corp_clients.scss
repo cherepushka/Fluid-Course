@@ -1,0 +1,52 @@
+.banner_corp_clients {
+  background-image: url(/images/corp-client-banner.png);
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 40px;
+
+  .banner_corp_clients_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    p {
+      color: #ffff;
+    }
+
+    .banner_corp_clients_info_title {
+      color: #ffff;
+    }
+  }
+}
+.solutions_corp_client {
+  li {
+    width: 31%;
+    padding: 20px 30px;
+    border: 1px solid #4763d5;
+    border-radius: 16px;
+
+    strong {
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .solutions_corp_client li {
+    margin-top: 20px;
+    width: calc(48% - 0.3rem);
+  }
+}
+@media screen and (max-width: 568px) {
+  .solutions_corp_client li {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+.gradient {
+  background-image: url(/images/f2/bg.png);
+  background-size: cover;
+}

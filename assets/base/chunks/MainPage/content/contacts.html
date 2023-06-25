@@ -1,4 +1,10 @@
 <main>
+  
+  <!-- Подключение библиотеки jQuery -->
+  <script src="jquery.js"></script>
+  <!-- Подключение jQuery плагина Masked Input -->
+  <script src="/assets/js/jquery.maskedinput.min.js"></script>
+
   <div class="container">
 
     <div class=" py-5 ">
@@ -118,6 +124,15 @@
                     <input class="form-control" required placeholder="Телефон" type="text" name="phone"
                       value="[[!+fi.phone]]">
                     <span class="error text-danger">[[!+fi.error.phone]]</span>
+                    
+        <script>
+          //Код jQuery, установливающий маску для ввода телефона элементу input
+          //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+          $(function () {
+            //2. Получить элемент, к которому необходимо добавить маску
+            $("#form_phone").mask("+7 (999) 999-99-99");
+          });
+        </script>
                   </div>
                 </div>
                 <div class="col-md-6">

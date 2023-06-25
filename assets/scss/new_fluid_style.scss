@@ -1,47 +1,48 @@
 @import "./varibles";
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
-@import "./new_style_course/form";
-@import './new_style_course/head_banner_info';
-@import './new_style_course/what_you_will_learn';
-@import './new_style_course/who_is_this_course';
-@import './new_style_course/teacher';
-@import './new_style_course/training_programm';
-@import './new_style_course/final_work';
-@import './fonts/Golos.scss';
-@import 'fonts/font';
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./new_style_course/Courses/form";
+@import "./new_style_course/Courses/head_banner_info";
+@import "./new_style_course/Courses/what_you_will_learn";
+@import "./new_style_course/Courses/who_is_this_course";
+@import "./new_style_course/Courses/teacher";
+@import "./new_style_course/Courses/training_programm";
+@import "./new_style_course/Courses/final_work";
+@import "./new_style_course/CorporateClients/corp_clients";
+@import "./fonts/Golos.scss";
+@import "fonts/font";
 
 .btn-secondary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #4763D5;
-  --bs-btn-border-color: #4763D5;
+  --bs-btn-bg: #4763d5;
+  --bs-btn-border-color: #4763d5;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #FF5500;
-  --bs-btn-hover-border-color: #FF5500;
+  --bs-btn-hover-bg: #ff5500;
+  --bs-btn-hover-border-color: #ff5500;
   --bs-btn-focus-shadow-rgb: 150, 38, 223;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #FF5500;
-  --bs-btn-active-border-color: #FF5500;
+  --bs-btn-active-bg: #ff5500;
+  --bs-btn-active-border-color: #ff5500;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #4763D5;
-  --bs-btn-disabled-border-color: #4763D5;
+  --bs-btn-disabled-bg: #4763d5;
+  --bs-btn-disabled-border-color: #4763d5;
 }
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #FF5500;
-  --bs-btn-border-color: #FF5500;
+  --bs-btn-bg: #ff5500;
+  --bs-btn-border-color: #ff5500;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #4763D5;
-  --bs-btn-hover-border-color: #4763D5;
+  --bs-btn-hover-bg: #4763d5;
+  --bs-btn-hover-border-color: #4763d5;
   --bs-btn-focus-shadow-rgb: 217, 72, 0;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #4763D5;
-  --bs-btn-active-border-color: #4763D5;
+  --bs-btn-active-bg: #4763d5;
+  --bs-btn-active-border-color: #4763d5;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #4763D5;
-  --bs-btn-disabled-border-color: #FF5500;
+  --bs-btn-disabled-bg: #4763d5;
+  --bs-btn-disabled-border-color: #ff5500;
 }
 
 .btn-outline-dark {
@@ -62,9 +63,9 @@
 }
 
 .btn-primary-white {
-  background-color: #FF5500;
+  background-color: #ff5500;
   --bs-btn-color: #fff;
-  --bs-btn-border-color: #FF5500;
+  --bs-btn-border-color: #ff5500;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #fff;
   --bs-btn-hover-border-color: #fff;
@@ -98,29 +99,38 @@ a:hover {
 .fw-500 {
   font-weight: 500;
 }
+.text-orange {
+  color: #FF4800;
+}
 
 h1 {
-  font-family: 'Golos';
+  font-family: "Golos";
   font-weight: 400;
   font-size: 48px;
-  line-height: 45.94px;
+  line-height: 64px;
 }
 
 h2 {
-  font-family: 'Golos';
+  font-family: "Golos";
   font-size: 32px;
-  line-height: 30.62px;
+  line-height: 43px;
 }
 
 h3 {
-  font-family: 'Golos';
-  font-size: 20px;
+  font-family: "Golos";
+  font-size: 28px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 38px;
+}
+h4 {
+  font-family: "Golos";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
 }
 
 h5 {
-  font-family: 'Golos';
+  font-family: "Golos";
   font-size: 22px;
   font-weight: 400;
   line-height: 26px;
@@ -133,39 +143,53 @@ h6 {
 }
 
 p {
-  font-family: 'Golos';
+  font-family: "Golos";
   font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 li {
-  font-family: 'Golos';
+  font-family: "Golos";
 }
 
 span {
-  font-family: 'Golos';
+  font-family: "Golos";
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
 }
 
 strong {
-  font-family: 'Golos';
+  font-family: "Golos";
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 992px) {
   h1 {
     font-family: "Golos";
     font-weight: 400;
-    font-size: 46px;
+    font-size: 41px;
     line-height: 56.94px;
   }
 
   h2 {
     font-family: "Golos";
-    font-size: 32px;
-    line-height: 30.62px;
+    font-size: 30px;
+    line-height: 38px;
   }
 
   h3 {
     font-family: "Golos";
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  h4 {
+    font-family: "Golos";
+    font-size: 16px;
     font-weight: 400;
     line-height: 24px;
   }
@@ -186,6 +210,7 @@ strong {
   p {
     font-family: "Golos";
     font-size: 18px;
+    line-height: 20px;
   }
 
   li {
@@ -194,13 +219,79 @@ strong {
 
   span {
     font-family: "Golos";
+    font-size: 15px;
+    line-height: 20px;
   }
 
   strong {
     font-family: "Golos";
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+@media screen and (max-width: 568px) {
+  // @media screen and (max-width: 1140px) {
+  h1 {
+    font-family: "Golos";
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-family: "Golos";
+    font-size: 30px;
+    line-height: 28px;
+  }
+
+  h3 {
+    font-family: "Golos";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+  h4 {
+    font-family: "Golos";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  h5 {
+    font-family: "Golos";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+  h6 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  p {
+    font-family: "Golos";
+    font-size: 15px;
+  }
+
+  li {
+    font-family: "Golos";
+  }
+
+  span {
+    font-family: "Golos";
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  strong {
+    font-family: "Golos";
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 
 .nav nav .blue-link {
-  color: #4763D5;
+  color: #4763d5;
 }

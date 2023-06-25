@@ -1,0 +1,19 @@
+<div class="py-5">
+    <div class="container-xxl">
+        <h2 class="py-lg-5">Решения для корпоративного обучения</h2>
+        <div>
+            {set $rows = json_decode($_modx->resource.steps_for_reg, true)}
+            <ol class="row justify-content-between list-unstyled my-4 mx-0 solutions_corp_client">
+                {foreach $rows as $row}
+                <li class="">
+                    <div class="d-flex flex-column">
+                        <strong class="mb-3">{$row.title}</strong>
+                        <p>{$row.description}</p>
+                    </div>
+                    </li>
+                    {/foreach}
+            </ol>
+        </div>
+
+    </div>
+</div>

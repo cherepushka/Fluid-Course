@@ -1,0 +1,30 @@
+<section class="gradient text-light py-5">
+
+    <div class="container">
+
+        <h2 id="program" class="mb-5">
+            Образовательные программы
+        </h2>
+        <div class="d-flex">
+            <div class="row mb-5 gy-4">
+
+                {'!pdoResources' | snippet : [
+                'parents' => 14,
+                'tpl' => 'tpl_main_page_program',
+                'limit' => 3,
+                'includeTVs' => 'total_price,monthly_price,anotation,img,category_program,date_start_calendar',
+                'sortby' => 'date_start_calendar',
+                'sortdir' => 'DESC',
+                'showHidden' => 1,
+                'includeContent' => 1,
+                'hideContainers' => 1,
+                ]}
+
+                <div class="d-flex justify-content-center align-items-end col-md-6 col-xxl-3 py-4">
+                <!-- <div class="d-flex justify-content-center align-content-end py-4"> -->
+                    <a class="text-white  text-decoration-none p-3" href="[[~4]]">Все курсы ᐳᐳ </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
