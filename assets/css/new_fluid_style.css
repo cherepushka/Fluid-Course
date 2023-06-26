@@ -13730,7 +13730,7 @@ input:invalid:not(:placeholder-shown) {
   transition-duration: 0.3s;
 }
 .final_work_stage h1.active, .final_work_stage .active.h1 {
-  color: #FF4800;
+  color: #ff4800;
 }
 
 .student_reviews {
@@ -13739,14 +13739,10 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .carousel {
-  min-height: 350px;
+  height: 670px;
   display: flex;
   width: 100%;
-  padding: 40px;
-  gap: 20px;
   box-sizing: border-box;
-  border: 1px solid #4763D5;
-  border-radius: 17px;
 }
 .carousel .coments .box client-coment {
   transition: all 0.8s;
@@ -13756,7 +13752,7 @@ input:invalid:not(:placeholder-shown) {
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 500;
-  color: #FF5500;
+  color: #ff5500;
 }
 .carousel .coments .box client-coment p {
   line-height: 27px;
@@ -13772,7 +13768,7 @@ input:invalid:not(:placeholder-shown) {
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 500;
-  color: #FF5500;
+  color: #ff5500;
 }
 .carousel .coments .box client-coment.active p {
   line-height: 27px;
@@ -13793,7 +13789,7 @@ input:invalid:not(:placeholder-shown) {
   }
 }
 .describe_near_form {
-  background: linear-gradient(180deg, #4763D5 0%, #000000 100%);
+  background: linear-gradient(180deg, #4763d5 0%, #000000 100%);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
   color: #fff;
@@ -13801,7 +13797,7 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .reg_form {
-  background: linear-gradient(180deg, #4763D5 0%, #000000 100%);
+  background: linear-gradient(180deg, #4763d5 0%, #000000 100%);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   padding: 40px 50px;
@@ -13809,23 +13805,23 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .btn_buy {
-  border: #FF5500;
+  border: #ff5500;
   padding: 15px 63px;
 }
 .btn_buy:hover {
   color: #fff;
-  background: #4763D5;
+  background: #4763d5;
   border: none;
 }
 
 .btn_installment {
-  background: #4763D5;
-  border: #4763D5;
+  background: #4763d5;
+  border: #4763d5;
   border-radius: 11px;
   padding: 15px 15px;
 }
 .btn_installment:hover {
-  color: #4763D5;
+  color: #4763d5;
   background: #fff;
   border: none;
 }
@@ -13845,20 +13841,20 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .selected_stage {
-  color: #FF4800;
+  color: #ff4800;
 }
 
 input.promocode {
   color: #fff;
   background: none;
-  border: 1px solid #FF5500;
+  border: 1px solid #ff5500;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 11px;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  position: initial;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13927,7 +13923,7 @@ input.promocode {
 }
 .faq .split h5, .faq .split .h5 {
   margin-bottom: 20px;
-  color: #4763D5;
+  color: #4763d5;
 }
 @media screen and (max-width: 720px) {
   .faq .split h5, .faq .split .h5 {
@@ -13992,6 +13988,20 @@ input.promocode {
   background-size: cover;
 }
 
+.case-list li {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 992px) {
+  .case-list li {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 568px) {
+  .case-list li {
+    margin-top: 14px;
+  }
+}
 @font-face {
   font-family: "Golos";
   src: url(/fonts/golos-text_regular.woff2?ae582e244fd754e381e0494d12e662ba) format("woff2"), url(/fonts/golos-text_regular.woff?b1395e91e001884eee01fbcf0896f85d) format("woff");

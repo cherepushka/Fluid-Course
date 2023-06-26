@@ -50,3 +50,24 @@
   background-image: url(/images/f2/bg.png);
   background-size: cover;
 }
+
+.case-list {
+  li {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .case-list {
+    li {
+      font-size: 16px;
+    }
+  }
+}
+@media screen and (max-width: 568px) {
+  .case-list {
+    li {
+      margin-top: 14px;
+    }
+  }
+}
