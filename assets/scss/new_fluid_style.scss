@@ -99,21 +99,24 @@ a:hover {
 .fw-500 {
   font-weight: 500;
 }
+
 .text-orange {
   color: #FF4800;
 }
-
 h1 {
-  font-family: "Golos";
+  font-family: "Gotham Pro";
+  // font-family: "Golos";
   font-weight: 400;
   font-size: 48px;
   line-height: 64px;
 }
 
 h2 {
-  font-family: "Golos";
+  font-family: "Gotham Pro";
+  // font-family: "Golos";
   font-size: 32px;
   line-height: 43px;
+  font-weight: 400;
 }
 
 h3 {
@@ -122,6 +125,7 @@ h3 {
   font-weight: 400;
   line-height: 38px;
 }
+
 h4 {
   font-family: "Golos";
   font-size: 18px;
@@ -138,7 +142,7 @@ h5 {
 
 h6 {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 14.52px;
 }
 
@@ -161,32 +165,175 @@ span {
 }
 
 strong {
-  font-family: "Golos";
+  font-family: "Gotham Pro";
+  // font-family: "Golos";
   font-size: 24px;
   line-height: 32px;
   font-weight: 400;
 }
-
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1140px) {
   h1 {
-    font-family: "Golos";
+    font-family: "Gotham Pro";
+    // font-family: "Golos";
     font-weight: 400;
-    font-size: 41px;
-    line-height: 56.94px;
+    font-size: 40px;
+    line-height: 53.48px;
   }
 
   h2 {
-    font-family: "Golos";
-    font-size: 30px;
-    line-height: 38px;
+    font-family: "Gotham Pro";
+    // font-family: "Golos";
+    font-size: 32px;
+    line-height: 43px;
+    font-weight: 400;
   }
 
   h3 {
     font-family: "Golos";
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 38px;
   }
+
+  h4 {
+    font-family: "Golos";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+  }
+
+  h5 {
+    font-family: "Golos";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+  h6 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 14.52px;
+  }
+
+  p {
+    font-family: "Golos";
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  li {
+    font-family: "Golos";
+  }
+
+  span {
+    font-family: "Golos";
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+  }
+
+  strong {
+    font-family: "Gotham Pro";
+    // font-family: "Golos";
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-family: "Gotham Pro";
+    // font-family: "Golos";
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 56.94px;
+  }
+
+  h2 {
+    font-family: "Gotham Pro";
+    // font-family: "Golos";
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 400;
+    line-height: 43.85px;
+  }
+
+  h3 {
+    font-family: "Golos";
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 38px;
+  }
+
+  h4 {
+    font-family: "Golos";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  h5 {
+    font-family: "Golos";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+  h6 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  p {
+    font-family: "Golos";
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  li {
+    font-family: "Golos";
+  }
+
+  span {
+    font-family: "Golos";
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  strong {
+    font-family: "Gotham Pro";
+    // font-family: "Golos";
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  h1 {
+    font-family: "Gotham Pro";
+    // font-family: "Golos";
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-family: "Gotham Pro";
+    // font-family: "Golos";
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  h3 {
+    font-family: "Golos";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
   h4 {
     font-family: "Golos";
     font-size: 16px;
@@ -210,69 +357,6 @@ strong {
   p {
     font-family: "Golos";
     font-size: 18px;
-    line-height: 20px;
-  }
-
-  li {
-    font-family: "Golos";
-  }
-
-  span {
-    font-family: "Golos";
-    font-size: 15px;
-    line-height: 20px;
-  }
-
-  strong {
-    font-family: "Golos";
-    font-size: 20px;
-    line-height: 28px;
-  }
-}
-@media screen and (max-width: 568px) {
-  // @media screen and (max-width: 1140px) {
-  h1 {
-    font-family: "Golos";
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 36px;
-  }
-
-  h2 {
-    font-family: "Golos";
-    font-size: 30px;
-    line-height: 28px;
-  }
-
-  h3 {
-    font-family: "Golos";
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
-  }
-
-  h4 {
-    font-family: "Golos";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-  }
-  h5 {
-    font-family: "Golos";
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 26px;
-  }
-
-  h6 {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14.52px;
-  }
-
-  p {
-    font-family: "Golos";
-    font-size: 15px;
   }
 
   li {
@@ -286,7 +370,8 @@ strong {
   }
 
   strong {
-    font-family: "Golos";
+    font-family: "Gotham Pro";
+    // font-family: "Golos";
     font-size: 18px;
     line-height: 24px;
   }

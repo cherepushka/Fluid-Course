@@ -1,33 +1,38 @@
-<div class="col-md-6 col-xxl-3 align-items-stretch ">
+<div class="col-xl-lg-3 col-lg-4 col">
     <div
-        class="cource-card h-100 p-4 bg-white rounded-4 text-black d-flex flex-column justify-content-between gap-2 border border-dark overflow-hidden position-relative">
-        <div class="flex-grow-1 ">
-            <small class="d-block text-muted mb-3">
+        class="cource-card h-100 p-4 bg-white rounded-4 text-black d-flex flex-column justify-content-between border border-dark overflow-hidden position-relative">
+        <div class="">
+        <!-- <div class="flex-grow-1 "> -->
+            <span class="d-block text-muted mb-3" style="font-size: 14px;">
                 {$_pls['tv.category_program']} {$_pls['tv.anotation']}
-            </small>
-            <h2 class="fs-5">
+            </span>
+            <h4 class="fw-500">
                 [[+pagetitle]]
-            </h2>
+            </h4>
         </div>
 
         <div class="row">
-            <div class="col text-end">
-                <img src=[[+tv.img]]>
-            </div>            
-            <div class="col-6">
+            
+            <div class="col-4 d-flex flex-column justify-content-end">
 
-{if $_pls['tv.total_price']?}
-                <strong class="fs-5">
-                {$_pls['tv.total_price']} ₽
-                </strong>
-{/if}
+                {if $_pls['tv.total_price']?}
+                <h4>
+                    {$_pls['tv.total_price']} ₽
+                </h4>
+                {/if}
 
-{if $_pls['tv.monthly_price']?}
-                <div>
+                {if $_pls['tv.monthly_price']?}
+                <span class="text-muted" style="font-size: 14px;">
                     от {$_pls['tv.monthly_price']} ₽/мес
-                </div>
-{/if}
+                </span>
+                {/if}
             </div>
+
+            
+            <div class="col-8 text-end">
+                <img src=[[+tv.img]]>
+            </div>
+
         </div>
 
         <div class="row gy-3">

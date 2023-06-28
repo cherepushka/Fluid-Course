@@ -1,50 +1,54 @@
 <div class="container-xxl pb-5">
   <div class="row">
-    <div class="d-flex flex-column col-md-6 col justify-content-between px-5">
-        <div class="d-flex flex-column gap-5">
-            {set $rows = json_decode($_modx->resource.final_work_template_migx, true)}
-            {set $i = 1} {foreach $rows as $row}
-            <div class="d-flex align-items-center gap-5">
-                <h1 class="text-orange" style="font-size: 62px">0{$i}</h1>
-                <h4 class="w-50">{$row.describe}</h4>
-            </div>
-            {set $i += 1} {/foreach}
-          </div>
-        <h3 class="pt-5" style="color: #4763D5;">Оставьте заявку и мы поможем вам создать программу обучения по нужным направлениям</h3>
+    <div class="d-flex flex-column col-xxl-6 justify-content-between px-3 mb-xxl-0 my-sm-5">
+      <div class="d-flex individual-block-number">
+        <!-- <div class="d-xxl-flex flex-column row gap-5"> -->
+        {set $rows = json_decode($_modx->resource.final_work_template_migx, true)}
+        {set $i = 1} {foreach $rows as $row}
+        <div class="d-flex align-items-center gap-5">
+          <h1 class="text-orange" style="font-size: 62px">0{$i}</h1>
+          <h4 class="">{$row.describe}</h4>
+        </div>
+        {set $i += 1}
+        {/foreach}
+      </div>
+      <h3 class="pt-sm-5 pt-2 w-75" style="color: #4763D5;">Оставьте заявку и мы поможем вам создать программу обучения
+        по нужным
+        направлениям</h3>
     </div>
 
     [[!AjaxForm?
-  &snippet=`FormIt`
-  &hooks=`FormItSaveForm,email`
-  &emailSubject=`От FluidCourse`
-  &emailTo=`[[+email]]`
-  &emailTpl=`tpl_email`
-  &emailFrom=`[[++emailsender]]`
-  &emailFromName=`FluidCourse.ru`
-  &form=`tpl-form-corp-clients`
-  &formName=`[[*pagetitle]]`
-  &formFields=`
-  name_and_surname,
-  phone,
-  company,
-  personal_data
-  `
-  &fieldNames=`
-  name_and_surname==Имя,
-  phone==Телефон,
-  company==Компания,
-  personal_data==Согласие на обработку персональных данных
-  `
-  &validate=`
-  name_and_surname:required:minLength=^3^,
-  phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-  company:required:minLength=^3^,
-  personal_data:required,
-  workemail:blank
-  `
-  &successMessage=`Поздравляем с успешной регистрацией!`
-  &validationErrorMessage=`Неправильно заполнена форма!`
-  ]]
+    &snippet=`FormIt`
+    &hooks=`FormItSaveForm,email`
+    &emailSubject=`От FluidCourse`
+    &emailTo=`[[+email]]`
+    &emailTpl=`tpl_email`
+    &emailFrom=`[[++emailsender]]`
+    &emailFromName=`FluidCourse.ru`
+    &form=`tpl-form-corp-clients`
+    &formName=`[[*pagetitle]]`
+    &formFields=`
+    name_and_surname,
+    phone,
+    company,
+    personal_data
+    `
+    &fieldNames=`
+    name_and_surname==Имя,
+    phone==Телефон,
+    company==Компания,
+    personal_data==Согласие на обработку персональных данных
+    `
+    &validate=`
+    name_and_surname:required:minLength=^3^,
+    phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+    company:required:minLength=^3^,
+    personal_data:required,
+    workemail:blank
+    `
+    &successMessage=`Поздравляем с успешной регистрацией!`
+    &validationErrorMessage=`Неправильно заполнена форма!`
+    ]]
 
   </div>
 </div>

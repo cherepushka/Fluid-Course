@@ -3,11 +3,11 @@
         <h2 class="py-lg-5">Решения для корпоративного обучения</h2>
         <div>
             {set $rows = json_decode($_modx->resource.steps_for_reg, true)}
-            <ol class="row justify-content-between list-unstyled my-4 mx-0 solutions_corp_client">
+            <ol class="row justify-content-between list-unstyled my-4 mx-0 solutions_corp_client gap-4">
                 {foreach $rows as $row}
-                <li class="">
-                    <div class="d-flex flex-column">
-                        <strong class="mb-3">{$row.title}</strong>
+                <li class="d-flex">
+                    <div class="d-flex flex-column justify-content-between">
+                        <strong class="mb-3" style="opacity: 1;">{$row.title}</strong>
                         <p>{$row.description}</p>
                     </div>
                     </li>
