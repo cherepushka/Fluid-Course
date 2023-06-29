@@ -17,13 +17,34 @@
     .banner_corp_clients_info_title {
       color: #ffff;
     }
+
+    .banner-content {
+      p {
+        top: -15%;
+        width: 75%;
+        position: relative;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .banner_corp_clients {
+    .banner_corp_clients_info {
+      .banner-content {
+        P {
+          top: -15%;
+          width: 90%;
+        }
+      }
+    }
   }
 }
 
 .solutions_corp_client {
   li {
     width: 31%;
-    padding: 20px 30px;
+    padding: 30px;
     border: 1px solid #4763d5;
     border-radius: 16px;
 
@@ -48,6 +69,14 @@
   }
 }
 
+@media (min-width: 576px) and (max-width: 768px) {
+  .solutions_corp_client li {
+    strong {
+      width: 75%;
+    }
+  }
+}
+
 .gradient {
   background-image: url(/images/f2/bg.png);
   background-size: cover;
@@ -56,15 +85,15 @@
 
 .carousel-inner-cases-corp-clients {
   .cases-corp-clients-left-block {
-    width: 30%;
+    width: calc(30% - 0.3em);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 0 20px;
 
     img {
-      width: 297px;
-      height: 297px;
+      width: calc(297px - 1.5rem);
+      height: calc(297px - 1.5rem);
     }
 
     button {
@@ -76,8 +105,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 70%;
+    width: calc(70% - 0.3em);
     gap: 20px;
+    padding-left: 0;
     margin-top: 16px;
 
     .list-cases {
@@ -92,11 +122,11 @@
   }
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1139px) {
   .carousel-inner-cases-corp-clients {
     .cases-corp-clients-left-block {
       padding: 0;
-      width: 27%;
+      width: 100%;
 
 
       img {
@@ -110,7 +140,7 @@
     }
 
     .cases-corp-clients-right-block {
-      width: 73%;
+      width: 100%;
       padding-right: 0;
 
       .list-cases {
@@ -122,14 +152,15 @@
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .carousel-inner-cases-corp-clients {
+    padding: 40px;
+
     .cases-corp-clients-left-block {
       padding: 0;
       width: 100%;
       flex-direction: row;
       justify-content: space-between;
-      padding-left: 80px;
       margin-bottom: 30px;
 
       h2 {
@@ -137,8 +168,36 @@
       }
 
       img {
-        width: 254px;
-        height: 254px;
+        width: calc(210px - 0.3vw);
+        height: calc(210px - 0.3vw);
+      }
+    }
+
+    .cases-corp-clients-right-block {
+      width: 100%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .carousel-inner-cases-corp-clients {
+    padding: 40px 80px 40px 20px;
+
+    .cases-corp-clients-left-block {
+      padding: 0;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      h2 {
+        width: 90%;
+      }
+
+      img {
+        width: calc(166px - 0.3vw);
+        height: calc(166px - 0.3vw);
       }
 
       button {
@@ -148,8 +207,6 @@
 
     .cases-corp-clients-right-block {
       width: 100%;
-      padding-right: 0;
-      padding-left: 80px;
 
       .list-cases {
         .case-list {
@@ -160,22 +217,43 @@
   }
 }
 
-@media screen and (max-width: 568px) {
-  .list-cases {
-    p {
-      margin-top: 5px;
-      margin-bottom: 0;
+@media screen and (max-width: 575px) {
+  .carousel-inner-cases-corp-clients {
+    padding: 40px 80px 40px 20px;
+
+    .cases-corp-clients-left-block {
+      padding: 0;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      h2 {
+        width: 90%;
+      }
+
+      img {
+        width: calc(166px - 0.3vw);
+        height: calc(166px - 0.3vw);
+      }
+
+      button {
+        width: 70%;
+      }
     }
 
-    .case-list {
-      padding-left: 1rem;
+    .cases-corp-clients-right-block {
+      width: 100%;
 
-      li {
-        margin-top: 14px;
+      .list-cases {
+        .case-list {
+          padding-left: 1.5rem;
+        }
       }
     }
   }
 }
+
 
 .corp-clients-carousel-prev {
   position: absolute;
@@ -225,6 +303,14 @@
   }
 }
 
+@media screen and (max-width:992px) {
+  .reg_form_corp_clients {
+    width: 100%;
+    margin: 0 20px;
+    padding: 40px 50px;
+  }
+}
+
 @media screen and (max-width:568px) {
   .reg_form_corp_clients {
     padding: 10px 20px;
@@ -234,13 +320,13 @@
 .corp-clients-arrow-container {
   position: relative;
   width: 180px;
-  height: 162px;
+  // height: 162px;
 }
 
 .corp-clients-arrow {
   position: absolute;
   left: -90px;
-  top: -80px;
+  top: -100px;
   rotate: -10deg;
 }
 
@@ -248,6 +334,10 @@
   flex-direction: column;
 
   div {
+    h3 {
+      width: 75%;
+    }
+
     h4 {
       width: 50%;
     }
@@ -267,6 +357,58 @@
       h4 {
         width: 100%;
       }
+    }
+  }
+}
+
+@media screen and (max-width:992px) {
+  .individual-block-number {
+    div {
+      width: 100%;
+
+      h3 {
+        width: 100%;
+      }
+
+      h4 {
+        width: 50%;
+      }
+    }
+  }
+}
+
+.banner-content {
+  p {
+    top: -15%;
+  }
+}
+
+.banner-img {
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .banner-img {
+    img {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .banner-img {
+    img {
+      width: 65%;
+    }
+  }
+}
+
+@media screen and (max-width:575px) {
+  .banner-img {
+    img {
+      width: 100%;
     }
   }
 }

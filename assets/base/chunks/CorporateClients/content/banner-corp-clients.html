@@ -1,28 +1,41 @@
+<div class="banner_corp_clients">
 
-  <div class="banner_corp_clients">
+  <div class="container-xxl banner_corp_clients_info">
+    <div class="row">
 
-    <div class="container-xxl banner_corp_clients_info">
-      <div class="row">
-        <div class="col-lg-6 d-lg-none d-flex justify-content-center">
-          <img class="w-100" src={$_modx->resource.img_right_side_banner} alt="Графика курса">
-        </div>
-        <div class="col-lg-6 d-flex flex-column justify-content-between gap-3 pb-lg-5">
-          <h1 class="banner_corp_clients_info_title text-uppercase">
-            [[*pagetitle]]
-          </h1>
-          <div>
-            [[*content]]
+      <div class="col-lg-6 d-lg-none d-flex d-lg-row flex-column justify-content-center d-lg-none d-block">
+        <h1 class="banner_corp_clients_info_title text-uppercase ">
+          [[*pagetitle]]
+        </h1>
+        <div class="d-flex flex-column">
+          <div class="d-flex justify-content-center banner-img">
+            <img class="position-relative" src={$_modx->resource.img_right_side_banner} alt="Графика курса">
           </div>
-            <a class="d-flex align-items-center justify-content-center btn btn-primary col-lg-5 w-50" href="#enroll-form">
-              Заказать обучение
-            </a>
-        </div>
-
-        <div class="col-lg-6 d-lg-flex d-none d-flex justify-content-center">
-          <img class="" src={$_modx->resource.img_right_side_banner} alt="Графика курса">
+          <div class="banner-content">[[*content]]</div>
+          <a class="d-flex align-items-center justify-content-center btn btn-primary col-lg-5 w-50" href="#enroll-form">
+            Заказать обучение
+          </a>
         </div>
       </div>
 
+
+      <div class="col-lg-6 flex-column justify-content-between gap-3 pb-lg-5 d-lg-flex d-none">
+        <h1 class="banner_corp_clients_info_title text-uppercase">
+          [[*pagetitle]]
+        </h1>
+        <div>
+          [[*content]]
+        </div>
+        <a class="d-flex align-items-center justify-content-center btn btn-primary col-lg-5 w-50" href="#enroll-form">
+          Заказать обучение
+        </a>
+      </div>
+
+      <div class="col-lg-6 d-lg-flex d-none d-flex justify-content-center">
+        <img class="" src={$_modx->resource.img_right_side_banner} alt="Графика курса">
       </div>
     </div>
+
   </div>
+</div>
+</div>

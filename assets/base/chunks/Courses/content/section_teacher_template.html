@@ -4,9 +4,10 @@
   </h2>
   {set $tpl = json_decode($_modx->resource.teacher_migx, true)}
   <div class="row justify-content-center">
-    <!-- <div class="d-md-flex justify-content-center teacher"> -->
-    <img class="col-md-4 py-5" src={$tpl.0.img} alt="Специалист по обучению">
-    <div class="col-md-8">
+    <div class="align-content-center col-md-5 col- d-flex justify-content-center">
+      <img class="w-50" src={$tpl.0.img} alt="Специалист по обучению">
+    </div>
+    <div class="col-md-7">
       <h2 class="header_1">
         Преподаватель
       </h2>

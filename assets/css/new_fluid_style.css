@@ -772,7 +772,7 @@ progress {
   --bs-breakpoint-sm: 576px;
   --bs-breakpoint-md: 768px;
   --bs-breakpoint-lg: 992px;
-  --bs-breakpoint-xl-lg: 1141px;
+  --bs-breakpoint-xl-lg: 1140px;
   --bs-breakpoint-xl: 1200px;
   --bs-breakpoint-xxl: 1440px;
 }
@@ -1679,7 +1679,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
-@media (min-width: 1141px) {
+@media (min-width: 1140px) {
   .col-xl-lg {
     flex: 1 0 0%;
   }
@@ -2407,7 +2407,7 @@ progress {
     -webkit-overflow-scrolling: touch;
   }
 }
-@media (max-width: 1140.98px) {
+@media (max-width: 1139.98px) {
   .table-responsive-xl-lg {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -3853,7 +3853,7 @@ textarea.form-control-lg {
     left: auto;
   }
 }
-@media (min-width: 1141px) {
+@media (min-width: 1140px) {
   .dropdown-menu-xl-lg-start {
     --bs-position: start;
   }
@@ -4611,7 +4611,7 @@ textarea.form-control-lg {
     overflow-y: visible;
   }
 }
-@media (min-width: 1141px) {
+@media (min-width: 1140px) {
   .navbar-expand-xl-lg {
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -5656,7 +5656,7 @@ textarea.form-control-lg {
     border-left-width: var(--bs-list-group-border-width);
   }
 }
-@media (min-width: 1141px) {
+@media (min-width: 1140px) {
   .list-group-horizontal-xl-lg {
     flex-direction: row;
   }
@@ -6227,7 +6227,7 @@ textarea.form-control-lg {
     overflow-y: auto;
   }
 }
-@media (max-width: 1140.98px) {
+@media (max-width: 1139.98px) {
   .modal-fullscreen-xl-lg-down {
     width: 100vw;
     max-width: none;
@@ -7149,7 +7149,7 @@ textarea.form-control-lg {
   }
 }
 
-@media (max-width: 1140.98px) {
+@media (max-width: 1139.98px) {
   .offcanvas-xl-lg {
     position: fixed;
     bottom: 0;
@@ -7165,12 +7165,12 @@ textarea.form-control-lg {
     transition: var(--bs-offcanvas-transition);
   }
 }
-@media (max-width: 1140.98px) and (prefers-reduced-motion: reduce) {
+@media (max-width: 1139.98px) and (prefers-reduced-motion: reduce) {
   .offcanvas-xl-lg {
     transition: none;
   }
 }
-@media (max-width: 1140.98px) {
+@media (max-width: 1139.98px) {
   .offcanvas-xl-lg.offcanvas-start {
     top: 0;
     left: 0;
@@ -7209,7 +7209,7 @@ textarea.form-control-lg {
     visibility: visible;
   }
 }
-@media (min-width: 1141px) {
+@media (min-width: 1140px) {
   .offcanvas-xl-lg {
     --bs-offcanvas-height: auto;
     --bs-offcanvas-border-width: 0;
@@ -7794,7 +7794,7 @@ textarea.form-control-lg {
     z-index: 1020;
   }
 }
-@media (min-width: 1141px) {
+@media (min-width: 1140px) {
   .sticky-xl-lg-top {
     position: sticky;
     top: 0;
@@ -12118,7 +12118,7 @@ textarea.form-control-lg {
     text-align: center !important;
   }
 }
-@media (min-width: 1141px) {
+@media (min-width: 1140px) {
   .float-xl-lg-start {
     float: left !important;
   }
@@ -14888,10 +14888,21 @@ input.promocode {
 .banner_corp_clients .banner_corp_clients_info .banner_corp_clients_info_title {
   color: white;
 }
+.banner_corp_clients .banner_corp_clients_info .banner-content p {
+  top: -15%;
+  width: 75%;
+  position: relative;
+}
 
+@media screen and (max-width: 767px) {
+  .banner_corp_clients .banner_corp_clients_info .banner-content P {
+    top: -15%;
+    width: 90%;
+  }
+}
 .solutions_corp_client li {
   width: 31%;
-  padding: 20px 30px;
+  padding: 30px;
   border: 1px solid #4763d5;
   border-radius: 16px;
 }
@@ -14912,21 +14923,26 @@ input.promocode {
     width: 100%;
   }
 }
+@media (min-width: 576px) and (max-width: 768px) {
+  .solutions_corp_client li strong {
+    width: 75%;
+  }
+}
 .gradient {
   background-image: url(/images/f2/bg.png);
   background-size: cover;
 }
 
 .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
-  width: 30%;
+  width: calc(30% - 0.3em);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 0 20px;
 }
 .carousel-inner-cases-corp-clients .cases-corp-clients-left-block img {
-  width: 297px;
-  height: 297px;
+  width: calc(297px - 1.5rem);
+  height: calc(297px - 1.5rem);
 }
 .carousel-inner-cases-corp-clients .cases-corp-clients-left-block button {
   width: 75%;
@@ -14935,8 +14951,9 @@ input.promocode {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 70%;
+  width: calc(70% - 0.3em);
   gap: 20px;
+  padding-left: 0;
   margin-top: 16px;
 }
 .carousel-inner-cases-corp-clients .cases-corp-clients-right-block .list-cases .case-list {
@@ -14946,10 +14963,10 @@ input.promocode {
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1139px) {
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
     padding: 0;
-    width: 27%;
+    width: 100%;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block img {
     width: 254px;
@@ -14959,51 +14976,89 @@ input.promocode {
     width: 100%;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-right-block {
-    width: 73%;
+    width: 100%;
     padding-right: 0;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-right-block .list-cases .case-list {
     padding-left: 1.5rem;
   }
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
+  .carousel-inner-cases-corp-clients {
+    padding: 40px;
+  }
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
     padding: 0;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 80px;
     margin-bottom: 30px;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block h2, .carousel-inner-cases-corp-clients .cases-corp-clients-left-block .h2 {
     width: 90%;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block img {
-    width: 254px;
-    height: 254px;
+    width: calc(210px - 0.3vw);
+    height: calc(210px - 0.3vw);
+  }
+  .carousel-inner-cases-corp-clients .cases-corp-clients-right-block {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .carousel-inner-cases-corp-clients {
+    padding: 40px 80px 40px 20px;
+  }
+  .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
+    padding: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .carousel-inner-cases-corp-clients .cases-corp-clients-left-block h2, .carousel-inner-cases-corp-clients .cases-corp-clients-left-block .h2 {
+    width: 90%;
+  }
+  .carousel-inner-cases-corp-clients .cases-corp-clients-left-block img {
+    width: calc(166px - 0.3vw);
+    height: calc(166px - 0.3vw);
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block button {
     width: 70%;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-right-block {
     width: 100%;
-    padding-right: 0;
-    padding-left: 80px;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-right-block .list-cases .case-list {
     padding-left: 1.5rem;
   }
 }
-@media screen and (max-width: 568px) {
-  .list-cases p {
-    margin-top: 5px;
-    margin-bottom: 0;
+@media screen and (max-width: 575px) {
+  .carousel-inner-cases-corp-clients {
+    padding: 40px 80px 40px 20px;
   }
-  .list-cases .case-list {
-    padding-left: 1rem;
+  .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
+    padding: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
   }
-  .list-cases .case-list li {
-    margin-top: 14px;
+  .carousel-inner-cases-corp-clients .cases-corp-clients-left-block h2, .carousel-inner-cases-corp-clients .cases-corp-clients-left-block .h2 {
+    width: 90%;
+  }
+  .carousel-inner-cases-corp-clients .cases-corp-clients-left-block img {
+    width: calc(166px - 0.3vw);
+    height: calc(166px - 0.3vw);
+  }
+  .carousel-inner-cases-corp-clients .cases-corp-clients-left-block button {
+    width: 70%;
+  }
+  .carousel-inner-cases-corp-clients .cases-corp-clients-right-block {
+    width: 100%;
+  }
+  .carousel-inner-cases-corp-clients .cases-corp-clients-right-block .list-cases .case-list {
+    padding-left: 1.5rem;
   }
 }
 .corp-clients-carousel-prev {
@@ -15033,6 +15088,13 @@ input.promocode {
     padding: 40px 50px;
   }
 }
+@media screen and (max-width: 992px) {
+  .reg_form_corp_clients {
+    width: 100%;
+    margin: 0 20px;
+    padding: 40px 50px;
+  }
+}
 @media screen and (max-width: 568px) {
   .reg_form_corp_clients {
     padding: 10px 20px;
@@ -15041,18 +15103,20 @@ input.promocode {
 .corp-clients-arrow-container {
   position: relative;
   width: 180px;
-  height: 162px;
 }
 
 .corp-clients-arrow {
   position: absolute;
   left: -90px;
-  top: -80px;
+  top: -100px;
   rotate: -10deg;
 }
 
 .individual-block-number {
   flex-direction: column;
+}
+.individual-block-number div h3, .individual-block-number div .h3 {
+  width: 75%;
 }
 .individual-block-number div h4, .individual-block-number div .h4 {
   width: 50%;
@@ -15069,6 +15133,40 @@ input.promocode {
     width: calc(47% - 0.3rem);
   }
   .individual-block-number div h4, .individual-block-number div .h4 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .individual-block-number div {
+    width: 100%;
+  }
+  .individual-block-number div h3, .individual-block-number div .h3 {
+    width: 100%;
+  }
+  .individual-block-number div h4, .individual-block-number div .h4 {
+    width: 50%;
+  }
+}
+.banner-content p {
+  top: -15%;
+}
+
+.banner-img img {
+  width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+  .banner-img img {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner-img img {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .banner-img img {
     width: 100%;
   }
 }
@@ -15321,7 +15419,242 @@ strong {
   font-weight: 400;
 }
 
-@media screen and (max-width: 1140px) {
+.text-consultation {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Gotham Pro";
+  line-height: 28.71px;
+}
+
+@media screen and (max-width: 575px) {
+  h1, .h1 {
+    font-family: "Gotham Pro";
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 37.44px;
+  }
+  h2, .h2 {
+    font-family: "Gotham Pro";
+    font-size: 28px;
+    line-height: 38.37px;
+  }
+  h3, .h3 {
+    font-family: "Golos";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32.89px;
+  }
+  h4, .h4 {
+    font-family: "Golos";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+  }
+  h5, .h5 {
+    font-family: "Golos";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+  h6, .h6 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+  p {
+    font-family: "Golos";
+    font-size: 20px;
+    line-height: 24px;
+  }
+  li {
+    font-family: "Golos";
+  }
+  span {
+    font-family: "Golos";
+    font-size: 14px;
+    line-height: 20px;
+  }
+  strong {
+    font-family: "Gotham Pro";
+    font-size: 24px;
+    line-height: 32.89px;
+  }
+}
+@media screen and (min-width: 576px) {
+  h1, .h1 {
+    font-family: "Gotham Pro";
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 37.44px;
+  }
+  h2, .h2 {
+    font-family: "Gotham Pro";
+    font-size: 28px;
+    line-height: 38.37px;
+  }
+  h3, .h3 {
+    font-family: "Golos";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32.89px;
+  }
+  h4, .h4 {
+    font-family: "Golos";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+  }
+  h5, .h5 {
+    font-family: "Golos";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+  h6, .h6 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+  p {
+    font-family: "Golos";
+    font-size: 20px;
+    line-height: 24px;
+  }
+  li {
+    font-family: "Golos";
+  }
+  span {
+    font-family: "Golos";
+    font-size: 14px;
+    line-height: 20px;
+  }
+  strong {
+    font-family: "Gotham Pro";
+    font-size: 24px;
+    line-height: 32.89px;
+  }
+}
+@media screen and (min-width: 768px) {
+  h1, .h1 {
+    font-family: "Gotham Pro";
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 42.78px;
+  }
+  h2, .h2 {
+    font-family: "Gotham Pro";
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 400;
+    line-height: 26.8px;
+  }
+  h3, .h3 {
+    font-family: "Golos";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32.89px;
+  }
+  h4, .h4 {
+    font-family: "Golos";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+  }
+  h5, .h5 {
+    font-family: "Golos";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+  h6, .h6 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+  p {
+    font-family: "Golos";
+    font-size: 20px;
+    line-height: 24px;
+  }
+  li {
+    font-family: "Golos";
+  }
+  span {
+    font-family: "Golos";
+    font-size: 15px;
+    line-height: 20px;
+  }
+  strong {
+    font-family: "Gotham Pro";
+    font-size: 24px;
+    line-height: 32.89px;
+  }
+  .text-consultation {
+    font-size: 24px;
+    line-height: 22.97px;
+  }
+}
+@media screen and (min-width: 992px) {
+  h1, .h1 {
+    font-family: "Gotham Pro";
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 53.48px;
+  }
+  h2, .h2 {
+    font-family: "Gotham Pro";
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 400;
+    line-height: 43.85px;
+  }
+  h3, .h3 {
+    font-family: "Golos";
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 38px;
+  }
+  h4, .h4 {
+    font-family: "Golos";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  h5, .h5 {
+    font-family: "Golos";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+  h6, .h6 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+  p {
+    font-family: "Golos";
+    font-size: 20px;
+    line-height: 24px;
+  }
+  li {
+    font-family: "Golos";
+  }
+  span {
+    font-family: "Golos";
+    font-size: 15px;
+    line-height: 20px;
+  }
+  strong {
+    font-family: "Gotham Pro";
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .text-consultation {
+    font-size: 24px;
+    line-height: 22.97px;
+  }
+}
+@media screen and (min-width: 1140px) {
   h1, .h1 {
     font-family: "Gotham Pro";
     font-weight: 400;
@@ -15379,19 +15712,18 @@ strong {
     font-weight: 400;
   }
 }
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 1440px) {
   h1, .h1 {
     font-family: "Gotham Pro";
     font-weight: 400;
-    font-size: 40px;
-    line-height: 56.94px;
+    font-size: 48px;
+    line-height: 64.18px;
   }
   h2, .h2 {
     font-family: "Gotham Pro";
     font-size: 32px;
-    line-height: 38px;
+    line-height: 43px;
     font-weight: 400;
-    line-height: 43.85px;
   }
   h3, .h3 {
     font-family: "Golos";
@@ -15401,63 +15733,9 @@ strong {
   }
   h4, .h4 {
     font-family: "Golos";
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 24px;
-  }
-  h5, .h5 {
-    font-family: "Golos";
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 26px;
-  }
-  h6, .h6 {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14.52px;
-  }
-  p {
-    font-family: "Golos";
-    font-size: 20px;
-    line-height: 24px;
-  }
-  li {
-    font-family: "Golos";
-  }
-  span {
-    font-family: "Golos";
-    font-size: 15px;
-    line-height: 20px;
-  }
-  strong {
-    font-family: "Gotham Pro";
-    font-size: 20px;
-    line-height: 28px;
-  }
-}
-@media screen and (max-width: 568px) {
-  h1, .h1 {
-    font-family: "Gotham Pro";
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 36px;
-  }
-  h2, .h2 {
-    font-family: "Gotham Pro";
-    font-size: 24px;
-    line-height: 28px;
-  }
-  h3, .h3 {
-    font-family: "Golos";
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
-  }
-  h4, .h4 {
-    font-family: "Golos";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+    line-height: 27px;
   }
   h5, .h5 {
     font-family: "Golos";
@@ -15467,25 +15745,29 @@ strong {
   }
   h6, .h6 {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 14.52px;
   }
   p {
     font-family: "Golos";
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
   }
   li {
     font-family: "Golos";
   }
   span {
     font-family: "Golos";
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
   }
   strong {
     font-family: "Gotham Pro";
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
   }
 }
 .nav nav .blue-link {

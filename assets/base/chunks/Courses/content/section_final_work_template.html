@@ -5,7 +5,9 @@
     <div class="final_work_describe col-md-6">
       [[*final_work_template_head_text]]
     </div>
-    <img class="col-md-6" src=[[*final_work_template_img]] alt="Графика курса">
+    <div class="col-md-6">
+      <img src=[[*final_work_template_img]] alt="Графика курса">
+    </div>
   </div>
 
 
@@ -54,48 +56,49 @@
     {/if}
   </div>
 
-  <!-- ЗАПИСЬ ОДНОГО УРОКА -->
-  <!-- {set $row = json_decode($_modx->resource.lesson_recording, true)}
-  <div class="mb-5">
-    <h2 class="mb-5">Получите запись одного урока</h2>
-    <div class="row">
-      <div class="col-lg-4">
-        <h4 style="color: #4763D5;font-size: 22px;font-weight: normal;">{$row.0.title}</h4>
-        <p class="mt-3" style="font-size: 18px;">{$row.0.subtitle}</p>
-      </div>
-      <div class="col-lg-4">
-        <span style="font-size: 18px;">{$row.0.description}</span>
-      </div> -->
-  [[-!AjaxForm?
-  &snippet=`FormIt`
-  &hooks=`FormItSaveForm,email`
-  &emailSubject=`От FluidCourse`
-  &emailTo=`[[+email]]`
-  &emailTpl=`tpl_email`
-  &emailFrom=`[[++emailsender]]`
-  &emailFromName=`FluidCourse.ru`
-  &form=`tpl_one_lesson`
-  &formName=`Запись одного урока [[*pagetitle]]`
-  &formFields=`
-  name_and_surname,
-  email
-  `
-  &fieldNames=`
-  name_and_surname==Имя,
-  email==Электронная почта,
-  `
-  &validate=`
-  name_and_surname:required:minLength=^3^,
-  email:required:email,
-  workemail:blank
-  `
-  &successMessage=`Поздравляем с успешной регистрацией!`
-  &validationErrorMessage=`Неправильно заполнена форма!`
-  ]]
-
-  <!-- </div>
-  </div> -->
 </div>
+<!-- ЗАПИСЬ ОДНОГО УРОКА -->
+{if $_modx->resource.lesson_recording?}
+{set $row = json_decode($_modx->resource.lesson_recording, true)}
+<div class="container-xxl mb-5">
+  <h2 class="mb-5">Получите запись одного урока</h2>
+  <div class="row">
+    <div class="col-lg-4">
+      <h4 style="color: #4763D5;font-size: 22px;font-weight: normal;">{$row.0.title}</h4>
+      <p class="mt-3" style="font-size: 18px;">{$row.0.subtitle}</p>
+    </div>
+    <div class="col-lg-4">
+      <span style="font-size: 18px;">{$row.0.description}</span>
+    </div>
+    [[!AjaxForm?
+    &snippet=`FormIt`
+    &hooks=`FormItSaveForm,email`
+    &emailSubject=`От FluidCourse`
+    &emailTo=`[[+email]]`
+    &emailTpl=`tpl_one_lesson_email`
+    &emailFrom=`[[++emailsender]]`
+    &emailFromName=`Бесплатный урок от FluidCourse`
+    &form=`tpl_one_lesson`
+    &formName=`Запись одного урока [[*pagetitle]]`
+    &formFields=`
+    name_and_surname,
+    email
+    `
+    &fieldNames=`
+    name_and_surname==Имя,
+    email==Электронная почта,
+    `
+    &validate=`
+    name_and_surname:required:minLength=^3^,
+    email:required:email,
+    workemail:blank
+    `
+    &successMessage=`Поздравляем с успешной регистрацией!`
+    &validationErrorMessage=`Неправильно заполнена форма!`
+    ]]
+  </div>
+</div>
+{/if}
 
 <!-- ШАГИ РЕГИСТРАЦИИ -->
 {$_modx->getChunk('steps_for_reg')}
@@ -247,17 +250,17 @@
 <div class="container-xxl">
   <h5 style="font-size: 26px;">Условия для корпоративных клиентов</h5>
   <div class="row mt-2">
-    <span class="col-lg-8 d-lg-flex align-items-end" style="font-size: 18px;">Наша компания специализируется на разработке
+    <span class="col-lg-8 d-lg-flex align-items-end" style="font-size: 18px;">Наша компания специализируется на
+      разработке
       курсов для бизнеса.
       Больше
       информации о сотрудничестве вы можете посмотреть на отдельной странице, жмите кнопку "Подробнее"</span>
     <div class="col-lg-4 d-sm-flex mt-4">
       <div class="d-flex">
-        <a class="col-lg-2 flex-grow-1 align-items-center justify-content-center py-1 btn btn-primary"
-          type="submit"
+        <a class="col-lg-2 flex-grow-1 align-items-center justify-content-center py-1 btn btn-primary" type="submit"
           href="#">
           Подробнее
-      </a>
+        </a>
       </div>
       <div class="position-relative d-sm-block d-none">
         <img class="corporate-arrow" src="/images/corp-clients-arrow.svg" alt="">
