@@ -5,8 +5,8 @@
     <div class="final_work_describe col-md-6">
       [[*final_work_template_head_text]]
     </div>
-    <div class="col-md-6">
-      <img src=[[*final_work_template_img]] alt="Графика курса">
+    <div class="col-md-4">
+      <img class="w-100 h-100"  src=[[*final_work_template_img]] alt="Графика курса">
     </div>
   </div>
 
@@ -50,6 +50,7 @@
           </div>
 
         </div>
+        <!-- <button class="carousel-control-next" type="button"></button> -->
       </div>
       <button class="carousel-control-next"><img src="/images/chevron_right.png" alt=""></button>
     </div>
@@ -57,8 +58,9 @@
   </div>
 
 </div>
-<!-- ЗАПИСЬ ОДНОГО УРОКА -->
+
 {if $_modx->resource.lesson_recording?}
+<!-- ЗАПИСЬ ОДНОГО УРОКА -->
 {set $row = json_decode($_modx->resource.lesson_recording, true)}
 <div class="container-xxl mb-5">
   <h2 class="mb-5">Получите запись одного урока</h2>
@@ -96,6 +98,7 @@
     &successMessage=`Поздравляем с успешной регистрацией!`
     &validationErrorMessage=`Неправильно заполнена форма!`
     ]]
+
   </div>
 </div>
 {/if}
@@ -119,7 +122,7 @@
         </div>
         {/if}
         <button
-          class="col-lg-5 col d-flex align-items-center justify-content-center text-white py-1 mt-lg-0 mt-2 btn btn-secondary">Подробнее</button>
+                class="col-lg-5 col d-flex align-items-center justify-content-center text-white py-1 mt-lg-0 mt-2 btn btn-secondary">Подробнее</button>
       </div>
     </div>
 
@@ -245,44 +248,41 @@
   </script>
 </div>
 
-
 <!-- ДРУГИЕ УСЛОВИЯ ДЛЯ КОРПОРАТИВНЫХ КЛИЕНТОВ -->
 <div class="container-xxl">
   <h5 style="font-size: 26px;">Условия для корпоративных клиентов</h5>
   <div class="row mt-2">
-    <span class="col-lg-8 d-lg-flex align-items-end" style="font-size: 18px;">Наша компания специализируется на
-      разработке
-      курсов для бизнеса.
+    <span class="col-lg-8 d-flex align-items-end" style="font-size: 18px;">Наша компания специализируется на разработке курсов для бизнеса.
       Больше
       информации о сотрудничестве вы можете посмотреть на отдельной странице, жмите кнопку "Подробнее"</span>
     <div class="col-lg-4 d-sm-flex mt-4">
       <div class="d-flex">
-        <a class="col-lg-2 flex-grow-1 align-items-center justify-content-center py-1 btn btn-primary" type="submit"
-          href="#">
+        <button class="col-lg-2 flex-grow-1 align-items-center justify-content-center py-1 btn btn-primary"
+                type="submit">
           Подробнее
-        </a>
+        </button>
       </div>
       <div class="position-relative d-sm-block d-none">
-        <img class="corporate-arrow" src="/images/corp-clients-arrow.svg" alt="">
+        <img class="corporate-arrow" src="/images/arrow_corporate_client.svg" alt="">
       </div>
     </div>
   </div>
-  <!-- <div class="container-xxl m-0">
-      {set $row = json_decode($_modx->resource.conditions_for_corpopate_client, true)}
-      <h5 style="font-size: 26px;">{$row.0.title}</h5>
-      <div class="d-flex w-75">
-        <div class="d-lg-flex py-3">
-          <span class="" style="font-size: 18px;">{$row.0.description}</span>
-          <button class="col-md-2 align-items-center justify-content-center text-white py-1 btn btn-primary" type="submit">
-            Перейти
-          </button>
-        </div>
-      </div>
-      <div class="w-25 h-50">
-        <img src="/images/arrow_corporate_client.svg" alt="">
-      </div>
-    </div> -->
 </div>
+<!-- <div class="container-xxl m-0">
+    {set $row = json_decode($_modx->resource.conditions_for_corpopate_client, true)}
+    <h5 style="font-size: 26px;">{$row.0.title}</h5>
+    <div class="d-flex w-75">
+      <div class="d-lg-flex py-3">
+        <span class="" style="font-size: 18px;">{$row.0.description}</span>
+        <button class="col-md-2 align-items-center justify-content-center text-white py-1 btn btn-primary" type="submit">
+          Перейти
+        </button>
+      </div>
+    </div>
+    <div class="w-25 h-50">
+      <img src="/images/arrow_corporate_client.svg" alt="">
+    </div>
+  </div> -->
 
 
 <!-- FAQ -->
