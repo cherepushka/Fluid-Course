@@ -5,6 +5,10 @@ global $modx;
  * snippet vars: 
  * @var $timestamp int - UNIX timestamp даты, которую нужно форматировать
  * @var $fmt string - формат даты и времени
+ * 
+ * Example:
+ * [[timestamp_fmt_rus_locale? &timestamp=`1688637170` &fmt=`d MMMM`]]
+ * Result: 6 июля
  */
 if (!extension_loaded('intl')){
     try {
