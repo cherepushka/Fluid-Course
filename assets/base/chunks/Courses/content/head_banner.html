@@ -35,7 +35,7 @@
               <div class="data_start col-6 position-relative top-0" style="z-index: 1;">
   
                 {if $_modx->resource.date_start_calendar? && !$_modx->resource.hideForm}
-                   до [[!timestamp_fmt_rus_locale? &timestamp=`[[!*date_start_calendar:strtotime]]` &fmt=`d MMMM`]]
+                   [[!timestamp_fmt_rus_locale? &timestamp=`[[!*date_start_calendar:strtotime]]` &fmt=`d MMMM`]]
                 {else}
                   Запись закрыта
                 {/if}
