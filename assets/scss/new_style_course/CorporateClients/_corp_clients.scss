@@ -311,9 +311,18 @@
   }
 }
 
-@media screen and (max-width:568px) {
+@media screen and (max-width:768px) {
   .reg_form_corp_clients {
-    padding: 10px 20px;
+    width: 90%;
+    padding: 60px;
+  }
+}
+@media screen and (max-width:575px) {
+  .reg_form_corp_clients {
+    padding: 60px 20px;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
   }
 }
 
@@ -409,6 +418,26 @@
   .banner-img {
     img {
       width: 100%;
+    }
+  }
+}
+
+.cource-card {
+  &>div {
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+
+@media screen and (max-width:575px) {
+  .cource-card {
+    // width: 100%;
+    // margin-left: 0;
+    // margin-right: 0;
+    // padding: 0;
+    --bs-gutter-x: 0;
+    &>div {
+      border-radius: 0;
     }
   }
 }

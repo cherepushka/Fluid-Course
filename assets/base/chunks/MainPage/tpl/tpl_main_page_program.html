@@ -46,20 +46,20 @@
 </div>
 
 <!-- 2й вид, который для маленьких экранов -->
-<a class="d-md-none d-block" href="[[+alias]]">
+<a class="d-md-none d-flex cource-card" href="[[+alias]]">
     <div
-        class="cource-card py-4 ps-4 bg-white rounded-4 text-black flex-column d-flex border border-dark overflow-hidden position-relative">
+        class=" py-4 ps-4 bg-white text-black border d-flex border-0 overflow-hidden position-relative">
 
-        <div class="col-md-7 d-flex flex-column justify-content-between">
+        <div class="col-7 d-flex flex-column justify-content-between">
             <div class="d-flex flex-column">
                 <span class="d-flex text-muted mb-3" style="font-size: 14px;">
                     {$_pls['tv.category_program']} {$_pls['tv.anotation']}
                 </span>
-                <h4 class="d-flex fw-500">
+                <h4 class="d-flex pe-4">
                     [[+pagetitle]]
                 </h4>
             </div>
-            <div class="d-sm-flex d-none flex-column justify-content-end">
+            <div class="d-flex flex-column justify-content-end">
 
                 {if $_pls['tv.total_price']?}
                 <h4>
@@ -72,9 +72,12 @@
                     от {$_pls['tv.monthly_price']} ₽/мес
                 </span>
                 {/if}
-                <div class="col-md-5 d-sm-flex d-none justify-content-end">
-                    <img class="" src=[[+tv.img]]>
-                </div>
+            </div>
+        </div>
+        <div class="d-flex col-5">
+            <div class="d-flex justify-content-end">
+            <!-- <div class="col-md-5"> -->
+                <img class="py-3 w-100" src=[[+tv.img]]>
             </div>
         </div>
 
