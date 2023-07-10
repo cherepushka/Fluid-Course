@@ -14933,6 +14933,9 @@ input.promocode {
   background-size: cover;
 }
 
+.carousel-inner-cases-corp-clients {
+  padding: 40px;
+}
 .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
   width: calc(30% - 0.3em);
   display: flex;
@@ -14953,7 +14956,7 @@ input.promocode {
   justify-content: space-between;
   width: calc(70% - 0.3em);
   gap: 20px;
-  padding-left: 0;
+  padding-left: 20px;
   margin-top: 16px;
 }
 .carousel-inner-cases-corp-clients .cases-corp-clients-right-block .list-cases .case-list {
@@ -14964,6 +14967,9 @@ input.promocode {
 }
 
 @media screen and (max-width: 1139px) {
+  .carousel-inner-cases-corp-clients {
+    padding: 35px 70px;
+  }
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
     padding: 0;
     width: 100%;
@@ -14976,8 +14982,9 @@ input.promocode {
     width: 100%;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-right-block {
-    width: 100%;
+    width: 90%;
     padding-right: 0;
+    padding-left: 0;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-right-block .list-cases .case-list {
     padding-left: 1.5rem;
@@ -14986,6 +14993,9 @@ input.promocode {
 @media screen and (max-width: 991px) {
   .carousel-inner-cases-corp-clients {
     padding: 40px;
+  }
+  .carousel-inner-cases-corp-clients button {
+    width: 75%;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
     padding: 0;
@@ -15001,13 +15011,10 @@ input.promocode {
     width: calc(210px - 0.3vw);
     height: calc(210px - 0.3vw);
   }
-  .carousel-inner-cases-corp-clients .cases-corp-clients-right-block {
-    width: 100%;
-  }
 }
 @media screen and (max-width: 767px) {
   .carousel-inner-cases-corp-clients {
-    padding: 40px 80px 40px 20px;
+    padding: 40px;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
     padding: 0;
@@ -15022,9 +15029,6 @@ input.promocode {
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block img {
     width: calc(166px - 0.3vw);
     height: calc(166px - 0.3vw);
-  }
-  .carousel-inner-cases-corp-clients .cases-corp-clients-left-block button {
-    width: 70%;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-right-block {
     width: 100%;
@@ -15034,8 +15038,14 @@ input.promocode {
   }
 }
 @media screen and (max-width: 575px) {
+  .text-consultation {
+    font-size: 24px;
+  }
   .carousel-inner-cases-corp-clients {
-    padding: 40px 80px 40px 20px;
+    padding: 20px 30px;
+  }
+  .carousel-inner-cases-corp-clients button {
+    width: 100%;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block {
     padding: 0;
@@ -15050,9 +15060,6 @@ input.promocode {
   .carousel-inner-cases-corp-clients .cases-corp-clients-left-block img {
     width: calc(166px - 0.3vw);
     height: calc(166px - 0.3vw);
-  }
-  .carousel-inner-cases-corp-clients .cases-corp-clients-left-block button {
-    width: 70%;
   }
   .carousel-inner-cases-corp-clients .cases-corp-clients-right-block {
     width: 100%;
@@ -15073,25 +15080,58 @@ input.promocode {
   width: 0;
 }
 
+@media screen and (max-width: 1139px) {
+  .carousel-count-cases {
+    position: absolute;
+    bottom: calc(-7% + 0.5rem);
+    left: 48%;
+  }
+  .corp-clients-carousel-prev {
+    left: calc(40% - 0.5rem);
+    bottom: -110%;
+  }
+  .corp-clients-carousel-prev img {
+    width: 45px;
+    height: 45px;
+  }
+  .corp-clients-carousel-next {
+    right: calc(40% - 0.5rem);
+    bottom: -110%;
+  }
+  .corp-clients-carousel-next img {
+    width: 45px;
+    height: 45px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .carousel-count-cases {
+    bottom: calc(-6.5% + 0.5rem);
+    left: 47%;
+  }
+}
 .reg_form_corp_clients {
   background: linear-gradient(180deg, #4763d5 0%, #000000 100%);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   padding: 40px 50px;
   color: #fff;
+  margin: 0 auto;
 }
 
+@media screen and (max-width: 1439px) {
+  .reg_form_corp_clients {
+    width: 55%;
+  }
+}
 @media screen and (max-width: 1140px) {
   .reg_form_corp_clients {
     width: 55%;
-    margin: 0 auto;
     padding: 40px 50px;
   }
 }
 @media screen and (max-width: 992px) {
   .reg_form_corp_clients {
-    width: 100%;
-    margin: 0 20px;
+    width: 70%;
     padding: 40px 50px;
   }
 }
@@ -15105,7 +15145,6 @@ input.promocode {
   .reg_form_corp_clients {
     padding: 60px 20px;
     width: 100%;
-    margin: 0;
     border-radius: 0;
   }
 }
@@ -15123,8 +15162,10 @@ input.promocode {
 
 .individual-block-number {
   flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
-.individual-block-number div h3, .individual-block-number div .h3 {
+.individual-block-number + h5, .individual-block-number + .h5 {
   width: 75%;
 }
 .individual-block-number div h4, .individual-block-number div .h4 {
@@ -15146,14 +15187,19 @@ input.promocode {
   }
 }
 @media screen and (max-width: 992px) {
-  .individual-block-number div {
+  .individual-block-number + h5, .individual-block-number + .h5 {
     width: 100%;
   }
-  .individual-block-number div h3, .individual-block-number div .h3 {
+  .individual-block-number div {
     width: 100%;
   }
   .individual-block-number div h4, .individual-block-number div .h4 {
     width: 50%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .individual-block-number + h5, .individual-block-number + .h5 {
+    width: 100%;
   }
 }
 .banner-content p {
@@ -15172,6 +15218,7 @@ input.promocode {
 @media screen and (max-width: 767px) {
   .banner-img img {
     width: 65%;
+    opacity: 0.7;
   }
 }
 @media screen and (max-width: 575px) {
@@ -15375,79 +15422,6 @@ a:hover {
   color: #FF4800;
 }
 
-h1, .h1 {
-  font-family: "Gotham Pro";
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 64px;
-}
-
-h2, .h2 {
-  font-family: "Gotham Pro";
-  font-size: 32px;
-  line-height: 43px;
-  font-weight: 400;
-}
-
-h3, .h3 {
-  font-family: "Golos";
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 38px;
-}
-
-h4, .h4 {
-  font-family: "Golos";
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 27px;
-}
-
-h5, .h5 {
-  font-family: "Golos";
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 26px;
-}
-
-h6, .h6 {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 14.52px;
-}
-
-p {
-  font-family: "Golos";
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 400;
-}
-
-li {
-  font-family: "Golos";
-}
-
-span {
-  font-family: "Golos";
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: 400;
-}
-
-strong {
-  font-family: "Gotham Pro";
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 400;
-}
-
-.text-consultation {
-  font-size: 30px;
-  font-weight: 400;
-  font-family: "Gotham Pro";
-  line-height: 28.71px;
-}
-
 @media screen and (max-width: 575px) {
   h1, .h1 {
     font-family: "Gotham Pro";
@@ -15457,26 +15431,26 @@ strong {
   }
   h2, .h2 {
     font-family: "Gotham Pro";
-    font-size: 28px;
-    line-height: 38.37px;
+    font-size: 32px;
+    line-height: 43.85px;
   }
   h3, .h3 {
     font-family: "Golos";
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 400;
-    line-height: 32.89px;
+    line-height: 33.6px;
   }
   h4, .h4 {
     font-family: "Golos";
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 21.92px;
   }
   h5, .h5 {
     font-family: "Golos";
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 32px;
   }
   h6, .h6 {
     font-weight: 400;
@@ -15485,8 +15459,8 @@ strong {
   }
   p {
     font-family: "Golos";
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 21.92px;
   }
   li {
     font-family: "Golos";
@@ -15523,12 +15497,12 @@ strong {
   h4, .h4 {
     font-family: "Golos";
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 27px;
   }
   h5, .h5 {
     font-family: "Golos";
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 26px;
   }
@@ -15579,12 +15553,12 @@ strong {
   h4, .h4 {
     font-family: "Golos";
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 27px;
   }
   h5, .h5 {
     font-family: "Golos";
-    font-size: 15px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 26px;
   }
@@ -15639,12 +15613,12 @@ strong {
   h4, .h4 {
     font-family: "Golos";
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 24px;
   }
   h5, .h5 {
     font-family: "Golos";
-    font-size: 15px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 26px;
   }
@@ -15698,12 +15672,12 @@ strong {
   h4, .h4 {
     font-family: "Golos";
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 27px;
   }
   h5, .h5 {
     font-family: "Golos";
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 26px;
   }
@@ -15739,7 +15713,7 @@ strong {
     font-family: "Gotham Pro";
     font-weight: 400;
     font-size: 48px;
-    line-height: 64.18px;
+    line-height: 64px;
   }
   h2, .h2 {
     font-family: "Gotham Pro";
@@ -15756,12 +15730,12 @@ strong {
   h4, .h4 {
     font-family: "Golos";
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 27px;
   }
   h5, .h5 {
     font-family: "Golos";
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 26px;
   }

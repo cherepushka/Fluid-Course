@@ -103,82 +103,6 @@ a:hover {
 .text-orange {
   color: #FF4800;
 }
-h1 {
-  font-family: "Gotham Pro";
-  // font-family: "Golos";
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 64px;
-}
-
-h2 {
-  font-family: "Gotham Pro";
-  // font-family: "Golos";
-  font-size: 32px;
-  line-height: 43px;
-  font-weight: 400;
-}
-
-h3 {
-  font-family: "Golos";
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 38px;
-}
-
-h4 {
-  font-family: "Golos";
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 27px;
-}
-
-h5 {
-  font-family: "Golos";
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 26px;
-}
-
-h6 {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 14.52px;
-}
-
-p {
-  font-family: "Golos";
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 400;
-}
-
-li {
-  font-family: "Golos";
-}
-
-span {
-  font-family: "Golos";
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: 400;
-}
-
-strong {
-  font-family: "Gotham Pro";
-  // font-family: "Golos";
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 400;
-}
-.text-consultation {
-  font-size: 30px;
-  font-weight: 400;
-  font-family: "Gotham Pro";
-  line-height: 28.71px;
-}
-
-
 
 @media screen and (max-width: 575px) {
   h1 {
@@ -192,29 +116,29 @@ strong {
   h2 {
     font-family: "Gotham Pro";
     // font-family: "Golos";
-    font-size: 28px;
-    line-height: 38.37px;
+    font-size: 32px;
+    line-height: 43.85px;
   }
 
   h3 {
     font-family: "Golos";
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 400;
-    line-height: 32.89px;
+    line-height: 33.6px;
   }
 
   h4 {
     font-family: "Golos";
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 21.92px;
   }
 
   h5 {
     font-family: "Golos";
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 32px;
   }
 
   h6 {
@@ -225,8 +149,8 @@ strong {
 
   p {
     font-family: "Golos";
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 21.92px;
   }
 
   li {
@@ -273,13 +197,13 @@ strong {
   h4 {
     font-family: "Golos";
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 27px;
   }
 
   h5 {
     font-family: "Golos";
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 26px;
   }
@@ -342,13 +266,13 @@ strong {
   h4 {
     font-family: "Golos";
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 27px;
   }
 
   h5 {
     font-family: "Golos";
-    font-size: 15px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 26px;
   }
@@ -415,13 +339,13 @@ strong {
   h4 {
     font-family: "Golos";
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 24px;
   }
 
   h5 {
     font-family: "Golos";
-    font-size: 15px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 26px;
   }
@@ -487,13 +411,13 @@ strong {
   h4 {
     font-family: "Golos";
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 27px;
   }
 
   h5 {
     font-family: "Golos";
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 26px;
   }
@@ -537,9 +461,9 @@ strong {
     // font-family: "Golos";
     font-weight: 400;
     font-size: 48px;
-    line-height: 64.18px;
+    line-height: 64px;
   }
-
+  
   h2 {
     font-family: "Gotham Pro";
     // font-family: "Golos";
@@ -547,52 +471,52 @@ strong {
     line-height: 43px;
     font-weight: 400;
   }
-
+  
   h3 {
     font-family: "Golos";
     font-size: 28px;
     font-weight: 400;
     line-height: 38px;
   }
-
+  
   h4 {
     font-family: "Golos";
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 27px;
   }
-
+  
   h5 {
     font-family: "Golos";
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 26px;
   }
-
+  
   h6 {
     font-weight: 400;
     font-size: 18px;
     line-height: 14.52px;
   }
-
+  
   p {
     font-family: "Golos";
     font-size: 20px;
     line-height: 24px;
     font-weight: 400;
   }
-
+  
   li {
     font-family: "Golos";
   }
-
+  
   span {
     font-family: "Golos";
     font-size: 16px;
     line-height: 21px;
     font-weight: 400;
   }
-
+  
   strong {
     font-family: "Gotham Pro";
     // font-family: "Golos";

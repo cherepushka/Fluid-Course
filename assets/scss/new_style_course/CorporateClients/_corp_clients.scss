@@ -84,6 +84,8 @@
 
 
 .carousel-inner-cases-corp-clients {
+  padding: 40px;
+
   .cases-corp-clients-left-block {
     width: calc(30% - 0.3em);
     display: flex;
@@ -107,7 +109,7 @@
     justify-content: space-between;
     width: calc(70% - 0.3em);
     gap: 20px;
-    padding-left: 0;
+    padding-left: 20px;
     margin-top: 16px;
 
     .list-cases {
@@ -124,6 +126,8 @@
 
 @media screen and (max-width: 1139px) {
   .carousel-inner-cases-corp-clients {
+    padding: 35px 70px;
+
     .cases-corp-clients-left-block {
       padding: 0;
       width: 100%;
@@ -140,8 +144,9 @@
     }
 
     .cases-corp-clients-right-block {
-      width: 100%;
+      width: 90%;
       padding-right: 0;
+      padding-left: 0;
 
       .list-cases {
         .case-list {
@@ -155,6 +160,10 @@
 @media screen and (max-width: 991px) {
   .carousel-inner-cases-corp-clients {
     padding: 40px;
+
+    button {
+      width: 75%;
+    }
 
     .cases-corp-clients-left-block {
       padding: 0;
@@ -172,17 +181,12 @@
         height: calc(210px - 0.3vw);
       }
     }
-
-    .cases-corp-clients-right-block {
-      width: 100%;
-    }
   }
 }
 
-
 @media screen and (max-width: 767px) {
   .carousel-inner-cases-corp-clients {
-    padding: 40px 80px 40px 20px;
+    padding: 40px;
 
     .cases-corp-clients-left-block {
       padding: 0;
@@ -200,9 +204,6 @@
         height: calc(166px - 0.3vw);
       }
 
-      button {
-        width: 70%;
-      }
     }
 
     .cases-corp-clients-right-block {
@@ -218,8 +219,16 @@
 }
 
 @media screen and (max-width: 575px) {
+  .text-consultation {
+    font-size: 24px;
+  }
+
   .carousel-inner-cases-corp-clients {
-    padding: 40px 80px 40px 20px;
+    padding: 20px 30px;
+
+    button {
+      width: 100%;
+    }
 
     .cases-corp-clients-left-block {
       padding: 0;
@@ -237,13 +246,11 @@
         height: calc(166px - 0.3vw);
       }
 
-      button {
-        width: 70%;
-      }
     }
 
     .cases-corp-clients-right-block {
       width: 100%;
+
 
       .list-cases {
         .case-list {
@@ -267,23 +274,38 @@
   width: 0;
 }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width:1139px) {
+  .carousel-count-cases {
+    position: absolute;
+    bottom: calc(-7% - -0.5rem);
+    left: 48%;
+  }
+
   .corp-clients-carousel-prev {
-    // left: -12%
+    left: calc(40% - 0.5rem);
+    bottom: -110%;
+
+    img {
+      width: 45px;
+      height: 45px;
+    }
   }
 
   .corp-clients-carousel-next {
-    // right: -12%
+    right: calc(40% - 0.5rem);
+    bottom: -110%;
+
+    img {
+      width: 45px;
+      height: 45px;
+    }
   }
 }
 
-@media screen and (max-width:568px) {
-  .corp-clients-carousel-prev {
-    // left: -20%
-  }
-
-  .corp-clients-carousel-next {
-    // right: -20%
+@media screen and (max-width:575px) {
+  .carousel-count-cases {
+    bottom: calc(-6.5% - -0.5rem);
+    left: 47%;
   }
 }
 
@@ -293,20 +315,24 @@
   border-radius: 15px;
   padding: 40px 50px;
   color: #fff;
+  margin: 0 auto;
 }
 
+@media screen and (max-width:1439px) {
+  .reg_form_corp_clients {
+    width: 55%;
+  }
+}
 @media screen and (max-width:1140px) {
   .reg_form_corp_clients {
     width: 55%;
-    margin: 0 auto;
     padding: 40px 50px;
   }
 }
 
 @media screen and (max-width:992px) {
   .reg_form_corp_clients {
-    width: 100%;
-    margin: 0 20px;
+    width: 70%;
     padding: 40px 50px;
   }
 }
@@ -317,11 +343,11 @@
     padding: 60px;
   }
 }
+
 @media screen and (max-width:575px) {
   .reg_form_corp_clients {
     padding: 60px 20px;
     width: 100%;
-    margin: 0;
     border-radius: 0;
   }
 }
@@ -329,7 +355,6 @@
 .corp-clients-arrow-container {
   position: relative;
   width: 180px;
-  // height: 162px;
 }
 
 .corp-clients-arrow {
@@ -341,12 +366,14 @@
 
 .individual-block-number {
   flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+
+  +h5 {
+    width: 75%;
+  }
 
   div {
-    h3 {
-      width: 75%;
-    }
-
     h4 {
       width: 50%;
     }
@@ -372,16 +399,24 @@
 
 @media screen and (max-width:992px) {
   .individual-block-number {
+    +h5 {
+      width: 100%;
+    }
+
     div {
       width: 100%;
-
-      h3 {
-        width: 100%;
-      }
 
       h4 {
         width: 50%;
       }
+    }
+  }
+}
+
+@media screen and (max-width:575px) {
+  .individual-block-number {
+    +h5 {
+      width: 100%;
     }
   }
 }
@@ -410,6 +445,7 @@
   .banner-img {
     img {
       width: 65%;
+      opacity: 0.7;
     }
   }
 }
@@ -436,6 +472,7 @@
     // margin-right: 0;
     // padding: 0;
     --bs-gutter-x: 0;
+
     &>div {
       border-radius: 0;
     }

@@ -3,6 +3,7 @@
   <div class="container-xxl banner_corp_clients_info">
     <div class="row">
 
+      <!-- Блок ниже 768px -->
       <div class="col-lg-6 d-lg-none d-flex d-lg-row flex-column justify-content-center d-lg-none d-block">
         <h1 class="banner_corp_clients_info_title text-uppercase ">
           [[*pagetitle]]
@@ -11,14 +12,17 @@
           <div class="d-flex justify-content-center banner-img">
             <img class="position-relative" src={$_modx->resource.img_right_side_banner} alt="Графика курса">
           </div>
-          <div class="banner-content">[[*content]]</div>
-          <a class="d-flex align-items-center justify-content-center btn btn-primary col-lg-5 w-50" href="#enroll-form">
-            Заказать обучение
-          </a>
+          <div class="position-relative" style="top: -12%">
+            [[*content]]
+            <a class="d-flex align-items-center justify-content-center btn btn-primary col-lg-5 w-50 mt-2"
+              href="#enroll-form">
+              Заказать обучение
+            </a>
+          </div>
         </div>
       </div>
 
-
+      <!-- Блок выше 768px -->
       <div class="col-lg-6 flex-column justify-content-between gap-3 pb-lg-5 d-lg-flex d-none">
         <h1 class="banner_corp_clients_info_title text-uppercase">
           [[*pagetitle]]
