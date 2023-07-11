@@ -1,8 +1,12 @@
 {set $row = json_decode($_modx->resource.modules, true)}
+{if !$row}
+    {return}
+{/if} 
+   
 {if count($row) % 2 == 1}
-{set $countModules = (count($row)-1) / 2 + 1}
+    {set $countModules = (count($row)-1) / 2 + 1}
 {else}
-{set $countModules = count($row) / 2}
+    {set $countModules = count($row) / 2}
 {/if}
 {set $j = 1}
 

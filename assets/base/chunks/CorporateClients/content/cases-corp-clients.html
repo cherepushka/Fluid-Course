@@ -1,23 +1,29 @@
+{if $_modx->resource.case_corp_clients?}
+
+{set $rows = json_decode($_modx->resource.case_corp_clients, true)}
+{set $countCases = count($rows)}
 <section class="py-5 mb-sm-5">
   <div class="container-xxl">
     <div class="reviews px-xl-lg-5 position-relative">
       <h2 class="mb-4">Наши кейсы</h2>
 
-
       <div id="reviews" class="carousel slide p-sm-3 p-1 p-md-0 carousel-cases-corp-clients">
         <div class="carousel-inner carousel-inner-cases-corp-clients">
 
-          <!-- 1й комментарий -->
+          {foreach $rows as $row index=$index}
+          {if $index === 0}
+
+          <!-- 1й активный комментарий -->
           <div class="carousel-item active">
             <div class="row comments">
-
               <!-- Left block -->
-              <h5 class="d-sm-none d-block p-0 mb-3">КЕЙС Биотехно</h5>
+              <h5 class="d-sm-none d-block p-0 mb-3">{$row.title}</h5>
               <div class="cases-corp-clients-left-block">
                 <div class="d-flex flex-xl-lg-column flex-row justify-content-xl-lg-between">
-                  <img class="" src="/images/case-gazprom-corp-clients.png" alt="" />
+                  <img class="" src={$row.img} alt="" />
+                  <!-- <img class="" src="/images/case-gazprom-corp-clients.png" alt="" /> -->
                   <div class="d-flex flex-column justify-content-between ms-4 ms-xl-lg-0">
-                    <h5 class="d-sm-block d-none my-lg-3 m-0">КЕЙС Биотехно</h5>
+                    <h5 class="d-sm-block d-none my-lg-3 m-0">{$row.title}</h5>
                     <!-- Вертикальная кнопка -->
                     <button
                       class="d-xl-lg-none d-lg-flex d-none justify-content-center align-items-center btn btn-primary py-2 thanks-btn">
@@ -34,57 +40,24 @@
 
               <!-- Right block -->
               <div class="cases-corp-clients-right-block">
+                {set $lists = $row.name_list_corp_clients | fromJSON}
+                {foreach $lists as $list}
                 <div class="d-flex flex-column list-cases">
-                  <p style="color: #ff5500;font-weight: bold;">Задачи бизнеса:</p>
+                  <p style="color: #ff5500;font-weight: bold;">{$list.name_of_list_corp_clients}</p>
                   <ul class="case-list m-0">
-                    <li>
-                      <h4>Уменьшение стоимости закупок оборудования.</h4>
-                    </li>
-                    <li>
-                      <h4>Ускорение поставок комплектующих для сборки</h4>
-                    </li>
-                    <li>
-                      <h4>Решение технических проблем возникающих при эксплуатации отдельных элементов арматуры</h4>
-                    </li>
-                    <li>
-                      <h4>Исключение утечек в системах трубопроводов, увеличение герметичности.</h4>
-                    </li>
-                  </ul>
-                </div>
 
-                <div class="d-flex flex-column list-cases">
-                  <p style="color: #ff5500;font-weight: bold;">Решение:</p>
-                  <ul class="case-list m-0">
+                    {set $points = $list.point_of_list | fromJSON}
+                    {foreach $points as $point}
                     <li>
-                      <h4>очное обучение инженеров проектировщиков и слесарей -сборщиков с целью повышения квалификации
-                        при выборе и монтаже трубопроводных систем. Обучение по интересующим направлениям</h4>
+                      <h4>{$point.point_of_list}</h4>
                     </li>
-                    <li>
-                      <h4>работа с обжимными фитингами", "запорная арматура для КИП и автоматики</h4>
-                    </li>
+                    {/foreach}
                   </ul>
                 </div>
+                {/foreach}
 
-                <div class="d-flex flex-column list-cases">
-                  <p style="color: #ff5500;font-weight: bold;">Результат:</p>
-                  <ul class="case-list m-0">
-                    <li>
-                      <h4>выявлено несколько простых и доступных решений, позволяющих уменьшить сумму закупочной
-                        спецификации и сроки поставки.</h4>
-                    </li>
-                    <li>
-                      <h4>проведён анализ используемых труб и фитингов и разъяснено в каких местах необходимо применять
-                        тот или иной тип трубопроводов.</h4>
-                    </li>
-                    <li>
-                      <h4>предложено складское решение по запорной арматуре и фитингам взамен проблемных узлов.</h4>
-                    </li>
-                    <li>
-                      <h4>подорана альтернатива (замена) оборудования, которое исчезло с Российского рынка</h4>
-                    </li>
-                  </ul>
-                </div>
               </div>
+
               <!-- Ниже 992px кнопка -->
               <div class="">
                 <button
@@ -95,18 +68,21 @@
 
             </div>
           </div>
+          {set $index += 1}
 
-          <!-- 2й комментарий -->
-          <div class="carousel-item">
+          {else}
+
+          <!-- 2й скрытый комментарий -->
+          <div class="carousel-item ">
             <div class="row comments">
-
               <!-- Left block -->
-              <h5 class="d-sm-none d-block p-0 mb-3">Кейс “Пневмоавтоматика для отдела продаж”</h5>
+              <h5 class="d-sm-none d-block p-0 mb-3">{$row.title}</h5>
               <div class="cases-corp-clients-left-block">
                 <div class="d-flex flex-xl-lg-column flex-row justify-content-xl-lg-between">
-                  <img class="" src="/images/case-gazprom-corp-clients.png" alt="" />
+                  <img class="" src={$row.img} alt="" />
+                  <!-- <img class="" src="/images/case-gazprom-corp-clients.png" alt="" /> -->
                   <div class="d-flex flex-column justify-content-between ms-4 ms-xl-lg-0">
-                    <h5 class="d-sm-block d-none my-lg-3 m-0">Кейс “Пневмоавтоматика для отдела продаж”</h5>
+                    <h5 class="d-sm-block d-none my-lg-3 m-0">{$row.title}</h5>
                     <!-- Вертикальная кнопка -->
                     <button
                       class="d-xl-lg-none d-lg-flex d-none justify-content-center align-items-center btn btn-primary py-2 thanks-btn">
@@ -123,41 +99,24 @@
 
               <!-- Right block -->
               <div class="cases-corp-clients-right-block">
+                {set $lists = $row.name_list_corp_clients | fromJSON}
+                {foreach $lists as $list}
                 <div class="d-flex flex-column list-cases">
-                  <p style="color: #ff5500;font-weight: bold;">Задачи бизнеса:</p>
+                  <p style="color: #ff5500;font-weight: bold;">{$list.name_of_list_corp_clients}</p>
                   <ul class="case-list m-0">
-                    <li>
-                      <h4>Обучить сотрудников отдела продаж основам пневмо автоматических систем</h4>
-                    </li>
-                    <li>
-                      <h4>Показать живые примеры устройств и их работу</h4>
-                    </li>
-                  </ul>
-                </div>
 
-                <div class="d-flex flex-column list-cases">
-                  <p style="color: #ff5500;font-weight: bold;">Решение:</p>
-                  <ul class="case-list m-0">
+                    {set $points = $list.point_of_list | fromJSON}
+                    {foreach $points as $point}
                     <li>
-                      <h4>Обучение сотрудников в офисе компании с использованием стенда с пневмо автоматическими
-                        приборами</h4>
+                      <h4>{$point.point_of_list}</h4>
                     </li>
+                    {/foreach}
                   </ul>
                 </div>
+                {/foreach}
 
-                <div class="d-flex flex-column list-cases">
-                  <p style="color: #ff5500;font-weight: bold;">Результат:</p>
-                  <ul class="case-list m-0">
-                    <li>
-                      <h4>Сотрудники научились разбираться в системах пневмоавтоматики</h4>
-                    </li>
-                    <li>
-                      <h4>Разобрали на примерах, как правильно рассчитать нужное оборудование для клиентов</h4>
-                    </li>
-                  </ul>
-                </div>
-                
               </div>
+
               <!-- Ниже 992px кнопка -->
               <div class="">
                 <button
@@ -168,6 +127,9 @@
 
             </div>
           </div>
+
+          {/if}
+          {/foreach}
 
         </div>
 
@@ -187,11 +149,12 @@
 
       <!-- Кнопки ниже 1140px -->
       <div class="d-xl-lg-none d-flex justify-content-center mt-3">
-        <button class="border-0 bg-transparent" type="button" data-bs-target="#reviews" data-bs-slide="prev">
+        <button class="border-0 bg-transparent btn-case" type="button" data-bs-target="#reviews" data-bs-slide="prev">
           <img style="width: 45px; height: 45px;" src="/images/chevron_left.png" alt="">
         </button>
-        <div class="d-xl-lg-none d-flex align-items-center mx-3" style="font-size: 14px;"><b>1 </b> / 8</div>
-        <button class="border-0 bg-transparent" type="button" data-bs-target="#reviews" data-bs-slide="next">
+        <!-- <div class="d-xl-lg-none d-flex align-items-center mx-3 " style="font-size: 14px;"><span
+            class="number-case"></span> / {$countCases}</div> -->
+        <button class="border-0 bg-transparent btn-case" type="button" data-bs-target="#reviews" data-bs-slide="next">
           <img style="width: 45px; height: 45px;" src="/images/chevron_right.png" alt="">
         </button>
       </div>
@@ -200,3 +163,32 @@
   </div>
   </div>
 </section>
+{/if}
+
+<!-- Скрипт для отображения количества кейсов на странице Условия для Корпоративных клиентов сколько из скольки -->
+<script defer>
+  let numberCase = document.querySelector('.number-case');
+  let btnCase = document.querySelectorAll('.btn-case');
+  let cases = document.querySelectorAll('.carousel-item');
+
+  numberCase.innerHTML = 1 + ' ';
+
+  btnCase.forEach(el => {
+    el.addEventListener("click", () => {
+      let activeCase = document.querySelector('.carousel-item .active');
+      console.log(activeCase);
+      cases.forEach((el, index) => {
+        let cases = document.querySelectorAll('.carousel-item');
+        if (el.classList.contains("active")) {
+          let number = index + 1;
+          numberCase.innerHTML = number + ' ';
+          console.log(index)
+          console.log(el)
+          console.log(cases)
+        }
+      })
+    })
+  })
+  console.log(cases)
+
+</script>
