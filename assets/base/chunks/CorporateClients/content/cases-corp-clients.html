@@ -2,9 +2,9 @@
 
 {set $rows = json_decode($_modx->resource.case_corp_clients, true)}
 {set $countCases = count($rows)}
-<section class="py-5 mb-sm-5">
+<section class="py-5 mb-sm-5 big-padding">
   <div class="container-xxl">
-    <div class="reviews px-xl-lg-5 position-relative">
+    <div class="reviews px-xxl-0 px-xl-lg-5 position-relative">
       <h2 class="mb-4">Наши кейсы</h2>
 
       <div id="reviews" class="carousel slide p-sm-3 p-1 p-md-0 carousel-cases-corp-clients">
@@ -33,7 +33,7 @@
                 </div>
                 <!-- Горизонтальная кнопка -->
                 <button
-                  class="d-xl-lg-flex d-none justify-content-center align-items-center btn btn-primary py-2 thanks-btn">
+                  class="d-xl-lg-flex d-none justify-content-center align-items-center btn btn-primary py-2 mt-4 thanks-btn">
                   Благодарность
                 </button>
               </div>
@@ -92,7 +92,7 @@
                 </div>
                 <!-- Горизонтальная кнопка -->
                 <button
-                  class="d-xl-lg-flex d-none justify-content-center align-items-center btn btn-primary py-2 thanks-btn">
+                  class="d-xl-lg-flex d-none justify-content-center align-items-center btn btn-primary py-2 mt-4 thanks-btn">
                   Благодарность
                 </button>
               </div>
@@ -135,7 +135,7 @@
 
       </div>
 
-      <!-- Кнопки выше 1140px -->
+      <!-- Кнопки переключения выше 1140px -->
       <div class="d-xl-lg-flex d-none">
         <button class="carousel-control-prev corp-clients-carousel-prev" type="button" data-bs-target="#reviews"
           data-bs-slide="prev">
@@ -147,7 +147,7 @@
         </button>
       </div>
 
-      <!-- Кнопки ниже 1140px -->
+      <!-- Кнопки переключения ниже 1140px -->
       <div class="d-xl-lg-none d-flex justify-content-center mt-3">
         <button class="border-0 bg-transparent btn-case" type="button" data-bs-target="#reviews" data-bs-slide="prev">
           <img style="width: 45px; height: 45px;" src="/images/chevron_left.png" alt="">
@@ -182,9 +182,9 @@
         if (el.classList.contains("active")) {
           let number = index + 1;
           numberCase.innerHTML = number + ' ';
-          console.log(index)
-          console.log(el)
-          console.log(cases)
+          // console.log(index)
+          // console.log(el)
+          // console.log(cases)
         }
       })
     })

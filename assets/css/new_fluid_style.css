@@ -15080,6 +15080,18 @@ input.promocode {
   width: 0;
 }
 
+@media screen and (min-width: 1440px) {
+  .corp-clients-carousel-prev {
+    position: absolute;
+    left: -2%;
+    width: 0;
+  }
+  .corp-clients-carousel-next {
+    position: absolute;
+    right: -2%;
+    width: 0;
+  }
+}
 @media screen and (max-width: 1139px) {
   .carousel-count-cases {
     position: absolute;
@@ -15166,7 +15178,7 @@ input.promocode {
   justify-content: space-between;
 }
 .individual-block-number + h5, .individual-block-number + .h5 {
-  width: 75%;
+  width: 90%;
 }
 .individual-block-number div h4, .individual-block-number div .h4 {
   width: 50%;
@@ -15237,6 +15249,11 @@ input.promocode {
   }
   .cource-card > div {
     border-radius: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .big-padding {
+    padding: 0 80px;
   }
 }
 @font-face {
@@ -15450,7 +15467,7 @@ a:hover {
     font-family: "Golos";
     font-size: 24px;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 32.89px;
   }
   h6, .h6 {
     font-weight: 400;
@@ -15504,7 +15521,7 @@ a:hover {
     font-family: "Golos";
     font-size: 24px;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 32.89px;
   }
   h6, .h6 {
     font-weight: 400;
@@ -15560,7 +15577,7 @@ a:hover {
     font-family: "Golos";
     font-size: 24px;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 32.89px;
   }
   h6, .h6 {
     font-weight: 400;
@@ -15620,7 +15637,7 @@ a:hover {
     font-family: "Golos";
     font-size: 28px;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 38.37px;
   }
   h6, .h6 {
     font-weight: 400;
@@ -15679,7 +15696,7 @@ a:hover {
     font-family: "Golos";
     font-size: 28px;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 38.37px;
   }
   h6, .h6 {
     font-weight: 400;
@@ -15737,7 +15754,7 @@ a:hover {
     font-family: "Golos";
     font-size: 28px;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 38.37px;
   }
   h6, .h6 {
     font-weight: 400;
