@@ -14452,3 +14452,13 @@ input:invalid:not(:placeholder-shown) {
     border-radius: 0;
   }
 }
+.material-course-filter {
+  background: #FF5500;
+  color: #fff;
+  border-radius: 16px;
+  font-size: calc(19px - 0.1vw);
+}
+.material-course-filter:hover {
+  background: #4763D5;
+  color: #fff;
+}

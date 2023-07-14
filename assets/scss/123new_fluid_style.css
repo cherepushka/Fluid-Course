@@ -15556,7 +15556,7 @@ input:invalid:not(:placeholder-shown) {
 
 .grid li strong {
   color: #4763D5;
-  font-weight: 700;
+  font-weight: 400;
   display: block;
   margin-bottom: 24px;
 }

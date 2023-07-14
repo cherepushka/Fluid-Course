@@ -2,16 +2,29 @@
   <h2 class="header_2">
     Преподаватель
   </h2>
-  {set $tpl = json_decode($_modx->resource.teacher_migx, true)}
-  <div class="row justify-content-center">
+  {set $rows = json_decode($_modx->resource.teacher_migx, true)}
+  {foreach $rows as $row}
+  <div class="row justify-content-center teacher-block">
     <div class="align-content-center col-md-5 col- d-flex justify-content-center">
-      <img src={$tpl.0.img} alt="Специалист по обучению" style="object-fit: contain">
+      <img src={$row.img} alt="Специалист по обучению" style="object-fit: contain">
     </div>
     <div class="col-md-7">
       <h2 class="header_1">
         Преподаватель
       </h2>
-      {$tpl.0.describe}
+
+      <div class="mt-4">
+        <h3 style="color: #4763D5;">{$row.name} - </h3>
+        <h3>{$row.specialization}</h3>
+        {set $lists = $row.points_of_charact | fromJSON}
+        <ul>
+          {foreach $lists as $list}
+          <li>{$list.title}</li>
+          {/foreach}
+        </ul>
+      </div>
+
     </div>
   </div>
+  {/foreach}
 </div>

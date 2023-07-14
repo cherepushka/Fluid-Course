@@ -583,3 +583,13 @@ input:invalid:not(:placeholder-shown) {
       }
     }
   }
+  .material-course-filter {
+    background: #FF5500;
+    color: #fff;
+    border-radius: 16px;
+    font-size: calc(19px - 0.1vw);
+    &:hover {
+        background: #4763D5;
+        color: #fff;
+    }
+  }
