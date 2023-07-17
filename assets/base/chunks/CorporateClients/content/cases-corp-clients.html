@@ -1,4 +1,4 @@
-{if $_modx->resource.case_corp_clients?}
+{if $_modx->resource.case_corp_clients !== null}
 
 {set $rows = json_decode($_modx->resource.case_corp_clients, true)}
 {set $countCases = count($rows)}

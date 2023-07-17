@@ -3,7 +3,7 @@
 
   <div class="row">
     {set $tpl = json_decode($_modx->resource.certificate_migx, true)}
-    <img class="col-lg-5 px-0 w-100" src={$tpl.0.certificate_img} alt="Сертификат">
+    <img class="col-lg-5 px-0" src={$tpl.0.certificate_img} alt="Сертификат">
     <p class="col-lg-7 d-flex align-items-center mt-sm-0 mt-3">{$tpl.0.certificate_text}</p>
   </div>
 

@@ -1,0 +1,48 @@
+<div class="container-xxl">
+    <div class="d-flex flex-md-row flex-column my-md-5 my-4">
+
+        <div class="d-flex flex-column justify-content-xl-lg-between justify-content-md-evenly">
+            <h1 class="text-uppercase">Предзапись на курс [[*pagetitle]]</h1>
+            <div><img class="w-100" src="/images/prereg_course.png" alt=""></div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <div class="my-md-0 my-5 prereg-form">
+            [[!AjaxForm?
+            &snippet=`FormIt`
+            &hooks=`FormItSaveForm,email,teachbaseReg`
+            &emailSubject=`От FluidCourse`
+            &emailTo=`[[+email]]`
+            &emailFrom=`[[++emailsender]]`
+            &emailFromName=`FluidCourse.ru`
+            &emailTpl=`tpl_email`
+            &form=`tpl_enroll_optional_promo`
+            &formName=`Предзапись на [[*pagetitle]]`
+            &formFields=`
+            name_and_surname,
+            email,
+            phone,
+            promocode,
+            personal-data,
+            mailing`
+            &fieldNames=`
+            name_and_surname==Имя,
+            email==Электронная почта,
+            phone==Телефон,
+            promocode==Промокод
+            personal-data==Согласие на обработку персональных данных,
+            mailing==Согласие на получение SMS и Email рассылок`
+            &validate=`
+            name_and_surname:required:minLength=^3^,
+            email:required:email,
+            phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+            {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+            workemail:blank
+            `
+            &successMessage=`Поздравляем с успешной регистрацией!`
+            &validationErrorMessage=`Неправильно заполнена форма!`
+            ]]
+
+        </div>
+    </div>
+    {$_modx->getChunk('consultations-corp-clients')}
+</div>

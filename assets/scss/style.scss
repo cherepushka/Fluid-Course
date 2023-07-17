@@ -1,5 +1,6 @@
 @import "varibles";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "/assets/scss/footer.scss";
 @import "fonts/font";
 
 body {
@@ -603,9 +604,4 @@ input:invalid:not(:placeholder-shown) {
   .slogan {
     width: 100%;
   }
-}
-
-.logo-footer {
-  width: 39px;
-  height: 39px;
 }

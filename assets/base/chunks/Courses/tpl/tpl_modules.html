@@ -1,9 +1,9 @@
 {set $row = json_decode($_modx->resource.modules, true)}
-   
+
 {if count($row) % 2 == 1}
-    {set $countModules = (count($row)-1) / 2 + 1}
+{set $countModules = (count($row)-1) / 2 + 1}
 {else}
-    {set $countModules = count($row) / 2}
+{set $countModules = count($row) / 2}
 {/if}
 {set $j = 1}
 
@@ -27,7 +27,8 @@
     {set $i += 1}
     {/if}
 
-    {if $i < $countModules} {set $temp=$countModules + $j} <div class="d-md-flex justify-content-between">
+    {if $i < $countModules} {set $temp=$countModules + $j} <div class="d-md-flex justify-content-md-between gap-2">
+
         <li class="">
             <div class="text">
                 <strong> {$row.$i.title} </strong>
@@ -52,3 +53,4 @@
     <br /><br />
     [[*describe_training_program]]
 </div>
+{/if}

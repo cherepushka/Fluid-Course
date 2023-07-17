@@ -5,7 +5,10 @@
 
 <body>
     <div class="main_view" id="top">
+
         [[!$top_nav_template]]
+        <!-- Страница уже запущенного курса -->
+        {if $_modx->resource.isActive_pre_reg_course === 'off'}
         [[!$head_banner]]
         [[!$section_what_you_will_learn_template]]
 
@@ -18,6 +21,13 @@
         [[!$section_final_work_template]]
 
         [[!$section_certificate_template]]
+
+        {else}
+        <!-- Страница предзаписи курса -->
+
+        {$_modx->getChunk('tpl_preregistration_page_course')}
+        
+        {/if}
 
         [[!$footer_course_template]]
 

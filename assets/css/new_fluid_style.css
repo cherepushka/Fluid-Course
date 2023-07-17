@@ -15255,6 +15255,10 @@ input.promocode {
     padding: 0 80px;
   }
 }
+.prereg-form form {
+  border-radius: 12px;
+}
+
 @font-face {
   font-family: "Golos";
   src: url(/fonts/golos-text_regular.woff2?ae582e244fd754e381e0494d12e662ba) format("woff2"), url(/fonts/golos-text_regular.woff?b1395e91e001884eee01fbcf0896f85d) format("woff");

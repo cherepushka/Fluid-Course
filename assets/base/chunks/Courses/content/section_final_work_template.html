@@ -110,8 +110,8 @@
 <!-- ФОРМЫ ЗАПИСИ -->
 <div class="container-xxl my-5">
   {if $_modx->resource.hideForm?}{else}
-  <div id="enroll-form" class="row justify-content-evenly gy-4">
-    <div class="col-md-5 describe_near_form">
+  <div id="enroll-form" class="d-flex flex-md-row flex-column justify-content-evenly gy-4 gap-4">
+    <div class="col-md-6 describe_near_form">
       [[*describe_near_form_reg]]
       {if $_modx->resource.total_price?}<h1 style="font-size: 40px;">{$_modx->resource.total_price} руб.</h1>{/if}
       <div class="row">
@@ -126,95 +126,95 @@
       </div>
     </div>
 
-    <div class="col-md-5 reg_form">
-      [[*header_form_reg]]
+    <!-- <div class="col-md-5 reg_form">
+      [[*header_form_reg]] -->
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
-      {if $_modx->resource.change_forms_buy_or_reg?}
-
-      [[!AjaxForm?
-      &snippet=`FormIt`
-      &hooks=`FormItSaveForm,email`
-      &emailSubject=`От FluidCourse`
-      &emailTo=`[[+email]]`
-      &emailTpl=`tpl_email`
-      &emailFrom=`[[++emailsender]]`
-      &emailFromName=`FluidCourse.ru`
-      &form=`tpl_enroll_form`
-      &formName=`[[*pagetitle]]`
-      &formFields=`
-      name_and_surname,
-      email,
-      phone,
-      company,
-      job,
-      promocode,
-      personal-data,
-      mailing`
-      &fieldNames=`
-      name_and_surname==Имя,
-      email==Электронная почта,
-      phone==Телефон,
-      company==Организация,
-      job==Должность,
-      promocode==Промокод
-      personal-data==Согласие на обработку персональных данных,
-      mailing==Согласие на получение SMS и Email рассылок`
-      &validate=`
-      name_and_surname:required:minLength=^3^,
-      email:required:email,
-      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-      company:required:minLength=^3^,
-      job:required:minLength=^3^,
-      {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
-      workemail:blank
-      `
-      &successMessage=`Поздравляем с успешной регистрацией!`
-      &validationErrorMessage=`Неправильно заполнена форма!`
-      ]]
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
-      {else}
+    {if $_modx->resource.change_forms_buy_or_reg?}
 
-      [[!AjaxForm?
-      &snippet=`FormIt`
-      &hooks=`FormItSaveForm,email,teachbaseReg`
-      &emailSubject=`От FluidCourse`
-      &emailTo=`[[+email]]`
-      &emailFrom=`[[++emailsender]]`
-      &emailFromName=`FluidCourse.ru`
-      &emailTpl=`tpl_email`
-      &form=`tpl_enroll_optional_promo`
-      &formName=`[[*pagetitle]]`
-      &formFields=`
-      name_and_surname,
-      email,
-      phone,
-      promocode,
-      personal-data,
-      mailing`
-      &fieldNames=`
-      name_and_surname==Имя,
-      email==Электронная почта,
-      phone==Телефон,
-      promocode==Промокод
-      personal-data==Согласие на обработку персональных данных,
-      mailing==Согласие на получение SMS и Email рассылок`
-      &validate=`
-      name_and_surname:required:minLength=^3^,
-      email:required:email,
-      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-      {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
-      workemail:blank
-      `
-      &successMessage=`Поздравляем с успешной регистрацией!`
-      &validationErrorMessage=`Неправильно заполнена форма!`
-      ]]
+    [[!AjaxForm?
+    &snippet=`FormIt`
+    &hooks=`FormItSaveForm,email`
+    &emailSubject=`От FluidCourse`
+    &emailTo=`[[+email]]`
+    &emailTpl=`tpl_email`
+    &emailFrom=`[[++emailsender]]`
+    &emailFromName=`FluidCourse.ru`
+    &form=`tpl_enroll_form`
+    &formName=`[[*pagetitle]]`
+    &formFields=`
+    name_and_surname,
+    email,
+    phone,
+    company,
+    job,
+    promocode,
+    personal-data,
+    mailing`
+    &fieldNames=`
+    name_and_surname==Имя,
+    email==Электронная почта,
+    phone==Телефон,
+    company==Организация,
+    job==Должность,
+    promocode==Промокод
+    personal-data==Согласие на обработку персональных данных,
+    mailing==Согласие на получение SMS и Email рассылок`
+    &validate=`
+    name_and_surname:required:minLength=^3^,
+    email:required:email,
+    phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+    company:required:minLength=^3^,
+    job:required:minLength=^3^,
+    {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+    workemail:blank
+    `
+    &successMessage=`Поздравляем с успешной регистрацией!`
+    &validationErrorMessage=`Неправильно заполнена форма!`
+    ]]
 
-      {/if}
-    </div>
+
+    {else}
+
+    [[!AjaxForm?
+    &snippet=`FormIt`
+    &hooks=`FormItSaveForm,email,teachbaseReg`
+    &emailSubject=`От FluidCourse`
+    &emailTo=`[[+email]]`
+    &emailFrom=`[[++emailsender]]`
+    &emailFromName=`FluidCourse.ru`
+    &emailTpl=`tpl_email`
+    &form=`tpl_enroll_optional_promo`
+    &formName=`[[*pagetitle]]`
+    &formFields=`
+    name_and_surname,
+    email,
+    phone,
+    promocode,
+    personal-data,
+    mailing`
+    &fieldNames=`
+    name_and_surname==Имя,
+    email==Электронная почта,
+    phone==Телефон,
+    promocode==Промокод
+    personal-data==Согласие на обработку персональных данных,
+    mailing==Согласие на получение SMS и Email рассылок`
+    &validate=`
+    name_and_surname:required:minLength=^3^,
+    email:required:email,
+    phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+    {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+    workemail:blank
+    `
+    &successMessage=`Поздравляем с успешной регистрацией!`
+    &validationErrorMessage=`Неправильно заполнена форма!`
+    ]]
+
+    {/if}
+    <!-- </div> -->
   </div>
   {/if}
   <!-- Скрипт отвечает за уведомление об успешном заполнении формы -->
