@@ -13,7 +13,7 @@
 <div class="module active">
     <div class="split row">
         {set $items = $rows.0.list_points | fromJSON}
-        <ol class="text-white list-unstyled ps-md-5 ps-3" style="font-size: 1.3rem; line-height: 30px">
+        <ol class="text-white list-unstyled ps-lg-5 ps-3" style="font-size: 20px; line-height: 25px">
             {set $k = 1}
             {foreach $items as $item}
             <li>{$k}. {$item.point}</li>
@@ -26,7 +26,7 @@
 <div class="module">
     <div class="split row">
         {set $items = $rows.$countModules.list_points | fromJSON}
-        <ol class="text-white list-unstyled ps-md-5 ps-3" style="font-size: 1.3rem; line-height: 30px">
+        <ol class="text-white list-unstyled ps-lg-5 ps-3" style="font-size: 20px; line-height: 25px">
             {set $k = 1}
             {foreach $items as $item}
             <li>{$k}. {$item.point}</li>
@@ -41,7 +41,7 @@
 <div class="module">
     <div class="split row">
         {set $items = $rows.$i.list_points | fromJSON}
-        <ol class="text-white list-unstyled ps-md-5 ps-3" style="font-size: 1.3rem; line-height: 30px">
+        <ol class="text-white list-unstyled ps-lg-5 ps-3" style="font-size: 20px; line-height: 25px">
             {set $k = 1}
             {foreach $items as $item}
             <li>{$k}. {$item.point}</li>
@@ -53,7 +53,7 @@
 {if $i < $countModules} {set $temp=$countModules + $j} {if $temp < count($rows)} <div class="module">
     <div class="split row">
         {set $items = $rows.$temp.list_points | fromJSON}
-        <ol class="text-white list-unstyled ps-md-5 ps-3" style="font-size: 1.3rem; line-height: 30px">
+        <ol class="text-white list-unstyled ps-lg-5 ps-3" style="font-size: 20px; line-height: 25px">
             {set $k = 1}
             {foreach $items as $item}
             <li>{$k}. {$item.point}</li>
@@ -61,9 +61,9 @@
             {set $j += 1}
         </ol>
     </div>
-</div>
-{/if}
-{/if}
+    </div>
+    {/if}
+    {/if}
 
 
-{/for}
+    {/for}

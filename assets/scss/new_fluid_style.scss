@@ -116,6 +116,7 @@ a:hover {
   h2 {
     font-family: "Gotham Pro";
     // font-family: "Golos";
+    font-weight: 400;
     font-size: 32px;
     line-height: 43.85px;
   }
@@ -183,6 +184,7 @@ a:hover {
   h2 {
     font-family: "Gotham Pro";
     // font-family: "Golos";
+    font-weight: 400;
     font-size: 28px;
     line-height: 38.37px;
   }
@@ -528,4 +530,9 @@ a:hover {
 
 .nav nav .blue-link {
   color: #4763d5;
+}
+
+.logo-footer {
+  width: 39px;
+  height: 39px;
 }

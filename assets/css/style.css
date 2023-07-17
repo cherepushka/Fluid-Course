@@ -14484,3 +14484,7 @@ input:invalid:not(:placeholder-shown) {
     width: 100%;
   }
 }
+.logo-footer {
+  width: 39px;
+  height: 39px;
+}

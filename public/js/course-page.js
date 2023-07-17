@@ -157,7 +157,6 @@ document.querySelectorAll('.modules_more_3 li').forEach(function (active, index)
   return active.addEventListener('click', function (e) {
     var modules = document.querySelectorAll('.modules_more_3 li');
     var modulesText = document.querySelectorAll('.module');
-    console.log(modulesText);
     modules.forEach(function (el) {
       if (el.classList.contains('active')) {
         el.classList.remove('active');
@@ -169,9 +168,35 @@ document.querySelectorAll('.modules_more_3 li').forEach(function (active, index)
         el.classList.remove('active');
       }
     });
-    modulesText[index].classList.add('active');
+    console.log(window.matchMedia('(min-width: 768px)').matches);
+    if (window.matchMedia('(min-width: 768px').matches) {
+      modulesText[index].classList.add('active');
+    } else {
+      modulesText[index + 1].classList.add('active');
+    }
   });
 });
+
+// Selected box (двигающаяся рамка) на баннере
+var selectedBox = document.querySelector('.selected_box');
+var mainModuleBox = document.querySelector('.main-module-box');
+selectedBox.style.width = mainModuleBox.clientWidth;
+selectedBox.style.height = mainModuleBox.clientHeight;
+window.addEventListener('resize', function () {
+  var selectedBox = document.querySelector('.selected_box');
+  var mainModuleBox = document.querySelector('.main-module-box');
+  selectedBox.style.width = mainModuleBox.clientWidth;
+  selectedBox.style.height = mainModuleBox.clientHeight;
+  selectedBox.style.borderColor = "rgb(".concat(Math.random() * (255 - 1), " 120 50)");
+  console.log('selectedBox.Height', getComputedStyle(selectedBox).getPropertyValue('height'));
+  console.log('selectedBox.Width', getComputedStyle(selectedBox).getPropertyValue('width'));
+  console.log('ModuleBox.Height', mainModuleBox.offsetHeight);
+  console.log('ModuleBox.Width', mainModuleBox.offsetWidth);
+});
+console.log('selectedBox.Height', getComputedStyle(selectedBox).getPropertyValue('height'));
+console.log('selectedBox.Width', getComputedStyle(selectedBox).getPropertyValue('width'));
+console.log('ModuleBox.Height', mainModuleBox.offsetHeight);
+console.log('ModuleBox.Width', mainModuleBox.offsetWidth);
 
 // Часто задаваемый вопросы
 document.querySelectorAll('.faq .split .list').forEach(function (row) {

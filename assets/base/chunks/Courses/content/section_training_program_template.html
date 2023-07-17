@@ -16,9 +16,11 @@
 
       <!-- Отображение модулей 768px и ниже -->
       {set $rows = json_decode($_modx->resource.modules, true)}
-      <ol class="row justify-content-sm-between list-unstyled my-4 d-md-none">
+      <ol class="justify-content-sm-between list-unstyled my-4 d-md-none">
+        <!-- <ol class="row justify-content-sm-between list-unstyled my-4 d-md-none"> -->
         {foreach $rows as $row index=$index}
-        {if $i == 0}
+        {if $index == 0}
+        <!-- Активный модуль при первой загрузке страницы -->
         <div>
           <div class="modules_more_3">
             <li class="active">
@@ -28,22 +30,25 @@
               </div>
             </li>
           </div>
+          <!-- Активное описание модуля при первой загрузке страницы -->
           <div class="module active">
             <div class="split row">
               {set $items = $row.list_points | fromJSON}
-              <ol class="text-white list-unstyled ps-md-5 ps-3" style="font-size: 1.1rem; line-height: 30px">
-                {set $i = 1}
+              <ol class="text-white list-unstyled ps-lg-5 ps-3" style="font-size: 20px; line-height: 25px">
+                {set $k = 1}
                 {foreach $items as $item}
-                <li>{$i}. {$item.point}</li>
-                {set $i += 1}
+                <li>{$k}. {$item.point}</li>
+                {set $k += 1}
                 {/foreach}
               </ol>
             </div>
           </div>
         </div>
-        {set $i += 1}
+
         {else}
+        <!-- Остальные модули (скрытые до нажатия) -->
         <div>
+
           <div class="modules_more_3">
             <li class="">
               <div class="text">
@@ -52,20 +57,20 @@
               </div>
             </li>
           </div>
-
+          <!-- Остальные описания модулей (скрытые до нажатия) -->
           <div class="module">
             <div class="split row">
               {set $items = $row.list_points | fromJSON}
-              <ol class="text-white list-unstyled ps-md-5 ps-3" style="font-size: 1.1rem; line-height: 30px">
-                {set $i = 1}
+              <ol class="text-white list-unstyled ps-lg-5 ps-3" style="font-size: 20px; line-height: 25px">
+                {set $k = 1}
                 {foreach $items as $item}
-                <li>{$i}. {$item.point}</li>
-                {set $i += 1}
+                <li>{$k}. {$item.point}</li>
+                {set $k += 1}
                 {/foreach}
               </ol>
             </div>
           </div>
-          
+
         </div>
         {/if}
         {/foreach}
@@ -78,7 +83,6 @@
           </div>
         </div>
       </ol>
-      <!-- Отображение модулей 768px и ниже -->
 
     </div>
   </div>

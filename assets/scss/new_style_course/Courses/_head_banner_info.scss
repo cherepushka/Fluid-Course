@@ -43,15 +43,15 @@
         .additional_info {
             .selected_box {
                 width: 350px;
-                position: absolute;
                 height: 140px;
+                position: absolute;
                 background: none;
                 border: 1px solid #fff;
                 border-radius: 16px;
-                transform: translateX(calc(var(--main-module-box) * 350px));
+                transform: translateX(calc(var(--main-module-box) * 100%));
                 transition: transform 2s ease-in-out 0.4s;
 
-                @media screen and (max-width: 1439px) {
+                @media screen and (max-width: 991px) {
                     & {
                         width: 50%;
                         transform: translate(calc(var(--main-module-box_x) * 100%), calc(100% * var(--main-module-box_y)));
@@ -70,19 +70,13 @@
             .main-module-box {
                 display: flex;
                 flex-direction: column;
-                height: 140px;
+                // height: 140px;
                 padding: 20px;
                 background: none;
 
-                p,
-                div {
+                strong,
+                h4 {
                     color: #fff;
-                    width: 100%;
-                }
-
-                strong {
-                    color: #fff;
-                    font-weight: 400;
                 }
             }
 
