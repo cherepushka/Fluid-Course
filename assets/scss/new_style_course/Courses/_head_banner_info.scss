@@ -125,13 +125,13 @@
         align-items: flex-start;
 
         p {
-            font-size: 1rem;
+            // font-size: 1rem;
             color: #000000;
-            line-height: 24px;
+            // line-height: 24px;
         }
 
         .head_banner_info_title {
-            font-size: 2.4rem;
+            // font-size: 2.4rem;
             color: #000000;
         }
 
@@ -192,13 +192,14 @@
                 div {
                     color: #000000;
                     width: 100%;
-                    font-size: 16px;
+                    // font-size: 16px;
                 }
 
-                strong {
+                strong,
+                h4 {
                     color: #000000;
                     margin-bottom: 10px;
-                    font-size: 20px;
+                    // font-size: 20px;
                 }
             }
 
@@ -249,13 +250,13 @@
         align-items: flex-start;
 
         p {
-            font-size: 1rem;
+            // font-size: 1rem;
             color: #FFFF;
-            line-height: 24px;
+            // line-height: 24px;
         }
 
         .head_banner_info_title {
-            font-size: 2.4rem;
+            // font-size: 2.4rem;
             color: #FFFF;
         }
 
@@ -315,14 +316,14 @@
                 p,
                 div {
                     color: #fff;
-                    width: 100%;
-                    font-size: 16px;
+                    // width: 100%;
+                    // font-size: 16px;
                 }
 
-                strong {
+                strong,
+                h4 {
                     color: #fff;
                     margin-bottom: 10px;
-                    font-size: 20px;
                 }
             }
         }
@@ -366,7 +367,7 @@
 }
 
 .btn {
-    font-size: 14px;
+    // font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0em;

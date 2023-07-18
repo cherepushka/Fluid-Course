@@ -12,7 +12,7 @@
   <input class="final_work_input phone" type="text" placeholder="+7 (999) 999-99-99" name="phone" required>
 
   <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode" required
-    pattern="[Ff][Cc][Nn][Gg]2023" title="Введите корректный Промокод">
+    pattern="[Ff][Cc][Nn][Gg]2023" title="Введите корректный Промокод" {if $_modx->resource.required_promo?}required{else}{/if}>
 
   <!--для защиты от ботов-->
   <input type="hidden" name="workemail" value="" />

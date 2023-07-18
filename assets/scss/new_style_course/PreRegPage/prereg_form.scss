@@ -1,6 +1,23 @@
 .prereg-form {
+    margin-bottom: 150px;
+
     form {
+        width: 100%;
         border-radius: 12px;
     }
-    
+
+    @media screen and (max-width: 991px) {
+        & {
+            margin-bottom: 50px;
+        }
+    }
+
+    h1 {
+        @media screen and (max-width : 767px) {
+            & {
+                line-height: 42px;
+            }
+        }
+    }
+
 }

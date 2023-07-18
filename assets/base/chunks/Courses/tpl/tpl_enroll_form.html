@@ -20,7 +20,8 @@
   <input class="final_work_input" type="text" placeholder="Должность" name="job" required>
 
   <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode"
-    title="Введите корректный Промокод">
+  title="Введите корректный Промокод" {if $_modx->resource.required_promo?}required{else}{/if}>
+
 
   <script>
     //Код jQuery, установливающий маску для ввода телефона элементу input

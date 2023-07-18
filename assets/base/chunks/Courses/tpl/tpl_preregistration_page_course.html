@@ -1,8 +1,8 @@
 <div class="container-xxl">
-    <div class="d-flex flex-md-row flex-column my-md-5 my-4">
+    <div class="d-flex flex-md-row flex-column prereg-form">
 
         <div class="d-flex flex-column justify-content-xl-lg-between justify-content-md-evenly">
-            <h1 class="text-uppercase">Предзапись на курс [[*pagetitle]]</h1>
+            <h1 class="text-uppercase" style="font-size: calc(27px + 1.4vw);">Предзапись на курс [[*pagetitle]]</h1>
             <div><img class="w-100" src="/images/prereg_course.png" alt=""></div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -22,20 +22,20 @@
             email,
             phone,
             promocode,
-            personal-data,
+            personal_data,
             mailing`
             &fieldNames=`
             name_and_surname==Имя,
             email==Электронная почта,
             phone==Телефон,
             promocode==Промокод
-            personal-data==Согласие на обработку персональных данных,
+            personal_data==Согласие на обработку персональных данных,
             mailing==Согласие на получение SMS и Email рассылок`
             &validate=`
             name_and_surname:required:minLength=^3^,
             email:required:email,
             phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-            {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+            {if $_modx->resource.required_promo?}promocode:required:regexp=^/[[*promocode]]/iu^,{else}{/if}
             workemail:blank
             `
             &successMessage=`Поздравляем с успешной регистрацией!`
