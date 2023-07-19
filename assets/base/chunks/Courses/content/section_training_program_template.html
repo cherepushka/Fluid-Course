@@ -17,7 +17,6 @@
       <!-- Отображение модулей 768px и ниже -->
       {set $rows = json_decode($_modx->resource.modules, true)}
       <ol class="justify-content-sm-between list-unstyled my-4 d-md-none">
-        <!-- <ol class="row justify-content-sm-between list-unstyled my-4 d-md-none"> -->
         {foreach $rows as $row index=$index}
         {if $index == 0}
         <!-- Активный модуль при первой загрузке страницы -->
@@ -74,13 +73,11 @@
         </div>
         {/if}
         {/foreach}
-        <div>
 
-          <div class="footnote d-md-none">
-            [[*duration_of_study]]
-            <br /><br />
-            [[*describe_training_program]]
-          </div>
+        <div class="footnote d-md-none">
+          [[*duration_of_study]]
+          <br /><br />
+          [[*describe_training_program]]
         </div>
       </ol>
 

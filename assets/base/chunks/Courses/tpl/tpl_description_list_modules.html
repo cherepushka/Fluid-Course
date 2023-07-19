@@ -5,11 +5,11 @@
 {else}
 {set $countModules = count($rows) / 2}
 {/if}
-{set $j = 1}
+{set $j=1}
 
-{for $i=0 to=count($rows) - 1 index=$index}
+{for $i=0 to=$countModules - 1 index=$index}
 
-{if $i == 0}
+{if $index == 0}
 <div class="module active">
     <div class="split row">
         {set $items = $rows.0.list_points | fromJSON}
@@ -34,13 +34,11 @@
         </ol>
     </div>
 </div>
-{continue}
 
-{/if}
-
+{else}
 <div class="module">
     <div class="split row">
-        {set $items = $rows.$i.list_points | fromJSON}
+        {set $items = $rows.$index.list_points | fromJSON}
         <ol class="text-white list-unstyled ps-lg-5 ps-3" style="font-size: 20px; line-height: 25px">
             {set $k = 1}
             {foreach $items as $item}
@@ -50,7 +48,7 @@
     </div>
 </div>
 
-{if $i < $countModules} {set $temp=$countModules + $j} {if $temp < count($rows)} <div class="module">
+{if $index < $countModules} {set $temp=$countModules + $j} {if $temp < count($rows)} <div class="module">
     <div class="split row">
         {set $items = $rows.$temp.list_points | fromJSON}
         <ol class="text-white list-unstyled ps-lg-5 ps-3" style="font-size: 20px; line-height: 25px">
@@ -62,6 +60,7 @@
         </ol>
     </div>
     </div>
+    {/if}
     {/if}
     {/if}
 
