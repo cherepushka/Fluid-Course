@@ -83,4 +83,5 @@
 
 .head_banner_picture {
     @include head_banner(#fff, #fff);
+    background-size: cover;
 }

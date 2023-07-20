@@ -14168,6 +14168,7 @@ input:invalid:not(:placeholder-shown) {
 .head_banner_picture {
   padding-top: 50px;
   padding-bottom: 40px;
+  background-size: cover;
 }
 .head_banner_picture .head_banner_info {
   display: flex;

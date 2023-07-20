@@ -168,13 +168,7 @@ document.querySelectorAll('.modules_more_3 li').forEach(function (active, index)
         el.classList.remove('active');
       }
     });
-    console.log(window.matchMedia('(min-width: 768px)').matches);
-    console.log(modulesText);
-    // if (window.matchMedia('(min-width: 768px').matches) {
     modulesText[index].classList.add('active');
-    // } else {
-    //     modulesText[index + 1].classList.add('active');
-    // }
   });
 });
 

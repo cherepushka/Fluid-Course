@@ -12,12 +12,13 @@
                 {set $today = $.php.strtotime("now")}
                 {set $twoWeeksInSeconds = 1209600}
 
-                {if $date_start !== null && ($date_start - $today) < $twoWeeksInSeconds && ($date_start - $today) > 0}
+                {if $date_start > 0}
                 <div class="date_flag">Старт [[!timestamp_fmt_rus_locale? &timestamp={$_pls['tv.date_start_calendar'] |
                     strtotime} &fmt=`d.MM`]]</div>
                 {/if}
             </h4>
         </div>
+        <img src="" alt="">
 <!-- 1 209 600 - 2 недели в секундах для даты -->
         <div class="d-flex justify-content-between">
 

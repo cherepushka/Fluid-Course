@@ -10,3 +10,5 @@ assets/materials
 .htaccess
 .vscode
 log.log
+assets/img
+mix-manifest.json
