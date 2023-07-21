@@ -6,8 +6,8 @@
     &emailSubject=`От FluidCourse`
     &emailTo=`[[+email]]`
     &emailTpl=`tpl_email_form_pop`
-      &emailFrom=`[[++emailsender]]`
-      &emailFromName=`FluidCourse.ru`
+    &emailFrom=`[[++emailsender]]`
+    &emailFromName=`FluidCourse.ru`
     &form=`tpl_form_registration`
     &formName=`Курсы`
 
@@ -63,6 +63,7 @@
     &successMessage=` `
 
     ]]
+    <!-- Отображение pop-up об успешной регистрации -->
     <script>
         $(document).on('af_complete', function (event, response) {
             const elForm = $(response.form);

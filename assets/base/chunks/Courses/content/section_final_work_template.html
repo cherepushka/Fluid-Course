@@ -124,7 +124,8 @@
 <!-- ФОРМЫ ЗАПИСИ -->
 <div class="container-xxl my-5">
   {if $_modx->resource.hideForm?}{else}
-  <div id="enroll-form" class="d-flex flex-md-row flex-column justify-content-evenly gy-4 gap-4">
+  <div id="enroll-form" class="d-flex flex-md-row flex-column justify-content-evenly gy-4 gap-4 position-relative">
+    <!-- Информация слева от формы -->
     <div class="col-md-6 describe_near_form">
       [[*describe_near_form_reg]]
       {if $_modx->resource.total_price?}<h1 style="font-size: 40px;">{$_modx->resource.total_price} руб.</h1>{/if}
@@ -139,9 +140,6 @@
           class="col-lg-5 col d-flex align-items-center justify-content-center text-white py-1 mt-lg-0 mt-2 btn btn-secondary">Подробнее</button>
       </div>
     </div>
-
-    <!-- <div class="col-md-5 reg_form">
-      [[*header_form_reg]] -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -223,7 +221,7 @@
     {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
     workemail:blank
     `
-    &successMessage=`Поздравляем с успешной регистрацией!`
+    &successMessage=``
     &validationErrorMessage=`Неправильно заполнена форма!`
     ]]
 

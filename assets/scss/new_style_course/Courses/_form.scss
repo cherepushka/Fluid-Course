@@ -23,9 +23,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
+    font-size: calc(26px + 1vw);
+    line-height: 54.87px;
     font-weight: 400;
     color: #4763D5;
+
+    @media screen and (max-width:767px) {
+        font-size: calc(23px + 1vw);
+        line-height: 38.37px;
+    }
 }
 
 .input_form {
@@ -188,3 +194,4 @@ input:invalid:not(:placeholder-shown) {
         margin-top: 0;
     }
 }
+

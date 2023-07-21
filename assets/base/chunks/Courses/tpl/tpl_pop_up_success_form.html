@@ -1,0 +1,45 @@
+<!-- Отображение pop-up об успешной регистрации -->
+<script>
+    $(document).on('af_complete', function (event, response) {
+        var form = response.form;
+        if (response.success) {
+            $('#modal_pop_up_success_form').removeClass('d-none');
+            $('#pop_up_success_form__window').removeClass('d-none');
+            body.style.height = '100vh';
+            body.style.overflowY = 'hidden';
+            document.querySelectorAll('.final_work_input').forEach(el => {
+                el.value = '';
+            })
+            // setTimeout(closeModalWindow, 5000);
+        }
+    });
+</script>
+
+<div class="pop_up_success_form d-none" id="modal_pop_up_success_form" aria-hidden="true">
+</div>
+<!-- <div class="container-xxl"> -->
+<div class="pop_up_success_form__window d-none" id="pop_up_success_form__window" role="dialog" aria-modal="true">
+    <div class="d-flex justify-content-end p-3">
+        <button data-pop-up-form-close class="pop_up_form_close">Закрыть</button>
+    </div>
+    <div class="row">
+        <div class="welcome_text col-md-6">Регистрация прошла успешно! <br> Вся информация придет на ваш e-mail
+        </div>
+        <div class="col-md-6"><img class="w-100" src="/images/pop_up_success_form.png" alt=""></div>
+    </div>
+    <!-- </div> -->
+</div>
+
+<script>
+    let pop_up_form_close = document.querySelector('.pop_up_form_close');
+    let modal_pop_up_success_form = document.querySelector('.pop_up_success_form');
+    let pop_up_success_form__window = document.querySelector('.pop_up_success_form__window');
+    let body = document.querySelector('body');
+    pop_up_form_close.addEventListener('click', closeModalWindow);
+    function closeModalWindow() {
+        modal_pop_up_success_form.classList.add('d-none');
+        pop_up_success_form__window.classList.add('d-none');
+        body.style.height = '';
+        body.style.overflowY = '';
+    }
+</script>
