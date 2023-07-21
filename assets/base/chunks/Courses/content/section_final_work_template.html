@@ -3,11 +3,25 @@
   <!-- ИТОГОВАЯ РАБОТА -->
   <div class="row align-items-center justify-content-lg-start">
     <div class="final_work_describe col-lg-6">
-      [[*final_work_template_head_text]]
+      {set $rows = json_decode($_modx->resource.final_work,true)}
+      {foreach $rows as $row}
+      <h2>{$row.title}</h2>
+      <div>
+        <h6>{$row.subtitle}</h6>
+        {set $points = $row.points | fromJSON}
+        <ul>
+          {foreach $points as $point}
+          <li>
+            <h6>{$point.point}</h6>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
     </div>
     <div class="col-lg-4">
-      <img class="w-100" src=[[*final_work_template_img]] alt="Графика курса">
+      <img class="w-100" src={$row.img} alt="Графика курса">
     </div>
+    {/foreach}
   </div>
 
 
@@ -66,7 +80,7 @@
   <h2 class="mb-5">Получите запись одного урока</h2>
   <div class="row">
     <div class="col-lg-4">
-      <h4 class="w-75" style="color: #4763D5;font-size: 22px;font-weight: normal;">{$row.0.title}</h4>
+      <h4 style="color: #4763D5;font-size: 22px;font-weight: normal;">{$row.0.title}</h4>
       <p class="mt-3" style="font-size: 18px;">{$row.0.subtitle}</p>
     </div>
     <div class="col-lg-4">
@@ -136,7 +150,7 @@
 
     [[!AjaxForm?
     &snippet=`FormIt`
-    &hooks=`FormItSaveForm,email`
+    &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
     &emailSubject=`От FluidCourse`
     &emailTo=`[[+email]]`
     &emailTpl=`tpl_email`
@@ -180,7 +194,7 @@
 
     [[!AjaxForm?
     &snippet=`FormIt`
-    &hooks=`FormItSaveForm,email,teachbaseReg`
+    &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
     &emailSubject=`От FluidCourse`
     &emailTo=`[[+email]]`
     &emailFrom=`[[++emailsender]]`
@@ -193,14 +207,14 @@
     email,
     phone,
     promocode,
-    personal-data,
+    personal_data,
     mailing`
     &fieldNames=`
     name_and_surname==Имя,
     email==Электронная почта,
     phone==Телефон,
     promocode==Промокод
-    personal-data==Согласие на обработку персональных данных,
+    personal_data==Согласие на обработку персональных данных,
     mailing==Согласие на получение SMS и Email рассылок`
     &validate=`
     name_and_surname:required:minLength=^3^,

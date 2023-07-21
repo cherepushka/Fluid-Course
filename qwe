@@ -1,0 +1,21 @@
+
+  <div class="row align-items-center justify-content-lg-start">
+    <div class="final_work_describe col-lg-6">
+
+      {set $rows = json_decode($_modx->resource.final_work)}
+      {var_dump($rows)}
+      <h2>{$rows.title}</h2>
+      <div>
+        <h6>{$rows.subtitle}</h6>
+        {set $points = $row.points | fromJSON}
+        <ul>
+          {foreach $points as $point}
+          <li><h6>{$point.point}</h6></li>
+          {/foreach}
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <img class="w-100" src={$row.img} alt="Графика курса">
+    </div>
+  </div>

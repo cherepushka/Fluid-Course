@@ -12,7 +12,8 @@
   <input class="final_work_input phone" type="text" placeholder="+7 (999) 999-99-99" name="phone" required>
 
   <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode" required
-    pattern="[Ff][Cc][Nn][Gg]2023" title="Введите корректный Промокод" {if $_modx->resource.required_promo?}required{else}{/if}>
+    pattern="[Ff][Cc][Nn][Gg]2023" title="Введите корректный Промокод" {if
+    $_modx->resource.required_promo?}required{else}{/if}>
 
   <!--для защиты от ботов-->
   <input type="hidden" name="workemail" value="" />
@@ -38,9 +39,9 @@
 </form>
 
 <!-- Рабочая форма на платную форму -->
-      <!-- [[!AjaxForm?
+<!-- [[!AjaxForm?
       &snippet=`FormIt`
-      &hooks=`FormItSaveForm,email`
+      &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
       &emailSubject=`От [[++site_name]]`
       &emailTo=`[[+email]]`
       &emailTpl=`tpl_email`

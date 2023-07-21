@@ -21,18 +21,30 @@
                     курс</button></a>
         </div>
 
+        <!-- Блоки с текстом -->
+        {set $rows = json_decode($_modx->resource.left_and_right_block_main_page,true)}
+        <div class="row mb-5 align-items-stretch gap-4 mx-0">
 
-        <div class="row mb-5 align-items-stretch gap-4">
-            <div class="col border p-5 rounded-4">
-
-                [[*left_block]]
-
+            <!-- Левый блок -->
+            <div class="col border py-5 px-md-5 px-4 rounded-4 d-flex flex-column gap-3">
+                <h2>{$rows.0.left_title}</h2>
+                <h6>{$rows.0.left_text}</h6>
             </div>
-            <div class="col border p-5 rounded-4">
 
-                [[*right_block]]
-
+            <!-- Правый блок -->
+            <div class="col border py-5 px-md-5 px-4 rounded-4 d-flex flex-column gap-3">
+                <h2 class="text-orange">{$rows.0.right_title}</h2>
+                {set $points = $rows.0.right_block_points | fromJSON}
+                <div>
+                    {foreach $points as $point}
+                    <div class="d-flex">
+                        <div class="d-flex me-3 orange-dash"><span></span></div>
+                        <h6>{$point.point}</h6>
+                    </div>
+                    {/foreach}
+                </div>
             </div>
+
         </div>
     </div>
 </main>
@@ -54,7 +66,7 @@
                 'limit' => 3,
                 'includeTVs' => 'total_price,monthly_price,anotation,img,category_program,date_start_calendar',
                 'sortby' => 'date_start_calendar',
-                'sortdir' => 'DESC',
+                'sortdir' => 'ASC',
                 'showHidden' => 1,
                 'includeContent' => 1,
                 'hideContainers' => 1,
@@ -217,7 +229,7 @@
                     </div>
 
                 </div>
-                
+
                 <div class="text-center d-md-block d-none" style="color:#4763D5">
                     Жми или сканируй
                 </div>
@@ -252,22 +264,21 @@
                                 <!-- 1й активный комментарий -->
                                 <div class="">
                                     <div class="border rounded-4 p-lg-4 py-1 px-2 comments">
-                                        <!-- style="height: 430px;"> -->
-                                        <div class="row">
-                                            <div class="col flex-grow-0">
+                                        <div class="row mb-3">
+                                            <div class="align-content-center col d-flex flex-grow-0">
                                                 <img src={$comment.avatar}>
                                             </div>
-                                            <div class="col ">
-                                                <strong>
+                                            <div class="col">
+                                                <strong style="font-size: 14px;font-weight: bold;color: #898989;">
                                                     {$comment.name}
                                                 </strong>
-                                                <p>
+                                                <p class="mb-0" style="font-size: 14px;color: #898989;">
                                                     {$comment.course}
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <p>
+                                        <p style="font-size: 16px;line-height: 23.76px;font-weight: 400;">
                                             {$comment.comment}
                                         </p>
                                     </div>
@@ -282,25 +293,26 @@
                     <div class="carousel-item">
                         <div class="d-block w-100">
                             <div class="row gy-4 align-items-stretch">
-                                <!-- 1й неактивный комментарий-->
+                                <!-- 2й неактивный комментарий-->
                                 <div class="">
                                     <div class="border rounded-4 p-lg-4 py-1 px-2 comments">
-                                        <!-- <div class="border rounded-4 p-lg-4 py-1 px-2 overflow-auto" style="height: 430px;"> -->
-                                        <div class="row">
-                                            <div class="col flex-grow-0">
+                                        <div class="row mb-3">
+                                            <div class="align-content-center col d-flex flex-grow-0">
                                                 <img src={$comment.avatar}>
                                             </div>
-                                            <div class="col ">
-                                                <strong>
+                                            <div class="col">
+                                                <strong style="font-size: 14px;font-weight: bold;color: #898989;">
                                                     {$comment.name}
                                                 </strong>
-                                                <p>
+                                                <p class="mb-0" style="font-size: 14px;color: #898989;">
                                                     {$comment.course}
                                                 </p>
                                             </div>
                                         </div>
 
-                                        {$comment.comment}
+                                        <p style="font-size: 16px;line-height: 23.76px;font-weight: 400;">
+                                            {$comment.comment}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -311,30 +323,32 @@
 
                     {/foreach}
                 </div>
-                
-      <!-- Кнопки переключения выше 1140px -->
-      <div class="d-xl-lg-flex d-none">
-        <button class="carousel-control-prev corp-clients-carousel-prev" type="button" data-bs-target="#reviews"
-          data-bs-slide="prev">
-          <img src="/images/chevron_left.png" alt="">
-        </button>
-        <button class="carousel-control-next corp-clients-carousel-next" type="button" data-bs-target="#reviews"
-          data-bs-slide="next">
-          <img src="/images/chevron_right.png" alt="">
-        </button>
-      </div>
 
-      <!-- Кнопки переключения ниже 1140px -->
-      <div class="d-xl-lg-none d-flex justify-content-center mt-3">
-        <button class="border-0 bg-transparent btn-case" type="button" data-bs-target="#reviews" data-bs-slide="prev">
-          <img style="width: 45px; height: 45px;" src="/images/chevron_left.png" alt="">
-        </button>
-        <!-- <div class="d-xl-lg-none d-flex align-items-center mx-3 " style="font-size: 14px;"><span
+                <!-- Кнопки переключения выше 1140px -->
+                <div class="d-xl-lg-flex d-none">
+                    <button class="carousel-control-prev corp-clients-carousel-prev" type="button"
+                        data-bs-target="#reviews" data-bs-slide="prev">
+                        <img src="/images/chevron_left.png" alt="">
+                    </button>
+                    <button class="carousel-control-next corp-clients-carousel-next" type="button"
+                        data-bs-target="#reviews" data-bs-slide="next">
+                        <img src="/images/chevron_right.png" alt="">
+                    </button>
+                </div>
+
+                <!-- Кнопки переключения ниже 1140px -->
+                <div class="d-xl-lg-none d-flex justify-content-center mt-3">
+                    <button class="border-0 bg-transparent btn-case" type="button" data-bs-target="#reviews"
+                        data-bs-slide="prev">
+                        <img style="width: 45px; height: 45px;" src="/images/chevron_left.png" alt="">
+                    </button>
+                    <!-- <div class="d-xl-lg-none d-flex align-items-center mx-3 " style="font-size: 14px;"><span
             class="number-case"></span> / {$countCases}</div> -->
-        <button class="border-0 bg-transparent btn-case" type="button" data-bs-target="#reviews" data-bs-slide="next">
-          <img style="width: 45px; height: 45px;" src="/images/chevron_right.png" alt="">
-        </button>
-      </div>
+                    <button class="border-0 bg-transparent btn-case" type="button" data-bs-target="#reviews"
+                        data-bs-slide="next">
+                        <img style="width: 45px; height: 45px;" src="/images/chevron_right.png" alt="">
+                    </button>
+                </div>
             </div>
 
         </div>
