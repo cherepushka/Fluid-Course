@@ -1,16 +1,37 @@
 <head>
+    <meta name="msapplication-TileColor" content="#138147">
+    <meta name="msapplication-TileImage"
+        content="/favicons/courses/excel/for-purchasers-and-managers/ms-icon-144x144.png">
+    <meta name="theme-color" content="#138147">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <title>[[*pagetitle]]</title>
-    <link rel="shortcut icon" href="url картинки" type="image/x-icon">
-
-
     <meta name="description" content="[[+description]]">
     <meta property="og:description" content=[[*meta_tag_head_for_advertising]]>
 
-    <!-- Yandex.Metrika counter -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/new_fluid_style.css">
+    <link rel="manifest" href="/favicons/courses/excel/for-purchasers-and-managers/manifest.json">
+    <link rel="shortcut icon" href="url картинки" type="image/x-icon">
+
+    <script src="/assets/js/jquery-3.7.0.min.js"></script>
+    <script src="/public/js/course-page.js" defer></script>
+    <script defer src="/assets/dist/main.js"></script>
+    <script defer src="/assets/js/shared/saveVisit.js"></script>
+    <script src="/node_modules/animejs/lib/anime.min.js"></script>
+    <script src="https://kit.fontawesome.com/58986500d7.js" crossorigin="anonymous"></script>
+
+
+
+    <script type="text/javascript">
+        !function () {
+            var t = document.createElement("script");
+            t.type = "text/javascript", t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload = function () {
+                VK.Retargeting.Init("VK-RTRG-1696046-eS8Lb"), VK.Retargeting.Hit()
+            }, document.head.appendChild(t)
+        }();
+    </script>
+
+    <!-- Yandex.Metrika counter START -->
     <script>
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () {
@@ -33,17 +54,21 @@
             webvisor: true
         });
     </script>
-
+    <!-- /Yandex.Metrika counter END -->
+    
     <noscript>
         <div>
             <img src="https://mc.yandex.ru/watch/90898955" style="position:absolute; left:-9999px;" alt="" />
         </div>
     </noscript>
 
-    <!-- /Yandex.Metrika counter -->
-    
+    <noscript>
+        <img src="https://vk.com/rtrg?p=VK-RTRG-1696046-eS8Lb" style="position:fixed; left:-999px;" alt="" />
+    </noscript>
+
+
+    <title>[[*pagetitle]]</title>
+
     {$_modx->resource.page_header_scripts}
-    
-    [[!$header_assets_template]]
 
 </head>

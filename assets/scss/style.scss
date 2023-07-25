@@ -9,73 +9,52 @@ body {
   background-color: #fff;
 }
 
+@mixin btn($bg, $hover-bg, $color, $hover-color, $border: none, $hover-border: none) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(18px - 0.1rem);
+  color: $color;
+  background: $bg;
+
+  @if $border ==none {
+    border: none;
+  }
+
+  @else {
+    border: 1px solid $border;
+  }
+
+  &:hover {
+    color: $hover-color;
+    background: $hover-bg;
+
+    @if $border ==none {
+      border: none;
+    }
+
+    @else {
+      border: 1px solid $hover-border;
+    }
+  }
+
+  white-space: nowrap;
+}
+
 .btn-secondary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #4763d5;
-  --bs-btn-border-color: #4763d5;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #ff5500;
-  --bs-btn-hover-border-color: #ff5500;
-  --bs-btn-focus-shadow-rgb: 150, 38, 223;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #ff5500;
-  --bs-btn-active-border-color: #ff5500;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #4763d5;
-  --bs-btn-disabled-border-color: #4763d5;
+  @include btn(#4763d5, #ff5500, #fff, #fff);
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #ff5500;
-  --bs-btn-border-color: #ff5500;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #4763d5;
-  --bs-btn-hover-border-color: #4763d5;
-  --bs-btn-focus-shadow-rgb: 217, 72, 0;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #4763d5;
-  --bs-btn-active-border-color: #4763d5;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #4763d5;
-  --bs-btn-disabled-border-color: #ff5500;
+  @include btn(#ff5500, #4763d5, #fff, #fff);
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #000000;
-  --bs-btn-border-color: #000;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #000000;
-  --bs-btn-hover-border-color: #000000;
-  --bs-btn-focus-shadow-rgb: 33, 37, 41;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #000000;
-  --bs-btn-active-border-color: #000000;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #000000;
-  --bs-gradient: none;
+  @include btn(#fff, #000000, #000000, #fff, #000000);
 }
 
 .btn-primary-white {
-  background-color: #ff5500;
-  --bs-btn-color: #fff;
-  --bs-btn-border-color: #ff5500;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #fff;
-  --bs-btn-hover-border-color: #fff;
-  --bs-btn-focus-shadow-rgb: 33, 37, 41;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #fff;
-  --bs-btn-active-border-color: #fff;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #000000;
-  --bs-gradient: none;
+  @include btn(#ff5500, #fff, #fff, #000);
 }
 
 .gradient {
@@ -567,6 +546,7 @@ input:invalid:not(:placeholder-shown) {
 
 .orange-dash {
   margin-top: 13px;
+
   span {
     display: flex;
     width: 27px;

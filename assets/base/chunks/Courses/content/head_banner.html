@@ -25,14 +25,14 @@
 
             {if $_modx->resource.background_banner == 'head_banner_picture' ||
             $_modx->resource.background_banner == 'head_banner_gradient'}
-            <a class="d-flex align-items-center justify-content-center overdate btn btn-primary-white col-6 h-100
-                 position-relative text-nowrap" href="#enroll-form" style="z-index: 2;font-size: calc(18px - 0.1rem);">
+            <a class="btn btn-primary-white col-6 h-100
+                 position-relative" href="#enroll-form" style="z-index: 2;">
               Записаться на курс
             </a>
             {else}
-            <a class="d-flex align-items-center justify-content-center overdate btn btn-primary col-6 h-100
-              position-relative text-nowrap" href="#enroll-form"
-              style="z-index: 2;font-size: calc(18px - 0.1rem);">Записаться на курс</a>
+            <a class="btn btn-primary col-6 h-100
+              position-relative" href="#enroll-form"
+              style="z-index: 2;">Записаться на курс</a>
             {/if}
 
             {if $_modx->resource.date_start_calendar || $_modx->resource.hideForm}

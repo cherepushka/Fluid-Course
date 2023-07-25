@@ -1,5 +1,5 @@
 <main>
-  
+
   <!-- Подключение библиотеки jQuery -->
   <script src="jquery.js"></script>
   <!-- Подключение jQuery плагина Masked Input -->
@@ -9,9 +9,9 @@
 
     <div class=" py-5 ">
       <div class="row">
-        <h1 class="h3 action-color mb-5">
+        <h2 class="action-color mb-5">
           Контакты
-        </h1>
+        </h2>
       </div>
 
       <div class="row gy-5">
@@ -23,8 +23,8 @@
               <small>
                 Телефон
               </small>
-              <a href="tel:+7(495)741-12-91" class="h3 text-black d-block text-decoration-none fw-bold">
-                +7 (495) 741-12-91
+              <a href="tel:+7(495)741-12-91" class="text-black d-block text-decoration-none ">
+                <strong class="fw-bold">+7 (495) 741-12-91</strong>
               </a>
             </div>
 
@@ -35,33 +35,33 @@
               <small>
                 E-mail
               </small>
-              <a href="../../../../index.php" class="h3 text-black d-block text-decoration-none">
-                mail@fluidcourse.ru
+              <a href="../../../../index.php" class="text-black d-block text-decoration-none">
+                <h6>mail@fluidcourse.ru</h6>
               </a>
             </div>
 
             <div class="col">
               <div class="d-flex flex-lg-column gap-4 mt-5">
 
-                <a href="https://vk.com/fluidcourse" class="text-decoration-none">
+                <a href="https://vk.com/fluidcourse" class="text-decoration-none text-black">
                   <img class="pe-3 d-inline-block" src="/assets/icons/socials/vk-logo-orange.svg">
-                  <span class="d-xss-none d-lg-inline-block  ">
+                  <h6 class="d-xss-none d-lg-inline-block">
                     ВКонтакте
-                  </span>
+                  </h6>
                 </a>
 
-                <a href="https://t.me/fluidcourse" class="text-decoration-none">
+                <a href="https://t.me/fluidcourse" class="text-decoration-none text-black">
                   <img class="pe-3 d-inline-block" src="/assets/icons/socials/tg-logo-orange.svg">
-                  <span class="d-xss-none d-lg-inline-block">
+                  <h6 class="d-xss-none d-lg-inline-block">
                     Телеграм
-                  </span>
+                  </h6>
                 </a>
 
-                <a href="https://www.youtube.com/@fluidcourse" class="text-decoration-none">
+                <a href="https://www.youtube.com/@fluidcourse" class="text-decoration-none text-black">
                   <img class="pe-3 d-inline-block" src="/assets/icons/socials/yt-logo-orange.svg">
-                  <span class="d-xss-none d-lg-inline-block">
+                  <h6 class="d-xss-none d-lg-inline-block">
                     YouTube
-                  </span>
+                  </h6>
                 </a>
               </div>
             </div>
@@ -72,10 +72,10 @@
 
 
 
-          <h2 class="h6">
+          <h6 class="fw-bold">
             Мы готовы провести корпоративный курс для вашей компании.<br>
             Воспользуйтесь формой обратной связи ниже и мы свяжемся с вами.
-          </h2>
+          </h6>
 
           [[!FormIt?
           &hooks=`email,FormItSaveForm`
@@ -124,15 +124,15 @@
                     <input class="form-control" required placeholder="Телефон" type="text" name="phone"
                       value="[[!+fi.phone]]">
                     <span class="error text-danger">[[!+fi.error.phone]]</span>
-                    
-        <script>
-          //Код jQuery, установливающий маску для ввода телефона элементу input
-          //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
-          $(function () {
-            //2. Получить элемент, к которому необходимо добавить маску
-            $("#form_phone").mask("+7 (999) 999-99-99");
-          });
-        </script>
+
+                    <script>
+                      //Код jQuery, установливающий маску для ввода телефона элементу input
+                      //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+                      $(function () {
+                        //2. Получить элемент, к которому необходимо добавить маску
+                        $("#form_phone").mask("+7 (999) 999-99-99");
+                      });
+                    </script>
                   </div>
                 </div>
                 <div class="col-md-6">
