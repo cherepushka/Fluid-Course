@@ -1,0 +1,12 @@
+<section class="nav">
+    <div class="container">
+        [[pdoMenu?
+        &parents=`9`
+        &level=`0`
+        &tplOuter = `@INLINE [[!$tpl_header_items]]`
+        &outerClass = `navbar navbar-expand-xl bg-body-tertiary py-3`
+        &tpl = `@INLINE
+        <li class="nav-item ms-3"><a class="nav-link blue-link" href="[[+alias]]">[[+menutitle]]</a>[[+wrapper]]</li>`
+        ]]
+    </div>
+</section>

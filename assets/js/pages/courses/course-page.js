@@ -1,7 +1,7 @@
 const Coment = require('./components/_Coment.js');
 
 
-//Программа обучения
+//Программа обучения СТАРТ
 document.querySelectorAll('.modules_more_3 li').forEach((active, index) => active.addEventListener('click', function (e) {
     const modules = document.querySelectorAll('.modules_more_3 li');
     const modulesText = document.querySelectorAll('.module');
@@ -18,8 +18,9 @@ document.querySelectorAll('.modules_more_3 li').forEach((active, index) => activ
     });
     modulesText[index].classList.add('active');
 }));
+//Программа обучения КОНЕЦ
 
-// Selected box (двигающаяся рамка) на баннере
+// Selected box (двигающаяся рамка) на баннере СТАРТ
 let selectedBox = document.querySelector('.selected_box');
 let mainModuleBox = document.querySelector('.main-module-box');
 selectedBox.style.width = mainModuleBox.clientWidth + 'px';
@@ -33,8 +34,9 @@ window.addEventListener('resize', () => {
 document.addEventListener("DOMContentLoaded", () => {
     selectedBox.classList.remove('d-none');
 });
+// Selected box (двигающаяся рамка) на баннере КОНЕЦ
 
-// Часто задаваемый вопросы
+// Часто задаваемые вопросы СТАРТ
 document.querySelectorAll('.faq .split .list').forEach(row => {
 
     row.addEventListener('click', e => {
@@ -46,8 +48,42 @@ document.querySelectorAll('.faq .split .list').forEach(row => {
         row.classList.toggle('FAQ__hidden')
     })
 })
+// Часто задаваемые вопросы КОНЕЦ
 
-// Как проходит обучение
+// Анимация видеоматериалов СТАРТ
+let moveToStart = document.querySelectorAll('.move-to-start li');
+let moveToEnd = document.querySelectorAll('.move-to-end li');
+console.log(moveToStart)
+window.addEventListener("scroll", () => {
+
+    moveToStart.forEach(el => {
+        if (isFullyVisible(el)) {
+            el.classList.add('transform-to-start');
+        } else {
+            el.classList.remove('transform-to-start');
+        }
+    })
+    moveToEnd.forEach(el => {
+        if (isFullyVisible(el)) {
+            el.classList.add('transform-to-end');
+        } else {
+            el.classList.remove('transform-to-end');
+        }
+    })
+})
+
+function isFullyVisible(el) {
+    var elementBoundary = el.getBoundingClientRect();
+
+    var top = elementBoundary.top;
+    var bottom = elementBoundary.bottom;
+
+    return top >= 0 && bottom <= window.innerHeight;
+}
+// Анимация видеоматериалов КОНЕЦ
+
+
+// Как проходит обучение СТАРТ
 const tiles = document.querySelectorAll('.final_work_stage h1');
 const tileMinIndex = 0;
 const tileMaxIndex = tiles.length - 1;
@@ -71,6 +107,7 @@ setInterval(() => {
         tileCurrentIndex = tileMinIndex
     }
 }, 4000)
+// Как проходит обучение КОНЕЦ
 
 const animationController = new class {
 
@@ -119,9 +156,6 @@ const animationController = new class {
                 document.body.style.setProperty(`--${className}_y`, 1);
                 break;
         }
-
-        // document.querySelector(`.${className}.active`).classList.remove('active');
-        // document.querySelectorAll(`.${className}`)[index].classList.add('active');
     }
 
 }

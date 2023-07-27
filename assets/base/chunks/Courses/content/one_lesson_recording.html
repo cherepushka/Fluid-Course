@@ -1,0 +1,44 @@
+
+<!-- ЗАПИСЬ ОДНОГО УРОКА -->
+{if $_modx->resource.lesson_recording?}
+{set $row = json_decode($_modx->resource.lesson_recording, true)}
+<div class="container-xxl mb-5">
+  <h2 class="mb-5">Получите запись одного урока</h2>
+  <div class="row">
+    <div class="col-lg-4">
+      <h4 style="color: #4763D5;font-size: 22px;font-weight: normal;">{$row.0.title}</h4>
+      <p class="mt-3" style="font-size: 18px;">{$row.0.subtitle}</p>
+    </div>
+    <div class="col-lg-4">
+      <span style="font-size: 18px;">{$row.0.description}</span>
+    </div>
+    [[!AjaxForm?
+    &snippet=`FormIt`
+    &hooks=`FormItSaveForm,email`
+    &emailSubject=`От FluidCourse`
+    &emailTo=`[[+email]]`
+    &emailTpl=`tpl_one_lesson_email`
+    &emailFrom=`[[++emailsender]]`
+    &emailFromName=`Бесплатный урок от FluidCourse`
+    &form=`tpl_one_lesson_form`
+    &formName=`Запись одного урока [[*pagetitle]]`
+    &formFields=`
+    name_and_surname,
+    email
+    `
+    &fieldNames=`
+    name_and_surname==Имя,
+    email==Электронная почта,
+    `
+    &validate=`
+    name_and_surname:required:minLength=^3^,
+    email:required:email,
+    workemail:blank
+    `
+    &successMessage=`Поздравляем с успешной регистрацией!`
+    &validationErrorMessage=`Неправильно заполнена форма!`
+    ]]
+
+  </div>
+</div>
+{/if}

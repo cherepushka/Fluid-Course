@@ -152,7 +152,7 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var Coment = __webpack_require__(/*! ./components/_Coment.js */ "./assets/js/pages/courses/components/_Coment.js");
 
-//Программа обучения
+//Программа обучения СТАРТ
 document.querySelectorAll('.modules_more_3 li').forEach(function (active, index) {
   return active.addEventListener('click', function (e) {
     var modules = document.querySelectorAll('.modules_more_3 li');
@@ -171,8 +171,9 @@ document.querySelectorAll('.modules_more_3 li').forEach(function (active, index)
     modulesText[index].classList.add('active');
   });
 });
+//Программа обучения КОНЕЦ
 
-// Selected box (двигающаяся рамка) на баннере
+// Selected box (двигающаяся рамка) на баннере СТАРТ
 var selectedBox = document.querySelector('.selected_box');
 var mainModuleBox = document.querySelector('.main-module-box');
 selectedBox.style.width = mainModuleBox.clientWidth + 'px';
@@ -186,8 +187,9 @@ window.addEventListener('resize', function () {
 document.addEventListener("DOMContentLoaded", function () {
   selectedBox.classList.remove('d-none');
 });
+// Selected box (двигающаяся рамка) на баннере КОНЕЦ
 
-// Часто задаваемый вопросы
+// Часто задаваемые вопросы СТАРТ
 document.querySelectorAll('.faq .split .list').forEach(function (row) {
   row.addEventListener('click', function (e) {
     row.classList.toggle('FAQ__hidden');
@@ -197,8 +199,37 @@ document.querySelectorAll('.faq .split .list').forEach(function (row) {
     row.classList.toggle('FAQ__hidden');
   });
 });
+// Часто задаваемые вопросы КОНЕЦ
 
-// Как проходит обучение
+// Анимация видеоматериалов СТАРТ
+var moveToStart = document.querySelectorAll('.move-to-start li');
+var moveToEnd = document.querySelectorAll('.move-to-end li');
+console.log(moveToStart);
+window.addEventListener("scroll", function () {
+  moveToStart.forEach(function (el) {
+    if (isFullyVisible(el)) {
+      el.classList.add('transform-to-start');
+    } else {
+      el.classList.remove('transform-to-start');
+    }
+  });
+  moveToEnd.forEach(function (el) {
+    if (isFullyVisible(el)) {
+      el.classList.add('transform-to-end');
+    } else {
+      el.classList.remove('transform-to-end');
+    }
+  });
+});
+function isFullyVisible(el) {
+  var elementBoundary = el.getBoundingClientRect();
+  var top = elementBoundary.top;
+  var bottom = elementBoundary.bottom;
+  return top >= 0 && bottom <= window.innerHeight;
+}
+// Анимация видеоматериалов КОНЕЦ
+
+// Как проходит обучение СТАРТ
 var tiles = document.querySelectorAll('.final_work_stage h1');
 var tileMinIndex = 0;
 var tileMaxIndex = tiles.length - 1;
@@ -218,6 +249,8 @@ setInterval(function () {
     tileCurrentIndex = tileMinIndex;
   }
 }, 4000);
+// Как проходит обучение КОНЕЦ
+
 var animationController = new ( /*#__PURE__*/function () {
   function _class() {
     _classCallCheck(this, _class);
@@ -268,9 +301,6 @@ var animationController = new ( /*#__PURE__*/function () {
           document.body.style.setProperty("--".concat(className, "_y"), 1);
           break;
       }
-
-      // document.querySelector(`.${className}.active`).classList.remove('active');
-      // document.querySelectorAll(`.${className}`)[index].classList.add('active');
     }
   }]);
   return _class;
@@ -285,19 +315,6 @@ Coment.init();
 /*!******************************************!*\
   !*** ./assets/scss/new_fluid_style.scss ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./assets/scss/style.scss":
-/*!********************************!*\
-  !*** ./assets/scss/style.scss ***!
-  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -394,8 +411,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/public/js/course-page": 0,
-/******/ 			"assets/css/style": 0,
-/******/ 			"assets/css/new_fluid_style": 0
+/******/ 			"public/css/new_fluid_style": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -445,9 +461,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["assets/css/style","assets/css/new_fluid_style"], () => (__webpack_require__("./assets/js/pages/courses/course-page.js")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/style","assets/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/new_fluid_style.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/style","assets/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/style.scss")))
+/******/ 	__webpack_require__.O(undefined, ["public/css/new_fluid_style"], () => (__webpack_require__("./assets/js/pages/courses/course-page.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/new_fluid_style.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

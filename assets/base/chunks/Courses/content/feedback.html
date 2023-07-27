@@ -1,0 +1,43 @@
+<div class="container-xxl my-5">
+    <!-- ОТЗЫВЫ -->
+    <div class="student_reviews">
+
+        {if $_modx->resource.hideComments?}{else}
+        <h2>
+            Отзывы студентов
+        </h2>
+        <div class="d-flex flex-xl-lg-row flex-column">
+            <button class="carousel-control-prev d-xl-lg-flex d-none"><img src="/images/chevron_left.png"
+                    alt=""></button>
+            <div id="reviews" class="carousel slide my-4 overflow-auto">
+                <div class="coments">
+                    <!-- <button class="carousel-control-prev" type="button"></button> -->
+                    <div class="box">
+                        {set $rows = json_decode($_modx->resource.comments_migx, true)}
+                        {foreach $rows as $row}
+                        <client-coment client="{$row.client}" text="{$row.comment_text}"></client-coment>
+                        {/foreach}
+                    </div>
+
+                </div>
+            </div>
+            <button class="carousel-control-next d-xl-lg-flex d-none"><img src="/images/chevron_right.png"
+                    alt=""></button>
+
+            <!-- Кнопки переключения комментов ниже 1140px -->
+            <div class="d-xl-lg-none d-flex justify-content-center mt-3">
+                <button class="border-0 bg-transparent btn-case carousel-control-prev" type="button"
+                    data-bs-target="#reviews" data-bs-slide="prev">
+                    <img style="width: 45px; height: 45px;" src="/images/chevron_left.png" alt="">
+                </button>
+                <!-- <div class="d-xl-lg-none d-flex align-items-center mx-3 " style="font-size: 14px;"><span
+            class="number-case"></span> / {$countCases}</div> -->
+                <button class="border-0 bg-transparent btn-case carousel-control-next" type="button"
+                    data-bs-target="#reviews" data-bs-slide="next">
+                    <img style="width: 45px; height: 45px;" src="/images/chevron_right.png" alt="">
+                </button>
+            </div>
+        </div>
+        {/if}
+    </div>
+</div>

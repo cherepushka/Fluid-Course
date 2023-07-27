@@ -1,0 +1,78 @@
+<!-- Видеоматериалы и картинка -->
+<section class="py-5 mb-lg-5">
+    <div class="container-xxl">
+
+        <div class="row flex-lg-row flex-column-reverse">
+
+            <div class="col-lg-6 mb-5 text-center">
+                <img class="img-fluid" src="../../../images/f3.png">
+            </div>
+
+            <div class="col-lg-6">
+                <h2>Видеоматериалы:</h2>
+                <ol class="boxs list-unstyled">
+
+                    {set $videomaterials = json_decode($_modx->resource.videomaterial, true)}
+                    {foreach $videomaterials as $videomaterial index=$index}
+                    {if $index % 2 == 0}
+
+                    <a class="d-flex justify-content-start material-link text-center w-100 move-to-end"
+                        href={$videomaterial.link}>
+                        <li
+                            class="d-flex justify-content-center align-content-center p-3 border rounded-4 mb-3 material-link w-50">
+                            {$videomaterial.title}
+                        </li>
+                    </a>
+
+                    {else}
+
+                    <a class="d-flex justify-content-end material-link text-center w-100 move-to-start"
+                        href={$videomaterial.link}>
+                        <li
+                            class="d-flex justify-content-center align-content-center p-3 border rounded-4 mb-3 material-link w-50">
+                            {$videomaterial.title}
+                        </li>
+                    </a>
+
+                    {/if}
+                    {/foreach}
+
+                </ol>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Анимация видеоматериалов -->
+<!-- <script>
+    let moveToStart = document.querySelectorAll('.move-to-start li');
+    let moveToEnd = document.querySelectorAll('.move-to-end li');
+    console.log(moveToStart)
+    window.addEventListener("scroll", () => {
+
+        moveToStart.forEach(el => {
+            if (isFullyVisible(el)) {
+                el.classList.add('transform-to-start');
+            } else {
+                el.classList.remove('transform-to-start');
+            }
+        })
+        moveToEnd.forEach(el => {
+            if (isFullyVisible(el)) {
+                el.classList.add('transform-to-end');
+            } else {
+                el.classList.remove('transform-to-end');
+            }
+        })
+    })
+
+    function isFullyVisible(el) {
+        var elementBoundary = el.getBoundingClientRect();
+
+        var top = elementBoundary.top;
+        var bottom = elementBoundary.bottom;
+
+        return top >= 0 && bottom <= window.innerHeight;
+    }
+</script> -->

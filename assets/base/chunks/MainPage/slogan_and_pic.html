@@ -1,0 +1,50 @@
+<!-- Приветственный текст и картинка  -->
+<main>
+    <div class="container-xxl">
+
+        <div class="main py-5" style="background-size: 59%;">
+            <div class="row">
+                <h1 class="col-lg-7 action-color text-uppercase">
+                    Не останавливайся<br> на достигнутом!
+                </h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <img src="/images/main.png" class="img-fluid mb-5 d-lg-none">
+            </div>
+            <div class="row mb-lg-5 mb-3 slogan">
+                <p class="col-lg-6">
+                    [[*slogan]]
+                </p>
+            </div>
+
+            <a href="#program"><button type="button" class="color-white btn btn-primary">Выбрать
+                    курс</button></a>
+        </div>
+
+        <!-- Блоки с текстом -->
+        {set $rows = json_decode($_modx->resource.left_and_right_block_main_page,true)}
+        <div class="row mb-5 align-items-stretch gap-4 mx-0">
+
+            <!-- Левый блок -->
+            <div class="col border py-5 px-md-5 px-4 rounded-4 d-flex flex-column gap-3">
+                <h2>{$rows.0.left_title}</h2>
+                <h6>{$rows.0.left_text}</h6>
+            </div>
+
+            <!-- Правый блок -->
+            <div class="col border py-5 px-md-5 px-4 rounded-4 d-flex flex-column gap-3">
+                <h2 class="text-orange">{$rows.0.right_title}</h2>
+                {set $points = $rows.0.right_block_points | fromJSON}
+                <div>
+                    {foreach $points as $point}
+                    <div class="d-flex">
+                        <div class="d-flex me-3 orange-dash"><span></span></div>
+                        <h6>{$point.point}</h6>
+                    </div>
+                    {/foreach}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>

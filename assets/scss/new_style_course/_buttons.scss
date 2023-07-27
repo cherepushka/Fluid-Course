@@ -1,0 +1,52 @@
+@mixin btn($bg, $hover-bg, $color, $hover-color, $border: none, $hover-border: none) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(18px - 0.1rem);
+  color: $color;
+  background: $bg;
+
+  @if $border ==none {
+    border: none;
+  }
+
+  @else {
+    border: 1px solid $border;
+  }
+
+  &:hover {
+    color: $hover-color;
+    background: $hover-bg;
+
+    @if $border ==none {
+      border: none;
+    }
+
+    @else {
+      border: 1px solid $hover-border;
+    }
+  }
+
+  &:active {
+    color: $hover-color;
+    background: $hover-bg;
+  }
+
+  white-space: nowrap;
+}
+
+.btn-secondary {
+  @include btn(#4763d5, #ff5500, #fff, #fff);
+}
+
+.btn-primary {
+  @include btn(#ff5500, #4763d5, #fff, #fff);
+}
+
+.btn-outline-dark {
+  @include btn(#fff, #000000, #000000, #fff, #000000);
+}
+
+.btn-primary-white {
+  @include btn(#ff5500, #fff, #fff, #000);
+}

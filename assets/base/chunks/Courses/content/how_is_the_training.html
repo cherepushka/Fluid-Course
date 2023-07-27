@@ -1,0 +1,19 @@
+<!-- КАК ПРОХОДИТ ОБУЧЕНИЕ -->
+<div class="container-xxl my-5">
+    <div class="my-5">
+        <h2>
+            Как проходит обучение
+        </h2>
+        <ol class="row list-unstyled my-4">
+            {set $rows = json_decode($_modx->resource.final_work_template_migx, true)}
+            {set $i = 1}
+            {foreach $rows as $row}
+            <li class="final_work_stage col-lg-3 col-md-6">
+                <h1 class="my-4" style="font-size: 62px;">0{$i}</h1>
+                <h6>{$row.describe}</h6>
+            </li>
+            {set $i += 1}
+            {/foreach}
+        </ol>
+    </div>
+</div>

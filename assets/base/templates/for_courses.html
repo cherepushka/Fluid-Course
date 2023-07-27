@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-[[$head_courses]]
+[[$base_head]]
 
 <body>
     <div class="main_view" id="top">
 
-        [[!$top_nav_template]]
+        [[!$header]]
         <!-- Страница уже запущенного курса -->
         {if $_modx->resource.isActive_pre_reg_course === 'off'}
+
         [[!$head_banner]]
-        [[!$section_what_you_will_learn_template]]
-
-        [[!$section_who_is_this_course_for_template]]
-
-        [[!$section_teacher_template]]
-
-        [[!$section_training_program_template]]
-
-        [[!$section_final_work_template]]
-
-        [[!$section_certificate_template]]
+        [[!$what_you_will_learn]]
+        [[!$who_is_this_course_for]]
+        [[!$teacher]]
+        [[!$training_program]]
+        [[!$final_work]]
+        [[!$how_is_the_training]]
+        [[!$feedback]]
+        [[!$one_lesson_recording]]
+        [[!$steps_for_reg]]
+        [[!$form_reg_block_course]]
+        [[!$conditions_corp_clients]]
+        [[!$faq]]
+        [[!$certificate]]
 
         {else}
         <!-- Страница предзаписи курса -->
 
-        {$_modx->getChunk('tpl_preregistration_page_course')}
+        {$_modx->getChunk('preregistration_page_course')}
         
         {/if}
 
-        [[!$footer_course_template]]
+        [[!$footer]]
 
 
     </div>

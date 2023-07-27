@@ -1,0 +1,88 @@
+<!-- ОТЗЫВЫ-->
+<section class="py-5 mb-5">
+    <div class="container-xxl">
+
+        <div class="reviews">
+            <h2 class="mb-5">
+                Отзывы
+            </h2>
+            <div class="d-flex flex-xl-lg-row flex-column">
+
+                <!-- Кнопки переключения назад отзыв выше 1140px -->
+                <button class="carousel-control-prev d-xl-lg-flex d-none" type="button" data-bs-target="#reviews"
+                    data-bs-slide="prev">
+                    <img src="/images/chevron_left.png" alt="">
+                </button>
+
+                <div id="reviews" class="carousel slide p-3 p-md-0">
+                    <div class="carousel-inner">
+
+                        {set $comments = json_decode($_modx->resource.comment, true)}
+                        {set $i = 0}
+                        {foreach $comments as $comment}
+                        {if $i === 0}
+                        <!-- 1й активный комментарий -->
+                        <div class="carousel-item active">
+                            {set $i += 1}
+                            {else}
+                            <!-- Неактивные комментарии -->
+                            <div class="carousel-item">
+                                {/if}
+                                <div class="d-block w-100">
+                                    <div class="row gy-4 align-items-stretch">
+                                        <div class="">
+                                            <div class="p-lg-4 py-1 px-2 comments">
+                                                <div class="row mb-3">
+                                                    <div class="align-content-center col d-flex flex-grow-0">
+                                                        <img src={$comment.avatar}>
+                                                    </div>
+                                                    <div class="col">
+                                                        <strong
+                                                            style="font-size: 14px;font-weight: bold;color: #898989;">
+                                                            {$comment.name}
+                                                        </strong>
+                                                        <p class="mb-0" style="font-size: 14px;color: #898989;">
+                                                            {$comment.course}
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <p style="font-size: 16px;line-height: 23.76px;font-weight: 400;">
+                                                    {$comment.comment}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            {/foreach}
+                        </div>
+
+
+                    </div>
+
+                    <!-- Кнопки переключения вперёд отзыв выше 1140px -->
+                    <button class="carousel-control-next d-xl-lg-flex d-none" type="button" data-bs-target="#reviews"
+                        data-bs-slide="next">
+                        <img src="/images/chevron_right.png" alt="">
+                    </button>
+
+                    <!-- Кнопки переключения отзывов ниже 1140px -->
+                    <div class="d-xl-lg-none d-flex justify-content-center mt-3">
+                        <button class="border-0 bg-transparent btn-case" type="button" data-bs-target="#reviews"
+                            data-bs-slide="prev">
+                            <img style="width: 45px; height: 45px;" src="/images/chevron_left.png" alt="">
+                        </button>
+                        <!-- <div class="d-xl-lg-none d-flex align-items-center mx-3 " style="font-size: 14px;"><span
+        class="number-case"></span> / {$countCases}</div> -->
+                        <button class="border-0 bg-transparent btn-case" type="button" data-bs-target="#reviews"
+                            data-bs-slide="next">
+                            <img style="width: 45px; height: 45px;" src="/images/chevron_right.png" alt="">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</section>

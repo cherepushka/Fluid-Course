@@ -1,0 +1,16 @@
+<!-- FAQ -->
+<div class="faq py-4 container-xxl">
+    <h2>
+      Часто задаваемые вопросы
+    </h2>
+    <div class="row split">
+      {set $rows = json_decode($_modx->resource.faq_migx, true)}
+      {foreach $rows as $row}
+      <div class="list FAQ__hidden">
+        <h5 style="font-size: 20px;">{$row.question}</h5>
+        <h6 class="font-size:18px">{$row.answer_text}</h6>
+        <img class="list__collapse-comment" src="/assets/icons/pages/courses/comment-collapse-arrow.svg" alt="^">
+      </div>
+      {/foreach}
+    </div>
+  </div>

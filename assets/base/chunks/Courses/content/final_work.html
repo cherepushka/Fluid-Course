@@ -1,0 +1,25 @@
+<!-- ИТОГОВАЯ РАБОТА -->
+<div class="container-xxl my-5">
+  <div class="row align-items-center justify-content-lg-start">
+    <div class="final_work_describe col-lg-6">
+      {set $rows = json_decode($_modx->resource.final_work,true)}
+      {foreach $rows as $row}
+      <h2>{$row.title}</h2>
+      <div>
+        <h6>{$row.subtitle}</h6>
+        {set $points = $row.points | fromJSON}
+        <ul>
+          {foreach $points as $point}
+          <li>
+            <h6>{$point.point}</h6>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <img class="w-100" src={$row.img} alt="Графика курса">
+    </div>
+    {/foreach}
+  </div>
+</div>
