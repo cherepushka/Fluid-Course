@@ -61,7 +61,7 @@
       <div class="additional_info my-3">
 
         <ol class="row list-unstyled gy-4">
-          {set $rows = json_decode($_modx->resource.additional_info_migx, true)}
+          {set $rows = json_decode($_modx->resource.block_with_move_border, true)}
           <div class="selected_box d-none"></div>
           {foreach $rows as $row}
           <li class="main-module-box col-6 col-lg-3">

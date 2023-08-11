@@ -28,9 +28,6 @@
               </a>
             </div>
 
-
-
-
             <div class="col my-2">
               <small>
                 E-mail
@@ -68,9 +65,8 @@
           </div>
 
         </div>
+
         <div class="col-lg-7">
-
-
 
           <h6 class="fw-bold">
             Мы готовы провести корпоративный курс для вашей компании.<br>
@@ -78,7 +74,7 @@
           </h6>
 
           [[!FormIt?
-          &hooks=`email,FormItSaveForm`
+          &hooks=`FormItSaveForm,email`
           &formName=`[[*pagetitle]]`
           &formFields=`
           name,
@@ -121,12 +117,12 @@
                     <input class="form-control" required placeholder="ФИО" type="text" name="name"
                       value="[[!+fi.name]]">
                     <span class="error text-danger">[[!+fi.error.name]]</span>
-                    <input class="form-control" required placeholder="Телефон" type="text" name="phone"
+                    <input class="form-control" id="form_phone" required placeholder="+7 (999) 999-99-99" type="text" name="phone"
                       value="[[!+fi.phone]]">
                     <span class="error text-danger">[[!+fi.error.phone]]</span>
 
                     <script>
-                      //Код jQuery, установливающий маску для ввода телефона элементу input
+                      //Код jQuery, устанавливающий маску для ввода телефона элементу input
                       //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
                       $(function () {
                         //2. Получить элемент, к которому необходимо добавить маску

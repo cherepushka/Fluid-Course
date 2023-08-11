@@ -1,67 +1,70 @@
 <div class="training_program" id="programm">
-  <div class="container-xxl">
-    <h2 class="text-white">[[*duration_of_study]]</h2>
+    <div class="container-xxl">
+        <h2 class="text-white">[[*duration_of_study]]</h2>
+        {if json_decode($_modx->resource.modules, true) === null}
+        {else}
+        <div class="row">
 
-    <div class="row">
-
-      <!-- Отображение модулей 768px и выше -->
-      <div class="col-md-8 d-md-block d-none">
-        {$_modx->getChunk('tpl_modules')}
-      </div>
-
-      <div class="col-md-4 my-5 modules d-md-block d-none">
-        {$_modx->getChunk('tpl_description_list_modules')}
-      </div>
-
-
-      <!-- Отображение модулей 768px и ниже -->
-      {set $rows = json_decode($_modx->resource.modules, true)}
-      <ol class="justify-content-sm-between list-unstyled my-4 d-md-none">
-        {foreach $rows as $row index=$index}
-        <div>
-          <div class="modules_more_3">
-            {if $index == 0}
-            <!-- Активный модуль при первой загрузке страницы -->
-            <li class="active">
-              {else}
-              <!-- Остальные модули (скрытые до нажатия) -->
-            <li class="">
-              {/if}
-              <div class="text">
-                <strong> {$row.title} </strong>
-                <p>{$row.subtitle}</p>
-              </div>
-            </li>
-          </div>
-          {if $index == 0}
-          <!-- Активное описание модуля при первой загрузке страницы -->
-          <div class="module active">
-            {else}
-            <!-- Остальные описания модулей (скрытые до нажатия) -->
-            <div class="module">
-              {/if}
-              <div class="split row">
-                {set $items = $row.list_points | fromJSON}
-                <ol class="text-white list-unstyled ps-lg-5 ps-3" style="font-size: 20px; line-height: 25px">
-                  {set $k = 1}
-                  {foreach $items as $item}
-                  <li>{$k}. {$item.point}</li>
-                  {set $k += 1}
-                  {/foreach}
-                </ol>
-              </div>
+            <!-- Отображение модулей 768px и выше -->
+            <div class="col-md-8 d-md-block d-none">
+                {$_modx->getChunk('tpl_modules')}
             </div>
-          </div>
 
-          {/foreach}
+            <div class="col-md-4 my-5 modules d-md-block d-none">
+                {$_modx->getChunk('tpl_description_list_modules')}
+            </div>
 
-          <div class="footnote d-md-none">
-            [[*duration_of_study]]
-            <br /><br />
-            [[*describe_training_program]]
-          </div>
-      </ol>
 
+            <!-- Отображение модулей 768px и ниже -->
+            {set $rows = json_decode($_modx->resource.modules, true)}
+            <ol class="justify-content-sm-between list-unstyled my-4 d-md-none">
+                {foreach $rows as $row index=$index}
+                <div>
+                    <div class="modules_more_3">
+                        {if $index == 0}
+                        <!-- Активный модуль при первой загрузке страницы -->
+                        <li class="active">
+                            {else}
+                            <!-- Остальные модули (скрытые до нажатия) -->
+                        <li class="">
+                            {/if}
+                            <div class="text">
+                                <strong> {$row.title} </strong>
+                                <p>{$row.subtitle}</p>
+                            </div>
+                        </li>
+                    </div>
+                    {if $index == 0}
+                    <!-- Активное описание модуля при первой загрузке страницы -->
+                    <div class="module active">
+                        {else}
+                        <!-- Остальные описания модулей (скрытые до нажатия) -->
+                        <div class="module">
+                            {/if}
+                            <div class="split row">
+                                {set $items = $row.list_points | fromJSON}
+                                <ol class="text-white list-unstyled ps-lg-5 ps-3"
+                                    style="font-size: 20px; line-height: 25px">
+                                    {set $k = 1}
+                                    {foreach $items as $item}
+                                    <li>{$k}. {$item.point}</li>
+                                    {set $k += 1}
+                                    {/foreach}
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/foreach}
+
+                    <div class="footnote d-md-none">
+                        [[*duration_of_study]]
+                        <br/><br/>
+                        [[*describe_training_program]]
+                    </div>
+                </div>
+            </ol>
+        </div>
+        {/if}
     </div>
-  </div>
 </div>
