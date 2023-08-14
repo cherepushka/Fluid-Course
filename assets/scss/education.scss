@@ -1,0 +1,44 @@
+body {
+  font-family: 'Golos', sans-serif;
+  background: #fff;
+}
+
+
+a {
+  text-decoration: none;
+
+  p {
+    text-decoration: none;
+  }
+}
+
+.education-list {
+  list-style: none;
+  border: 1px solid #4763D5;
+
+  a {
+    color: #000;
+
+    &:hover {
+      color: #FF5500;
+    }
+  }
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0px 4px 28px 8px #00000008;
+  z-index: 99;
+
+  nav {
+    .blue-link {
+      color: #4763d5;
+    }
+  }
+}
+.gradient {
+  background-image: url(/images/f2/bg.png);
+  background-size: cover;
+}
