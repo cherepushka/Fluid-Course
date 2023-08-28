@@ -204,7 +204,6 @@ document.querySelectorAll('.faq .split .list').forEach(function (row) {
 // Анимация видеоматериалов СТАРТ
 var moveToStart = document.querySelectorAll('.move-to-start li');
 var moveToEnd = document.querySelectorAll('.move-to-end li');
-console.log(moveToStart);
 window.addEventListener("scroll", function () {
   moveToStart.forEach(function (el) {
     if (isFullyVisible(el)) {

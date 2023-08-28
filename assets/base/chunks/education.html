@@ -1,3 +1,12 @@
+
+{if $_modx->resource.id == 84}
+{set $firstChild = $_modx->getChildIds(84, 1)}
+{$firstChild | print}
+{$url = $_modx->makeUrl($firstChild.0)}
+{$_modx->sendRedirect($url)}
+
+{else }
+
 <div class="container my-5">
     <h2 class="my-4" style="font-weight: 400;color: #4763D5;">Образование</h2>
     <div class="row">
@@ -43,3 +52,5 @@
 
     </div>
 </div>
+{/if}
+

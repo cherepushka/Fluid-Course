@@ -5,9 +5,9 @@
   <ol class="row list-unstyled gy-4 justify-content-center">
     {set $rows = json_decode($_modx->resource.who_is_this_course_for_migx, true)}
     {foreach $rows as $row}
-    <li class="col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+    <li class="col-md-6 col-lg-4 d-flex flex-column align-items-center">
       <img src="{$row.img}" alt="">
-      <h6 class="px-5 mt-md-4">{$row.describe}</h6>
+      <h6 class="px-5">{$row.describe}</h6>
     </li>
     {/foreach}
   </ol>

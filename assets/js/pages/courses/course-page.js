@@ -53,7 +53,6 @@ document.querySelectorAll('.faq .split .list').forEach(row => {
 // Анимация видеоматериалов СТАРТ
 let moveToStart = document.querySelectorAll('.move-to-start li');
 let moveToEnd = document.querySelectorAll('.move-to-end li');
-console.log(moveToStart)
 window.addEventListener("scroll", () => {
 
     moveToStart.forEach(el => {

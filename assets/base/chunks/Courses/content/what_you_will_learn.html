@@ -1,18 +1,20 @@
 <div class="container-xxl">
-  <h2 class="my-5">Чему научитесь</h2>
-  <div class="row gy-4 m-0">
-    <div class="d-flex col-lg-6 pe-lg-4">
-      <img class="w-100" src="[[*img_what_you_learn]]" />
-    </div>
+    <h2 class="my-5">Чему научитесь</h2>
+    <div class="row gy-4 m-0">
+        <div class="d-flex col-lg-6 pe-lg-4">
+            <div class="d-flex justify-content-center align-items-center">
+                <img class="w-100" src="[[*img_what_you_learn]]"/>
+            </div>
+        </div>
 
-    <ol class="grid col-lg-6 p-lg-4">
-      {set $rows = json_decode($_modx->resource.what_you_will_learn_migx, true)}
-      {foreach $rows as $row}
-      <li>
-        <p style="color: #4763D5;">{$row.title}</p>
-        <h4>{$row.describe}</h4>
-      </li>
-      {/foreach}
-    </ol>
-  </div>
+        <ol class="grid col-lg-6 p-lg-4">
+            {set $rows = json_decode($_modx->resource.what_you_will_learn_migx, true)}
+            {foreach $rows as $row}
+            <li>
+                <p style="color: #4763D5;">{$row.title}</p>
+                <h4>{$row.describe}</h4>
+            </li>
+            {/foreach}
+        </ol>
+    </div>
 </div>

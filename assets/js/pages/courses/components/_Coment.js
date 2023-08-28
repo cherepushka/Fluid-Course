@@ -62,7 +62,7 @@ class Coment extends HTMLElement {
     static types(){
         const interval = setInterval(() => {
             Coment.active.nextChar()
-        }, Coment.typeSpeed);   
+        }, Coment.typeSpeed);
     }
 
 
