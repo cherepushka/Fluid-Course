@@ -2,136 +2,133 @@
 <div class="container-xxl my-5">
     {if $_modx->resource.hideForm?}{else}
     <div id="enroll-form" class="d-flex flex-md-row flex-column justify-content-evenly gy-4 gap-4 position-relative">
-      <!-- Информация слева от формы -->
-      <div class="col-md-6 describe_near_form">
-        [[*describe_near_form_reg]]
-        {if $_modx->resource.total_price?}<h1 style="font-size: 40px;">{$_modx->resource.total_price} руб.</h1>{/if}
-        <div class="row">
-          {if $_modx->resource.monthly_price?}
-          <div class="col-lg-7 col" style="line-height: 24px;">
-            <span style="color: #4763D5;">Купить в рассрочку</span> <br>
-            <span class="text-white">от {$_modx->resource.monthly_price} руб/ месяц</span>
-          </div>
-          {/if}
-          <button class="col-lg-5 col mt-lg-0 mt-2 btn btn-secondary">Подробнее</button>
+        <!-- Информация слева от формы -->
+        <div class="col-md-6 describe_near_form">
+            [[*describe_near_form_reg]]
+            {if $_modx->resource.total_price?}<h1 style="font-size: 40px;">{$_modx->resource.total_price} руб.</h1>{/if}
+            <div class="row">
+                {if $_modx->resource.monthly_price?}
+                <div class="col-lg-7 col" style="line-height: 24px;">
+                    <span style="color: #4763D5;">Купить в рассрочку</span> <br>
+                    <span class="text-white">от {$_modx->resource.monthly_price} руб/ месяц</span>
+                </div>
+                {/if}
+                <button class="col-lg-5 col mt-lg-0 mt-2 btn btn-secondary">Подробнее</button>
+            </div>
         </div>
-      </div>
-  
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
-  
-      {if $_modx->resource.change_forms_buy_or_reg?}
-  
-      [[!AjaxForm?
-      &snippet=`FormIt`
-      &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
-      &emailSubject=`От FluidCourse`
-      &emailTo=`[[+email]]`
-      &emailTpl=`tpl_course_emal`
-      &emailFrom=`[[++emailsender]]`
-      &emailFromName=`FluidCourse.ru`
-      &form=`tpl_enroll_form`
-      &formName=`[[*pagetitle]]`
-      &formFields=`
-      name_and_surname,
-      email,
-      phone,
-      company,
-      job,
-      promocode,
-      personal-data,
-      mailing`
-      &fieldNames=`
-      name_and_surname==Имя,
-      email==Электронная почта,
-      phone==Телефон,
-      company==Организация,
-      job==Должность,
-      promocode==Промокод
-      personal-data==Согласие на обработку персональных данных,
-      mailing==Согласие на получение SMS и Email рассылок`
-      &validate=`
-      name_and_surname:required:minLength=^3^,
-      email:required:email,
-      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-      company:required:minLength=^3^,
-      job:required:minLength=^3^,
-      {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
-      workemail:blank
-      `
-      &successMessage=`Поздравляем с успешной регистрацией!`
-      &validationErrorMessage=`Неправильно заполнена форма!`
-      ]]
-  
-  
-      {else}
-  
-      [[!AjaxForm?
-      &snippet=`FormIt`
-      &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
-      &emailSubject=`От FluidCourse`
-      &emailTo=`[[+email]]`
-      &emailFrom=`[[++emailsender]]`
-      &emailFromName=`FluidCourse.ru`
-      &emailTpl=`tpl_course_emal`
-      &form=`tpl_enroll_optional_promo_form`
-      &formName=`[[*pagetitle]]`
-      &formFields=`
-      name_and_surname,
-      email,
-      phone,
-      promocode,
-      personal_data,
-      mailing`
-      &fieldNames=`
-      name_and_surname==Имя,
-      email==Электронная почта,
-      phone==Телефон,
-      promocode==Промокод
-      personal_data==Согласие на обработку персональных данных,
-      mailing==Согласие на получение SMS и Email рассылок`
-      &validate=`
-      name_and_surname:required:minLength=^3^,
-      email:required:email,
-      phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-      {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
-      workemail:blank
-      `
-      &successMessage=``
-      &validationErrorMessage=`Неправильно заполнена форма!`
-      ]]
-  
-      {/if}
+
+        <!--Записаться с 3мя полями-->
+        [[-!AjaxForm?
+        &snippet=`FormIt`
+        &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
+        &emailSubject=`От FluidCourse`
+        &emailTo=`[[+email]]`
+        &emailFrom=`[[++emailsender]]`
+        &emailFromName=`FluidCourse.ru`
+        &emailTpl=`tpl_course_emal`
+        &formName=`[[*pagetitle]]`
+        &form=`tpl_enroll_optional_promo_form`
+        &formFields=`
+            name_and_surname,
+            email,
+            phone,
+            promocode,
+            personal_data,
+            mailing
+        `
+        &fieldNames=`
+            name_and_surname==Имя,
+            email==Электронная почта,
+            phone==Телефон,
+            promocode==Промокод
+            personal_data==Согласие на обработку персональных данных,
+            mailing==Согласие на получение SMS и Email рассылок
+        `
+        &validate=`
+            name_and_surname:required:minLength=^3^,
+            email:required:email,
+            phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+            {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+            workemail:blank
+        `
+        ]]
+
+        <!--        КУПИТЬ с 3 полями-->
+        [[!AjaxForm?
+        &snippet=`FormIt`
+        &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
+        &emailSubject=`От FluidCourse`
+        &emailTo=`[[+email]]`
+        &emailTpl=`tpl_course_emal`
+        &formName=`[[*pagetitle]]`
+        &form=`tpl_buy_form`
+        &formFields=`
+            name_and_surname,
+            email,
+            phone,
+            promocode
+            personal_data,
+            mailing
+        `
+        &fieldNames=`
+            name_and_surname==Имя,
+            email==Электронная почта,
+            phone==Телефон,
+            promocode==Промокод
+            personal_data==Согласие на обработку персональных данных,
+            mailing==Согласие на получение SMS и Email рассылок
+        `
+        &validate=`
+            name_and_surname:required:minLength=^3^:maxLength=^21^,
+            email:required:email,
+            phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+        {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+            workemail:blank
+        `
+        ]]
+
+        <!--ЗАПИСАТЬСЯ с 5ю полями-->
+        [[-!AjaxForm?
+        &snippet=`FormIt`
+        &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
+        &emailSubject=`От FluidCourse`
+        &emailTo=`[[+email]]`
+        &emailTpl=`tpl_course_emal`
+        &emailFrom=`[[++emailsender]]`
+        &emailFromName=`FluidCourse.ru`
+        &formName=`[[*pagetitle]]`
+        &form=`tpl_enroll_form`
+        &formFields=`
+            name_and_surname,
+            email,
+            phone,
+            company,
+            job,
+            promocode,
+            personal_data,
+            mailing
+        `
+        &fieldNames=`
+            name_and_surname==Имя,
+            email==Электронная почта,
+            phone==Телефон,
+            company==Организация,
+            job==Должность,
+            promocode==Промокод
+            personal_data==Согласие на обработку персональных данных,
+            mailing==Согласие на получение SMS и Email рассылок
+        `
+        &validate=`
+            name_and_surname:required:minLength=^3^,
+            email:required:email,
+            phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+            company:required:minLength=^3^,
+            job:required:minLength=^3^,
+            {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+            workemail:blank
+        `
+        ]]
+
     </div>
     {/if}
-    
-    <!-- Скрипт отвечает за уведомление об успешном заполнении формы -->
-    <script type="application/javascript">
-  
-      const successBag = $('.ajax_form .apply-form__success');
-      const errorBag = $('.ajax_form .apply-form__errors');
-  
-      $(document).on('submit', '.ajax_form', function (event) {
-        successBag.html('')
-        errorBag.html('')
-  
-        successBag.removeClass('alert alert-success')
-        errorBag.removeClass('alert alert-danger')
-      })
-      // Уведомление об успешном заполнении формы
-      $(document).on('af_complete', () => {
-  
-        AjaxForm.Message.error = (message, sticky) => {
-  
-          errorBag.addClass('alert alert-danger')
-          errorBag.html('<li style="list-style: none">' + message + '</li>')
-        }
-  
-        AjaxForm.Message.success = (message, sticky) => {
-  
-          successBag.addClass('alert alert-success')
-          successBag.html('<li style="list-style: none">' + message + '</li>')
-        }
-      })
-    </script>
-  </div>
+</div>

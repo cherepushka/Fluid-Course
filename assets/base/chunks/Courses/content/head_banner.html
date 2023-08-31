@@ -1,75 +1,77 @@
 {if $_modx->resource.background_banner == 'head_banner_picture'}
 <div class=[[*background_banner]] style="background-image: url([[*banner_picture]]);">
-  {else}
-  <div class=[[*background_banner]]>
-    {/if}
-
-
-    <div class="container-xxl head_banner_info">
-      <div class="row">
-        {if $_modx->resource.img_right_side_banner?}
-        <div class="d-lg-none d-flex justify-content-center align-items-center">
-          <img class="mw-100" src=[[*img_right_side_banner]] alt="Графика курса">
-          <!-- <img class="col-lg-6 h-75 up_img d-lg-none d-block" src=[[*img_right_side_banner]] alt="Графика курса"> -->
-        </div>
+    {else}
+    <div class=[[*background_banner]]>
         {/if}
-        <div class="col-lg-6 py-4">
-          <h1 class="head_banner_info_title" style="margin-bottom: 3rem">
-            [[*pagetitle]]
-          </h1>
-          <div style="margin-bottom: 3rem">
-            [[*content]]
-          </div>
 
-          <div class="action row m-0" style="margin-bottom: 3rem">
 
-            {if $_modx->resource.background_banner == 'head_banner_picture' ||
-            $_modx->resource.background_banner == 'head_banner_gradient'}
-            <a class="btn btn-primary-white col-6 h-100
+        <div class="container-xxl head_banner_info">
+            <div class="row">
+                {if $_modx->resource.img_right_side_banner?}
+                <div class="d-lg-none d-flex justify-content-center align-items-center">
+                    <img class="mw-100" src=[[*img_right_side_banner]] alt="Графика курса">
+                    <!-- <img class="col-lg-6 h-75 up_img d-lg-none d-block" src=[[*img_right_side_banner]] alt="Графика курса"> -->
+                </div>
+                {/if}
+                <div class="col-lg-6 py-4">
+                    <h1 class="head_banner_info_title" style="margin-bottom: 3rem">
+                        [[*pagetitle]]
+                    </h1>
+                    <div style="margin-bottom: 3rem">
+                        [[*content]]
+                    </div>
+
+                    <div class="action row m-0" style="margin-bottom: 3rem">
+
+                        {if $_modx->resource.background_banner == 'head_banner_picture' ||
+                        $_modx->resource.background_banner == 'head_banner_gradient'}
+                        <a class="btn btn-primary-white col-6 h-100
                  position-relative" href="#enroll-form" style="z-index: 2;">
-              Записаться на курс
-            </a>
-            {else}
-            <a class="btn btn-primary col-6 h-100
+                            Записаться на курс
+                        </a>
+                        {else}
+                        <a class="btn btn-primary col-6 h-100
               position-relative" href="#enroll-form"
-              style="z-index: 2;">Записаться на курс</a>
-            {/if}
+                           style="z-index: 2;">Записаться на курс</a>
+                        {/if}
 
-            {if $_modx->resource.date_start_calendar || $_modx->resource.hideForm}
-            <div class="date_start col-6 position-relative top-0" style="z-index: 1;">
+                        {if $_modx->resource.date_start_calendar || $_modx->resource.hideForm}
+                        <div class="date_start col-6 position-relative top-0" style="z-index: 1;">
 
-              {if $_modx->resource.date_start_calendar? && !$_modx->resource.hideForm}
-              [[!timestamp_fmt_rus_locale? &timestamp=`[[!*date_start_calendar:strtotime]]` &fmt=`d MMMM`]]
-              {else}
-              Запись закрыта
-              {/if}
+                            {if $_modx->resource.date_start_calendar? && !$_modx->resource.hideForm}
+                            [[!timestamp_fmt_rus_locale? &timestamp=`[[!*date_start_calendar:strtotime]]` &fmt=`d
+                            MMMM`]]
+                            {else}
+                            Запись закрыта
+                            {/if}
 
+                        </div>
+                        {/if}
+                    </div>
+                </div>
+
+                {if $_modx->resource.img_right_side_banner?}
+                <div class="d-lg-flex d-none col-lg-6 justify-content-center align-items-center">
+                    <img class="mw-100" src=[[*img_right_side_banner]] alt="Графика курса">
+                    <!-- <img class="col-lg-6 h-75 down_img" src=[[*img_right_side_banner]] alt="Графика курса"> -->
+                </div>
+                {/if}
             </div>
-            {/if}
-          </div>
+
+
+            <div class="additional_info my-3">
+
+                <ol class="row list-unstyled gy-4">
+                    {set $rows = json_decode($_modx->resource.block_with_move_border, true)}
+                    <div class="selected_box d-none"></div>
+                    {foreach $rows as $row}
+                    <li class="main-module-box col-6 col-lg-3">
+                        <p class="mb-3">{$row.title}</p>
+                        <h4>{$row.describe}</h4>
+                    </li>
+                    {/foreach}
+                </ol>
+            </div>
         </div>
-
-        {if $_modx->resource.img_right_side_banner?}
-        <div class="d-lg-flex d-none col-lg-6 justify-content-center align-items-center">
-          <img class="mw-100" src=[[*img_right_side_banner]] alt="Графика курса">
-          <!-- <img class="col-lg-6 h-75 down_img" src=[[*img_right_side_banner]] alt="Графика курса"> -->
-        </div>
-        {/if}
-      </div>
-
-
-      <div class="additional_info my-3">
-
-        <ol class="row list-unstyled gy-4">
-          {set $rows = json_decode($_modx->resource.block_with_move_border, true)}
-          <div class="selected_box d-none"></div>
-          {foreach $rows as $row}
-          <li class="main-module-box col-6 col-lg-3">
-            <p class="mb-3">{$row.title}</p>
-            <h4>{$row.describe}</h4>
-          </li>
-          {/foreach}
-        </ol>
-      </div>
     </div>
-  </div>
+</div>

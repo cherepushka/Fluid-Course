@@ -1,64 +1,61 @@
-<form class="ajax_form reg_form_corp_clients" method="post">
-  [[*header_form_reg]] <br>
+<form class="reg_form_corp_clients enroll-optional" method="post" action="[[~[[*id]]? &scheme=`full`]]">
+    [[*header_form_reg]] <br>
 
 
-  <!-- Подключение библиотеки jQuery -->
-  <script src="jquery.js"></script>
-  <!-- Подключение jQuery плагина Masked Input -->
-  <script src="/assets/js/jquery.maskedinput.min.js"></script>
+    <!-- Подключение библиотеки jQuery -->
+    <script src="jquery.js"></script>
+    <!-- Подключение jQuery плагина Masked Input -->
+    <script src="/assets/js/jquery.maskedinput.min.js"></script>
 
-  <!-- <ul class="apply-form__success"></ul>
-  <ul class="apply-form__errors"></ul> -->
+    <input class="final_work_input" type="text" placeholder="Фамилия Имя" name="name_and_surname" required>
 
-  <input class="final_work_input" type="text" placeholder="Фамилия Имя" name="name_and_surname" required>
+    <input class="final_work_input" type="text" placeholder="E-mail" class="email" name="email" required>
 
-  <input class="final_work_input" type="text" placeholder="E-mail" class="mail" name="email" required>
+    <input class="final_work_input" id="form_phone" type="text" placeholder="+7 (999) 999-99-99" class="phone"
+           name="phone" required>
 
-  <input class="final_work_input" id="form_phone" type="text" placeholder="+7 (999) 999-99-99" class="phone"
-    name="phone" required>
+    <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode"
+           title="Введите корректный Промокод" {if $_modx->resource.required_promo?}required{else}{/if}>
+    <!-- <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode"
+      pattern="[Ff][Cc][Nn][Gg]2023|[Ff][Ll]2023|[Кк]3601|[Hh][Rr][Kk]51|[Mm][Pp][Uu]61|[Mm][Ss]51|[Mm][Ss]360|[Hh][Mm][Ss]5"
+      title="Введите корректный Промокод"> -->
 
-  <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode"
-    title="Введите корректный Промокод" {if $_modx->resource.required_promo?}required{else}{/if}>
-  <!-- title="Введите корректный Промокод" {if $_modx->resource.required_promo?}required{else}{/if}> -->
-  <!-- <input class="final_work_input promocode" type="text" placeholder="Промокод" name="promocode"
-    pattern="[Ff][Cc][Nn][Gg]2023|[Ff][Ll]2023|[Кк]3601|[Hh][Rr][Kk]51|[Mm][Pp][Uu]61|[Mm][Ss]51|[Mm][Ss]360|[Hh][Mm][Ss]5"
-    title="Введите корректный Промокод"> -->
+    <!--для защиты от ботов-->
+    <input type="hidden" name="workemail" value=""/>
 
-  <!--для защиты от ботов-->
-  <input type="hidden" name="workemail" value="" />
-
-  <script>
-    //Код jQuery, устанавливающий маску для ввода телефона элементу input
-    //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
-    $(function () {
-      //2. Получить элемент, к которому необходимо добавить маску
-      $("#form_phone").mask("+7 (999) 999-99-99");
-    });
-  </script>
+    <script>
+        //Код jQuery, устанавливающий маску для ввода телефона элементу input
+        //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+        $(function () {
+            //2. Получить элемент, к которому необходимо добавить маску
+            $("#form_phone").mask("+7 (999) 999-99-99");
+        });
+    </script>
 
 
-
-  <div class="split">
-    <button class="btn btn-primary w-100" type="submit">
-      Записаться
-    </button>
-  </div>
-
-
-  <div class="d-flex justify-content-between align-items-center my-3">
-    <input class="checkbox_accept" type="checkbox" id="personal_data" name="personal_data[]" checked required disabled>
-    <label class="checkbox-other__label" for="personal_data"><span></span></label>
-    <div class="text_accept w-100">Записываясь на курс, вы даете согласие на обработку своих
-      персональных данных в соответствии с
-      <a class="text-white" style="text-decoration: underline;" href=[[~118]]><span>политикой конфиденциальности.</span></a>
+    <div class="split">
+        <button class="btn btn-primary w-100" type="submit">
+            Записаться
+        </button>
     </div>
-  </div>
 
-  <div class="d-flex align-items-center">
-    <input class="checkbox_accept" type="checkbox" id="mailing" name="mailing[]" checked required disabled>
-    <label class="checkbox-other__label" for="mailing"><span></span></label>
-    <div class="text_accept">Получение SMS и Email рассылок.</div>
-  </div>
+
+    <div class="d-flex justify-content-between align-items-center my-3">
+        <input class="checkbox_accept" type="checkbox" id="personal_data" name="personal_data[]" checked required
+               disabled>
+        <label class="checkbox-other__label" for="personal_data"><span></span></label>
+        <div class="text_accept w-100">Записываясь на курс, вы даете согласие на обработку своих
+            персональных данных в соответствии с
+            <a class="text-white text-decoration-underline"
+               href=[[~118]]><span>политикой конфиденциальности.</span></a>
+        </div>
+    </div>
+
+    <div class="d-flex align-items-center">
+        <input class="checkbox_accept" type="checkbox" id="mailing" name="mailing[]" checked required disabled>
+        <label class="checkbox-other__label" for="mailing"><span></span></label>
+        <div class="text_accept">Получение SMS и Email рассылок.</div>
+    </div>
 
 </form>
 {$_modx->getChunk('tpl_pop_up_success_form')}

@@ -1,0 +1,40 @@
+<script>
+
+    // Уведомление об успешном заполнении формы
+    $(document).on('af_complete', () => {
+
+        const form = document.getElementById("buy_form");
+        const buy = document.getElementById("buy_course");
+        const formData = new FormData(form, buy);
+
+        payformInit("fluid-course.payform.ru", { // где, XXX.payform.ru - ссылка на вашу пейформу, без указания https://
+            order_sum: 55, // Стоимость заказа в валюте заказа
+            customer_email: formData.get('email'),
+            customer_phone: formData.get('phone'),
+        })
+    })
+
+    // если у вас несколько кнопок, то для каждой из кнопок нужно продублировать код ниже, со своим уникальным идентификатором кнопки.
+    // UNIQ_IDButton - техническое название кнопки (должно быть уникальным)
+    // UNIQ_ID - уникальный идентификатор кнопки, который
+    // const buy_courseButton = document.querySelector("#buy_course");
+    // например, если у Вашей кнопки UNIQ_ID это englishCourse, то вместо UNIQ_IDButton следует написать englishCourseButton
+    // UNIQ_IDButton - название вашей кнопки
+    // document.getElementById('buy_form').addEventListener("submit", () => {
+    //     payformInit("fluid-course.payform.ru", { // где, XXX.payform.ru - ссылка на вашу пейформу, без указания https://
+    //         order_sum: 55, // Стоимость заказа в валюте заказа
+    //         customer_email: "sloopy1170@gmail.com",
+    //         customer_phone: "+79194892370",
+    //     })
+    // })
+    const enroll_buy_courseButton = document.querySelector("#enroll_buy_course");
+    // например, если у Вашей кнопки UNIQ_ID это englishCourse, то вместо UNIQ_IDButton следует написать englishCourseButton
+    // UNIQ_IDButton - название вашей кнопки
+    enroll_buy_courseButton?.addEventListener("click", () => {
+        payformInit("fluid-course.payform.ru", { // где, XXX.payform.ru - ссылка на вашу пейформу, без указания https://
+            order_sum: 100, // Стоимость заказа в валюте заказа
+            customer_email: "sloopy1170@gmail.com",
+            customer_phone: "+79194892370",
+        })
+    })
+</script>

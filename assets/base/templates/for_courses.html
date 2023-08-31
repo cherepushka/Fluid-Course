@@ -4,38 +4,41 @@
 [[$base_head]]
 
 <body>
-    <div class="main_view" id="top">
+<div class="main_view" id="top">
 
-        [[!$header]]
-        <!-- Страница уже запущенного курса -->
-        {if $_modx->resource.isActive_pre_reg_course === 'off'}
+    [[!$header]]
+    <!-- Страница уже запущенного курса -->
+    {if $_modx->resource.isActive_pre_reg_course === 'off'}
 
-        [[!$head_banner]]
-        [[!$what_you_will_learn]]
-        [[!$who_is_this_course_for]]
-        [[!$teacher]]
-        [[!$training_program]]
-        [[!$final_work]]
-        [[!$how_is_the_training]]
-        [[!$feedback]]
-        [[!$one_lesson_recording]]
-        [[!$steps_for_reg]]
-        [[!$form_reg_block_course]]
-        [[!$conditions_corp_clients]]
-        [[!$faq]]
-        [[!$certificate]]
+    [[!$head_banner]]
+    [[!$what_you_will_learn]]
+    [[!$who_is_this_course_for]]
+    [[!$teacher]]
+    [[!$training_program]]
+    [[!$final_work]]
+    [[!$how_is_the_training]]
+    [[!$feedback]]
+    [[!$one_lesson_recording]]
+    [[!$steps_for_reg]]
+    [[!$form_reg_block_course]]
+    [[!$conditions_corp_clients]]
+    [[!$faq]]
+    [[!$certificate]]
 
-        {else}
-        <!-- Страница предзаписи курса -->
+    {else}
+    <!-- Страница предзаписи курса -->
 
-        {$_modx->getChunk('preregistration_page_course')}
-        
-        {/if}
+    {$_modx->getChunk('preregistration_page_course')}
 
-        [[!$footer]]
+    {/if}
+
+    [[!$footer]]
 
 
-    </div>
+</div>
+
+[[!$prodamus]]
+
 </body>
 
 </html>
