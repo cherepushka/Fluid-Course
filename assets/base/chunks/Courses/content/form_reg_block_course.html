@@ -17,8 +17,45 @@
             </div>
         </div>
 
+        {if $_modx->resource.change_forms_buy_or_reg?}
+        <!--        КУПИТЬ с 3 полями-->
+        [[!AjaxForm?
+        &snippet=`FormIt`
+        &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
+        &emailSubject=`От FluidCourse`
+        &emailTo=`[[+email]]`
+        &emailTpl=`tpl_course_emal`
+        &formName=`[[*pagetitle]]`
+        &form=`tpl_buy_form`
+        &redirectTo=`1`
+        &formFields=`
+        name_and_surname,
+        email,
+        phone,
+        promocode
+        personal_data,
+        mailing
+        `
+        &fieldNames=`
+        name_and_surname==Имя,
+        email==Электронная почта,
+        phone==Телефон,
+        promocode==Промокод
+        personal_data==Согласие на обработку персональных данных,
+        mailing==Согласие на получение SMS и Email рассылок
+        `
+        &validate=`
+        name_and_surname:required:minLength=^3^:maxLength=^21^,
+        email:required:email,
+        phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+        {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+        workemail:blank
+        `
+        ]]
+
+        {else}
         <!--Записаться с 3мя полями-->
-        [[-!AjaxForm?
+        [[!AjaxForm?
         &snippet=`FormIt`
         &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
         &emailSubject=`От FluidCourse`
@@ -29,63 +66,31 @@
         &formName=`[[*pagetitle]]`
         &form=`tpl_enroll_optional_promo_form`
         &formFields=`
-            name_and_surname,
-            email,
-            phone,
-            promocode,
-            personal_data,
-            mailing
+        name_and_surname,
+        email,
+        phone,
+        promocode,
+        personal_data,
+        mailing
         `
         &fieldNames=`
-            name_and_surname==Имя,
-            email==Электронная почта,
-            phone==Телефон,
-            promocode==Промокод
-            personal_data==Согласие на обработку персональных данных,
-            mailing==Согласие на получение SMS и Email рассылок
+        name_and_surname==Имя,
+        email==Электронная почта,
+        phone==Телефон,
+        promocode==Промокод
+        personal_data==Согласие на обработку персональных данных,
+        mailing==Согласие на получение SMS и Email рассылок
         `
         &validate=`
-            name_and_surname:required:minLength=^3^,
-            email:required:email,
-            phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-            {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
-            workemail:blank
-        `
-        ]]
-
-        <!--        КУПИТЬ с 3 полями-->
-        [[!AjaxForm?
-        &snippet=`FormIt`
-        &hooks=`FormItSaveForm,email{if $_modx->resource.teachBase_session_id?},teachbaseReg{/if}`
-        &emailSubject=`От FluidCourse`
-        &emailTo=`[[+email]]`
-        &emailTpl=`tpl_course_emal`
-        &formName=`[[*pagetitle]]`
-        &form=`tpl_buy_form`
-        &formFields=`
-            name_and_surname,
-            email,
-            phone,
-            promocode
-            personal_data,
-            mailing
-        `
-        &fieldNames=`
-            name_and_surname==Имя,
-            email==Электронная почта,
-            phone==Телефон,
-            promocode==Промокод
-            personal_data==Согласие на обработку персональных данных,
-            mailing==Согласие на получение SMS и Email рассылок
-        `
-        &validate=`
-            name_and_surname:required:minLength=^3^:maxLength=^21^,
-            email:required:email,
-            phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+        name_and_surname:required:minLength=^3^,
+        email:required:email,
+        phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
         {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
-            workemail:blank
+        workemail:blank
         `
         ]]
+        {/if}
+
 
         <!--ЗАПИСАТЬСЯ с 5ю полями-->
         [[-!AjaxForm?
@@ -99,33 +104,33 @@
         &formName=`[[*pagetitle]]`
         &form=`tpl_enroll_form`
         &formFields=`
-            name_and_surname,
-            email,
-            phone,
-            company,
-            job,
-            promocode,
-            personal_data,
-            mailing
+        name_and_surname,
+        email,
+        phone,
+        company,
+        job,
+        promocode,
+        personal_data,
+        mailing
         `
         &fieldNames=`
-            name_and_surname==Имя,
-            email==Электронная почта,
-            phone==Телефон,
-            company==Организация,
-            job==Должность,
-            promocode==Промокод
-            personal_data==Согласие на обработку персональных данных,
-            mailing==Согласие на получение SMS и Email рассылок
+        name_and_surname==Имя,
+        email==Электронная почта,
+        phone==Телефон,
+        company==Организация,
+        job==Должность,
+        promocode==Промокод
+        personal_data==Согласие на обработку персональных данных,
+        mailing==Согласие на получение SMS и Email рассылок
         `
         &validate=`
-            name_and_surname:required:minLength=^3^,
-            email:required:email,
-            phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
-            company:required:minLength=^3^,
-            job:required:minLength=^3^,
-            {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
-            workemail:blank
+        name_and_surname:required:minLength=^3^,
+        email:required:email,
+        phone:required:regexp=^/^\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/^,
+        company:required:minLength=^3^,
+        job:required:minLength=^3^,
+        {if $_modx->resource.required_promo?}promocode:required:regexp=^/fcng2023|[[*promocode]]/iu^,{else}{/if}
+        workemail:blank
         `
         ]]
 

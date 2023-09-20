@@ -1,8 +1,8 @@
-<form id="buy_form" class="reg_form_corp_clients" method="post">
+<form id="buy_form" class="reg_form_corp_clients" method="post" action="[[~[[*id]]? &scheme=`full`]]">
     [[*header_form_reg]]
 
 
-    <input class="final_work_input" type="text" placeholder="Имя фамилия" name="name_and_surname" required>
+    <input class=" final_work_input" type="text" placeholder="Имя фамилия" name="name_and_surname" required>
 
     <input class="final_work_input mail" type="text" placeholder="E-mail" name="email" required>
 
@@ -17,7 +17,7 @@
 
     <script>
         //Код jQuery, устанавливающий маску для ввода телефона элементу input
-        //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+        //1. После загрузки страницы, когда все элементы будут доступны выполнить...
         $(function () {
             //2. Получить элемент, к которому необходимо добавить маску
             $("#form_phone").mask("+7 (999) 999-99-99");
@@ -26,8 +26,8 @@
 
 
     <div class="row flex-xl-nowrap gap-3 my-4">
-        <button id="buy_course" class="btn btn-primary col-xl-6" onclick="payformInit()" type="submit">Оплатить</button>
-        <button id="enroll_buy_course" class="btn btn-secondary col-xl-6" onclick="payformInit()" type="submit">Оплатить
+        <button id="buy_course" data-prodamus="[[*prodamus_link]]" class="btn btn-primary col-xl-6" type="submit">Оплатить</button>
+        <button id="enroll_buy_course" class="btn btn-secondary col-xl-6" type="submit">Оплатить
             в рассрочку
         </button>
     </div>

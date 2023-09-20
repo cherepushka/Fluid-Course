@@ -15093,6 +15093,28 @@ input.promocode {
   }
 }
 
+.version_visually_impaired {
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.version_visually_impaired button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  background: #FF5500;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.version_visually_impaired button:hover {
+  background: #4763D5;
+}
+
 @font-face {
   font-family: "Gotham Pro";
   src: url("/font/GothamPro-Bold.eot");
@@ -15581,26 +15603,6 @@ a:hover {
 
 .nav nav .blue-link {
   color: #4763d5;
-}
-
-.version_visually_impaired {
-  position: relative;
-  padding-right: 1.5rem;
-}
-.version_visually_impaired button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border: none;
-  background: #FF5500;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-.version_visually_impaired button:hover {
-  background: #4763D5;
 }
 
 .logo-footer {

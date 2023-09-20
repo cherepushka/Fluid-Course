@@ -10,6 +10,7 @@
 @import "./new_style_course/Courses/final_work";
 @import "./new_style_course/CorporateClients/corp_clients";
 @import "./new_style_course/PreRegPage/prereg_form";
+@import "./new_style_course/version_visually_impaired";
 @import "fonts/font";
 @import "./fonts/font-size";
 @import "./fonts/Golos.scss";
@@ -41,28 +42,6 @@ a:hover {
 
 .nav nav .blue-link {
   color: #4763d5;
-}
-
-.version_visually_impaired {
-  position: relative;
-  padding-right: 1.5rem;
-
-  button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border: none;
-    background: #FF5500;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-    &:hover {
-      background: #4763D5;
-    }
-  }
 }
 
 .logo-footer {

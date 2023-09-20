@@ -21,9 +21,9 @@ buildJs('assets/js/pages/', 'public/js');
 
 function buildJs(dir, dest) {
     findFiles(dir).forEach(function (file) {
-        
+
         const filename = path.basename(file)
-        
+
         if (!filename.startsWith('_')) {
             mix.js(file, dest).version();
         }
@@ -34,21 +34,22 @@ function findFiles(dir) {
     let results = [];
     const list = fs.readdirSync(dir);
 
-    list.forEach(function(file) {
+    list.forEach(function (file) {
         file = dir + '/' + file;
         var stat = fs.statSync(file);
-        if (stat && stat.isDirectory()) { 
+        if (stat && stat.isDirectory()) {
             /* Recurse into a subdirectory */
             results = results.concat(findFiles(file));
-        } else { 
+        } else {
             /* Is a file */
             results.push(file);
         }
     });
-    
+
     return results;
 }
 
 
 mix.sass('assets/scss/new_fluid_style.scss', 'public/css/new_fluid_style.css');
 mix.sass('assets/scss/education.scss', 'public/css/education.css');
+mix.sass('assets/scss/material_page.scss', 'public/css/material_page.css');

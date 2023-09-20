@@ -226,6 +226,7 @@ function isFullyVisible(el) {
   var bottom = elementBoundary.bottom;
   return top >= 0 && bottom <= window.innerHeight;
 }
+
 // Анимация видеоматериалов КОНЕЦ
 
 // Как проходит обучение СТАРТ
@@ -334,6 +335,19 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
+/***/ }),
+
+/***/ "./assets/scss/material_page.scss":
+/*!****************************************!*\
+  !*** ./assets/scss/material_page.scss ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
 /***/ })
 
 /******/ 	});
@@ -423,6 +437,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/public/js/course-page": 0,
+/******/ 			"public/css/material_page": 0,
 /******/ 			"public/css/education": 0,
 /******/ 			"public/css/new_fluid_style": 0
 /******/ 		};
@@ -474,9 +489,10 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["public/css/education","public/css/new_fluid_style"], () => (__webpack_require__("./assets/js/pages/courses/course-page.js")))
-/******/ 	__webpack_require__.O(undefined, ["public/css/education","public/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/new_fluid_style.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public/css/education","public/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/education.scss")))
+/******/ 	__webpack_require__.O(undefined, ["public/css/material_page","public/css/education","public/css/new_fluid_style"], () => (__webpack_require__("./assets/js/pages/courses/course-page.js")))
+/******/ 	__webpack_require__.O(undefined, ["public/css/material_page","public/css/education","public/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/new_fluid_style.scss")))
+/******/ 	__webpack_require__.O(undefined, ["public/css/material_page","public/css/education","public/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/education.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public/css/material_page","public/css/education","public/css/new_fluid_style"], () => (__webpack_require__("./assets/scss/material_page.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

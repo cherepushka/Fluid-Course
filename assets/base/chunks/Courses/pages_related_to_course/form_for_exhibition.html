@@ -1,5 +1,4 @@
 <div class="bg_pic h-100">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     [[!AjaxForm?
     &snippet=`FormIt`
     &hooks=`FormItSaveForm,email`
@@ -8,7 +7,7 @@
     &emailTpl=`tpl_form_exhibition_email`
     &emailFrom=`[[++emailsender]]`
     &emailFromName=`FluidCourse.ru`
-    &form=`tpl_form_exhibition`
+    &form=`tpl_exhibition_form`
     &formName=`Курсы`
 
     &formFields=`
@@ -57,7 +56,7 @@
     email:required:email,
     company:required:minLength=^3^,
     job:required:minLength=^3^,
-    promocode:required:regexp=^/fcng2023/i^,
+    promocode:regexp=^/fcng2023/i^,
     `
     &validationErrorMessage=``
     &successMessage=` `

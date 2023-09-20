@@ -79,6 +79,7 @@ function isFullyVisible(el) {
 
     return top >= 0 && bottom <= window.innerHeight;
 }
+
 // Анимация видеоматериалов КОНЕЦ
 
 
@@ -107,6 +108,8 @@ setInterval(() => {
     }
 }, 4000)
 // Как проходит обучение КОНЕЦ
+
+
 
 const animationController = new class {
 
